@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\QualificationWork.DAL\QualificationWork.DAL.csproj" />
+    <ProjectReference Include="..\QualificationWork.Middleware\QualificationWork.Middleware.csproj" />
   </ItemGroup>
 
 </Project>

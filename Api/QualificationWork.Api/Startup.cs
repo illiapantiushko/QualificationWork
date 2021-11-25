@@ -13,6 +13,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using QualificationWork.DAL;
+using QualificationWork.Middleware;
 
 namespace QualificationWork.Api
 {
@@ -47,6 +48,8 @@ namespace QualificationWork.Api
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "QualificationWork.Api v1"));
             }
+
+            app.UseMiddleware<ErrorMiddleware>();
 
             app.UseHttpsRedirection();
 

@@ -184,3 +184,5 @@ C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api\obj\Debug\net
 C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api\obj\Debug\net5.0\ref\QualificationWork.Api.dll
 C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api\obj\Debug\net5.0\QualificationWork.Api.pdb
 C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api\obj\Debug\net5.0\QualificationWork.Api.genruntimeconfig.cache
+C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api\bin\Debug\net5.0\QualificationWork.Middleware.dll
+C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api\bin\Debug\net5.0\QualificationWork.Middleware.pdb
