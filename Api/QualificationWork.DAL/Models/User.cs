@@ -11,6 +11,6 @@ namespace QualificationWork.DAL.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int Age { get; set; }
-        public ICollection<UserTopic> UserTopics { get; set; }
+        public ICollection<UserSubject> UserSubjects { get; set; }
     }
 }

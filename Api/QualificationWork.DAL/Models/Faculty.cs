@@ -9,6 +9,6 @@ namespace QualificationWork.DAL.Models
     {
         public long Id { get; set; }
         public string FacultyName { get; set; }
-        public ICollection<Topic> Topics { get; set; }
+        public ICollection<Subject> Subjects { get; set; }
     }
 }

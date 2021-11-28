@@ -5,14 +5,21 @@ using System.Threading.Tasks;
 
 namespace QualificationWork.DAL.Models
 {
-    public class Topic
+    public class Subject
     {
         public long Id { get; set; }
         public string TopicName { get; set; }
 
-        public Faculty Faculty { get; set; }
         public bool IsActive { get; set; }
 
-        public ICollection<UserTopic> UserTopics { get; set; }
+        public DateTime SubjectСlosingDate { get; set; }
+
+        public ICollection<UserSubject> UserSubjects { get; set; }
+
+
+        public long CurrentFacultyId { get; set; }
+
+        public virtual Faculty Faculty { get; set; }
+
     }
 }
