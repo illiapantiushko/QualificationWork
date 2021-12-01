@@ -16,3 +16,10 @@ C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.BL\obj\Debug\netc
 C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.BL\obj\Debug\netcoreapp3.1\QualificationWork.BL.csproj.CoreCompileInputs.cache
 C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.BL\obj\Debug\netcoreapp3.1\QualificationWork.BL.dll
 C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.BL\obj\Debug\netcoreapp3.1\QualificationWork.BL.pdb
+C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.BL\bin\Debug\netcoreapp3.1\QualificationWork.DAL.dll
+C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.BL\bin\Debug\netcoreapp3.1\QualificationWork.DTO.dll
+C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.BL\bin\Debug\netcoreapp3.1\QualificationWork.Middleware.dll
+C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.BL\bin\Debug\netcoreapp3.1\QualificationWork.DAL.pdb
+C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.BL\bin\Debug\netcoreapp3.1\QualificationWork.DTO.pdb
+C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.BL\bin\Debug\netcoreapp3.1\QualificationWork.Middleware.pdb
+C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.BL\obj\Debug\netcoreapp3.1\QualificationWork.BL.csproj.CopyComplete

@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualificationWork.DTO", "Qu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualificationWork.EmailSender", "QualificationWork.EmailSender\QualificationWork.EmailSender.csproj", "{DA62213F-7080-450B-BEB7-EE6FFFDA0E5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QualificationWork.Middleware", "QualificationWork.Middleware\QualificationWork.Middleware.csproj", "{AE00F4F2-22DA-4EC6-A14F-CB145D81F36B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualificationWork.Middleware", "QualificationWork.Middleware\QualificationWork.Middleware.csproj", "{AE00F4F2-22DA-4EC6-A14F-CB145D81F36B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

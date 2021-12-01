@@ -1,0 +1,9 @@
+C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.EmailSender\bin\Debug\netcoreapp3.1\QualificationWork.EmailSender.deps.json
+C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.EmailSender\bin\Debug\netcoreapp3.1\QualificationWork.EmailSender.dll
+C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.EmailSender\bin\Debug\netcoreapp3.1\QualificationWork.EmailSender.pdb
+C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.EmailSender\obj\Debug\netcoreapp3.1\QualificationWork.EmailSender.csprojAssemblyReference.cache
+C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.EmailSender\obj\Debug\netcoreapp3.1\QualificationWork.EmailSender.AssemblyInfoInputs.cache
+C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.EmailSender\obj\Debug\netcoreapp3.1\QualificationWork.EmailSender.AssemblyInfo.cs
+C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.EmailSender\obj\Debug\netcoreapp3.1\QualificationWork.EmailSender.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.EmailSender\obj\Debug\netcoreapp3.1\QualificationWork.EmailSender.dll
+C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.EmailSender\obj\Debug\netcoreapp3.1\QualificationWork.EmailSender.pdb
