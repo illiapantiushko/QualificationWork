@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "X34ARvJJrhRv1cef+YU9m4PYqZJbpAC8nAI9SoThD6jLpFcVZpO12nqnxSOWEUNtUHdX045x7i1XAaDNjrrA+A==",
+  "dgSpecHash": "gJuG0AWvt96EFPUs5eIFTNibw/Vok1Q8r5PNflqfbS50TbmG368aKQE/6lGPf2bPAPlVzKLckncfUIkVXFdOVQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\admin\\Desktop\\QualificationWork\\Api\\QualificationWork.Api\\QualificationWork.Api.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\admin\\.nuget\\packages\\csvhelper\\27.2.1\\csvhelper.27.2.1.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\google.apis\\1.55.0\\google.apis.1.55.0.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\google.apis.auth\\1.55.0\\google.apis.auth.1.55.0.nupkg.sha512",
     "C:\\Users\\admin\\.nuget\\packages\\google.apis.core\\1.55.0\\google.apis.core.1.55.0.nupkg.sha512",
