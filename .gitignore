@@ -1,15 +1,23 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# dot net dev
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+packages
+
 # dependencies
-/node_modules
-/.pnp
-.pnp.js
+/Front/node_modules
+/Front/.pnp
+/Front.pnp.js
 
 # testing
-/coverage
+/Front/coverage
 
 # production
-/build
+/Front/build
 
 # misc
 .DS_Store
