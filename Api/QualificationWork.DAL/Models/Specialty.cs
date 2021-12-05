@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
 namespace QualificationWork.DAL.Models
 {
-    public class Faculty
+   public class Specialty
     {
         public long Id { get; set; }
-        public string FacultyName { get; set; }
 
+        public string SpecialtyName { get; set; }
 
         // navigation property
-        public ICollection<Group> Groups { get; set; }
+
+        public virtual Group Group { get; set; }
     }
 }

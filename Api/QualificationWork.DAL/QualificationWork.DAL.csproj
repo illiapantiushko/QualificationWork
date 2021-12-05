@@ -13,10 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Query\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\QualificationWork.DTO\QualificationWork.DTO.csproj" />
     <ProjectReference Include="..\QualificationWork.Middleware\QualificationWork.Middleware.csproj" />
   </ItemGroup>

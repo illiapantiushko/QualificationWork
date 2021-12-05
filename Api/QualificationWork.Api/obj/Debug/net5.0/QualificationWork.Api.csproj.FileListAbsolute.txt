@@ -225,3 +225,4 @@ C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api\bin\Debug\net
 C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api\bin\Debug\net5.0\QualificationWork.DTO.pdb
 C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api\bin\Debug\net5.0\Microsoft.Extensions.Logging.dll
 C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api\bin\Debug\net5.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api\bin\Debug\net5.0\CsvHelper.dll

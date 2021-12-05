@@ -10,8 +10,8 @@ using QualificationWork.DAL;
 namespace QualificationWork.DAL.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20211129123213_MigrateDB")]
-    partial class MigrateDB
+    [Migration("20211204115729_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -167,6 +167,37 @@ namespace QualificationWork.DAL.Migrations
                     b.ToTable("Faculties");
                 });
 
+            modelBuilder.Entity("QualificationWork.DAL.Models.Group", b =>
+                {
+                    b.Property<long>("Id")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("CurrentUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("GroupName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CurrentUserId");
+
+                    b.ToTable("Groups");
+                });
+
+            modelBuilder.Entity("QualificationWork.DAL.Models.Specialty", b =>
+                {
+                    b.Property<long>("Id")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("SpecialtyName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Specialtys");
+                });
+
             modelBuilder.Entity("QualificationWork.DAL.Models.Subject", b =>
                 {
                     b.Property<long>("Id")
@@ -174,8 +205,8 @@ namespace QualificationWork.DAL.Migrations
                         .HasColumnType("bigint")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<long>("CurrentFacultyId")
-                        .HasColumnType("bigint");
+                    b.Property<int>("AmountCredits")
+                        .HasColumnType("int");
 
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
@@ -187,8 +218,6 @@ namespace QualificationWork.DAL.Migrations
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CurrentFacultyId");
 
                     b.ToTable("Subjects");
                 });
@@ -203,10 +232,10 @@ namespace QualificationWork.DAL.Migrations
                     b.Property<bool>("IsPresent")
                         .HasColumnType("bit");
 
-                    b.Property<DateTime>("TopicDate")
+                    b.Property<DateTime>("LessonDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("TopicNumber")
+                    b.Property<int>("LessonNumber")
                         .HasColumnType("int");
 
                     b.Property<long>("UserSubjectId")
@@ -367,15 +396,40 @@ namespace QualificationWork.DAL.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("QualificationWork.DAL.Models.Subject", b =>
+            modelBuilder.Entity("QualificationWork.DAL.Models.Group", b =>
                 {
+                    b.HasOne("QualificationWork.DAL.Models.User", "User")
+                        .WithMany("Groups")
+                        .HasForeignKey("CurrentUserId");
+
                     b.HasOne("QualificationWork.DAL.Models.Faculty", "Faculty")
-                        .WithMany("Subjects")
-                        .HasForeignKey("CurrentFacultyId")
+                        .WithMany("Groups")
+                        .HasForeignKey("Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("QualificationWork.DAL.Models.Subject", "Subject")
+                        .WithMany("Groups")
+                        .HasForeignKey("Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Faculty");
+
+                    b.Navigation("Subject");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("QualificationWork.DAL.Models.Specialty", b =>
+                {
+                    b.HasOne("QualificationWork.DAL.Models.Group", "Group")
+                        .WithMany("Specialtys")
+                        .HasForeignKey("Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Group");
                 });
 
             modelBuilder.Entity("QualificationWork.DAL.Models.TimeTable", b =>
@@ -460,16 +514,25 @@ namespace QualificationWork.DAL.Migrations
 
             modelBuilder.Entity("QualificationWork.DAL.Models.Faculty", b =>
                 {
-                    b.Navigation("Subjects");
+                    b.Navigation("Groups");
+                });
+
+            modelBuilder.Entity("QualificationWork.DAL.Models.Group", b =>
+                {
+                    b.Navigation("Specialtys");
                 });
 
             modelBuilder.Entity("QualificationWork.DAL.Models.Subject", b =>
                 {
+                    b.Navigation("Groups");
+
                     b.Navigation("UserSubjects");
                 });
 
             modelBuilder.Entity("QualificationWork.DAL.Models.User", b =>
                 {
+                    b.Navigation("Groups");
+
                     b.Navigation("UserSubjects");
                 });
 

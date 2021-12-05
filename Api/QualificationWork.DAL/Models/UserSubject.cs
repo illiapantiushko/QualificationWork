@@ -15,6 +15,7 @@ namespace QualificationWork.DAL.Models
         public long SubjectId { get; set; }
         public virtual Subject Subject { get; set; }
 
+        // navigation property
         public virtual TimeTable TimeTable { get; set; }
     }
 }

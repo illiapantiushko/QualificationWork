@@ -7,7 +7,10 @@ namespace QualificationWork.DAL
 {
     public class ApplicationContext : IdentityDbContext<User>
     {
+       
         public DbSet<Subject> Subjects { get; set; }
+        public DbSet<Specialty> Specialtys { get; set; }
+        public DbSet<Group> Groups { get; set; }
         public DbSet<Faculty> Faculties { get; set; }
         public DbSet<UserSubject> UserSubjects { get; set; }
         public DbSet<TimeTable> TimeTable { get; set; }
@@ -21,7 +24,7 @@ namespace QualificationWork.DAL
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //  Many-to-Many, User to Topic
+            //  Many-to-Many, User to Topic 
 
             modelBuilder.Entity<UserSubject>()
                 .HasOne<User>(sc => sc.User)
@@ -34,27 +37,29 @@ namespace QualificationWork.DAL
                 .WithMany(s => s.UserSubjects)
                 .HasForeignKey(sc => sc.SubjectId);
 
-            //modelBuilder.Entity<UserSubject>(userTopic =>
-            //{
-            //    userTopic.HasKey(sc => new { sc.UserId, sc.SubjectId });
+            // One-to-Many, Faculty to Group
+            modelBuilder.Entity<Group>()
+           .HasOne<Faculty>(s => s.Faculty)
+           .WithMany(g => g.Groups)
+           .HasForeignKey(s => s.Id);
 
-            //    userTopic.HasOne(b => b.User)
-            //    .WithMany(ba => ba.UserSubjects)
-            //    .HasForeignKey(bi => bi.UserId);
+            // One-to-Many, User to Group
+            modelBuilder.Entity<Group>()
+                .HasOne<User>(s => s.User)
+                .WithMany(g => g.Groups)
+                .HasForeignKey(s => s.CurrentUserId);
 
-            //    userTopic.HasOne(b => b.Subject)
-            //    .WithMany(ba => ba.UserSubjects)
-            //    .HasForeignKey(bi => bi.SubjectId);
+            // One-to-Many, Subject to Group
+            modelBuilder.Entity<Group>()
+             .HasOne<Subject>(s => s.Subject)
+             .WithMany(g => g.Groups)
+             .HasForeignKey(s => s.Id);
 
-            //});
-
-            // One-to-Many, Faculty to Subject
-
-            modelBuilder.Entity<Subject>()
-                .HasOne<Faculty>(s => s.Faculty)
-                .WithMany(g => g.Subjects)
-                .HasForeignKey(s => s.CurrentFacultyId);
-
+            // One-to-Many, Group to Specialty
+            modelBuilder.Entity<Specialty>()
+           .HasOne<Group>(s => s.Group)
+           .WithMany(g => g.Specialtys)
+           .HasForeignKey(s => s.Id);
 
             // One-to-One, TimeTable to UserSubject
 

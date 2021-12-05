@@ -9,16 +9,21 @@ namespace QualificationWork.DAL.Models
     {
         public long Id { get; set; }
         public string SubjectName { get; set; }
-
+       
         public bool IsActive { get; set; }
+
+        // кількість кредитів
+        public int AmountCredits { get; set; }
 
         public DateTime SubjectСlosingDate { get; set; }
 
-        public ICollection<UserSubject> UserSubjects { get; set; }
 
-        public long CurrentFacultyId { get; set; }
+        // navigation property
 
-        public virtual Faculty Faculty { get; set; }
+        public  ICollection<Group> Groups { get; set; }
+
+        public virtual ICollection<UserSubject> UserSubjects { get; set; }
+
 
     }
 }

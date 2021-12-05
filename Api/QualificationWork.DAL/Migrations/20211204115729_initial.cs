@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace QualificationWork.DAL.Migrations
 {
-    public partial class MigrateDB : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -60,6 +60,22 @@ namespace QualificationWork.DAL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Faculties", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Subjects",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    SubjectName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false),
+                    AmountCredits = table.Column<int>(type: "int", nullable: false),
+                    SubjectСlosingDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Subjects", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -196,23 +212,32 @@ namespace QualificationWork.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Subjects",
+                name: "Groups",
                 columns: table => new
                 {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    SubjectName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IsActive = table.Column<bool>(type: "bit", nullable: false),
-                    SubjectСlosingDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CurrentFacultyId = table.Column<long>(type: "bigint", nullable: false)
+                    Id = table.Column<long>(type: "bigint", nullable: false),
+                    GroupName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CurrentUserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Subjects", x => x.Id);
+                    table.PrimaryKey("PK_Groups", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Subjects_Faculties_CurrentFacultyId",
-                        column: x => x.CurrentFacultyId,
+                        name: "FK_Groups_AspNetUsers_CurrentUserId",
+                        column: x => x.CurrentUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Groups_Faculties_Id",
+                        column: x => x.Id,
                         principalTable: "Faculties",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Groups_Subjects_Id",
+                        column: x => x.Id,
+                        principalTable: "Subjects",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -244,15 +269,33 @@ namespace QualificationWork.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Specialtys",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false),
+                    SpecialtyName = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Specialtys", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Specialtys_Groups_Id",
+                        column: x => x.Id,
+                        principalTable: "Groups",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "TimeTable",
                 columns: table => new
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserSubjectId = table.Column<long>(type: "bigint", nullable: false),
-                    TopicDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    LessonDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsPresent = table.Column<bool>(type: "bit", nullable: false),
-                    TopicNumber = table.Column<int>(type: "int", nullable: false)
+                    LessonNumber = table.Column<int>(type: "int", nullable: false),
+                    UserSubjectId = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -305,14 +348,14 @@ namespace QualificationWork.DAL.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Groups_CurrentUserId",
+                table: "Groups",
+                column: "CurrentUserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_RefreshToken_UserId",
                 table: "RefreshToken",
                 column: "UserId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Subjects_CurrentFacultyId",
-                table: "Subjects",
-                column: "CurrentFacultyId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TimeTable_UserSubjectId",
@@ -352,22 +395,28 @@ namespace QualificationWork.DAL.Migrations
                 name: "RefreshToken");
 
             migrationBuilder.DropTable(
+                name: "Specialtys");
+
+            migrationBuilder.DropTable(
                 name: "TimeTable");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
+                name: "Groups");
+
+            migrationBuilder.DropTable(
                 name: "UserSubjects");
+
+            migrationBuilder.DropTable(
+                name: "Faculties");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
                 name: "Subjects");
-
-            migrationBuilder.DropTable(
-                name: "Faculties");
         }
     }
 }
