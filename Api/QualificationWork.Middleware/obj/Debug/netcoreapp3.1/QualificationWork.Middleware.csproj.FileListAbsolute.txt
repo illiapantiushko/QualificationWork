@@ -1,9 +1,0 @@
-C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Middleware\bin\Debug\netcoreapp3.1\QualificationWork.Middleware.deps.json
-C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Middleware\bin\Debug\netcoreapp3.1\QualificationWork.Middleware.dll
-C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Middleware\bin\Debug\netcoreapp3.1\QualificationWork.Middleware.pdb
-C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Middleware\obj\Debug\netcoreapp3.1\QualificationWork.Middleware.csprojAssemblyReference.cache
-C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Middleware\obj\Debug\netcoreapp3.1\QualificationWork.Middleware.AssemblyInfoInputs.cache
-C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Middleware\obj\Debug\netcoreapp3.1\QualificationWork.Middleware.AssemblyInfo.cs
-C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Middleware\obj\Debug\netcoreapp3.1\QualificationWork.Middleware.csproj.CoreCompileInputs.cache
-C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Middleware\obj\Debug\netcoreapp3.1\QualificationWork.Middleware.dll
-C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Middleware\obj\Debug\netcoreapp3.1\QualificationWork.Middleware.pdb
