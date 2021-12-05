@@ -1,13 +1,13 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using QualificationWork.DAL.Models;
 
-
 namespace QualificationWork.DAL
 {
-    public class ApplicationContext : IdentityDbContext<User>
+    public class ApplicationContext : IdentityDbContext<ApplicationUser, ApplicationRole, long, IdentityUserClaim<long>, ApplicationUserRole,
+                                                        IdentityUserLogin<long>, IdentityRoleClaim<long>, IdentityUserToken<long>>
     {
-       
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<Specialty> Specialtys { get; set; }
         public DbSet<Group> Groups { get; set; }
@@ -24,49 +24,56 @@ namespace QualificationWork.DAL
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //  Many-to-Many, User to Topic 
+            modelBuilder.Entity<ApplicationUserRole>(userRole =>
+            {
+                userRole.HasKey(ur => new { ur.UserId, ur.RoleId });
 
-            modelBuilder.Entity<UserSubject>()
-                .HasOne<User>(sc => sc.User)
-                .WithMany(s => s.UserSubjects)
-                .HasForeignKey(sc => sc.UserId);
+                userRole.HasOne(ur => ur.Role)
+                        .WithMany(r => r.UserRoles)
+                        .HasForeignKey(ur => ur.RoleId)
+                        .IsRequired();
 
+                userRole.HasOne(ur => ur.User)
+                        .WithMany(r => r.UserRoles)
+                        .HasForeignKey(ur => ur.UserId)
+                        .IsRequired();
+            });
 
-            modelBuilder.Entity<UserSubject>()
-                .HasOne<Subject>(sc => sc.Subject)
-                .WithMany(s => s.UserSubjects)
-                .HasForeignKey(sc => sc.SubjectId);
+            modelBuilder.Entity<UserSubject>(entity =>
+            {
+                entity.HasOne<ApplicationUser>(sc => sc.User)
+                      .WithMany(s => s.UserSubjects)
+                      .HasForeignKey(sc => sc.UserId);
 
-            // One-to-Many, Faculty to Group
-            modelBuilder.Entity<Group>()
-           .HasOne<Faculty>(s => s.Faculty)
-           .WithMany(g => g.Groups)
-           .HasForeignKey(s => s.Id);
+                entity.HasOne<Subject>(sc => sc.Subject)
+                      .WithMany(s => s.UserSubjects)
+                      .HasForeignKey(sc => sc.SubjectId);
 
-            // One-to-Many, User to Group
-            modelBuilder.Entity<Group>()
-                .HasOne<User>(s => s.User)
-                .WithMany(g => g.Groups)
-                .HasForeignKey(s => s.CurrentUserId);
+                entity.HasOne<TimeTable>(ad => ad.TimeTable)
+                      .WithOne(s => s.UserSubject)
+                      .HasForeignKey<TimeTable>(ad => ad.UserSubjectId);
+            });
 
-            // One-to-Many, Subject to Group
-            modelBuilder.Entity<Group>()
-             .HasOne<Subject>(s => s.Subject)
-             .WithMany(g => g.Groups)
-             .HasForeignKey(s => s.Id);
+            modelBuilder.Entity<Group>(entity =>
+            {
+                entity.HasOne<Faculty>(s => s.Faculty)
+                      .WithMany(g => g.Groups)
+                      .HasForeignKey(s => s.Id);
+
+                entity.HasOne<ApplicationUser>(s => s.User)
+                      .WithMany(g => g.Groups)
+                      .HasForeignKey(s => s.CurrentUserId);
+
+                entity.HasOne<Subject>(s => s.Subject)
+                      .WithMany(g => g.Groups)
+                      .HasForeignKey(s => s.Id);
+            });
 
             // One-to-Many, Group to Specialty
             modelBuilder.Entity<Specialty>()
-           .HasOne<Group>(s => s.Group)
-           .WithMany(g => g.Specialtys)
-           .HasForeignKey(s => s.Id);
-
-            // One-to-One, TimeTable to UserSubject
-
-            modelBuilder.Entity<UserSubject>()
-                .HasOne<TimeTable>(ad => ad.TimeTable)
-                .WithOne(s => s.UserSubject)
-                .HasForeignKey<TimeTable>(ad => ad.UserSubjectId);
+                        .HasOne<Group>(s => s.Group)
+                        .WithMany(g => g.Specialtys)
+                        .HasForeignKey(s => s.Id);
 
             base.OnModelCreating(modelBuilder);
         }

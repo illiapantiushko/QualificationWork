@@ -20,7 +20,7 @@ namespace QualificationWork.DAL.HelperServise
             this.appSettings = appSettings.Value;
         }
 
-        public string GenerateJwtToken(User user)
+        public string GenerateJwtToken(ApplicationUser user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
 
