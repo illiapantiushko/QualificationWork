@@ -25,7 +25,7 @@ namespace QualificationWork.DAL.Models
         public bool IsRevoked => Revoked != null;
         public bool IsActive => !IsRevoked && !IsExpired;
 
-        public virtual User User { get; set; }
+        public virtual ApplicationUser User { get; set; }
 
     }
 }

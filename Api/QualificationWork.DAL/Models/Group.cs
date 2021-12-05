@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace QualificationWork.DAL.Models
 {
-   public class Group
+    public class Group
     {
         [Key]
         public long Id { get; set; }
@@ -17,8 +15,8 @@ namespace QualificationWork.DAL.Models
 
         public virtual Faculty Faculty { get; set; }
 
-        public virtual string CurrentUserId { get; set; }
-        public virtual User User { get; set; }
+        public long CurrentUserId { get; set; }
+        public virtual ApplicationUser User { get; set; }
 
         public virtual Subject Subject { get; set; }
     }

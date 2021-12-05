@@ -19,7 +19,7 @@ namespace QualificationWork.BL.Services
             this.context = context;
         }
 
-        public List<User> ReadCSVFile(string location)
+        public List<ApplicationUser> ReadCSVFile(string location)
         {
             try
             {
@@ -27,7 +27,7 @@ namespace QualificationWork.BL.Services
                 using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
                 {
                     //csv.Context.RegisterClassMap<User>();
-                    var records = csv.GetRecords<User>().ToList();
+                    var records = csv.GetRecords<ApplicationUser>().ToList();
                     return records;
                 }
             }

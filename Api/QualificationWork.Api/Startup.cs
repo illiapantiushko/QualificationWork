@@ -50,14 +50,13 @@ namespace QualificationWork.Api
                 });
             });
 
-            services.AddIdentity<User, IdentityRole>(opt => {
-
+            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ConStr")));
+            services.AddIdentity<ApplicationUser, ApplicationRole>(opt =>
+            {
                 opt.SignIn.RequireConfirmedEmail = true;
             })
                .AddEntityFrameworkStores<ApplicationContext>()
                .AddDefaultTokenProviders();
-
-            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ConStr")));
 
             // налаштування схеми
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

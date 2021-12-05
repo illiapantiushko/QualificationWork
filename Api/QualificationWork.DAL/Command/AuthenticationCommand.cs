@@ -20,13 +20,13 @@ namespace QualificationWork.DAL.Command
 
         private readonly AppSettings appSettings;
 
-        private readonly UserManager<User> userManager;
+        private readonly UserManager<ApplicationUser> userManager;
 
         public AuthenticationCommand(
                 ApplicationContext context,
                 JwtUtils jwtUtils,
                 IOptions<AppSettings> appSettings,
-                UserManager<User> userManager
+                UserManager<ApplicationUser> userManager
             )
         {
             this.context = context;
@@ -74,7 +74,7 @@ namespace QualificationWork.DAL.Command
 
             if (user == null)
             {
-                User userData = new User
+                ApplicationUser userData = new ApplicationUser
                 {
                     Email = payload.Email,
                     SecurityStamp = Guid.NewGuid().ToString(),
@@ -126,14 +126,14 @@ namespace QualificationWork.DAL.Command
             return new AuthenticateResponseDto(user.UserName, jwtToken, newRefreshToken.Token, roles);
         }
 
-        private void RemoveOldRefreshTokens(User user)
+        private void RemoveOldRefreshTokens(ApplicationUser user)
         {
             user.RefreshTokens.RemoveAll(x =>
                 !x.IsActive &&
                 x.Created.AddDays(appSettings.RefreshTokenTTL) <= DateTime.UtcNow);
         }
 
-        private void RevokeDescendantRefreshTokens(RefreshToken refreshToken, User user, string ipAddress, string reason)
+        private void RevokeDescendantRefreshTokens(RefreshToken refreshToken, ApplicationUser user, string ipAddress, string reason)
         {
 
             if (!string.IsNullOrEmpty(refreshToken.ReplacedByToken))
@@ -151,7 +151,7 @@ namespace QualificationWork.DAL.Command
             }
         }
 
-        private User GetUserByRefreshToken(string token)
+        private ApplicationUser GetUserByRefreshToken(string token)
         {
             var user = context.Users.SingleOrDefault(u => u.RefreshTokens.Any(t => t.Token == token));
 

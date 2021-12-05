@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace QualificationWork.DAL.Models
 {
@@ -10,8 +6,8 @@ namespace QualificationWork.DAL.Models
     {
         [Key]
         public long Id { get; set; }
-        public string UserId { get; set; }
-        public virtual User User { get; set; }
+        public long UserId { get; set; }
+        public virtual ApplicationUser User { get; set; }
         public long SubjectId { get; set; }
         public virtual Subject Subject { get; set; }
 

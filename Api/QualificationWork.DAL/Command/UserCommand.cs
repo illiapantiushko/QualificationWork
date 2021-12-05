@@ -1,11 +1,8 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using QualificationWork.DAL.Models;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
+using QualificationWork.DAL.Models;
 
 namespace QualificationWork.DAL.Command
 {
@@ -13,9 +10,9 @@ namespace QualificationWork.DAL.Command
     {
         private readonly ApplicationContext context;
 
-        private readonly UserManager<User> userManager;
+        private readonly UserManager<ApplicationUser> userManager;
 
-        public UserCommand(ApplicationContext context, UserManager<User> userManager)
+        public UserCommand(ApplicationContext context, UserManager<ApplicationUser> userManager)
         {
             this.context = context;
             this.userManager = userManager;
@@ -52,7 +49,7 @@ namespace QualificationWork.DAL.Command
             }
         }
 
-        public async Task AddSubjectById(string userId, long subjectId)
+        public async Task AddSubjectById(long userId, long subjectId)
         {
             var data = new UserSubject
             {
@@ -62,17 +59,16 @@ namespace QualificationWork.DAL.Command
              await context.AddAsync(data);
         }
 
-        public void RemoveSubjectById(string userId, long subjectId)
+        public void RemoveSubjectById(long userId, long subjectId)
         {
             var data = context.UserSubjects
-                                            .Where(pub => pub.UserId == userId)
-                                            .FirstOrDefault(pub => pub.SubjectId == subjectId);
+                              .Where(pub => pub.UserId == userId)
+                              .FirstOrDefault(pub => pub.SubjectId == subjectId);
+
             if (data != null)
             {
                 context.Remove(data);
             }
         }
-
-
     }
 }
