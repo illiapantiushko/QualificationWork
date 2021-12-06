@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace QualificationWork.DAL.Migrations
 {
-    public partial class MigrateDB : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -234,17 +234,11 @@ namespace QualificationWork.DAL.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false),
                     GroupName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CurrentUserId = table.Column<long>(type: "bigint", nullable: false)
+                    SubjectId = table.Column<long>(type: "bigint", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Groups", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Groups_AspNetUsers_CurrentUserId",
-                        column: x => x.CurrentUserId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Groups_Faculties_Id",
                         column: x => x.Id,
@@ -252,11 +246,11 @@ namespace QualificationWork.DAL.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Groups_Subjects_Id",
-                        column: x => x.Id,
+                        name: "FK_Groups_Subjects_SubjectId",
+                        column: x => x.SubjectId,
                         principalTable: "Subjects",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -298,6 +292,58 @@ namespace QualificationWork.DAL.Migrations
                     table.ForeignKey(
                         name: "FK_Specialtys_Groups_Id",
                         column: x => x.Id,
+                        principalTable: "Groups",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "SubjectGroups",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    SubjectId = table.Column<long>(type: "bigint", nullable: false),
+                    GroupId = table.Column<long>(type: "bigint", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SubjectGroups", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_SubjectGroups_Groups_GroupId",
+                        column: x => x.GroupId,
+                        principalTable: "Groups",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_SubjectGroups_Subjects_SubjectId",
+                        column: x => x.SubjectId,
+                        principalTable: "Subjects",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UserGroups",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<long>(type: "bigint", nullable: false),
+                    GroupId = table.Column<long>(type: "bigint", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserGroups", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_UserGroups_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_UserGroups_Groups_GroupId",
+                        column: x => x.GroupId,
                         principalTable: "Groups",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -375,9 +421,9 @@ namespace QualificationWork.DAL.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Groups_CurrentUserId",
+                name: "IX_Groups_SubjectId",
                 table: "Groups",
-                column: "CurrentUserId");
+                column: "SubjectId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_RefreshToken_UserId",
@@ -385,10 +431,30 @@ namespace QualificationWork.DAL.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_SubjectGroups_GroupId",
+                table: "SubjectGroups",
+                column: "GroupId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_SubjectGroups_SubjectId",
+                table: "SubjectGroups",
+                column: "SubjectId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_TimeTable_UserSubjectId",
                 table: "TimeTable",
                 column: "UserSubjectId",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserGroups_GroupId",
+                table: "UserGroups",
+                column: "GroupId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserGroups_UserId",
+                table: "UserGroups",
+                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_UserSubjects_SubjectId",
@@ -425,22 +491,28 @@ namespace QualificationWork.DAL.Migrations
                 name: "Specialtys");
 
             migrationBuilder.DropTable(
+                name: "SubjectGroups");
+
+            migrationBuilder.DropTable(
                 name: "TimeTable");
+
+            migrationBuilder.DropTable(
+                name: "UserGroups");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "Groups");
-
-            migrationBuilder.DropTable(
                 name: "UserSubjects");
 
             migrationBuilder.DropTable(
-                name: "Faculties");
+                name: "Groups");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Faculties");
 
             migrationBuilder.DropTable(
                 name: "Subjects");

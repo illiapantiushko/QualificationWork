@@ -10,8 +10,8 @@ using QualificationWork.DAL;
 namespace QualificationWork.DAL.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20211205200231_MigrateDB")]
-    partial class MigrateDB
+    [Migration("20211206155908_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -260,15 +260,15 @@ namespace QualificationWork.DAL.Migrations
                     b.Property<long>("Id")
                         .HasColumnType("bigint");
 
-                    b.Property<long>("CurrentUserId")
-                        .HasColumnType("bigint");
-
                     b.Property<string>("GroupName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<long?>("SubjectId")
+                        .HasColumnType("bigint");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("CurrentUserId");
+                    b.HasIndex("SubjectId");
 
                     b.ToTable("Groups");
                 });
@@ -310,6 +310,28 @@ namespace QualificationWork.DAL.Migrations
                     b.ToTable("Subjects");
                 });
 
+            modelBuilder.Entity("QualificationWork.DAL.Models.SubjectGroup", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<long>("GroupId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("SubjectId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GroupId");
+
+                    b.HasIndex("SubjectId");
+
+                    b.ToTable("SubjectGroups");
+                });
+
             modelBuilder.Entity("QualificationWork.DAL.Models.TimeTable", b =>
                 {
                     b.Property<long>("Id")
@@ -335,6 +357,28 @@ namespace QualificationWork.DAL.Migrations
                         .IsUnique();
 
                     b.ToTable("TimeTable");
+                });
+
+            modelBuilder.Entity("QualificationWork.DAL.Models.UserGroup", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<long>("GroupId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("UserId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GroupId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserGroups");
                 });
 
             modelBuilder.Entity("QualificationWork.DAL.Models.UserSubject", b =>
@@ -475,12 +519,6 @@ namespace QualificationWork.DAL.Migrations
 
             modelBuilder.Entity("QualificationWork.DAL.Models.Group", b =>
                 {
-                    b.HasOne("QualificationWork.DAL.Models.ApplicationUser", "User")
-                        .WithMany("Groups")
-                        .HasForeignKey("CurrentUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("QualificationWork.DAL.Models.Faculty", "Faculty")
                         .WithMany("Groups")
                         .HasForeignKey("Id")
@@ -488,16 +526,12 @@ namespace QualificationWork.DAL.Migrations
                         .IsRequired();
 
                     b.HasOne("QualificationWork.DAL.Models.Subject", "Subject")
-                        .WithMany("Groups")
-                        .HasForeignKey("Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany()
+                        .HasForeignKey("SubjectId");
 
                     b.Navigation("Faculty");
 
                     b.Navigation("Subject");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("QualificationWork.DAL.Models.Specialty", b =>
@@ -511,6 +545,25 @@ namespace QualificationWork.DAL.Migrations
                     b.Navigation("Group");
                 });
 
+            modelBuilder.Entity("QualificationWork.DAL.Models.SubjectGroup", b =>
+                {
+                    b.HasOne("QualificationWork.DAL.Models.Group", "Group")
+                        .WithMany("SubjectGroups")
+                        .HasForeignKey("GroupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("QualificationWork.DAL.Models.Subject", "Subject")
+                        .WithMany("SubjectGroups")
+                        .HasForeignKey("SubjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Group");
+
+                    b.Navigation("Subject");
+                });
+
             modelBuilder.Entity("QualificationWork.DAL.Models.TimeTable", b =>
                 {
                     b.HasOne("QualificationWork.DAL.Models.UserSubject", "UserSubject")
@@ -520,6 +573,25 @@ namespace QualificationWork.DAL.Migrations
                         .IsRequired();
 
                     b.Navigation("UserSubject");
+                });
+
+            modelBuilder.Entity("QualificationWork.DAL.Models.UserGroup", b =>
+                {
+                    b.HasOne("QualificationWork.DAL.Models.Group", "Group")
+                        .WithMany("UserGroups")
+                        .HasForeignKey("GroupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("QualificationWork.DAL.Models.ApplicationUser", "User")
+                        .WithMany("UserGroups")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Group");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("QualificationWork.DAL.Models.UserSubject", b =>
@@ -548,7 +620,7 @@ namespace QualificationWork.DAL.Migrations
 
             modelBuilder.Entity("QualificationWork.DAL.Models.ApplicationUser", b =>
                 {
-                    b.Navigation("Groups");
+                    b.Navigation("UserGroups");
 
                     b.Navigation("UserRoles");
 
@@ -563,11 +635,15 @@ namespace QualificationWork.DAL.Migrations
             modelBuilder.Entity("QualificationWork.DAL.Models.Group", b =>
                 {
                     b.Navigation("Specialtys");
+
+                    b.Navigation("SubjectGroups");
+
+                    b.Navigation("UserGroups");
                 });
 
             modelBuilder.Entity("QualificationWork.DAL.Models.Subject", b =>
                 {
-                    b.Navigation("Groups");
+                    b.Navigation("SubjectGroups");
 
                     b.Navigation("UserSubjects");
                 });

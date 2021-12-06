@@ -25,6 +25,7 @@ namespace QualificationWork.DAL.Query
         public ApplicationUser GetUserSubjectById(long userId)
         {
             var data = context.Users
+
                               .Include(pub => pub.UserSubjects)
                               .ThenInclude(pub => pub.Subject)
                               .FirstOrDefault(pub => pub.Id == userId);

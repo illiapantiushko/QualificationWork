@@ -15,8 +15,9 @@ namespace QualificationWork.DAL.Models
 
         public virtual Faculty Faculty { get; set; }
 
-        public long CurrentUserId { get; set; }
-        public virtual ApplicationUser User { get; set; }
+        public virtual ICollection<UserGroup> UserGroups { get; set; }
+
+        public virtual ICollection<SubjectGroup> SubjectGroups { get; set; }
 
         public virtual Subject Subject { get; set; }
     }

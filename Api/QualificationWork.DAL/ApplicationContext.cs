@@ -14,6 +14,8 @@ namespace QualificationWork.DAL
         public DbSet<Faculty> Faculties { get; set; }
         public DbSet<UserSubject> UserSubjects { get; set; }
         public DbSet<TimeTable> TimeTable { get; set; }
+        public DbSet<UserGroup> UserGroups { get; set; }
+        public DbSet<SubjectGroup> SubjectGroups { get; set; }
 
         public DbSet<RefreshToken> RefreshToken { get; set; }
 
@@ -54,22 +56,36 @@ namespace QualificationWork.DAL
                       .HasForeignKey<TimeTable>(ad => ad.UserSubjectId);
             });
 
+            modelBuilder.Entity<UserGroup>(entity =>
+            {
+                entity.HasOne<ApplicationUser>(sc => sc.User)
+                      .WithMany(s => s.UserGroups)
+                      .HasForeignKey(sc => sc.UserId);
+
+                entity.HasOne<Group>(sc => sc.Group)
+                      .WithMany(s => s.UserGroups)
+                      .HasForeignKey(sc => sc.GroupId);
+            });
+
+            modelBuilder.Entity<SubjectGroup>(entity =>
+            {
+                entity.HasOne<Subject>(sc => sc.Subject)
+                      .WithMany(s => s.SubjectGroups)
+                      .HasForeignKey(sc => sc.SubjectId);
+
+                entity.HasOne<Group>(sc => sc.Group)
+                      .WithMany(s => s.SubjectGroups)
+                      .HasForeignKey(sc => sc.GroupId);
+            });
+
+
             modelBuilder.Entity<Group>(entity =>
             {
                 entity.HasOne<Faculty>(s => s.Faculty)
                       .WithMany(g => g.Groups)
                       .HasForeignKey(s => s.Id);
-
-                entity.HasOne<ApplicationUser>(s => s.User)
-                      .WithMany(g => g.Groups)
-                      .HasForeignKey(s => s.CurrentUserId);
-
-                entity.HasOne<Subject>(s => s.Subject)
-                      .WithMany(g => g.Groups)
-                      .HasForeignKey(s => s.Id);
             });
 
-            // One-to-Many, Group to Specialty
             modelBuilder.Entity<Specialty>()
                         .HasOne<Group>(s => s.Group)
                         .WithMany(g => g.Specialtys)
