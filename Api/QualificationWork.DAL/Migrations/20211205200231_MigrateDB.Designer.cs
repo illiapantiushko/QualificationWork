@@ -10,8 +10,8 @@ using QualificationWork.DAL;
 namespace QualificationWork.DAL.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20211205191408_AddedUserRolesRelations")]
-    partial class AddedUserRolesRelations
+    [Migration("20211205200231_MigrateDB")]
+    partial class MigrateDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

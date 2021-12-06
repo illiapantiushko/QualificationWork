@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualificationWork.EmailSend
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualificationWork.Middleware", "QualificationWork.Middleware\QualificationWork.Middleware.csproj", "{AE00F4F2-22DA-4EC6-A14F-CB145D81F36B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QualificationWork.ClaimsExtension", "QualificationWork.ClaimsExtension\QualificationWork.ClaimsExtension.csproj", "{ADE0BE4C-8C57-49ED-AC0A-22C6F826237F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{AE00F4F2-22DA-4EC6-A14F-CB145D81F36B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE00F4F2-22DA-4EC6-A14F-CB145D81F36B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE00F4F2-22DA-4EC6-A14F-CB145D81F36B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADE0BE4C-8C57-49ED-AC0A-22C6F826237F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADE0BE4C-8C57-49ED-AC0A-22C6F826237F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADE0BE4C-8C57-49ED-AC0A-22C6F826237F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADE0BE4C-8C57-49ED-AC0A-22C6F826237F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +60,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{DA62213F-7080-450B-BEB7-EE6FFFDA0E5A} = {26E24B85-C381-4AE8-BBFA-B3B43367FB99}
 		{AE00F4F2-22DA-4EC6-A14F-CB145D81F36B} = {26E24B85-C381-4AE8-BBFA-B3B43367FB99}
+		{ADE0BE4C-8C57-49ED-AC0A-22C6F826237F} = {26E24B85-C381-4AE8-BBFA-B3B43367FB99}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0BF9B86B-13C7-4FE0-AF5F-E0C3EBCBD4E7}
