@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using QualificationWork.DAL.Models;
+using QualificationWork.DTO.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace QualificationWork.DAL.Command
         }
 
 
-        public async Task AddSubjectAsync(Subject model)
+        public async Task AddSubjectAsync(SubjectDto model)
         {
             var data = new Subject
             {
@@ -30,7 +31,7 @@ namespace QualificationWork.DAL.Command
             await context.AddAsync(data);
         }
 
-        public async Task UpdateSubjectAsync(long subjectId, Subject model)
+        public async Task UpdateSubjectAsync(long subjectId, SubjectDto model)
         {
             var data = await context.Subjects.FirstOrDefaultAsync(m => m.Id == subjectId);
 

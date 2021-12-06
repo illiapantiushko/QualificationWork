@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualificationWork.EmailSend
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QualificationWork.Middleware", "QualificationWork.Middleware\QualificationWork.Middleware.csproj", "{AE00F4F2-22DA-4EC6-A14F-CB145D81F36B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QualificationWork.ClaimsExtension", "QualificationWork.ClaimsExtension\QualificationWork.ClaimsExtension.csproj", "{ADE0BE4C-8C57-49ED-AC0A-22C6F826237F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QualificationWork.ClaimsHelper", "QualificationWork.ClaimsExtension\QualificationWork.ClaimsHelper.csproj", "{ADE0BE4C-8C57-49ED-AC0A-22C6F826237F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

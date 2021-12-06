@@ -33,7 +33,8 @@ namespace QualificationWork.DAL.Query
 
         // вивести всі предмети де числиться певний студент
         public List<Subject> GetAllSubjectByStudent(long userId)
-        {
+        {                             
+                      
             var data = context.Subjects
                               .Include(pub => pub.UserSubjects)
                               .ThenInclude(pub => pub.User.Id == userId)
