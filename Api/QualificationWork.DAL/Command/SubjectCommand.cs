@@ -1,15 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using QualificationWork.DAL.Models;
 using QualificationWork.DTO.Dtos;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace QualificationWork.DAL.Command
 {
-    class SubjectCommand
+  public  class SubjectCommand
     {
         private readonly ApplicationContext context;
 

@@ -1,12 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using QualificationWork.DAL.Models;
+using QualificationWork.DTO.Dtos;
+using QualificationWork.Middleware;
 
 namespace QualificationWork.DAL.Command
 {
-    class UserCommand
+  public class UserCommand
     {
         private readonly ApplicationContext context;
 
@@ -49,9 +52,26 @@ namespace QualificationWork.DAL.Command
             }
         }
 
-        public async Task AddSubjectById(long userId, long subjectId)
+        public async Task СreateUserAsync(string userName, string userEmail)
         {
-            var data = new UserSubject
+            ApplicationUser userData = new ApplicationUser
+            {
+                Email = userEmail,
+                SecurityStamp = Guid.NewGuid().ToString(),
+                UserName = userName,
+            };
+
+            var result = await userManager.CreateAsync(userData);
+
+            if (!result.Succeeded)
+            {
+                throw new AppException("Something went wrong");
+            }
+        }
+
+        public async Task AddSubject(long userId, long subjectId)
+        {
+            var data = new UserSubjectDto
             {
                 UserId = userId,
                 SubjectId = subjectId
@@ -59,7 +79,17 @@ namespace QualificationWork.DAL.Command
              await context.AddAsync(data);
         }
 
-        public void RemoveSubjectById(long userId, long subjectId)
+        public async Task AddGroup(long userId, long groupId)
+        {
+            var data = new UserGroupDto
+            {
+                UserId = userId,
+                GroupId = groupId
+            };
+            await context.AddAsync(data);
+        }
+
+        public void RemoveSubject(long userId, long subjectId)
         {
             var data = context.UserSubjects
                               .Where(pub => pub.UserId == userId)

@@ -6,7 +6,6 @@ namespace QualificationWork.DTO.Dtos
 {
    public class SubjectDto
     {
-        public long Id { get; set; }
         public string SubjectName { get; set; }
 
         public bool IsActive { get; set; }

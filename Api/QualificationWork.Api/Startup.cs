@@ -25,6 +25,7 @@ using QualificationWork.DAL.HelperServise;
 using QualificationWork.BL.Services;
 using Microsoft.AspNetCore.Identity;
 using QualificationWork.DAL.Models;
+using QualificationWork.DAL.Query;
 
 namespace QualificationWork.Api
 {
@@ -81,7 +82,18 @@ namespace QualificationWork.Api
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
 
             services.AddTransient<AuthenticationCommand>();
-             services.AddTransient<AuthenticationService>();
+            services.AddTransient<GroupCommand>();
+            services.AddTransient<SubjectCommand>();
+            services.AddTransient<UserCommand>();
+
+            services.AddTransient<GroupQuery>();
+            services.AddTransient<SubjectQuery>();
+
+
+            services.AddTransient<AuthenticationService>();
+            services.AddTransient<UserService>();
+            services.AddTransient<SubjectService>();
+            services.AddTransient<GroupService>();
 
             // configure DI for application services
             services.AddScoped<JwtUtils>();

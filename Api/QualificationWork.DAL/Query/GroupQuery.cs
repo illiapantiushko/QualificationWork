@@ -7,7 +7,7 @@ using System.Text;
 
 namespace QualificationWork.DAL.Query
 {
-    class GroupQuery
+   public class GroupQuery
     {
 
         private readonly ApplicationContext context;
@@ -24,7 +24,7 @@ namespace QualificationWork.DAL.Query
         public List<Group> GetGroupsBySubject(string subject)
         {
             var groups = context.Groups
-                                .Where(s => s.Subject.SubjectName == subject)
+                                .Include(s => s.SubjectGroups)
                                 .ToList();
             return groups;
         }

@@ -6,14 +6,11 @@ using QualificationWork.DAL.Models;
 
 namespace QualificationWork.DAL.Query
 {
-    class SubjectQuery
+  public  class SubjectQuery
     {
         private readonly ApplicationContext context;
 
         private readonly UserManager<ApplicationUser> userManager;
-
-        //_userManager.GetUsersInRoleAsync("myRole").Result
-
 
         public SubjectQuery(ApplicationContext context, UserManager<ApplicationUser> userManager)
         {

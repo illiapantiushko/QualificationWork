@@ -19,6 +19,6 @@ namespace QualificationWork.DAL.Models
 
         public virtual ICollection<SubjectGroup> SubjectGroups { get; set; }
 
-        public virtual Subject Subject { get; set; }
+        //public virtual Subject Subject { get; set; }
     }
 }
