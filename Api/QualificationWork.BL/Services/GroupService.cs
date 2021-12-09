@@ -1,5 +1,6 @@
 ﻿using QualificationWork.DAL;
 using QualificationWork.DAL.Command;
+using QualificationWork.DAL.Models;
 using QualificationWork.DAL.Query;
 using QualificationWork.DTO.Dtos;
 using System;
@@ -24,10 +25,36 @@ namespace QualificationWork.BL.Services
             this.groupQuery = groupQuery;
         }
 
-        public async Task AddGroupAsync(GroupDto model)
+        public async Task AddFacultyGroupAsync(long facultyId, string GroupName)
         {
-            await groupCommand.AddGroupAsync(model);
+            await groupCommand.AddFacultyGroupAsync(facultyId, GroupName);
+            await context.SaveChangesAsync();
+          
+        }
+
+        public async Task CreateFacultyAsync(FacultyDto model)
+        {
+            await groupCommand.CreateFacultyAsync(model);
             await context.SaveChangesAsync();
         }
+
+   
+        public async Task AddGroupSpecialtyAsync(long groupId, string specialtyName)
+        {
+            await groupCommand.AddGroupSpecialtyAsync( groupId, specialtyName);
+            await context.SaveChangesAsync();
+        }
+
+        public List<Group> GetGroups()
+        {
+            return groupQuery.GetGroups();
+        }
+
+        public List<Faculty> GetFaculty()
+        {
+            return groupQuery.GetFaculty();
+        }
+
+
     }
 }

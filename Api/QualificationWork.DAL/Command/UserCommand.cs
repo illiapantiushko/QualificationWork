@@ -71,7 +71,7 @@ namespace QualificationWork.DAL.Command
 
         public async Task AddSubject(long userId, long subjectId)
         {
-            var data = new UserSubjectDto
+            var data = new UserSubject
             {
                 UserId = userId,
                 SubjectId = subjectId
@@ -81,7 +81,7 @@ namespace QualificationWork.DAL.Command
 
         public async Task AddGroup(long userId, long groupId)
         {
-            var data = new UserGroupDto
+            var data = new UserGroup
             {
                 UserId = userId,
                 GroupId = groupId

@@ -81,15 +81,26 @@ namespace QualificationWork.DAL
 
             modelBuilder.Entity<Group>(entity =>
             {
+                entity.HasKey(s => s.Id);
+                entity.Property(s => s.Id)
+                .ValueGeneratedOnAdd();
+
                 entity.HasOne<Faculty>(s => s.Faculty)
                       .WithMany(g => g.Groups)
-                      .HasForeignKey(s => s.Id);
+                      .HasForeignKey(s => s.FacultyId);
             });
 
-            modelBuilder.Entity<Specialty>()
-                        .HasOne<Group>(s => s.Group)
+            modelBuilder.Entity<Specialty>(entity =>
+            {
+                entity.HasKey(s => s.Id);
+                entity.Property(s => s.Id)
+                .ValueGeneratedOnAdd();
+
+                entity.HasOne<Group>(s => s.Group)
                         .WithMany(g => g.Specialtys)
-                        .HasForeignKey(s => s.Id);
+                        .HasForeignKey(s => s.GroupId);
+            });
+                        
 
             base.OnModelCreating(modelBuilder);
         }

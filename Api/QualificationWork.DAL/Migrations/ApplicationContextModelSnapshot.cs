@@ -256,17 +256,19 @@ namespace QualificationWork.DAL.Migrations
             modelBuilder.Entity("QualificationWork.DAL.Models.Group", b =>
                 {
                     b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<long>("FacultyId")
                         .HasColumnType("bigint");
 
                     b.Property<string>("GroupName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long?>("SubjectId")
-                        .HasColumnType("bigint");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("SubjectId");
+                    b.HasIndex("FacultyId");
 
                     b.ToTable("Groups");
                 });
@@ -274,12 +276,19 @@ namespace QualificationWork.DAL.Migrations
             modelBuilder.Entity("QualificationWork.DAL.Models.Specialty", b =>
                 {
                     b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<long>("GroupId")
                         .HasColumnType("bigint");
 
                     b.Property<string>("SpecialtyName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("GroupId");
 
                     b.ToTable("Specialtys");
                 });
@@ -519,24 +528,18 @@ namespace QualificationWork.DAL.Migrations
                 {
                     b.HasOne("QualificationWork.DAL.Models.Faculty", "Faculty")
                         .WithMany("Groups")
-                        .HasForeignKey("Id")
+                        .HasForeignKey("FacultyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("QualificationWork.DAL.Models.Subject", "Subject")
-                        .WithMany()
-                        .HasForeignKey("SubjectId");
-
                     b.Navigation("Faculty");
-
-                    b.Navigation("Subject");
                 });
 
             modelBuilder.Entity("QualificationWork.DAL.Models.Specialty", b =>
                 {
                     b.HasOne("QualificationWork.DAL.Models.Group", "Group")
                         .WithMany("Specialtys")
-                        .HasForeignKey("Id")
+                        .HasForeignKey("GroupId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

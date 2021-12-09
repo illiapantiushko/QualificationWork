@@ -16,7 +16,7 @@ namespace QualificationWork.DAL.Command
         }
 
 
-        public async Task AddSubjectAsync(SubjectDto model)
+        public async Task CreateSubjectAsync(SubjectDto model)
         {
             var data = new Subject
             {

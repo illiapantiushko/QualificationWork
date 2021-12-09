@@ -51,6 +51,13 @@ namespace QualificationWork.Api
                 });
             });
 
+            services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.IgnoreNullValues = true);
+
+
+            services.AddControllersWithViews().AddNewtonsoftJson(options =>
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
+
             services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ConStr")));
             services.AddIdentity<ApplicationUser, ApplicationRole>(opt =>
             {

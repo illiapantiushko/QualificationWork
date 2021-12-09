@@ -12,6 +12,6 @@ namespace QualificationWork.DAL.Models
 
 
         // navigation property
-        public ICollection<Group> Groups { get; set; }
+        public virtual ICollection<Group> Groups { get; set; }
     }
 }

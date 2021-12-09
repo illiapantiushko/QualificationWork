@@ -5,7 +5,7 @@ namespace QualificationWork.DAL.Models
 {
     public class Group
     {
-        [Key]
+        [Key]   
         public long Id { get; set; }
 
         public string GroupName { get; set; }
@@ -13,12 +13,13 @@ namespace QualificationWork.DAL.Models
         // navigation property
         public virtual ICollection<Specialty> Specialtys { get; set; }
 
+        public virtual long FacultyId { get; set; }
         public virtual Faculty Faculty { get; set; }
 
         public virtual ICollection<UserGroup> UserGroups { get; set; }
 
         public virtual ICollection<SubjectGroup> SubjectGroups { get; set; }
 
-        //public virtual Subject Subject { get; set; }
+      
     }
 }

@@ -23,14 +23,14 @@ namespace QualificationWork.Api.Controllers
         }
 
 
-        [HttpPost("addSubject")]
-        public async Task<ActionResult> AddSubject([FromBody]SubjectDto model)
+        [HttpPost("сreateSubject")]
+        public async Task<ActionResult> CreateSubject([FromBody]SubjectDto model)
         {
-            await subjectService.AddSubjectAsync(model);
+            await subjectService.CreateSubjectAsync(model);
             return Ok();
         }
 
-        [HttpPut("addSubject")]
+        [HttpPut("updateSubject")]
         public async Task<ActionResult> UpdateSubjectAsync(long subjectId, [FromBody]SubjectDto model)
         {
             await subjectService.UpdateSubjectAsync(subjectId, model);

@@ -1,7 +1,11 @@
-﻿using QualificationWork.DTO.Dtos;
+﻿using Microsoft.EntityFrameworkCore;
+using QualificationWork.DAL.Models;
+using QualificationWork.DTO.Dtos;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+
 using System.Threading.Tasks;
 
 namespace QualificationWork.DAL.Command
@@ -16,14 +20,38 @@ namespace QualificationWork.DAL.Command
             this.context = context;
         }
 
-        public async Task AddGroupAsync(GroupDto model)
+        public async Task AddFacultyGroupAsync(long facultyId, string groupName)
         {
-            var data = new GroupDto
+          
+            var group = new Group 
             {
-                GroupName = model.GroupName
+                GroupName = groupName,
+                FacultyId = facultyId
+            };
+
+            await context.AddAsync(group);
+
+        }
+
+        public async Task CreateFacultyAsync(FacultyDto model)
+        {
+            var data = new Faculty
+            {
+              FacultyName =model.FacultyName
             };
 
             await context.AddAsync(data);
+        }
+
+        public async Task AddGroupSpecialtyAsync(long groupId, string specialtyName)
+        {
+            var specialty = new Specialty
+            {
+                SpecialtyName = specialtyName,GroupId=groupId
+            };
+
+            await context.AddAsync(specialty);
+
         }
     }
 }

@@ -18,20 +18,19 @@ namespace QualificationWork.DAL.Query
             this.context = context;
         }
 
-
         //вивести всі групи для яких читається певний предмет
         // можливо, можна зінити SubjectName на id
-        public List<Group> GetGroupsBySubject(string subject)
+        public List<Group> GetGroups()
         {
             var groups = context.Groups
-                                .Include(s => s.SubjectGroups)
                                 .ToList();
             return groups;
         }
 
-
-
-
+        public List<Faculty> GetFaculty()
+        {
+            return context.Faculties.ToList();
+        }
 
     }
 }

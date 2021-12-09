@@ -1,5 +1,6 @@
 ﻿using QualificationWork.DAL;
 using QualificationWork.DAL.Command;
+using QualificationWork.DAL.Models;
 using QualificationWork.DAL.Query;
 using QualificationWork.DTO.Dtos;
 using System;
@@ -24,9 +25,9 @@ namespace QualificationWork.BL.Services
             this.subjectCommand = subjectCommand;
         }
 
-        public async Task AddSubjectAsync(SubjectDto model)
+        public async Task CreateSubjectAsync(SubjectDto model)
         {
-            await subjectCommand.AddSubjectAsync(model);
+            await subjectCommand.CreateSubjectAsync(model);
             await context.SaveChangesAsync();
         }
 
@@ -41,5 +42,20 @@ namespace QualificationWork.BL.Services
             subjectCommand.DeleteSubject(subjectId);
             context.SaveChanges();
         }
+
+
+        public ApplicationUser GetUserSubjectById(long userId)
+        {
+            return subjectQuery.GetUserSubjectById(userId);
+        }
+
+        // вивести всі предмети де числиться певний студент
+        public List<Subject> GetAllSubjectByStudent(long userId)
+        {
+            return subjectQuery.GetAllSubjectByStudent(userId);
+           
+        }
+
+
     }
 }

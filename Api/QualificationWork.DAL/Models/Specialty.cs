@@ -12,6 +12,7 @@ namespace QualificationWork.DAL.Models
 
         // navigation property
 
+        public virtual long GroupId { get; set; }
         public virtual Group Group { get; set; }
     }
 }

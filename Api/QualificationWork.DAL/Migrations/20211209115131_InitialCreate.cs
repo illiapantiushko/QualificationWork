@@ -232,25 +232,20 @@ namespace QualificationWork.DAL.Migrations
                 name: "Groups",
                 columns: table => new
                 {
-                    Id = table.Column<long>(type: "bigint", nullable: false),
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     GroupName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SubjectId = table.Column<long>(type: "bigint", nullable: true)
+                    FacultyId = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Groups", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Groups_Faculties_Id",
-                        column: x => x.Id,
+                        name: "FK_Groups_Faculties_FacultyId",
+                        column: x => x.FacultyId,
                         principalTable: "Faculties",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Groups_Subjects_SubjectId",
-                        column: x => x.SubjectId,
-                        principalTable: "Subjects",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -283,15 +278,17 @@ namespace QualificationWork.DAL.Migrations
                 name: "Specialtys",
                 columns: table => new
                 {
-                    Id = table.Column<long>(type: "bigint", nullable: false),
-                    SpecialtyName = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    SpecialtyName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    GroupId = table.Column<long>(type: "bigint", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Specialtys", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Specialtys_Groups_Id",
-                        column: x => x.Id,
+                        name: "FK_Specialtys_Groups_GroupId",
+                        column: x => x.GroupId,
                         principalTable: "Groups",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -421,14 +418,19 @@ namespace QualificationWork.DAL.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Groups_SubjectId",
+                name: "IX_Groups_FacultyId",
                 table: "Groups",
-                column: "SubjectId");
+                column: "FacultyId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_RefreshToken_UserId",
                 table: "RefreshToken",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Specialtys_GroupId",
+                table: "Specialtys",
+                column: "GroupId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_SubjectGroups_GroupId",
@@ -512,10 +514,10 @@ namespace QualificationWork.DAL.Migrations
                 name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "Faculties");
+                name: "Subjects");
 
             migrationBuilder.DropTable(
-                name: "Subjects");
+                name: "Faculties");
         }
     }
 }

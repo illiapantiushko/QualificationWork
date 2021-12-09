@@ -34,7 +34,7 @@ namespace QualificationWork.DAL.Query
         {                             
                       
             var data = context.Subjects
-                              .Include(pub => pub.UserSubjects)
+                              .Include(pub => pub.UserSubjects.)
                               .ThenInclude(pub => pub.User.Id == userId)
                               .ToList();
             return data;
