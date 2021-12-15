@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using QualificationWork.BL.Services;
 using QualificationWork.DAL.Models;
@@ -12,6 +13,7 @@ namespace QualificationWork.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class GroupsController : ControllerBase
     {
         private readonly GroupService groupService;
@@ -37,29 +39,25 @@ namespace QualificationWork.Api.Controllers
         }
 
         [HttpGet("getFaculty")]
-        public List<Faculty> GetFaculty()
+        public ActionResult GetFaculty()
         {
-            return groupService.GetFaculty();
-
+            var data= groupService.GetFaculty();
+            return Ok(data);
         }
 
         [HttpGet("getGroups")]
-        public List<Group> GetGroups();
+        public ActionResult GetGroups()
         {
-            return groupService.GetGroups();
-
+            var data = groupService.GetGroups();
+            return Ok(data);
         }
 
-
-        //public List<Group> GetGroups()
-        //{
-        //    return groupQuery.GetGroups();
-        //}
-
-        //public List<Faculty> GetFaculty()
-        //{
-        //    return groupQuery.GetFaculty();
-        //}
+        [HttpGet("getSpecialtys")]
+        public ActionResult GetSpecialtys()
+        {
+            var data = groupService.GetSpecialtys();
+            return Ok(data);
+        }
 
         [HttpPost("createFaculty")]
         public async Task<ActionResult> CreateFaculty([FromBody] FacultyDto model)

@@ -45,11 +45,13 @@ namespace QualificationWork.DAL
             {
                 entity.HasOne<ApplicationUser>(sc => sc.User)
                       .WithMany(s => s.UserSubjects)
-                      .HasForeignKey(sc => sc.UserId);
+                      .HasForeignKey(sc => sc.UserId)
+                      .IsRequired();
 
                 entity.HasOne<Subject>(sc => sc.Subject)
                       .WithMany(s => s.UserSubjects)
-                      .HasForeignKey(sc => sc.SubjectId);
+                      .HasForeignKey(sc => sc.SubjectId)
+                      .IsRequired();
 
                 entity.HasOne<TimeTable>(ad => ad.TimeTable)
                       .WithOne(s => s.UserSubject)
@@ -60,22 +62,27 @@ namespace QualificationWork.DAL
             {
                 entity.HasOne<ApplicationUser>(sc => sc.User)
                       .WithMany(s => s.UserGroups)
-                      .HasForeignKey(sc => sc.UserId);
+                      .HasForeignKey(sc => sc.UserId)
+                      .IsRequired();
 
                 entity.HasOne<Group>(sc => sc.Group)
                       .WithMany(s => s.UserGroups)
-                      .HasForeignKey(sc => sc.GroupId);
+                      .HasForeignKey(sc => sc.GroupId)
+                      .IsRequired();
             });
 
             modelBuilder.Entity<SubjectGroup>(entity =>
             {
                 entity.HasOne<Subject>(sc => sc.Subject)
                       .WithMany(s => s.SubjectGroups)
-                      .HasForeignKey(sc => sc.SubjectId);
+                      .HasForeignKey(sc => sc.SubjectId)
+                      .IsRequired();
 
                 entity.HasOne<Group>(sc => sc.Group)
                       .WithMany(s => s.SubjectGroups)
-                      .HasForeignKey(sc => sc.GroupId);
+                      .HasForeignKey(sc => sc.GroupId)
+                      .IsRequired();
+
             });
 
 
@@ -100,7 +107,7 @@ namespace QualificationWork.DAL
                         .WithMany(g => g.Specialtys)
                         .HasForeignKey(s => s.GroupId);
             });
-                        
+
 
             base.OnModelCreating(modelBuilder);
         }

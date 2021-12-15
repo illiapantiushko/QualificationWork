@@ -1,0 +1,42 @@
+2021-12-15 19:02:14.8711|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2021-12-15 19:02:17.6478|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2021-12-15 19:02:17.8527|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2021-12-15 19:02:17.8593|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2021-12-15 19:02:17.8593|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2021-12-15 19:02:18.9340|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:12280:20ffa847 successfully announced in 957,5979 ms
+2021-12-15 19:02:19.0757|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:12280:20ffa847 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2021-12-15 19:02:19.1852|INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout
+2021-12-15 19:02:19.7459|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-12-15 19:02:19.9421|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-12-15 19:02:20.0793|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2021-12-15 19:02:20.1303|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:12280:20ffa847 all the dispatchers started
+2021-12-15 19:38:51.1216|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2021-12-15 19:38:51.1060|ERROR|Microsoft.EntityFrameworkCore.Database.Connection|An error occurred using the connection to database 'MyDB' on server '(localdb)\MSSQLLocalDB'.
+2021-12-15 19:38:51.3629|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2021-12-15 19:38:53.5849|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2021-12-15 19:38:53.7353|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2021-12-15 19:38:53.7353|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2021-12-15 19:38:53.7353|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2021-12-15 19:38:54.3059|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-12-15 19:38:54.3059|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-12-15 19:38:54.3209|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2021-12-15 19:38:54.4170|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:23420:d8c5990d successfully announced in 617,5589 ms
+2021-12-15 19:38:54.4376|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:23420:d8c5990d is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2021-12-15 19:38:54.5170|INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout
+2021-12-15 19:38:55.5771|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:23420:d8c5990d all the dispatchers started

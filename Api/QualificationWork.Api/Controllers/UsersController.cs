@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using QualificationWork.BL.Services;
+using QualificationWork.DAL.Models;
+using QualificationWork.DTO.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +13,7 @@ namespace QualificationWork.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class UsersController : ControllerBase
     {
         private readonly UserService userService;
@@ -19,33 +23,45 @@ namespace QualificationWork.Api.Controllers
             this.userService = userService;
         }
 
-        [HttpPost("addRole")]
-        public async Task<ActionResult> AddRole(string userId, string roleName)
+        [HttpGet("getUsers")]
+        public async Task<ActionResult> GetUsers()
         {
-            await userService.AddRoleAsync(userId,roleName);
+            var data = await userService.GetUsers();
+            return Ok(data);
+        }
+        [HttpGet("getTimeTable")]
+        public async Task<ActionResult> GetTimeTable()
+        {
+            var data = await userService.GetTimeTable();
+            return Ok(data);
+        }
+
+        [HttpPost("addRole")]
+        public async Task<ActionResult> AddRole([FromBody] RoleDto model)
+        {
+            await userService.AddRoleAsync(model.UserId, model.RoleName);
             return Ok();
         }
 
         [HttpPost("deleteRole")]
-        public async Task<ActionResult> DeleteRole(string userId, string roleName)
+        public async Task<ActionResult> DeleteRole([FromBody] RoleDto model)
         {
-            await userService.DeleteRolesAsync(userId,roleName);
+            await userService.DeleteRolesAsync(model.UserId, model.RoleName);
             return Ok();
         }
 
         [HttpPost("createUser")]
-        public async Task<ActionResult> СreateUser(string userName, string userEmail)
+        public async Task<ActionResult> СreateUser([FromBody] UserDto model)
         {
-          
-            await userService.СreateUserAsync(userName, userEmail);
+            await userService.СreateUserAsync(model.UserName, model.UserEmail);
             return Ok();
         }
 
         [HttpPost("addSubject")]
-        public async Task<ActionResult> AddSubject(long userId, long subjectId)
+        public async Task<ActionResult> AddSubject([FromBody] UserSubjectDto model)
         {
 
-            await userService.AddSubject(userId, subjectId);
+            await userService.AddSubject(model.UserId, model.SubjectId);
             return Ok();
         }
 
@@ -58,13 +74,20 @@ namespace QualificationWork.Api.Controllers
         }
 
         [HttpDelete("removeSubject")]
-        public ActionResult RemoveSubject(long userId, long subjectId)
+        public ActionResult RemoveSubject([FromBody] UserSubjectDto model)
         {
 
-            userService.RemoveSubject(userId, subjectId);
+            userService.RemoveSubject(model.UserId, model.SubjectId);
             return Ok();
         }
 
-       
+        [HttpPost("createTimeTable")]
+        public async Task<ActionResult> CreateTimeTable([FromBody]TimeTableDto model)
+        {
+            await userService.CreateTimeTableAsync(model);
+            return Ok();
+        }
+
+
     }
 }

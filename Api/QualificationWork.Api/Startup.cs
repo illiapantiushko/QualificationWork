@@ -95,6 +95,8 @@ namespace QualificationWork.Api
 
             services.AddTransient<GroupQuery>();
             services.AddTransient<SubjectQuery>();
+            services.AddTransient<UserQuery>();
+         
 
 
             services.AddTransient<AuthenticationService>();
@@ -102,9 +104,12 @@ namespace QualificationWork.Api
             services.AddTransient<SubjectService>();
             services.AddTransient<GroupService>();
 
+            services.AddTransient<DBInitializer>();
+
             // configure DI for application services
             services.AddScoped<JwtUtils>();
 
+            
             // підключення Swagger
             services.AddControllers();
             services.AddSwaggerGen(c =>

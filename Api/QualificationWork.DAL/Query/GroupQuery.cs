@@ -32,5 +32,10 @@ namespace QualificationWork.DAL.Query
             return context.Faculties.ToList();
         }
 
+        public List<Specialty> GetSpecialtys()
+        {
+            return context.Specialtys.ToList();
+        }
+
     }
 }

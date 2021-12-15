@@ -26,11 +26,14 @@ namespace QualificationWork.DAL.Command
             var user = await userManager.FindByIdAsync(userId);
 
             if (roleName == "Admin") {
-                await userManager.AddToRolesAsync(user, new List<string>() { UserRoles.Admin });
+
+                await userManager.AddToRoleAsync(user, UserRoles.Admin);
+                //await userManager.AddToRolesAsync(user, new List<string>() { UserRoles.Admin });
             }
 
             else if (roleName == "Teacher") {
-                await userManager.AddToRolesAsync(user, new List<string>() { UserRoles.Teacher });
+                await userManager.AddToRoleAsync(user, UserRoles.Teacher);
+                //await userManager.AddToRolesAsync(user, new List<string>() { UserRoles.Teacher });
             }
 
         }
@@ -99,6 +102,21 @@ namespace QualificationWork.DAL.Command
             {
                 context.Remove(data);
             }
+        }
+
+
+
+        public async Task CreateTimeTableAsync(TimeTableDto model)
+        {
+            var data = new TimeTable
+            {
+                LessonDate = model.LessonDate,
+                IsPresent = model.IsPresent,
+                LessonNumber = model.LessonNumber,
+                UserSubjectId = model.UserSubjectId,
+            };
+
+            await context.AddAsync(data);
         }
     }
 }

@@ -55,6 +55,11 @@ namespace QualificationWork.BL.Services
             return groupQuery.GetFaculty();
         }
 
+        public List<Specialty> GetSpecialtys()
+        {
+            return groupQuery.GetSpecialtys();
+        }
+
 
     }
 }

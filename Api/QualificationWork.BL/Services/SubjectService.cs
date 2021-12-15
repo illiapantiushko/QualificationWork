@@ -43,19 +43,34 @@ namespace QualificationWork.BL.Services
             context.SaveChanges();
         }
 
-
-        public ApplicationUser GetUserSubjectById(long userId)
+        public List<Subject> GetSubjects()
         {
-            return subjectQuery.GetUserSubjectById(userId);
+            return subjectQuery.GetSubjects();
+        }
+
+        public async Task<ApplicationUser> GetUserSubjectById(long userId)
+        {
+            return await subjectQuery.GetUserSubjectById(userId);
         }
 
         // вивести всі предмети де числиться певний студент
-        public List<Subject> GetAllSubjectByStudent(long userId)
+        public async Task<List<ApplicationUser>> GetAllSubjectByStudent()
         {
-            return subjectQuery.GetAllSubjectByStudent(userId);
+            return  await subjectQuery.GetAllSubjectByStudent();
            
         }
 
+
+        //вивести всіх викладачів факультету
+        public async Task<List<ApplicationUser>> GetAllTeacherFaculty(long facultyId)
+        {
+            return await subjectQuery.GetAllTeacherFaculty(facultyId);
+        }
+
+        public async Task<List<ApplicationUser>> GetAllTeacherGroups(long groupId)
+        {
+            return await subjectQuery.GetAllTeacherGroups(groupId);
+        }
 
     }
 }

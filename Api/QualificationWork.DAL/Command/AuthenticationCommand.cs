@@ -42,7 +42,7 @@ namespace QualificationWork.DAL.Command
 
             string domenOA = "@oa.edu.ua";
 
-            bool ValidationEmail = payload.Email.Contains(domenOA);
+            bool ValidationEmail = payload.Email.EndsWith(domenOA);
 
             if (!ValidationEmail)
             {
