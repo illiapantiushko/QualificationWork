@@ -29,7 +29,7 @@ namespace QualificationWork.BL.Services
         {
             await groupCommand.AddFacultyGroupAsync(facultyId, GroupName);
             await context.SaveChangesAsync();
-          
+
         }
 
         public async Task CreateFacultyAsync(FacultyDto model)
@@ -38,10 +38,10 @@ namespace QualificationWork.BL.Services
             await context.SaveChangesAsync();
         }
 
-   
+
         public async Task AddGroupSpecialtyAsync(long groupId, string specialtyName)
         {
-            await groupCommand.AddGroupSpecialtyAsync( groupId, specialtyName);
+            await groupCommand.AddGroupSpecialtyAsync(groupId, specialtyName);
             await context.SaveChangesAsync();
         }
 
@@ -58,6 +58,12 @@ namespace QualificationWork.BL.Services
         public List<Specialty> GetSpecialtys()
         {
             return groupQuery.GetSpecialtys();
+        }
+
+        public async Task<List<Group>> GetAllUserByGroup()
+        {
+
+            return await groupQuery.GetAllUserByGroup();
         }
 
 

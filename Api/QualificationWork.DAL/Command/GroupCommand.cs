@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace QualificationWork.DAL.Command
 {
- public   class GroupCommand
+    public class GroupCommand
     {
 
         private readonly ApplicationContext context;
@@ -22,8 +22,8 @@ namespace QualificationWork.DAL.Command
 
         public async Task AddFacultyGroupAsync(long facultyId, string groupName)
         {
-          
-            var group = new Group 
+
+            var group = new Group
             {
                 GroupName = groupName,
                 FacultyId = facultyId
@@ -37,7 +37,7 @@ namespace QualificationWork.DAL.Command
         {
             var data = new Faculty
             {
-              FacultyName =model.FacultyName
+                FacultyName = model.FacultyName
             };
 
             await context.AddAsync(data);
@@ -47,7 +47,8 @@ namespace QualificationWork.DAL.Command
         {
             var specialty = new Specialty
             {
-                SpecialtyName = specialtyName,GroupId=groupId
+                SpecialtyName = specialtyName,
+                GroupId = groupId
             };
 
             await context.AddAsync(specialty);

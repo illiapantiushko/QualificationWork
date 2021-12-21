@@ -1,15 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using QualificationWork.DAL.Models;
 using QualificationWork.DTO.Dtos;
 using QualificationWork.Middleware;
 
 namespace QualificationWork.DAL.Command
 {
-  public class UserCommand
+    public class UserCommand
     {
         private readonly ApplicationContext context;
 
@@ -25,15 +26,22 @@ namespace QualificationWork.DAL.Command
         {
             var user = await userManager.FindByIdAsync(userId);
 
-            if (roleName == "Admin") {
+            //var user = await context.Users.FirstOrDefaultAsync(x=>x.Id == userId);
+
+            if (roleName == "Admin")
+            {
 
                 await userManager.AddToRoleAsync(user, UserRoles.Admin);
-                //await userManager.AddToRolesAsync(user, new List<string>() { UserRoles.Admin });
+
             }
 
-            else if (roleName == "Teacher") {
+            else if (roleName == "Teacher")
+            {
                 await userManager.AddToRoleAsync(user, UserRoles.Teacher);
-                //await userManager.AddToRolesAsync(user, new List<string>() { UserRoles.Teacher });
+            }
+            else if (roleName == "Student")
+            {
+                await userManager.AddToRoleAsync(user, UserRoles.Student);
             }
 
         }
@@ -53,15 +61,21 @@ namespace QualificationWork.DAL.Command
             {
                 await userManager.RemoveFromRoleAsync(user, UserRoles.Teacher);
             }
+            else if (roleName == "Student")
+            {
+                await userManager.RemoveFromRoleAsync(user, UserRoles.Student);
+            }
         }
 
-        public async Task СreateUserAsync(string userName, string userEmail)
+        public async Task СreateUserAsync(UserDto model)
         {
             ApplicationUser userData = new ApplicationUser
             {
-                Email = userEmail,
+                Email = model.UserEmail,
                 SecurityStamp = Guid.NewGuid().ToString(),
-                UserName = userName,
+                UserName = model.UserName,
+                ІsContract = model.ІsContract,
+                Age = model.Age,
             };
 
             var result = await userManager.CreateAsync(userData);
@@ -79,7 +93,7 @@ namespace QualificationWork.DAL.Command
                 UserId = userId,
                 SubjectId = subjectId
             };
-             await context.AddAsync(data);
+            await context.AddAsync(data);
         }
 
         public async Task AddGroup(long userId, long groupId)
@@ -104,8 +118,6 @@ namespace QualificationWork.DAL.Command
             }
         }
 
-
-
         public async Task CreateTimeTableAsync(TimeTableDto model)
         {
             var data = new TimeTable
@@ -118,5 +130,18 @@ namespace QualificationWork.DAL.Command
 
             await context.AddAsync(data);
         }
+
+        public void DeleteUser(long userId)
+        {
+            var user = context.Users.FirstOrDefault(m => m.Id == userId);
+
+            if (user != null)
+            {
+                context.Remove(user);
+
+            }
+        }
+
     }
+
 }

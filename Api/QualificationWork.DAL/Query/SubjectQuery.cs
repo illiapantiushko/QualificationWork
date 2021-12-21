@@ -7,7 +7,7 @@ using QualificationWork.DAL.Models;
 
 namespace QualificationWork.DAL.Query
 {
-  public  class SubjectQuery
+    public class SubjectQuery
     {
         private readonly ApplicationContext context;
 
@@ -19,7 +19,6 @@ namespace QualificationWork.DAL.Query
             this.userManager = userManager;
         }
 
-
         public List<Subject> GetSubjects()
         {
             var data = context.Subjects
@@ -27,53 +26,46 @@ namespace QualificationWork.DAL.Query
             return data;
         }
 
-
-
-        // вивести всі предмети для певного викладача, користувача
-        public async Task<ApplicationUser> GetUserSubjectById(long userId)
-        {
-            var data = await context.Users
-                              .Include(pub => pub.UserSubjects)
-                              .ThenInclude(pub => pub.Subject)
-                              .FirstOrDefaultAsync(pub => pub.Id == userId);
-            return data;
-        }
-
         // вивести всі предмети де числиться певний студент
-        public async Task<List<ApplicationUser>> GetAllSubjectByStudent()
+        // вивести всі предмети для певного викладача
+        public async Task<List<ApplicationUser>> GetAllSubjectByUser()
         {
-
             var data = await context.Users
                   .Include(pub => pub.UserSubjects)
                                      .ThenInclude(pub => pub.Subject)
+                                      .Include(pub => pub.UserRoles)
+                                     .ThenInclude(pub => pub.Role)
                                                   .ToListAsync();
             return data;
         }
 
         //вивести всіх викладачів певної групи
-        public async Task<List<ApplicationUser>>  GetAllTeacherGroups(long groupId)
+        public async Task<List<ApplicationUser>> GetAllTeacherGroups(long groupId)
         {
-            const string RoleName = "Teacher";
+            var teacher = context.Roles.FirstOrDefault(p => p.Name == UserRoles.Teacher);
 
-            var teacher = context.Roles.FirstOrDefault(p => p.Name == RoleName);
-            
             var response = await context.Users.Where(x => x.UserGroups.Any(y => y.GroupId == groupId))
             .Where(x => x.UserRoles.Any(y => y.RoleId == teacher.Id)).ToListAsync();
 
             return response;
         }
 
-
         //вивести всіх викладачів факультету
         public async Task<List<ApplicationUser>> GetAllTeacherFaculty(long facultyId)
         {
-            const string RoleName = "Teacher";
-
-            var teacher = context.Roles.FirstOrDefault(p => p.Name == RoleName);
+            var teacher = context.Roles.FirstOrDefault(p => p.Name == UserRoles.Teacher);
 
             var response = await context.Users
-                    .Where(x => x.UserGroups.Any(y=> y.Group.FacultyId == facultyId))
+                    .Where(x => x.UserGroups.Any(y => y.Group.FacultyId == facultyId))
                     .Where(x => x.UserRoles.Any(y => y.RoleId == teacher.Id)).ToListAsync();
+            return response;
+        }
+
+        //вивести всі групи для яких читається певний предмет
+        public async Task<List<Group>> GetAllGroupsBySubject(long subjectId)
+        {
+            var response = await context.Groups.Where(x => x.SubjectGroups.Any(y => y.SubjectId == subjectId)).ToListAsync();
+
             return response;
         }
 

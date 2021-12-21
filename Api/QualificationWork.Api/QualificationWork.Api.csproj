@@ -25,6 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\QualificationWork.BL\QualificationWork.BL.csproj" />
+    <ProjectReference Include="..\QualificationWork.ClaimsExtension\QualificationWork.ClaimsHelper.csproj" />
     <ProjectReference Include="..\QualificationWork.DAL\QualificationWork.DAL.csproj" />
     <ProjectReference Include="..\QualificationWork.Middleware\QualificationWork.Middleware.csproj" />
   </ItemGroup>

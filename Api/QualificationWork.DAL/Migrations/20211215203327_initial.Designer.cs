@@ -10,8 +10,8 @@ using QualificationWork.DAL;
 namespace QualificationWork.DAL.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20211209115131_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20211215203327_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -223,19 +223,9 @@ namespace QualificationWork.DAL.Migrations
                     b.Property<long>("RoleId")
                         .HasColumnType("bigint");
 
-                    b.Property<long?>("RoleId1")
-                        .HasColumnType("bigint");
-
-                    b.Property<long?>("UserId1")
-                        .HasColumnType("bigint");
-
                     b.HasKey("UserId", "RoleId");
 
                     b.HasIndex("RoleId");
-
-                    b.HasIndex("RoleId1");
-
-                    b.HasIndex("UserId1");
 
                     b.ToTable("AspNetUserRoles");
                 });
@@ -501,25 +491,17 @@ namespace QualificationWork.DAL.Migrations
 
             modelBuilder.Entity("QualificationWork.DAL.Models.ApplicationUserRole", b =>
                 {
-                    b.HasOne("QualificationWork.DAL.Models.ApplicationRole", null)
-                        .WithMany()
-                        .HasForeignKey("RoleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("QualificationWork.DAL.Models.ApplicationRole", "Role")
                         .WithMany("UserRoles")
-                        .HasForeignKey("RoleId1");
-
-                    b.HasOne("QualificationWork.DAL.Models.ApplicationUser", null)
-                        .WithMany()
-                        .HasForeignKey("UserId")
+                        .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("QualificationWork.DAL.Models.ApplicationUser", "User")
                         .WithMany("UserRoles")
-                        .HasForeignKey("UserId1");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Role");
 

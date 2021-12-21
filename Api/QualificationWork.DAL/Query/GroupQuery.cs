@@ -4,22 +4,19 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace QualificationWork.DAL.Query
 {
-   public class GroupQuery
+    public class GroupQuery
     {
-
         private readonly ApplicationContext context;
-
 
         public GroupQuery(ApplicationContext context)
         {
             this.context = context;
         }
 
-        //вивести всі групи для яких читається певний предмет
-        // можливо, можна зінити SubjectName на id
         public List<Group> GetGroups()
         {
             var groups = context.Groups
@@ -35,6 +32,15 @@ namespace QualificationWork.DAL.Query
         public List<Specialty> GetSpecialtys()
         {
             return context.Specialtys.ToList();
+        }
+
+        public async Task<List<Group>> GetAllUserByGroup()
+        {
+            var data = await context.Groups
+                  .Include(pub => pub.UserGroups)
+                                     .ThenInclude(pub => pub.User)
+                                                  .ToListAsync();
+            return data;
         }
 
     }

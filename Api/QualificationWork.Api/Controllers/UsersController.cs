@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using QualificationWork.BL.Services;
+using QualificationWork.ClaimsExtension;
 using QualificationWork.DAL.Models;
 using QualificationWork.DTO.Dtos;
 using System;
@@ -13,7 +14,7 @@ namespace QualificationWork.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    [Authorize(AuthenticationSchemes = "Bearer")]
     public class UsersController : ControllerBase
     {
         private readonly UserService userService;
@@ -53,7 +54,7 @@ namespace QualificationWork.Api.Controllers
         [HttpPost("createUser")]
         public async Task<ActionResult> СreateUser([FromBody] UserDto model)
         {
-            await userService.СreateUserAsync(model.UserName, model.UserEmail);
+            await userService.СreateUserAsync(model);
             return Ok();
         }
 
@@ -81,6 +82,14 @@ namespace QualificationWork.Api.Controllers
             return Ok();
         }
 
+        [HttpDelete("deleteUser")]
+        public ActionResult DeleteUser(long userId)
+        {
+            userService.DeleteUser(userId);
+            return Ok();
+         
+        }
+
         [HttpPost("createTimeTable")]
         public async Task<ActionResult> CreateTimeTable([FromBody]TimeTableDto model)
         {
@@ -88,6 +97,11 @@ namespace QualificationWork.Api.Controllers
             return Ok();
         }
 
-
+        [HttpGet("getAllTeacherSubject")]
+        public async Task<ActionResult> GetAllTeacherSubject()
+        {
+           var data =  await userService.GetAllTeacherSubject(User.GetUserId());
+           return Ok(data);
+        }
     }
 }

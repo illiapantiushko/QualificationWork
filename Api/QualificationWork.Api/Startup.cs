@@ -26,6 +26,8 @@ using QualificationWork.BL.Services;
 using Microsoft.AspNetCore.Identity;
 using QualificationWork.DAL.Models;
 using QualificationWork.DAL.Query;
+using QualificationWork.DTO.Dtos;
+using FluentValidation;
 
 namespace QualificationWork.Api
 {
@@ -85,6 +87,8 @@ namespace QualificationWork.Api
                      };
                  });
 
+            services.AddTransient<IValidator<UserDto>, UserValidator>();
+
             // підключення сервісів
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
 
@@ -96,8 +100,6 @@ namespace QualificationWork.Api
             services.AddTransient<GroupQuery>();
             services.AddTransient<SubjectQuery>();
             services.AddTransient<UserQuery>();
-         
-
 
             services.AddTransient<AuthenticationService>();
             services.AddTransient<UserService>();
@@ -109,7 +111,7 @@ namespace QualificationWork.Api
             // configure DI for application services
             services.AddScoped<JwtUtils>();
 
-            
+
             // підключення Swagger
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -135,7 +137,7 @@ namespace QualificationWork.Api
 
         }
 
-       
+
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
 
@@ -170,7 +172,7 @@ namespace QualificationWork.Api
 
             app.UseAuthorization();
             app.UseAuthentication();
-            
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

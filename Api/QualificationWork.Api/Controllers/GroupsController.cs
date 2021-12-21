@@ -13,7 +13,7 @@ namespace QualificationWork.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class GroupsController : ControllerBase
     {
         private readonly GroupService groupService;
@@ -57,6 +57,15 @@ namespace QualificationWork.Api.Controllers
         {
             var data = groupService.GetSpecialtys();
             return Ok(data);
+        }
+
+        [HttpGet("getAllUserByGroup")]
+        public async Task<ActionResult> GetAllUserByGroup()
+        {
+
+            var data = await groupService.GetAllUserByGroup();
+            return Ok(data);
+          
         }
 
         [HttpPost("createFaculty")]

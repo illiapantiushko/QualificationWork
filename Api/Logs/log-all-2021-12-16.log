@@ -1,0 +1,74 @@
+2021-12-16 11:20:36.8256|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2021-12-16 11:20:37.6160|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2021-12-16 11:20:37.8043|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2021-12-16 11:20:37.8043|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2021-12-16 11:20:37.8043|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2021-12-16 11:20:38.5383|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:14432:58bbb138 successfully announced in 655,489 ms
+2021-12-16 11:20:38.5568|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:14432:58bbb138 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2021-12-16 11:20:38.6727|INFO|Hangfire.Server.ServerWatchdog|2 servers were removed due to timeout
+2021-12-16 11:20:39.7539|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:14432:58bbb138 all the dispatchers started
+2021-12-16 11:20:39.9268|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-12-16 11:20:39.9419|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-12-16 11:20:39.9943|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2021-12-16 11:20:41.3683|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2021-12-16 11:21:10.3811|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2021-12-16 11:21:10.8597|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2021-12-16 11:21:10.9603|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2021-12-16 11:21:10.9603|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2021-12-16 11:21:10.9603|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2021-12-16 11:21:11.4845|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-12-16 11:21:11.5008|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-12-16 11:21:11.5641|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2021-12-16 11:21:11.6291|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:25432:38cb6840 successfully announced in 606,7869 ms
+2021-12-16 11:21:11.6546|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:25432:38cb6840 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2021-12-16 11:21:12.7674|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:25432:38cb6840 all the dispatchers started
+2021-12-16 11:21:13.8681|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2021-12-16 11:21:31.5426|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request.
+2021-12-16 11:24:29.0416|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2021-12-16 11:24:29.4974|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2021-12-16 11:24:29.5901|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2021-12-16 11:24:29.5963|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2021-12-16 11:24:29.5963|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2021-12-16 11:24:30.0499|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-12-16 11:24:30.0499|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-12-16 11:24:30.0678|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2021-12-16 11:24:30.1542|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:22904:ac985b94 successfully announced in 508,3249 ms
+2021-12-16 11:24:30.1759|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:22904:ac985b94 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2021-12-16 11:24:31.1917|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:22904:ac985b94 all the dispatchers started
+2021-12-16 22:23:20.1381|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2021-12-16 22:23:23.3755|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2021-12-16 22:23:23.6199|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2021-12-16 22:23:23.6199|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2021-12-16 22:23:23.6300|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2021-12-16 22:23:24.3668|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:18744:39cba712 successfully announced in 661,7333 ms
+2021-12-16 22:23:24.4387|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:18744:39cba712 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2021-12-16 22:23:24.5413|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-12-16 22:23:24.6412|INFO|Hangfire.Server.ServerWatchdog|3 servers were removed due to timeout
+2021-12-16 22:23:24.5864|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-12-16 22:23:24.6412|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2021-12-16 22:23:25.3388|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:18744:39cba712 all the dispatchers started
+2021-12-16 22:33:42.9298|WARN|Microsoft.AspNetCore.Identity.UserManager|User is already in role Admin.
+2021-12-16 22:34:50.3677|WARN|Microsoft.AspNetCore.Identity.UserManager|User is already in role Admin.
+2021-12-16 22:35:50.7664|WARN|Microsoft.AspNetCore.Identity.UserManager|User is already in role Admin.
+2021-12-16 22:37:03.9142|WARN|Microsoft.AspNetCore.Identity.UserManager|User is already in role Admin.
+2021-12-16 22:39:50.5847|WARN|Microsoft.AspNetCore.Identity.UserManager|User is already in role Admin.
+2021-12-16 22:41:09.3146|WARN|Microsoft.AspNetCore.Identity.UserManager|User is already in role Admin.
+2021-12-16 22:44:30.5410|WARN|Microsoft.AspNetCore.Identity.UserManager|User is already in role Admin.
+2021-12-16 22:46:02.8113|WARN|Microsoft.AspNetCore.Identity.UserManager|User is already in role Admin.
+2021-12-16 22:48:58.0719|WARN|Microsoft.AspNetCore.Identity.UserManager|User is already in role Admin.

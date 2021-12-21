@@ -13,7 +13,7 @@ namespace QualificationWork.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class SubjectsController : ControllerBase
     {
 
@@ -47,10 +47,17 @@ namespace QualificationWork.Api.Controllers
             return Ok(data);
         }
 
-        [HttpGet("getAllSubjectByStudent")]
-        public async Task<ActionResult> GetAllSubjectByStudent()
+        [HttpGet("getAllSubjectByUser")]
+        public async Task<ActionResult> GetAllSubjectByUser()
         {
-            var data = await subjectService.GetAllSubjectByStudent();
+            var data = await subjectService.GetAllSubjectByUser();
+            return Ok(data);
+        }
+
+        [HttpGet("getAllGroupsBySubject")]
+        public async Task<ActionResult> GetAllGroupsBySubject(long subjectId)
+        {
+            var data= await subjectService.GetAllGroupsBySubject(subjectId);
             return Ok(data);
         }
 

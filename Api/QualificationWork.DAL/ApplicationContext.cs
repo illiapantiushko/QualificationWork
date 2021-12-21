@@ -26,6 +26,8 @@ namespace QualificationWork.DAL
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<ApplicationUserRole>(userRole =>
             {
                 userRole.HasKey(ur => new { ur.UserId, ur.RoleId });
@@ -108,8 +110,8 @@ namespace QualificationWork.DAL
                         .HasForeignKey(s => s.GroupId);
             });
 
-
-            base.OnModelCreating(modelBuilder);
+            
+            //base.OnModelCreating(modelBuilder);
         }
     }
 }

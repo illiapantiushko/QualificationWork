@@ -4,7 +4,7 @@ using System.Text;
 
 namespace QualificationWork.DAL.HelperServise
 {
-  public  class AppSettings
+    public class AppSettings
     {
         public string Secret { get; set; }
 

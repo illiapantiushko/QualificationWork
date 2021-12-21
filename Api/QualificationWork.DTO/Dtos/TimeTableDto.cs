@@ -4,7 +4,7 @@ using System.Text;
 
 namespace QualificationWork.DTO.Dtos
 {
-  public  class TimeTableDto
+    public class TimeTableDto
     {
         public DateTime LessonDate { get; set; }
         public bool IsPresent { get; set; }

@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace QualificationWork.DAL.HelperServise
 {
-    public  class DBInitializer
+    public class DBInitializer
     {
 
-           private readonly RoleManager<ApplicationRole> roleManager;
-           private readonly UserManager<ApplicationUser> userManager;
+        private readonly RoleManager<ApplicationRole> roleManager;
+        private readonly UserManager<ApplicationUser> userManager;
         private readonly ApplicationContext context;
 
         public DBInitializer(RoleManager<ApplicationRole> roleManager, UserManager<ApplicationUser> userManager, ApplicationContext context)
@@ -23,10 +23,10 @@ namespace QualificationWork.DAL.HelperServise
             this.userManager = userManager;
         }
 
-        public  async Task SeedAsync()
+        public async Task SeedAsync()
         {
+            await CreateAdmin();
             await CreateRoles();
-
             await context.SaveChangesAsync();
 
         }
@@ -61,9 +61,9 @@ namespace QualificationWork.DAL.HelperServise
                     UserName = adminEmail,
                 };
 
-                 await userManager.CreateAsync(userData);
+                await userManager.CreateAsync(userData);
 
-                 await userManager.AddToRoleAsync(userData, UserRoles.Admin);
+                await userManager.AddToRoleAsync(userData, UserRoles.Admin);
             }
 
         }

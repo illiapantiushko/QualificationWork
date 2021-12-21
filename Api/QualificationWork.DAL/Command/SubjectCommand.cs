@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QualificationWork.DAL.Command
 {
-  public  class SubjectCommand
+    public class SubjectCommand
     {
         private readonly ApplicationContext context;
 
@@ -15,14 +15,14 @@ namespace QualificationWork.DAL.Command
             this.context = context;
         }
 
-
         public async Task CreateSubjectAsync(SubjectDto model)
         {
             var data = new Subject
             {
-               SubjectName = model.SubjectName,
-               IsActive  = model.IsActive,
-               SubjectСlosingDate = model.SubjectСlosingDate,
+                SubjectName = model.SubjectName,
+                IsActive = model.IsActive,
+                AmountCredits = model.AmountCredits,
+                SubjectСlosingDate = model.SubjectСlosingDate,
             };
 
             await context.AddAsync(data);
@@ -36,6 +36,7 @@ namespace QualificationWork.DAL.Command
             {
                 data.SubjectName = model.SubjectName;
                 data.IsActive = model.IsActive;
+                data.AmountCredits = model.AmountCredits;
                 data.SubjectСlosingDate = model.SubjectСlosingDate;
             }
         }
@@ -50,6 +51,5 @@ namespace QualificationWork.DAL.Command
 
             }
         }
-
     }
 }

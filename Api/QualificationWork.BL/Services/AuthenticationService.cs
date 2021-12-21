@@ -5,14 +5,14 @@ using System.Threading.Tasks;
 
 namespace QualificationWork.BL.Services
 {
-   public class AuthenticationService
+    public class AuthenticationService
     {
         private readonly AuthenticationCommand authenticationCommand;
         private readonly ApplicationContext context;
 
-        public AuthenticationService(AuthenticationCommand authenticationCommand,  ApplicationContext context)
+        public AuthenticationService(AuthenticationCommand authenticationCommand, ApplicationContext context)
         {
-        
+
             this.authenticationCommand = authenticationCommand;
             this.context = context;
         }

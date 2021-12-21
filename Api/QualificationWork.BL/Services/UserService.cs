@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace QualificationWork.BL.Services
 {
-   public class UserService
+    public class UserService
     {
-      
+
         private readonly UserCommand userCommand;
         private readonly UserQuery userQuery;
         private readonly ApplicationContext context;
@@ -36,8 +36,8 @@ namespace QualificationWork.BL.Services
 
         public async Task AddRoleAsync(string userId, string roleName)
         {
-          await userCommand.AddRoleAsync(userId, roleName);
-          await  context.SaveChangesAsync();
+            await userCommand.AddRoleAsync(userId, roleName);
+            await context.SaveChangesAsync();
         }
 
         public async Task DeleteRolesAsync(string userId, string roleName)
@@ -46,9 +46,9 @@ namespace QualificationWork.BL.Services
             await context.SaveChangesAsync();
         }
 
-        public async Task СreateUserAsync(string userName, string userEmail)
+        public async Task СreateUserAsync(UserDto model)
         {
-            await userCommand.СreateUserAsync(userName,  userEmail);
+            await userCommand.СreateUserAsync(model);
             await context.SaveChangesAsync();
         }
 
@@ -60,7 +60,7 @@ namespace QualificationWork.BL.Services
 
         public async Task AddGroup(long userId, long groupId)
         {
-            await userCommand.AddGroup( userId, groupId);
+            await userCommand.AddGroup(userId, groupId);
             await context.SaveChangesAsync();
 
         }
@@ -78,5 +78,17 @@ namespace QualificationWork.BL.Services
             await context.SaveChangesAsync();
         }
 
+        public void DeleteUser(long userId)
+        {
+            userCommand.DeleteUser(userId);
+            context.SaveChanges();
+
+        }
+
+        public async Task<List<Subject>> GetAllTeacherSubject(long userId)
+        {
+            return await userQuery.GetAllTeacherSubject(userId);
+        }
+        
     }
 }

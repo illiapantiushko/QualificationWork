@@ -4,7 +4,7 @@ using System.Text;
 
 namespace QualificationWork.DTO.Dtos
 {
-   public class SubjectDto
+    public class SubjectDto
     {
         public string SubjectName { get; set; }
 

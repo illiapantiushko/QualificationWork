@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace QualificationWork.BL.Services
 {
-  public  class SubjectService
+    public class SubjectService
     {
         private readonly SubjectQuery subjectQuery;
 
@@ -48,20 +48,12 @@ namespace QualificationWork.BL.Services
             return subjectQuery.GetSubjects();
         }
 
-        public async Task<ApplicationUser> GetUserSubjectById(long userId)
+        public async Task<List<ApplicationUser>> GetAllSubjectByUser()
         {
-            return await subjectQuery.GetUserSubjectById(userId);
+            return await subjectQuery.GetAllSubjectByUser();
+
         }
 
-        // вивести всі предмети де числиться певний студент
-        public async Task<List<ApplicationUser>> GetAllSubjectByStudent()
-        {
-            return  await subjectQuery.GetAllSubjectByStudent();
-           
-        }
-
-
-        //вивести всіх викладачів факультету
         public async Task<List<ApplicationUser>> GetAllTeacherFaculty(long facultyId)
         {
             return await subjectQuery.GetAllTeacherFaculty(facultyId);
@@ -70,6 +62,12 @@ namespace QualificationWork.BL.Services
         public async Task<List<ApplicationUser>> GetAllTeacherGroups(long groupId)
         {
             return await subjectQuery.GetAllTeacherGroups(groupId);
+        }
+
+
+        public async Task<List<Group>> GetAllGroupsBySubject(long subjectId)
+        {
+            return await subjectQuery.GetAllGroupsBySubject(subjectId);
         }
 
     }
