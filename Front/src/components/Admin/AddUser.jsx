@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { AddNewUser } from '../../Api/actions';
+import { AddNewUser, AddNewUserFromExel } from '../../Api/actionsAdmin';
 import { connect } from 'react-redux';
-
-import { Modal, Form, Button, Input, Select } from 'antd';
+import { Modal, Form, Button, Input, Select, Upload, message } from 'antd';
+import { UploadOutlined } from '@ant-design/icons';
 
 const AddUser = (props) => {
   const [form] = Form.useForm();
@@ -26,11 +26,35 @@ const AddUser = (props) => {
     form.resetFields();
     setIsModalVisible(false);
   };
+
+  const UploadProps = {
+    name: 'file',
+    action: 'https://www.mocky.io/v2/5cc8019d300000980a055e76',
+
+    onChange(info) {
+      if (info.file.status !== 'uploading') {
+        console.log(info.file, info.fileList);
+      }
+      if (info.file.status === 'done') {
+        let file = new FormData();
+        file.append('file', info.fileList[0].originFileObj);
+        props.AddNewUserFromExel(file);
+        message.success(`${info.file.name} file uploaded successfully`);
+      } else if (info.file.status === 'error') {
+        message.error(`${info.file.name} file upload failed.`);
+      }
+    },
+  };
+
   return (
     <div>
-      <Button type="primary" onClick={showModal} style={{ margin: 16 }}>
+      <Button type="primary" onClick={showModal} style={{ margin: 5 }}>
         Add User
       </Button>
+      <Upload {...UploadProps}>
+        <Button icon={<UploadOutlined />}>Add Users from Exel</Button>
+      </Upload>
+      ,
       <Modal
         title="Add User"
         visible={isModalVisible}
@@ -43,17 +67,17 @@ const AddUser = (props) => {
           </Button>,
         ]}>
         <Form form={form} id="myForm" name="basic" onFinish={onFinish} autoComplete="off">
-          <Form.Item name="userName">
+          <Form.Item name="userName" rules={[{ required: true }]}>
             <Input placeholder="Name" />
           </Form.Item>
 
-          <Form.Item name="userEmail">
+          <Form.Item name="userEmail" rules={[{ required: true }]}>
             <Input placeholder="Email" />
           </Form.Item>
-          <Form.Item name="age">
+          <Form.Item name="age" rules={[{ required: true }]}>
             <Input placeholder="Age" />
           </Form.Item>
-          <Form.Item name="isContract">
+          <Form.Item name="isContract" rules={[{ required: true }]}>
             <Select placeholder="Position">
               <Select.Option value={true}>Платник</Select.Option>
               <Select.Option value={false}>Державник</Select.Option>
@@ -65,17 +89,13 @@ const AddUser = (props) => {
   );
 };
 
-// let mapStateToProps = (state) => {
-//   return {
-//     users: state.AdminPage.users,
-//     groups: state.AdminPage.groups,
-//   };
-// };
-
 let mapDispatchToProps = (dispatch) => {
   return {
     AddNewUser: (data) => {
       dispatch(AddNewUser(data));
+    },
+    AddNewUserFromExel: (file) => {
+      dispatch(AddNewUserFromExel(file));
     },
   };
 };

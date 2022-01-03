@@ -1,0 +1,9 @@
+2021-12-30 11:21:19.0742|INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout
+2021-12-30 11:21:21.9715|WARN|Hangfire.Server.ServerHeartbeatProcess|Server desktop-bhcmgte:12216:e66c7ab6 was considered dead by other servers, restarting...
+2021-12-30 11:21:22.4731|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:12216:e66c7ab6 caught restart signal...
+2021-12-30 11:21:23.5943|WARN|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:12216:e66c7ab6 stopped non-gracefully due to ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler. Outstanding work on those dispatchers could be aborted, and there can be delays in background processing. This server instance will be incorrectly shown as active for a while. To avoid non-graceful shutdowns, investigate what prevents from stopping gracefully and add CancellationToken support for those methods.
+2021-12-30 11:21:27.9439|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:12216:e66c7ab6 successfully reported itself as stopped in 2630,9899 ms
+2021-12-30 11:21:28.5062|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:12216:e66c7ab6 has been stopped in total 5470,8053 ms
+2021-12-30 11:21:28.7687|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:12216:272b57cb successfully announced in 215,2285 ms
+2021-12-30 11:21:29.2343|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:12216:272b57cb is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2021-12-30 11:21:31.3317|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:12216:272b57cb all the dispatchers started

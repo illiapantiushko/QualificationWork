@@ -1,30 +1,33 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Hangfire;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using QualificationWork.DAL.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace QualificationWork.DAL.HelperServise
 {
     public class DBInitializer
     {
-
+        private readonly IRecurringJobManager recurringJobManager;
         private readonly RoleManager<ApplicationRole> roleManager;
         private readonly UserManager<ApplicationUser> userManager;
         private readonly ApplicationContext context;
 
-        public DBInitializer(RoleManager<ApplicationRole> roleManager, UserManager<ApplicationUser> userManager, ApplicationContext context)
+        public DBInitializer(RoleManager<ApplicationRole> roleManager, UserManager<ApplicationUser> userManager, ApplicationContext context, IRecurringJobManager recurringJobManager)
         {
             this.roleManager = roleManager;
             this.context = context;
             this.userManager = userManager;
+            this.recurringJobManager = recurringJobManager;
+
+
         }
 
         public async Task SeedAsync()
         {
+            //BackgroundJobCheckingSubject();
             await CreateAdmin();
             await CreateRoles();
             await context.SaveChangesAsync();
@@ -67,6 +70,27 @@ namespace QualificationWork.DAL.HelperServise
             }
 
         }
+
+
+        public async Task CheckSubject()
+        {
+            var subjects = await context.Subjects.ToListAsync();
+
+            foreach (var subject in subjects)
+            {
+
+                if (subject.SubjectСlosingDate == DateTime.Today)
+                {
+                    subject.IsActive = false;
+                }
+            }
+
+        }
+
+        //public void BackgroundJobCheckingSubject()
+        //{
+        //    recurringJobManager.AddOrUpdate("Checking the activity of the subject", () => CheckSubject(), Cron.Daily);
+        //}
 
     }
 }

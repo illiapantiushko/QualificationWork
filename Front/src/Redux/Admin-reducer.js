@@ -2,6 +2,7 @@ const SET_USERS = 'SET_USERS';
 const DELETE_USER = 'DELETE_USER';
 const SET_GROUPS = 'SET_GROUPS';
 const ADD_USER = 'ADD_USER';
+const ADD_USERS = 'ADD_USERS';
 
 let initialState = {
   users: [],
@@ -26,6 +27,11 @@ const AdminReducer = (state = initialState, action) => {
       return {
         ...state,
         users: [...state.users, action.payload],
+      };
+    case ADD_USERS:
+      return {
+        ...state,
+        users: [...state.users, ...action.payload],
       };
     case DELETE_USER:
       return {
@@ -55,6 +61,13 @@ export const addUser = (data) => {
   return {
     type: ADD_USER,
     payload: data,
+  };
+};
+
+export const addUsers = (users) => {
+  return {
+    type: ADD_USERS,
+    payload: users,
   };
 };
 

@@ -18,7 +18,7 @@ instance.interceptors.response.use(
 
     if (error.response.status === 401) {
       const refreshToken = localStorage.getItem('refreshToken');
-      await axios
+      await instance
         .post(`Authentication/refresh-token`, { refreshToken })
         .then(function (response) {
           localStorage.setItem('token', response.data.jwtToken);
@@ -27,7 +27,8 @@ instance.interceptors.response.use(
           return instance.request(originalRequest);
         })
         .catch(function (error) {
-          console.log(error);
+          alert(error.message);
+          console.log(error.message);
         });
     }
     throw error;

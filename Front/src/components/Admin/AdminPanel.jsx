@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { GetUsers, GetGroups, DeleteUser } from '../../Api/actions';
+import { GetUsers, GetGroups, DeleteUser } from '../../Api/actionsAdmin';
 import AddUser from './AddUser';
 import GroupTable from './GroupTable';
 import './admin.scss';
@@ -8,18 +8,14 @@ import UserTable from './UserTable';
 
 const AdminPanel = (props) => {
   useEffect(() => {
-    loadUsers();
-  }, []);
-
-  const loadUsers = async () => {
     props.GetUsers();
     props.GetGroups();
-  };
+  }, []);
 
   return (
     <div className="wraper">
       <AddUser />
-      <UserTable isFetching={props.isFetching} users={props.users}  DeleteUser={props.DeleteUser} />
+      <UserTable isFetching={props.isFetching} users={props.users} DeleteUser={props.DeleteUser} />
       <GroupTable isFetching={props.isFetching} groups={props.groups} />
     </div>
   );

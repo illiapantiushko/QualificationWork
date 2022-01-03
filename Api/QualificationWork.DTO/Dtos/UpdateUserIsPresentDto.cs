@@ -4,11 +4,9 @@ using System.Text;
 
 namespace QualificationWork.DTO.Dtos
 {
-    public class TimeTableDto
+  public class UpdateUserIsPresentDto
     {
-        public int LessonNumber { get; set; }
+        public long Id { get; set; }
         public bool IsPresent { get; set; }
-        public int Score { get; set; }
-        public DateTime LessonDate { get; set; }
     }
 }

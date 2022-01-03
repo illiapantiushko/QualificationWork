@@ -85,10 +85,39 @@ namespace QualificationWork.BL.Services
 
         }
 
+        public async Task AddRangeUsers(List<UserDto> model)
+        {
+           await userCommand.AddRangeUsers(model);
+           await context.SaveChangesAsync();
+        }
+
         public async Task<List<Subject>> GetAllTeacherSubject(long userId)
         {
             return await userQuery.GetAllTeacherSubject(userId);
         }
-        
+
+        public async Task<List<ApplicationUser>> GetUsersTimeTable(long subjectId, int namberleson)
+        {
+            return await userQuery.GetUsersTimeTable(subjectId,namberleson);
+        }
+
+        public async Task<List<TimeTable>> GetSubjectTopic(long subjectId)
+        {
+            return await userQuery.GetSubjectTopic( subjectId);
+         }
+
+        public async Task UpdateUserScore(UpdateUserScoreDto model)
+        {
+            await userCommand.UpdateUserScore(model);
+            await context.SaveChangesAsync();
+        }
+
+        public async Task UpdateUserIsPresent(UpdateUserIsPresentDto model)
+        {
+            await userCommand.UpdateUserIsPresent(model);
+            await context.SaveChangesAsync();
+        }
+
+
     }
 }

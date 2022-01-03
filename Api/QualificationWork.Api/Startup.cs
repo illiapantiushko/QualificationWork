@@ -42,22 +42,11 @@ namespace QualificationWork.Api
 
         public void ConfigureServices(IServiceCollection services)
         {
-            // налаштування CORS
-            services.AddCors(opts =>
-            {
-                opts.AddPolicy("AllowAll", builder =>
-                {
-                    builder.AllowAnyOrigin()
-                            .AllowAnyMethod()
-                            .AllowAnyHeader();
-                });
-            });
-
             services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.IgnoreNullValues = true);
 
 
             services.AddControllersWithViews().AddNewtonsoftJson(options =>
-    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+        options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
 
             services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ConStr")));
@@ -105,6 +94,7 @@ namespace QualificationWork.Api
             services.AddTransient<UserService>();
             services.AddTransient<SubjectService>();
             services.AddTransient<GroupService>();
+            services.AddTransient<CsvService>();
 
             services.AddTransient<DBInitializer>();
 
@@ -166,7 +156,7 @@ namespace QualificationWork.Api
 
             app.UseHttpsRedirection();
 
-            app.UseCors("AllowAll");
+            app.UseCors(opt => opt.WithOrigins("http://localhost:3000").AllowAnyHeader().AllowAnyMethod());
 
             app.UseRouting();
 

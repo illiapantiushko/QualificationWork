@@ -70,5 +70,10 @@ namespace QualificationWork.BL.Services
             return await subjectQuery.GetAllGroupsBySubject(subjectId);
         }
 
+        public async Task<List<Subject>> GetAllSubject(long userId)
+        {
+            return await subjectQuery.GetAllSubject(userId);
+        }
+
     }
 }

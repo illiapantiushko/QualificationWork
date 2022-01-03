@@ -14,14 +14,16 @@ namespace QualificationWork.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(AuthenticationSchemes = "Bearer")]
+   
     public class UsersController : ControllerBase
     {
         private readonly UserService userService;
+        private readonly CsvService csvService;
 
-        public UsersController(UserService userService)
+        public UsersController(UserService userService, CsvService csvService)
         {
             this.userService = userService;
+            this.csvService = csvService;
         }
 
         [HttpGet("getUsers")]
@@ -34,6 +36,18 @@ namespace QualificationWork.Api.Controllers
         public async Task<ActionResult> GetTimeTable()
         {
             var data = await userService.GetTimeTable();
+            return Ok(data);
+        }
+        [HttpGet("getUsersTimeTable")]
+        public async Task<ActionResult> GetUsersTimeTable(long subjectId, int namberleson)
+        {
+            var data = await userService.GetUsersTimeTable(subjectId, namberleson);
+            return Ok(data);
+        }
+        [HttpGet("GetSubjectTopic")]
+        public async Task<ActionResult> GetSubjectTopic(long subjectId)
+        {
+            var data = await userService.GetSubjectTopic(subjectId);
             return Ok(data);
         }
 
@@ -97,11 +111,39 @@ namespace QualificationWork.Api.Controllers
             return Ok();
         }
 
+        public class DtoExel { 
+        
+            public IFormFile file { get; set; }
+        }
+
+        [HttpPost("AddUsersFromExel")]
+        public async Task<ActionResult> AddUsersFromExel([FromForm]DtoExel model)
+        {
+            var data = await csvService.Import(model.file);
+            //await userService.AddRangeUsers(data);
+            return Ok(data);
+         }
+
+        [Authorize(AuthenticationSchemes = "Bearer")]
         [HttpGet("getAllTeacherSubject")]
         public async Task<ActionResult> GetAllTeacherSubject()
         {
            var data =  await userService.GetAllTeacherSubject(User.GetUserId());
            return Ok(data);
+        }
+
+        [HttpPut("updateUserScore")]
+        public async Task<ActionResult> UpdateUserScore([FromBody] UpdateUserScoreDto model)
+        {
+           await userService.UpdateUserScore(model);
+           return Ok();
+        }
+
+        [HttpPut("updateUserIsPresent")]
+        public async Task<ActionResult> UpdateUserIsPresent([FromBody]UpdateUserIsPresentDto model)
+        {
+            await userService.UpdateUserIsPresent(model);
+            return Ok();
         }
     }
 }

@@ -55,9 +55,10 @@ namespace QualificationWork.DAL
                       .HasForeignKey(sc => sc.SubjectId)
                       .IsRequired();
 
-                entity.HasOne<TimeTable>(ad => ad.TimeTable)
-                      .WithOne(s => s.UserSubject)
-                      .HasForeignKey<TimeTable>(ad => ad.UserSubjectId);
+                entity.HasOne<TimeTable>(sc => sc.TimeTable)
+                     .WithMany(s => s.UserSubjects)
+                     .HasForeignKey(sc => sc.TimeTableId);
+                   
             });
 
             modelBuilder.Entity<UserGroup>(entity =>

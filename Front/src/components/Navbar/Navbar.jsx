@@ -1,14 +1,20 @@
 import React from 'react';
-import { Breadcrumb } from 'antd';
 import { NavLink, useLocation } from 'react-router-dom';
 import { Menu } from 'antd';
 import { MailOutlined, AppstoreOutlined, TableOutlined } from '@ant-design/icons';
-
-const { SubMenu } = Menu;
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const location = useLocation();
   const checkLocation = location.pathname === '/login';
+  const roles = useSelector((state) => state.Auth.roles);
+  const navigate = useNavigate();
+
+  const logout = () => {
+    localStorage.clear();
+    navigate('/login');
+  };
 
   return (
     <div>
@@ -26,9 +32,15 @@ const Navbar = () => {
               <NavLink to="/teacher">Teacher panel</NavLink>
             </Menu.Item>
 
-            <Menu.Item key="login">
-              <NavLink to="/login">Login</NavLink>
-            </Menu.Item>
+            {!roles ? (
+              <Menu.Item key="login">
+                <NavLink to="/login">Login</NavLink>
+              </Menu.Item>
+            ) : (
+              <Menu.Item key=" LogOut" onClick={logout}>
+                Logout
+              </Menu.Item>
+            )}
           </Menu>
         </div>
       )}

@@ -14,11 +14,11 @@ namespace QualificationWork.Api.Controllers
     [Route("api/[controller]")]
     [ApiController]
     //[Authorize]
-    public class GroupsController : ControllerBase
+    public class StudentsController : ControllerBase
     {
         private readonly GroupService groupService;
 
-        public GroupsController(GroupService groupService)
+        public StudentsController(GroupService groupService)
         {
            
             this.groupService = groupService;

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using QualificationWork.BL.Services;
+using QualificationWork.ClaimsExtension;
 using QualificationWork.DAL.Models;
 using QualificationWork.DTO.Dtos;
 using System;
@@ -14,12 +15,12 @@ namespace QualificationWork.Api.Controllers
     [Route("api/[controller]")]
     [ApiController]
     //[Authorize]
-    public class SubjectsController : ControllerBase
+    public class TeachersController : ControllerBase
     {
 
         private readonly SubjectService subjectService;
 
-        public SubjectsController(SubjectService subjectService)
+        public TeachersController(SubjectService subjectService)
         {
 
             this.subjectService = subjectService;
@@ -44,6 +45,13 @@ namespace QualificationWork.Api.Controllers
         public async Task<ActionResult> GetAllTeacherGroups(long groupId)
         {
             var data = await subjectService.GetAllTeacherGroups(groupId);
+            return Ok(data);
+        }
+        [Authorize(AuthenticationSchemes = "Bearer")]
+        [HttpGet("GetAllSubject")]
+        public async Task<ActionResult> GetAllSubject()
+        {
+            var data = await subjectService.GetAllSubject(User.GetUserId());
             return Ok(data);
         }
 

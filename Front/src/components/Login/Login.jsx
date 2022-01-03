@@ -3,11 +3,12 @@ import GoogleLogin from 'react-google-login';
 import { Row, Col } from 'antd';
 import '../Login/Login.scss';
 import { connect } from 'react-redux';
-import { setUserData } from './../../Api/actions';
+import { setUserData } from './../../Api/actionAuth';
 import { useNavigate } from 'react-router-dom';
 
 const Login = (props) => {
   const navigate = useNavigate();
+
   const responseGoogle = (res) => {
     props.SetUserData(res.tokenId);
     console.log(res);

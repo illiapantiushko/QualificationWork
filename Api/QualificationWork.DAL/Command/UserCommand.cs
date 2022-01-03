@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Data.Entity;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
@@ -86,13 +86,32 @@ namespace QualificationWork.DAL.Command
             }
         }
 
+        public async Task AddRangeUsers(List<UserDto> list)
+        {
+            foreach (var user in list)
+            {
+                ApplicationUser userData = new ApplicationUser
+                {
+                    Email = user.UserEmail,
+                    SecurityStamp = Guid.NewGuid().ToString(),
+                    UserName = user.UserName,
+                    ІsContract = user.ІsContract,
+                    Age = user.Age,
+                };
+                await context.AddAsync(userData);
+            }
+        }
+
         public async Task AddSubject(long userId, long subjectId)
         {
             var data = new UserSubject
             {
                 UserId = userId,
-                SubjectId = subjectId
+                SubjectId = subjectId,
+                TimeTableId = 0
+
             };
+
             await context.AddAsync(data);
         }
 
@@ -125,7 +144,7 @@ namespace QualificationWork.DAL.Command
                 LessonDate = model.LessonDate,
                 IsPresent = model.IsPresent,
                 LessonNumber = model.LessonNumber,
-                UserSubjectId = model.UserSubjectId,
+                Score = model.Score,
             };
 
             await context.AddAsync(data);
@@ -141,6 +160,52 @@ namespace QualificationWork.DAL.Command
 
             }
         }
+
+        public async Task UpdateUserScore(UpdateUserScoreDto model)
+        {
+            var data = await context.TimeTable.FirstOrDefaultAsync(m => m.Id == model.Id);
+
+            if (data != null)
+            {
+                data.Score = model.Score;
+            }
+        }
+
+        public async Task UpdateUserIsPresent(UpdateUserIsPresentDto model)
+        {
+            var data = await context.TimeTable.FirstOrDefaultAsync(m => m.Id == model.Id);
+
+            if (data != null)
+            {
+                data.IsPresent = model.IsPresent;
+            }
+        }
+
+
+        //public async Task AddNewLeson(long subjectId, int lessonNumber,  DateTime dateTime)
+        //{
+        //    var list = await context.UserSubjects.Where(x => x.SubjectId == subjectId).ToListAsync();
+
+        //    var data = new TimeTable
+        //    {
+        //        LessonDate = dateTime,
+        //        IsPresent = true,
+        //        LessonNumber = lessonNumber,
+        //        Score = 0,
+        //    };
+
+        //    foreach (var item in list) {
+
+        //        var userSubject = new UserSubject { UserId = item.UserId, SubjectId = item.SubjectId };
+        //        data.UserSubjects.Add(userSubject);
+
+        //    }
+
+        //    //if (data != null)
+        //    //{
+        //    //    data.IsPresent = model.IsPresent;
+        //    //}
+        //}
 
     }
 

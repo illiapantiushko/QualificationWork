@@ -6,9 +6,11 @@ import thunk from 'redux-thunk';
 import AuthReducer from './Auth-reducer';
 import AdminReducer from './Admin-reducer';
 import TeacherReducer from './Teacher-reducer';
+import ProfileReducer from './Profile-reducer';
 
 const rootReducer = combineReducers({
   Auth: AuthReducer,
+  ProfilePage: ProfileReducer,
   AdminPage: AdminReducer,
   TeacherPage: TeacherReducer,
 });

@@ -1,12 +1,16 @@
 ﻿using CsvHelper;
+using Microsoft.AspNetCore.Http;
+using OfficeOpenXml;
 using QualificationWork.DAL;
 using QualificationWork.DAL.Models;
+using QualificationWork.DTO.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace QualificationWork.BL.Services
 {
@@ -49,5 +53,30 @@ namespace QualificationWork.BL.Services
             csvwriter.Dispose();
             writer.Dispose();
         }
+
+        public async Task<List<UserDto>> Import(IFormFile file) {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            var list = new List<UserDto>();
+            using (var stream = new MemoryStream()) {
+                await file.CopyToAsync(stream);
+                using (var package = new ExcelPackage(stream)) {
+                    ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
+                    var rowcount = worksheet.Dimension.Rows;
+                    for (int row = 2; row <= rowcount; row++)
+                    {
+                        list.Add(new UserDto
+                        {
+                            UserName= worksheet.Cells[row, 1].Value.ToString().Trim(),
+                            UserEmail = worksheet.Cells[row, 2].Value.ToString().Trim(),
+                            Age = Convert.ToInt32(worksheet.Cells[row, 3].Value.ToString().Trim()),
+                            ІsContract = Convert.ToBoolean( worksheet.Cells[row, 4].Value.ToString().Trim()),
+                        });
+                    }
+                }
+            }
+
+            return list;
+           }
+
     }
 }

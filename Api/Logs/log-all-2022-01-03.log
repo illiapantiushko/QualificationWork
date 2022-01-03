@@ -1,0 +1,68 @@
+2022-01-03 12:40:00.4754|INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout
+2022-01-03 12:40:01.5968|WARN|Hangfire.Server.ServerHeartbeatProcess|Server desktop-bhcmgte:8328:797f2c0b was considered dead by other servers, restarting...
+2022-01-03 12:40:04.8297|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:8328:797f2c0b caught restart signal...
+2022-01-03 12:40:06.2035|WARN|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:8328:797f2c0b stopped non-gracefully due to ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler. Outstanding work on those dispatchers could be aborted, and there can be delays in background processing. This server instance will be incorrectly shown as active for a while. To avoid non-graceful shutdowns, investigate what prevents from stopping gracefully and add CancellationToken support for those methods.
+2022-01-03 12:40:07.2562|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:8328:797f2c0b successfully reported itself as stopped in 757,3013 ms
+2022-01-03 12:40:07.2858|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:8328:797f2c0b has been stopped in total 2218,7004 ms
+2022-01-03 12:40:07.5223|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:8328:48cf5a0d successfully announced in 209,0877 ms
+2022-01-03 12:40:07.5555|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:8328:48cf5a0d is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-01-03 12:40:09.0016|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:8328:48cf5a0d all the dispatchers started
+2022-01-03 12:43:38.3865|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-01-03 12:43:39.0159|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-01-03 12:43:42.3764|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-01-03 12:43:42.3825|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-01-03 12:43:42.3982|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-01-03 12:43:43.0734|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-01-03 12:43:43.0831|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:12340:888e7bff successfully announced in 606,0851 ms
+2022-01-03 12:43:43.0734|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-01-03 12:43:43.0831|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-01-03 12:43:43.1103|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:12340:888e7bff is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-01-03 12:43:44.2256|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:12340:888e7bff all the dispatchers started
+2022-01-03 12:44:52.3807|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-01-03 12:44:52.3807|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-01-03 12:45:39.4064|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-01-03 12:49:21.3340|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-01-03 12:49:23.3758|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-01-03 12:49:27.2859|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-01-03 12:49:27.3027|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-01-03 12:49:27.3027|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-01-03 12:49:27.9408|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-01-03 12:49:27.9749|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-01-03 12:49:27.9749|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-01-03 12:49:28.0279|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:7444:8cd24179 successfully announced in 643,9824 ms
+2022-01-03 12:49:28.0520|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:7444:8cd24179 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-01-03 12:49:28.2280|INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout
+2022-01-03 12:49:29.5096|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:7444:8cd24179 all the dispatchers started
+2022-01-03 12:50:09.2094|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-01-03 12:50:09.2344|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-01-03 12:54:28.2701|INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout
+2022-01-03 12:55:42.3528|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-01-03 12:55:44.4772|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-01-03 12:55:48.4284|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-01-03 12:55:48.4284|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-01-03 12:55:48.4405|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-01-03 12:55:48.9664|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-01-03 12:55:48.9759|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-01-03 12:55:48.9885|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-01-03 12:55:49.1045|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:16560:ef7db584 successfully announced in 613,2801 ms
+2022-01-03 12:55:49.1285|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:16560:ef7db584 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-01-03 12:55:50.1617|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:16560:ef7db584 all the dispatchers started
+2022-01-03 12:56:38.2773|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-01-03 12:56:38.2773|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-01-03 13:00:49.2258|INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout
+2022-01-03 13:05:53.4987|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-01-03 13:06:02.6212|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-01-03 16:27:17.1717|WARN|Microsoft.AspNetCore.Identity.UserManager|User is already in role Admin.
+2022-01-03 16:31:15.8261|WARN|Microsoft.AspNetCore.Identity.UserManager|User is already in role Admin.

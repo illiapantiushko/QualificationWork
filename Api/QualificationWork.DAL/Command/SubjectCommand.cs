@@ -34,6 +34,7 @@ namespace QualificationWork.DAL.Command
 
             if (data != null)
             {
+                
                 data.SubjectName = model.SubjectName;
                 data.IsActive = model.IsActive;
                 data.AmountCredits = model.AmountCredits;

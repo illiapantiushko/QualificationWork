@@ -1,6 +1,7 @@
 import React from 'react';
-import { Table, Tag } from 'antd';
+import { Table, Tag, Typography, Button } from 'antd';
 
+const { Title } = Typography;
 const GroupTable = ({ isFetching, groups }) => {
   const columns = [
     {
@@ -8,21 +9,21 @@ const GroupTable = ({ isFetching, groups }) => {
       dataIndex: 'name',
       sorter: false,
     },
-    {
-      title: 'Email',
-      dataIndex: 'email',
-      sorter: false,
-    },
+    // {
+    //   title: 'Email',
+    //   dataIndex: 'email',
+    //   sorter: false,
+    // },
 
-    {
-      title: 'Age',
-      dataIndex: 'age',
-      sorter: false,
-    },
-    {
-      title: 'Action',
-      key: 'operation',
-    },
+    // {
+    //   title: 'Age',
+    //   dataIndex: 'age',
+    //   sorter: false,
+    // },
+    // {
+    //   title: 'Action',
+    //   key: 'operation',
+    // },
   ];
 
   const expandedRowRender = (userGroups) => {
@@ -60,10 +61,11 @@ const GroupTable = ({ isFetching, groups }) => {
 
   return (
     <div>
-      <h2>Group Table</h2>
+      <Title level={4}>Group Table</Title>
+      <Button type="primary">Add new group</Button>
       <Table
         dataSource={groups}
-        bordered
+        // bordered
         pagination={false}
         columns={columns}
         expandable={{

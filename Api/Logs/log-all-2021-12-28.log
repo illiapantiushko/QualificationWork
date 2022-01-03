@@ -1,0 +1,176 @@
+2021-12-28 22:58:02.2712|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2021-12-28 22:58:02.9694|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2021-12-28 22:58:10.9054|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2021-12-28 22:58:10.9268|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2021-12-28 22:58:10.9647|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2021-12-28 22:58:12.0972|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:21700:edb35a04 successfully announced in 1012,3001 ms
+2021-12-28 22:58:12.1770|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-12-28 22:58:12.3275|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:21700:edb35a04 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2021-12-28 22:58:12.3079|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-12-28 22:58:12.3399|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2021-12-28 22:58:12.4957|INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout
+2021-12-28 22:58:13.9201|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:21700:edb35a04 all the dispatchers started
+2021-12-28 22:59:02.0271|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2021-12-28 23:24:43.1783|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2021-12-28 23:24:43.9304|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2021-12-28 23:24:47.4780|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2021-12-28 23:24:47.4972|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2021-12-28 23:24:47.5132|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2021-12-28 23:24:48.0270|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-12-28 23:24:48.0270|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-12-28 23:24:48.0785|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2021-12-28 23:24:48.1292|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:8776:1d820406 successfully announced in 559,001 ms
+2021-12-28 23:24:48.1581|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:8776:1d820406 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2021-12-28 23:24:48.2407|INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout
+2021-12-28 23:24:49.5745|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:8776:1d820406 all the dispatchers started
+2021-12-28 23:29:30.1594|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2021-12-28 23:29:30.9675|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2021-12-28 23:29:34.0900|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2021-12-28 23:29:34.1129|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2021-12-28 23:29:34.1405|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2021-12-28 23:29:34.7782|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-12-28 23:29:34.7782|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-12-28 23:29:34.8011|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2021-12-28 23:29:34.8891|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:19468:849f9f7b successfully announced in 659,5521 ms
+2021-12-28 23:29:34.9147|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:19468:849f9f7b is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2021-12-28 23:29:36.7075|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:19468:849f9f7b all the dispatchers started
+2021-12-28 23:34:15.9858|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2021-12-28 23:34:16.7964|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2021-12-28 23:34:22.1406|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2021-12-28 23:34:22.1406|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2021-12-28 23:34:22.1490|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2021-12-28 23:34:23.0614|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-12-28 23:34:23.0901|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-12-28 23:34:23.2023|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2021-12-28 23:34:23.2519|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:15716:6fcd7507 successfully announced in 1024,4524 ms
+2021-12-28 23:34:23.2724|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:15716:6fcd7507 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2021-12-28 23:34:23.4701|INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout
+2021-12-28 23:34:24.9795|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:15716:6fcd7507 all the dispatchers started
+2021-12-28 23:39:23.5414|INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout
+2021-12-28 23:41:21.3872|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2021-12-28 23:41:22.0383|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2021-12-28 23:41:25.2097|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2021-12-28 23:41:25.2140|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2021-12-28 23:41:25.2281|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2021-12-28 23:41:25.7424|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-12-28 23:41:25.7424|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-12-28 23:41:25.7597|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2021-12-28 23:41:25.8447|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:6820:bb9b368b successfully announced in 552,7003 ms
+2021-12-28 23:41:25.8672|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:6820:bb9b368b is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2021-12-28 23:41:27.0900|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:6820:bb9b368b all the dispatchers started
+2021-12-28 23:49:48.6931|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2021-12-28 23:49:49.6219|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2021-12-28 23:49:52.9157|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2021-12-28 23:49:52.9157|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2021-12-28 23:49:52.9388|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2021-12-28 23:49:53.7135|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-12-28 23:49:53.7418|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-12-28 23:49:53.7693|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2021-12-28 23:49:53.7981|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:9368:25237ce5 successfully announced in 766,4866 ms
+2021-12-28 23:49:53.8461|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:9368:25237ce5 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2021-12-28 23:49:53.9883|INFO|Hangfire.Server.ServerWatchdog|2 servers were removed due to timeout
+2021-12-28 23:49:55.2502|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:9368:25237ce5 all the dispatchers started
+2021-12-28 23:53:02.2497|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2021-12-28 23:53:03.8884|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2021-12-28 23:53:07.3402|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2021-12-28 23:53:07.3402|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2021-12-28 23:53:07.3402|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2021-12-28 23:53:07.9381|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2021-12-28 23:53:07.9474|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2021-12-28 23:53:07.9474|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2021-12-28 23:53:08.0609|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:21956:40095960 successfully announced in 613,4924 ms
+2021-12-28 23:53:08.1030|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:21956:40095960 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2021-12-28 23:53:09.4398|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:21956:40095960 all the dispatchers started
+2021-12-28 23:54:29.9170|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (20ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?' (DbType = Int64), @p2='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [UserSubjects] ([SubjectId], [TimeTableId], [UserId])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [UserSubjects]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2021-12-28 23:54:30.0733|ERROR|Microsoft.EntityFrameworkCore.Update|An exception occurred in the database while saving changes for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_UserSubjects_TimeTable_TimeTableId". The conflict occurred in database "MyDB", table "dbo.TimeTable", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__277_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:6c7d7795-0e35-45a2-baa5-22e1ad7c68af
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2021-12-28 23:58:08.1897|INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout
+2021-12-28 23:58:18.0411|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (8ms) [Parameters=[@p0='?' (DbType = Int64), @p1='?' (DbType = Int64), @p2='?' (DbType = Int64)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [UserSubjects] ([SubjectId], [TimeTableId], [UserId])
+VALUES (@p0, @p1, @p2);
+SELECT [Id]
+FROM [UserSubjects]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2021-12-28 23:58:18.1064|ERROR|Microsoft.EntityFrameworkCore.Update|An exception occurred in the database while saving changes for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while updating the entries. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_UserSubjects_TimeTable_TimeTableId". The conflict occurred in database "MyDB", table "dbo.TimeTable", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__277_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:6c7d7795-0e35-45a2-baa5-22e1ad7c68af
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(DbContext _, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)

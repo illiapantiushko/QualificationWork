@@ -45,5 +45,40 @@ namespace QualificationWork.DAL.Query
 
             return response;
         }
+
+        // time table
+
+        // вивести користувачів та по предмету та номеру заняття
+        public async Task<List<ApplicationUser>> GetUsersTimeTable(long subjectId, int namberleson)
+        {
+           
+            var response = await context.Users.Where(x => x.UserSubjects.Any(y => y.SubjectId == subjectId))
+                             .Include(pub => pub.UserSubjects)
+                             .ThenInclude(pub => pub.Subject)
+                             .Include(pub => pub.UserSubjects.Where(x => x.TimeTable.LessonNumber==namberleson))
+                             .ThenInclude(pub => pub.TimeTable).ToListAsync();
+
+            return response;
+        }
+
+
+        public async Task<List<TimeTable>> GetSubjectTopic(long subjectId)
+        {
+           var list = new List<TimeTable>();
+
+            var response = await context.TimeTable.Where(x => x.UserSubjects.Any(y => y.SubjectId == subjectId))
+                .ToListAsync();
+            
+            foreach (var item in response)
+            {
+               var leson = list.FirstOrDefault(x => x.LessonNumber == item.LessonNumber);
+                if (leson == null) { list.Add(item); }
+            }
+
+            return list;
+        }
+
+
+        
     }
 }

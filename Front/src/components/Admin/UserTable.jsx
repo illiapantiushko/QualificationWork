@@ -1,8 +1,19 @@
-import React from 'react';
-import { Table, Tag, Popover } from 'antd';
+import React, { useState } from 'react';
+import { Table, Tag, Popover, Popconfirm, Typography } from 'antd';
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
+import EditeUser from './EditeUser';
+
+const { Title } = Typography;
 
 const UserTable = ({ users, isFetching, DeleteUser }) => {
+  const [modalEditeUser, setModalEditeUser] = useState(false);
+  const [row, setRow] = useState({});
+
+  const handleEditUser = (row) => {
+    setRow(row);
+    !modalEditeUser ? setModalEditeUser(true) : setModalEditeUser(false);
+  };
+
   const columns = [
     {
       title: 'Name',
@@ -27,7 +38,7 @@ const UserTable = ({ users, isFetching, DeleteUser }) => {
       render: (userRoles) => (
         <div>
           <Popover
-            content={userRoles.map((userRoles) => (
+            content={userRoles?.map((userRoles) => (
               <p>{userRoles.role.name}</p>
             ))}
             trigger="hover">
@@ -43,13 +54,15 @@ const UserTable = ({ users, isFetching, DeleteUser }) => {
       align: 'center',
       render: (record) => (
         <span>
-          <a href="#" className="icon">
+          <a href="#" className="icon" onClick={() => handleEditUser(record)}>
             <EditOutlined />
           </a>
           <span> </span>
-          <a href="#" className="icon delete" onClick={() => DeleteUser(record.id)}>
-            <DeleteOutlined />
-          </a>
+          <Popconfirm title="Sure to delete?" onConfirm={() => DeleteUser(record.id)}>
+            <a href="#" className="icon delete">
+              <DeleteOutlined />
+            </a>
+          </Popconfirm>
         </span>
       ),
     },
@@ -97,7 +110,7 @@ const UserTable = ({ users, isFetching, DeleteUser }) => {
 
   return (
     <div>
-      <h2>User Table</h2>
+      <Title level={4}>User table with subject</Title>
       <Table
         loading={isFetching}
         dataSource={users}
@@ -106,9 +119,11 @@ const UserTable = ({ users, isFetching, DeleteUser }) => {
         columns={columns}
         expandable={{
           expandedRowRender: (record) => expandedRowRender(record.userSubjects),
-          rowExpandable: (record) => record.userSubjects.length,
+          rowExpandable: (record) => record.userSubjects?.length,
         }}
       />
+
+      <EditeUser data={row} visible={modalEditeUser} handleEditUser={handleEditUser} />
     </div>
   );
 };

@@ -46,7 +46,6 @@ namespace QualificationWork.DAL.Query
 
             var response = await context.Users.Where(x => x.UserGroups.Any(y => y.GroupId == groupId))
             .Where(x => x.UserRoles.Any(y => y.RoleId == teacher.Id)).ToListAsync();
-
             return response;
         }
 
@@ -65,9 +64,14 @@ namespace QualificationWork.DAL.Query
         public async Task<List<Group>> GetAllGroupsBySubject(long subjectId)
         {
             var response = await context.Groups.Where(x => x.SubjectGroups.Any(y => y.SubjectId == subjectId)).ToListAsync();
-
             return response;
         }
 
+
+        public async Task<List<Subject>> GetAllSubject(long userId)
+        {
+            var response = await context.Subjects.Where(x => x.UserSubjects.Any(y => y.UserId == userId)).ToListAsync();  
+            return response;
+        }
     }
 }
