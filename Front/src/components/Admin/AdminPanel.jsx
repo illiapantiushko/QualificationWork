@@ -1,29 +1,34 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { GetUsers, GetGroups, DeleteUser } from '../../Api/actionsAdmin';
-import AddUser from './AddUser';
-import GroupTable from './GroupTable';
-import './admin.scss';
-import UserTable from './UserTable';
+import { GetGroups } from '../../Api/actionsAdmin';
+import GroupTable from './GroupTable/GroupTable';
+import './adminPanel.scss';
+import UserTable from './UserTable/UserTable';
+import { deleteUserRole } from './../../Redux/Admin-reducer';
 
 const AdminPanel = (props) => {
   useEffect(() => {
-    props.GetUsers();
     props.GetGroups();
   }, []);
 
   return (
     <div className="wraper">
-      <AddUser />
-      <UserTable isFetching={props.isFetching} users={props.users} DeleteUser={props.DeleteUser} />
-      <GroupTable isFetching={props.isFetching} groups={props.groups} />
+      <UserTable
+        isFetching={props.isFetching}
+        deleteUserRole={props.deleteUserRole}
+      />
+      <GroupTable
+        refreshUsers={props.GetUsers}
+        refreshGroups={props.GetGroups}
+        isFetching={props.isFetching}
+        groups={props.groups}
+      />
     </div>
   );
 };
 
 let mapStateToProps = (state) => {
   return {
-    users: state.AdminPage.users,
     groups: state.AdminPage.groups,
     isFetching: state.AdminPage.isFetching,
   };
@@ -31,14 +36,11 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
   return {
-    GetUsers: () => {
-      dispatch(GetUsers());
-    },
     GetGroups: () => {
       dispatch(GetGroups());
     },
-    DeleteUser: (id) => {
-      dispatch(DeleteUser(id));
+    deleteUserRole: (row) => {
+      dispatch(deleteUserRole(row));
     },
   };
 };

@@ -4,18 +4,18 @@ import { Table, Typography, Switch } from 'antd';
 import { connect } from 'react-redux';
 import { GetAttendanceList, SetNewUserScore, SetNewUserIsPresent } from '../../Api/actionsTeacher';
 import { EditableRow, EditableCell } from './EditableCell';
+import { DeleteOutlined } from '@ant-design/icons';
 
 const { Title } = Typography;
 
 const AttendanceTable = (props) => {
   useEffect(() => {
-    props.GetAttendanceList(props.subjectid, props.namberleson);
-  }, [props.subjectid, props.namberleson]);
+    props.GetAttendanceList(props.subjectId, props.namberleson);
+  }, [props.subjectId, props.namberleson]);
 
   const handleSwitch = (e, id) => {
-    props.SetNewUserIsPresent(id, e.isPresent);
+    props.SetNewUserIsPresent(id, e);
   };
-
   const columns = [
     { title: 'User Name', dataIndex: 'userName', key: 'userName' },
     {
@@ -23,9 +23,7 @@ const AttendanceTable = (props) => {
       dataIndex: 'isPresent',
       key: 'isPresent',
       align: 'center',
-      render: (e, record) => (
-        <Switch defaultChecked={e} onChange={(e) => handleSwitch(e, record.id)} />
-      ),
+      render: (e, record) => <Switch checked={e} onChange={(e) => handleSwitch(e, record.id)} />,
     },
     {
       title: 'Bal',
@@ -66,7 +64,7 @@ const AttendanceTable = (props) => {
 
   return (
     <div>
-      <Title level={4}>Таблиця выдвідуваносі № {props.namberleson}</Title>
+      <Title level={4}>Таблиця відвідуваності заняття №{props.namberleson}</Title>
 
       <Table
         components={components}

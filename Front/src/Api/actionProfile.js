@@ -1,12 +1,15 @@
-import { instance } from './api';
-import { notification } from 'antd';
-import { SetSubjects } from './../Redux/Profile-reducer';
+import { instance, Notification } from './api';
+import { SetSubjects, SetSubjectDetails, SetUserInfo } from './../Redux/Profile-reducer';
 
-const Notification = (status, message) => {
-  notification.error({
-    message: status,
-    description: message,
-  });
+export const GetInfoCurrentUser = () => {
+  return async (dispatch) => {
+    await instance
+      .get('Users/getCurrentUser')
+      .then((res) => {
+        dispatch(SetUserInfo(res.data));
+      })
+      .catch((err) => Notification(err.response.status, err.message));
+  };
 };
 
 export const GetSubjects = () => {
@@ -16,6 +19,17 @@ export const GetSubjects = () => {
       .then((res) => {
         dispatch(SetSubjects(res.data));
       })
-      .catch((err) => Notification(err.status, err.message));
+      .catch((err) => Notification(err.response.status, err.message));
+  };
+};
+
+export const GetSubjectDetails = (id) => {
+  return async (dispatch) => {
+    await instance
+      .get(`Users/getTimeTableByUser?subjectId=${id}`)
+      .then((res) => {
+        dispatch(SetSubjectDetails(res.data));
+      })
+      .catch((err) => Notification(err.response.status, err.message));
   };
 };

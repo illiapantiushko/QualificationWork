@@ -1,0 +1,1640 @@
+2022-01-06 00:10:15.4759|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-01-06 00:10:16.7663|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-01-06 00:10:21.2057|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-01-06 00:10:21.2057|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-01-06 00:10:21.2183|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-01-06 00:10:21.8615|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-01-06 00:10:21.8727|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-01-06 00:10:21.8727|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-01-06 00:10:21.9688|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:20548:214448de successfully announced in 674,5365 ms
+2022-01-06 00:10:21.9972|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:20548:214448de is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-01-06 00:10:22.0869|INFO|Hangfire.Server.ServerWatchdog|2 servers were removed due to timeout
+2022-01-06 00:10:23.3064|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:20548:214448de all the dispatchers started
+2022-01-06 00:10:32.8565|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-01-06 00:10:32.8600|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-01-06 00:10:34.8723|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-01-06 00:12:39.1687|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-01-06 00:12:39.8773|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-01-06 00:12:44.0648|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-01-06 00:12:44.0806|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-01-06 00:12:44.0806|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-01-06 00:12:44.5621|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-01-06 00:12:44.5621|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-01-06 00:12:44.5774|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-01-06 00:12:44.6681|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:18292:9b3b4c88 successfully announced in 505,777 ms
+2022-01-06 00:12:44.6986|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:18292:9b3b4c88 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-01-06 00:12:46.0389|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:18292:9b3b4c88 all the dispatchers started
+2022-01-06 00:13:01.3124|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-01-06 00:13:01.3124|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-01-06 00:13:02.8763|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-01-06 13:37:33.3510|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-01-06 13:37:34.2330|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-01-06 13:37:40.7969|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-01-06 13:37:40.7969|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-01-06 13:37:40.8190|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-01-06 13:37:41.7956|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:20376:56018d4a successfully announced in 772,2464 ms
+2022-01-06 13:37:41.8329|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:20376:56018d4a is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-01-06 13:37:41.9705|INFO|Hangfire.Server.ServerWatchdog|2 servers were removed due to timeout
+2022-01-06 13:37:42.5731|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-01-06 13:37:42.7389|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-01-06 13:37:43.0230|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-01-06 13:37:43.6799|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:20376:56018d4a all the dispatchers started
+2022-01-06 13:41:32.3266|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-01-06 13:41:33.0240|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-01-06 13:41:37.6418|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-01-06 13:41:37.6418|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-01-06 13:41:37.6559|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-01-06 13:41:38.1966|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-01-06 13:41:38.2044|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-01-06 13:41:38.2044|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-01-06 13:41:38.3092|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:14492:5fb1b6c3 successfully announced in 589,6584 ms
+2022-01-06 13:41:38.3318|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:14492:5fb1b6c3 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-01-06 13:41:39.4959|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:14492:5fb1b6c3 all the dispatchers started
+2022-01-06 14:14:28.2455|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-01-06 14:14:31.0635|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-01-06 14:14:35.3560|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-01-06 14:14:35.3560|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-01-06 14:14:35.3737|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-01-06 14:14:36.1256|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:14328:394e5089 successfully announced in 686,3138 ms
+2022-01-06 14:14:36.1618|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:14328:394e5089 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-01-06 14:14:36.2608|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-01-06 14:14:36.2990|INFO|Hangfire.Server.ServerWatchdog|2 servers were removed due to timeout
+2022-01-06 14:14:36.3074|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-01-06 14:14:36.3297|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-01-06 14:14:37.3475|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:14328:394e5089 all the dispatchers started
+2022-01-06 14:16:34.4479|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-01-06 14:16:35.0390|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-01-06 14:16:39.8652|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-01-06 14:16:39.8652|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-01-06 14:16:39.8857|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-01-06 14:16:40.4163|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-01-06 14:16:40.4163|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-01-06 14:16:40.4353|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-01-06 14:16:40.5193|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:8072:b88aca1d successfully announced in 555,8822 ms
+2022-01-06 14:16:40.5475|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:8072:b88aca1d is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-01-06 14:16:41.6806|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:8072:b88aca1d all the dispatchers started
+2022-01-06 14:21:40.6438|INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout
+2022-01-06 14:36:05.6654|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-01-06 14:36:07.5552|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-01-06 14:36:11.8705|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-01-06 14:36:11.8705|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-01-06 14:36:11.8854|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-01-06 14:36:12.3836|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-01-06 14:36:12.4057|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-01-06 14:36:12.4242|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-01-06 14:36:12.5132|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:2072:45a7ba9b successfully announced in 477,1843 ms
+2022-01-06 14:36:12.5304|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:2072:45a7ba9b is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-01-06 14:36:12.6429|INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout
+2022-01-06 14:36:13.4858|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:2072:45a7ba9b all the dispatchers started
+2022-01-06 14:38:08.2827|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-01-06 14:38:08.8602|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-01-06 14:38:12.0869|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-01-06 14:38:12.0869|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-01-06 14:38:12.0869|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-01-06 14:38:12.5274|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-01-06 14:38:12.5358|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-01-06 14:38:12.5358|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-01-06 14:38:12.6293|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:1312:09ae6288 successfully announced in 472,4147 ms
+2022-01-06 14:38:12.6565|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:1312:09ae6288 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-01-06 14:38:13.6275|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:1312:09ae6288 all the dispatchers started
+2022-01-06 14:46:57.2597|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-01-06 14:46:57.8426|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-01-06 14:47:01.9118|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-01-06 14:47:01.9118|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-01-06 14:47:01.9118|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-01-06 14:47:02.4205|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-01-06 14:47:02.4279|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-01-06 14:47:02.4279|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-01-06 14:47:02.5003|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:14456:fb378706 successfully announced in 520,8622 ms
+2022-01-06 14:47:02.5220|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:14456:fb378706 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-01-06 14:47:02.5887|INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout
+2022-01-06 14:47:03.4885|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:14456:fb378706 all the dispatchers started
+2022-01-06 14:48:14.5057|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-01-06 14:48:15.0586|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-01-06 14:48:18.1784|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-01-06 14:48:18.1784|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-01-06 14:48:18.1784|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-01-06 14:48:18.5804|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-01-06 14:48:18.5880|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-01-06 14:48:18.5880|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-01-06 14:48:18.6711|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:9632:2f288b80 successfully announced in 437,9574 ms
+2022-01-06 14:48:18.6930|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:9632:2f288b80 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-01-06 14:48:18.7559|INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout
+2022-01-06 14:48:19.3903|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:9632:2f288b80 all the dispatchers started
+2022-01-06 14:51:22.6142|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-01-06 14:51:23.1825|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-01-06 14:51:26.4207|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-01-06 14:51:26.4258|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-01-06 14:51:26.4258|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-01-06 14:51:26.9798|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-01-06 14:51:26.9798|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-01-06 14:51:26.9949|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-01-06 14:51:27.0772|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:1156:beb4bb48 successfully announced in 577,6347 ms
+2022-01-06 14:51:27.0981|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:1156:beb4bb48 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-01-06 14:51:27.9545|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:1156:beb4bb48 all the dispatchers started
+2022-01-06 14:51:37.9431|WARN|Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor|No output formatter was found for content types 'application/octet-stream, application/octet-stream' to write the response.
+2022-01-06 14:53:30.8878|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-01-06 14:53:31.4735|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-01-06 14:53:34.7362|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-01-06 14:53:34.7409|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-01-06 14:53:34.7588|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-01-06 14:53:35.2618|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-01-06 14:53:35.2618|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-01-06 14:53:35.2753|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-01-06 14:53:35.3501|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:1044:c40e260d successfully announced in 528,7858 ms
+2022-01-06 14:53:35.3751|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:1044:c40e260d is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-01-06 14:53:35.4579|INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout
+2022-01-06 14:53:36.2420|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:1044:c40e260d all the dispatchers started
+2022-01-06 15:02:03.9345|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-01-06 15:02:04.8710|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-01-06 15:02:08.5595|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-01-06 15:02:08.5595|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-01-06 15:02:08.5669|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-01-06 15:02:09.0201|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-01-06 15:02:09.0201|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-01-06 15:02:09.0201|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-01-06 15:02:09.1113|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:14368:5c33051c successfully announced in 481,166 ms
+2022-01-06 15:02:09.1299|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:14368:5c33051c is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-01-06 15:02:09.1999|INFO|Hangfire.Server.ServerWatchdog|3 servers were removed due to timeout
+2022-01-06 15:02:10.0778|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:14368:5c33051c all the dispatchers started
+2022-01-06 15:03:32.5366|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-01-06 15:03:33.1239|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-01-06 15:03:36.6904|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-01-06 15:03:36.7050|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-01-06 15:03:36.7295|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-01-06 15:03:37.2249|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-01-06 15:03:37.2249|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-01-06 15:03:37.2551|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-01-06 15:03:37.3264|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:7340:718912d9 successfully announced in 481,7297 ms
+2022-01-06 15:03:37.3546|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:7340:718912d9 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-01-06 15:03:38.7439|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:7340:718912d9 all the dispatchers started
+2022-01-06 15:08:37.4575|INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout
+2022-01-06 15:10:00.7377|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-01-06 15:10:01.3296|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-01-06 15:10:04.6162|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-01-06 15:10:04.6162|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-01-06 15:10:04.6314|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-01-06 15:10:05.1689|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-01-06 15:10:05.1765|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-01-06 15:10:05.1765|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-01-06 15:10:05.2513|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:13560:7a0ae2a7 successfully announced in 533,3908 ms
+2022-01-06 15:10:05.2716|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:13560:7a0ae2a7 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-01-06 15:10:06.1888|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:13560:7a0ae2a7 all the dispatchers started
+2022-01-06 15:11:42.4038|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-01-06 15:11:42.9990|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-01-06 15:11:45.8719|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-01-06 15:11:45.8719|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-01-06 15:11:45.8719|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-01-06 15:11:46.2896|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-01-06 15:11:46.2896|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-01-06 15:11:46.3030|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-01-06 15:11:46.3646|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:10312:5e598afe successfully announced in 434,6687 ms
+2022-01-06 15:11:46.3831|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:10312:5e598afe is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-01-06 15:11:46.9409|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:10312:5e598afe all the dispatchers started
+2022-01-06 16:20:41.4840|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-01-06 16:20:51.2802|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-01-06 16:20:55.2894|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-01-06 16:20:55.2894|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-01-06 16:20:55.2894|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-01-06 16:20:55.9879|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-01-06 16:20:56.0317|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-01-06 16:20:56.0420|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-01-06 16:20:56.0890|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:14316:8ba980ed successfully announced in 714,5799 ms
+2022-01-06 16:20:56.1250|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:14316:8ba980ed is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-01-06 16:20:56.2103|INFO|Hangfire.Server.ServerWatchdog|3 servers were removed due to timeout
+2022-01-06 16:20:57.1697|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:14316:8ba980ed all the dispatchers started
+2022-01-06 16:21:08.3202|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-01-06 16:21:11.9165|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-01-06 16:21:11.9165|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-01-06 16:21:42.0920|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,035ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:21:42.2352|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:a4238bb0-7d67-441e-8835-fd8580af9801
+Error Number:-2,State:0,Class:11
+2022-01-06 16:22:27.1553|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,005ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:22:27.1845|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:4c8d7cd1-4f5c-4843-8366-7623fd21045e
+Error Number:-2,State:0,Class:11
+2022-01-06 16:22:33.7054|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-01-06 16:22:40.1682|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,012ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:22:40.2007|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:f076da2d-c9f5-46b4-bcb9-7ca8f33c34a7
+Error Number:-2,State:0,Class:11
+2022-01-06 16:22:55.5636|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,132ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:22:55.6139|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:a4238bb0-7d67-441e-8835-fd8580af9801
+Error Number:-2,State:0,Class:11
+2022-01-06 16:22:56.4649|WARN|Microsoft.AspNetCore.Identity.UserManager|User is already in role Admin.
+2022-01-06 16:22:57.8891|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,014ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:22:57.9392|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:4c8d7cd1-4f5c-4843-8366-7623fd21045e
+Error Number:-2,State:0,Class:11
+2022-01-06 16:23:16.9847|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,015ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:23:17.0077|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:f076da2d-c9f5-46b4-bcb9-7ca8f33c34a7
+Error Number:-2,State:0,Class:11
+2022-01-06 16:23:28.8258|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,011ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:23:28.8486|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:4c8d7cd1-4f5c-4843-8366-7623fd21045e
+Error Number:-2,State:0,Class:11
+2022-01-06 16:23:49.8854|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,010ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:23:49.9009|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:f076da2d-c9f5-46b4-bcb9-7ca8f33c34a7
+Error Number:-2,State:0,Class:11
+2022-01-06 16:23:53.5646|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,007ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:23:53.6087|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:a4238bb0-7d67-441e-8835-fd8580af9801
+Error Number:-2,State:0,Class:11
+2022-01-06 16:24:06.2234|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,016ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:24:06.2436|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:6416cc3c-512b-4ab6-bc2c-3d5c0efaa3b4
+Error Number:-2,State:0,Class:11
+2022-01-06 16:24:36.7712|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,016ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:24:36.8021|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:6416cc3c-512b-4ab6-bc2c-3d5c0efaa3b4
+Error Number:-2,State:0,Class:11
+2022-01-06 16:27:07.1354|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,023ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:27:07.1531|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:6416cc3c-512b-4ab6-bc2c-3d5c0efaa3b4
+Error Number:-2,State:0,Class:11
+2022-01-06 16:28:08.4054|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,019ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:28:08.4333|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:a4238bb0-7d67-441e-8835-fd8580af9801
+Error Number:-2,State:0,Class:11
+2022-01-06 16:29:44.2134|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,028ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:29:44.2481|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:a4238bb0-7d67-441e-8835-fd8580af9801
+Error Number:-2,State:0,Class:11
+2022-01-06 16:32:18.1081|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,008ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:32:18.1488|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:57b1a2b8-1979-4ff7-8050-e469a4a4d2a6
+Error Number:-2,State:0,Class:11
+2022-01-06 16:32:48.6821|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,023ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:32:48.7009|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:57b1a2b8-1979-4ff7-8050-e469a4a4d2a6
+Error Number:-2,State:0,Class:11
+2022-01-06 16:33:11.7519|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,033ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:33:11.8098|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:09833a13-3a63-429f-9990-c3bc71b4de81
+Error Number:-2,State:0,Class:11
+2022-01-06 16:33:22.4702|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,009ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:33:22.4994|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:a4238bb0-7d67-441e-8835-fd8580af9801
+Error Number:-2,State:0,Class:11
+2022-01-06 16:33:50.3020|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,018ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:33:50.3471|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:57b1a2b8-1979-4ff7-8050-e469a4a4d2a6
+Error Number:-2,State:0,Class:11
+2022-01-06 16:36:19.5987|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-01-06 16:36:22.5186|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-01-06 16:36:26.9217|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-01-06 16:36:26.9309|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-01-06 16:36:26.9309|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-01-06 16:36:27.4889|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-01-06 16:36:27.4889|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-01-06 16:36:27.5148|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-01-06 16:36:27.7335|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:11676:1311cd52 successfully announced in 711,2044 ms
+2022-01-06 16:36:27.7514|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:11676:1311cd52 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-01-06 16:36:28.9509|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:11676:1311cd52 all the dispatchers started
+2022-01-06 16:36:38.2168|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-01-06 16:36:47.1375|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-01-06 16:36:47.1375|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-01-06 16:37:54.2945|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-01-06 16:38:05.4441|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,022ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:38:05.5925|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:4c2460a0-07d2-4c03-8cdf-05bdd3bb3b30
+Error Number:-2,State:0,Class:11
+2022-01-06 16:38:53.6925|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,150ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:38:53.7116|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:4c2460a0-07d2-4c03-8cdf-05bdd3bb3b30
+Error Number:-2,State:0,Class:11
+2022-01-06 16:40:07.3549|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,018ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:40:07.3782|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:53ffe612-acad-4f89-9b74-dbab4b1618cb
+Error Number:-2,State:0,Class:11
+2022-01-06 16:40:44.7495|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,012ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:40:44.7782|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:53ffe612-acad-4f89-9b74-dbab4b1618cb
+Error Number:-2,State:0,Class:11
+2022-01-06 16:41:24.9726|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,010ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:41:25.0001|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:53ffe612-acad-4f89-9b74-dbab4b1618cb
+Error Number:-2,State:0,Class:11
+2022-01-06 16:41:27.9666|INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout
+2022-01-06 16:42:36.8092|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,020ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:42:36.8415|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:53ffe612-acad-4f89-9b74-dbab4b1618cb
+Error Number:-2,State:0,Class:11
+2022-01-06 16:43:12.8312|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,015ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:43:12.8719|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:7bdaaee0-682c-4a71-b94b-d2d65dbaec8d
+Error Number:-2,State:0,Class:11
+2022-01-06 16:43:43.3185|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,007ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:43:43.3512|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:7bdaaee0-682c-4a71-b94b-d2d65dbaec8d
+Error Number:-2,State:0,Class:11
+2022-01-06 16:43:43.9222|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,153ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:43:43.9358|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:4c2460a0-07d2-4c03-8cdf-05bdd3bb3b30
+Error Number:-2,State:0,Class:11
+2022-01-06 16:44:27.0388|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,031ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:44:27.0680|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:7bdaaee0-682c-4a71-b94b-d2d65dbaec8d
+Error Number:-2,State:0,Class:11
+2022-01-06 16:45:11.7633|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,017ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:45:11.8106|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:4c2460a0-07d2-4c03-8cdf-05bdd3bb3b30
+Error Number:-2,State:0,Class:11
+2022-01-06 16:45:38.2780|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,005ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 16:45:38.3091|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:7bdaaee0-682c-4a71-b94b-d2d65dbaec8d
+Error Number:-2,State:0,Class:11
+2022-01-06 17:00:18.4864|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,010ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 17:00:18.4990|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:12c3a984-f8e6-488a-8f26-e42d94bfe388
+Error Number:-2,State:0,Class:11
+2022-01-06 17:00:41.7907|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,026ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 17:00:41.8321|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:775156cf-d458-446a-89d6-05bcbeb44b34
+Error Number:-2,State:0,Class:11
+2022-01-06 17:00:58.0928|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,018ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 17:00:58.1083|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:12c3a984-f8e6-488a-8f26-e42d94bfe388
+Error Number:-2,State:0,Class:11
+2022-01-06 17:07:18.4710|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,024ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 17:07:18.5159|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:e2abf9b1-cf74-4eaf-a5c4-846d2ebdc6b0
+Error Number:-2,State:0,Class:11
+2022-01-06 17:07:43.3197|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,023ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 17:07:43.3413|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:ca2c3f84-0277-4493-800c-0a1dbd5e6ea3
+Error Number:-2,State:0,Class:11
+2022-01-06 17:08:37.0336|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,023ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 17:08:37.0610|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:ca2c3f84-0277-4493-800c-0a1dbd5e6ea3
+Error Number:-2,State:0,Class:11
+2022-01-06 17:09:07.5975|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,022ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 17:09:07.6175|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:ca2c3f84-0277-4493-800c-0a1dbd5e6ea3
+Error Number:-2,State:0,Class:11
+2022-01-06 17:11:58.8601|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-01-06 17:11:59.5321|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-01-06 17:12:02.9736|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-01-06 17:12:02.9736|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-01-06 17:12:02.9925|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-01-06 17:12:03.4547|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-01-06 17:12:03.4598|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-01-06 17:12:03.4598|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-01-06 17:12:03.5344|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:18272:3ea5bc66 successfully announced in 459,8025 ms
+2022-01-06 17:12:03.5507|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:18272:3ea5bc66 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-01-06 17:12:04.2560|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:18272:3ea5bc66 all the dispatchers started
+2022-01-06 17:12:21.6221|WARN|Microsoft.AspNetCore.Identity.UserManager|User is already in role Admin.
+2022-01-06 17:12:39.4268|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-01-06 17:12:39.4253|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-01-06 17:12:47.3455|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-01-06 17:13:36.9851|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-01-06 17:17:03.6518|INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout
+2022-01-06 17:22:40.1998|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,038ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 17:22:40.3245|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:62ef88f0-210e-4a1c-8453-18d2195584c7
+Error Number:-2,State:0,Class:11
+2022-01-06 17:23:09.5434|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,041ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 17:23:09.5871|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:3d2f0596-3774-40de-a96a-d84e27dd63e0
+Error Number:-2,State:0,Class:11
+2022-01-06 17:23:10.9107|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,009ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 17:23:10.9302|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:62ef88f0-210e-4a1c-8453-18d2195584c7
+Error Number:-2,State:0,Class:11
+2022-01-06 20:12:31.6534|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-01-06 20:12:32.3349|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-01-06 20:12:35.8790|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-01-06 20:12:35.8790|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-01-06 20:12:35.8973|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-01-06 20:12:36.6174|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-01-06 20:12:36.6174|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-01-06 20:12:36.6354|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-01-06 20:12:36.7468|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:15948:4208d395 successfully announced in 764,079 ms
+2022-01-06 20:12:36.8010|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:15948:4208d395 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-01-06 20:12:38.4434|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:15948:4208d395 all the dispatchers started
+2022-01-06 20:13:22.5897|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-01-06 20:13:27.4886|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-01-06 20:14:09.6845|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-01-06 20:17:36.9570|INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout
+2022-01-06 20:23:25.2942|ERROR|Microsoft.EntityFrameworkCore.Database.Command|Failed executing DbCommand (30,027ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [a].[ІsContract], [r].[Id], [r].[Created], [r].[CreatedByIp], [r].[Expires], [r].[ReasonRevoked], [r].[ReplacedByToken], [r].[Revoked], [r].[RevokedByIp], [r].[Token], [r].[UserId], [t].[Id], [t].[SubjectId], [t].[UserId], [t].[Id0], [t].[AmountCredits], [t].[IsActive], [t].[SubjectName], [t].[SubjectСlosingDate], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[ConcurrencyStamp], [t0].[Name], [t0].[NormalizedName]
+FROM [AspNetUsers] AS [a]
+LEFT JOIN [RefreshToken] AS [r] ON [a].[Id] = [r].[UserId]
+LEFT JOIN (
+    SELECT [u].[Id], [u].[SubjectId], [u].[UserId], [s].[Id] AS [Id0], [s].[AmountCredits], [s].[IsActive], [s].[SubjectName], [s].[SubjectСlosingDate]
+    FROM [UserSubjects] AS [u]
+    INNER JOIN [Subjects] AS [s] ON [u].[SubjectId] = [s].[Id]
+) AS [t] ON [a].[Id] = [t].[UserId]
+LEFT JOIN (
+    SELECT [a0].[UserId], [a0].[RoleId], [a1].[Id], [a1].[ConcurrencyStamp], [a1].[Name], [a1].[NormalizedName]
+    FROM [AspNetUserRoles] AS [a0]
+    INNER JOIN [AspNetRoles] AS [a1] ON [a0].[RoleId] = [a1].[Id]
+) AS [t0] ON [a].[Id] = [t0].[UserId]
+ORDER BY [a].[Id], [r].[Id], [t].[Id], [t].[Id0], [t0].[UserId], [t0].[RoleId], [t0].[Id]
+2022-01-06 20:23:25.4397|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred while iterating over the results of a query for context type 'QualificationWork.DAL.ApplicationContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): Execution Timeout Expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+ ---> System.ComponentModel.Win32Exception (258): Время ожидания операции истекло.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__169_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(DbContext _, Boolean result, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:5e853fe7-31f0-4338-8f81-599fe3a4e057
+Error Number:-2,State:0,Class:11

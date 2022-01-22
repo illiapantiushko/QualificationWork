@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using static QualificationWork.DAL.Command.UserCommand;
 
 namespace QualificationWork.BL.Services
 {
@@ -57,6 +58,11 @@ namespace QualificationWork.BL.Services
             await userCommand.AddSubject(userId, subjectId);
             await context.SaveChangesAsync();
         }
+        public async Task UpdateUserAsync(EditeUserDto model)
+        {
+            await userCommand.UpdateUserAsync(model);
+            await context.SaveChangesAsync();
+        }
 
         public async Task AddGroup(long userId, long groupId)
         {
@@ -72,6 +78,11 @@ namespace QualificationWork.BL.Services
 
         }
 
+        public async Task<ApplicationUser> GetUser(long userId)
+        {
+            return await userQuery.GetUser(userId);
+        }
+
         public async Task CreateTimeTableAsync(TimeTableDto model)
         {
             await userCommand.CreateTimeTableAsync(model);
@@ -82,7 +93,6 @@ namespace QualificationWork.BL.Services
         {
             userCommand.DeleteUser(userId);
             context.SaveChanges();
-
         }
 
         public async Task AddRangeUsers(List<UserDto> model)
@@ -91,20 +101,20 @@ namespace QualificationWork.BL.Services
            await context.SaveChangesAsync();
         }
 
-        public async Task<List<Subject>> GetAllTeacherSubject(long userId)
+        public async Task<List<Subject>> GetAllTeacherSubject()
         {
-            return await userQuery.GetAllTeacherSubject(userId);
+            return await userQuery.GetAllTeacherSubject();
         }
 
         public async Task<List<ApplicationUser>> GetUsersTimeTable(long subjectId, int namberleson)
         {
-            return await userQuery.GetUsersTimeTable(subjectId,namberleson);
+            return await userQuery.GetUsersTimeTable(subjectId, namberleson);
         }
 
         public async Task<List<TimeTable>> GetSubjectTopic(long subjectId)
         {
-            return await userQuery.GetSubjectTopic( subjectId);
-         }
+            return await userQuery.GetSubjectTopic(subjectId);
+        }
 
         public async Task UpdateUserScore(UpdateUserScoreDto model)
         {
@@ -118,6 +128,17 @@ namespace QualificationWork.BL.Services
             await context.SaveChangesAsync();
         }
 
+        public async Task<List<TimeTable>> GetTimeTableByUser(long subjectId, long userId)
+        {
+            return await userQuery.GetTimeTableByUser(subjectId, userId);
+        }
+
+
+        public async Task CreateGroup(CreateGroupDto model)
+        {
+            await userCommand.CreateGroup(model);
+            await context.SaveChangesAsync();
+        }
 
     }
 }

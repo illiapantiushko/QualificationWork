@@ -3,10 +3,15 @@ const DELETE_USER = 'DELETE_USER';
 const SET_GROUPS = 'SET_GROUPS';
 const ADD_USER = 'ADD_USER';
 const ADD_USERS = 'ADD_USERS';
+const ADD_LIST_SUBJECTS = ' ADD_LIST_SUBJECTS';
+const UPDATE_USER = 'UPDATE_USER';
+const DELETE_USER_ROLE = 'DELETE_USER_ROLE';
 
 let initialState = {
   users: [],
+  usersTotalCount: null,
   groups: [],
+  subjects: [],
 };
 
 const AdminReducer = (state = initialState, action) => {
@@ -14,9 +19,11 @@ const AdminReducer = (state = initialState, action) => {
     case SET_USERS:
       return {
         ...state,
-        users: action.payload,
+        users: action.payload.users,
+        usersTotalCount: action.totalCount,
         isFetching: false,
       };
+
     case SET_GROUPS:
       return {
         ...state,
@@ -38,15 +45,47 @@ const AdminReducer = (state = initialState, action) => {
         users: [...state.users.filter((user) => user.id !== action.payload)],
       };
 
+    case UPDATE_USER:
+      const newUserData = state.users.map((item) => {
+        if (item.id === action.payload.id) {
+          return {
+            ...item,
+            userName: action.payload.userName,
+            userEmail: action.payload.userEmail,
+            age: action.payload.age,
+            isContract: action.payload.isContract,
+          };
+        }
+        return item;
+      });
+      return { ...state, users: newUserData };
+
+    case DELETE_USER_ROLE:
+      const deleteUserRole = state.users.map((item) => {
+        if (item.id === action.row.id) {
+          return {
+            ...item,
+            userRoles: [...item.userRoles.filter((role) => role.id !== action.row.roleId)],
+          };
+        }
+        return item;
+      });
+      return { ...state, users: deleteUserRole };
+    case ADD_LIST_SUBJECTS:
+      return {
+        ...state,
+        subjects: action.payload,
+      };
+
     default:
       return state;
   }
 };
 
-export const SetUsers = (users) => {
+export const SetUsers = (users, totalCount) => {
   return {
     type: SET_USERS,
-    payload: users,
+    payload: { users, totalCount },
   };
 };
 
@@ -64,6 +103,13 @@ export const addUser = (data) => {
   };
 };
 
+export const updateUser = (userData) => {
+  return {
+    type: UPDATE_USER,
+    payload: userData,
+  };
+};
+
 export const addUsers = (users) => {
   return {
     type: ADD_USERS,
@@ -75,6 +121,20 @@ export const deleteUser = (id) => {
   return {
     type: DELETE_USER,
     payload: id,
+  };
+};
+
+export const deleteUserRole = (row) => {
+  return {
+    type: DELETE_USER_ROLE,
+    row,
+  };
+};
+
+export const setlistSubjects = (subjects) => {
+  return {
+    type: ADD_LIST_SUBJECTS,
+    payload: subjects,
   };
 };
 

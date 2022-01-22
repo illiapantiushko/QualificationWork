@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { AddNewUser, AddNewUserFromExel } from '../../Api/actionsAdmin';
+import React from 'react';
+import { editeUser } from '../../../Api/actionsAdmin';
 import { connect } from 'react-redux';
 import { Modal, Form, Button, Input, Select } from 'antd';
+import { updateUser } from './../../../Redux/Admin-reducer';
 
 const EditeUser = (props) => {
   const [form] = Form.useForm();
@@ -12,12 +13,15 @@ const EditeUser = (props) => {
   };
 
   const Intitial = {
-    userName: props.data?.name,
+    userName: props.data?.userName,
     userEmail: props.data?.email,
     age: props.data?.age,
+    іsContract: props.data?.іsContract,
   };
 
   const onFinish = (data) => {
+    data.id = props.data?.id;
+    props.editeUser(data);
     form.resetFields();
     props.handleEditUser();
   };
@@ -29,10 +33,10 @@ const EditeUser = (props) => {
         visible={props.visible}
         onCancel={handleCancel}
         onOk={props.handleEditUser}
-        width={350}
+        width={400}
         footer={[
           <Button form="myForm" type="primary" key="submit" htmlType="submit">
-            Submit
+            Edite
           </Button>,
         ]}>
         <Form
@@ -51,7 +55,7 @@ const EditeUser = (props) => {
           <Form.Item name="age">
             <Input placeholder="Age" />
           </Form.Item>
-          <Form.Item name="isContract">
+          <Form.Item name="іsContract">
             <Select placeholder="Position">
               <Select.Option value={true}>Платник</Select.Option>
               <Select.Option value={false}>Державник</Select.Option>
@@ -65,11 +69,8 @@ const EditeUser = (props) => {
 
 let mapDispatchToProps = (dispatch) => {
   return {
-    AddNewUser: (data) => {
-      dispatch(AddNewUser(data));
-    },
-    AddNewUserFromExel: (file) => {
-      dispatch(AddNewUserFromExel(file));
+    editeUser: (data) => {
+      dispatch(editeUser(data));
     },
   };
 };

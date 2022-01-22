@@ -52,11 +52,7 @@ export const EditableCell = ({
 
   if (editable) {
     childNode = editing ? (
-      <Form.Item
-        style={{
-          margin: 0,
-        }}
-        name={dataIndex}>
+      <Form.Item name={dataIndex}>
         <InputNumber ref={inputRef} onPressEnter={save} onBlur={save} />
       </Form.Item>
     ) : (

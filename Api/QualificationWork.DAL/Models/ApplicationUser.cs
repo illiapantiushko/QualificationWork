@@ -10,6 +10,7 @@ namespace QualificationWork.DAL.Models
         public string LastName { get; set; }
         public int Age { get; set; }
         public bool ІsContract { get; set; }
+        public string ProfilePicture { get; set; }
 
         public virtual ICollection<ApplicationUserRole> UserRoles { get; set; }
 

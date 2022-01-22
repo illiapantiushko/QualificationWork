@@ -25,7 +25,6 @@ namespace QualificationWork.ClaimsExtension
             var claims = claimsPrincipal.Claims;
             return claims.FirstOrDefault(claim => claim.Type == ClaimTypes.Email).Value;
         }
-
         /// <summary>
         /// Gets ID of current user from claims
         /// </summary>
@@ -33,7 +32,7 @@ namespace QualificationWork.ClaimsExtension
         static public long GetUserId(this ClaimsPrincipal claimsPrincipal)
         {
             var claims = claimsPrincipal.Claims;
-            return long.Parse(claims.FirstOrDefault(claim => claim.Type == "id").Value);
+            return long.Parse(claims.FirstOrDefault(claim => claim.Type == ClaimTypes.NameIdentifier).Value);
         }
 
         static public List<string> GetUserRoles(this ClaimsPrincipal claimsPrincipal)

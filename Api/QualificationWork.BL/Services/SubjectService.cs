@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using static QualificationWork.DAL.Query.SubjectQuery;
 
 namespace QualificationWork.BL.Services
 {
@@ -48,9 +49,9 @@ namespace QualificationWork.BL.Services
             return subjectQuery.GetSubjects();
         }
 
-        public async Task<List<ApplicationUser>> GetAllSubjectByUser()
+        public async Task<UsersPagination> GetAllUsersWithSubjests(int pageNumber, int pageSize, string search)
         {
-            return await subjectQuery.GetAllSubjectByUser();
+            return await subjectQuery.GetAllUsersWithSubjests(pageNumber,pageSize,search);
 
         }
 
@@ -75,5 +76,16 @@ namespace QualificationWork.BL.Services
             return await subjectQuery.GetAllSubject(userId);
         }
 
+        public async Task AddLessonAsync(AddLessonDto model)
+        {
+           await subjectCommand.AddLessonAsync(model);
+           await context.SaveChangesAsync();
+        }
+
+        public async Task DeleteLessonAsync(int lessonNumber, long subjectId)
+        {
+            await subjectCommand.DeleteLessonAsync(lessonNumber,subjectId);
+            await context.SaveChangesAsync();
+        }
     }
 }

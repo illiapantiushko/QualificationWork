@@ -12,7 +12,7 @@ const TeacherPanel = (props) => {
   return (
     <div className="wraper">
       <SubjectTable subjects={props.subjects} />
-      <LineChart />
+      {/* <LineChart /> */}
     </div>
   );
 };

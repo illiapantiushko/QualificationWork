@@ -60,11 +60,13 @@ namespace QualificationWork.BL.Services
             return groupQuery.GetSpecialtys();
         }
 
-        public async Task<List<Group>> GetAllUserByGroup()
+        public async Task<List<Group>> GetAllGroup()
         {
 
-            return await groupQuery.GetAllUserByGroup();
+            return await groupQuery.GetAllGroup();
         }
+
+
 
 
     }

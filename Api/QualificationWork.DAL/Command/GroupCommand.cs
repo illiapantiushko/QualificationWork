@@ -54,5 +54,6 @@ namespace QualificationWork.DAL.Command
             await context.AddAsync(specialty);
 
         }
+
     }
 }

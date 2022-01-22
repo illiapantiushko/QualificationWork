@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AddNewUser, AddNewUserFromExel } from '../../Api/actionsAdmin';
+import { AddNewUser, AddNewUserFromExel } from '../../../Api/actionsAdmin';
 import { connect } from 'react-redux';
 import { Modal, Form, Button, Input, Select, Upload, message } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
@@ -54,13 +54,12 @@ const AddUser = (props) => {
       <Upload {...UploadProps}>
         <Button icon={<UploadOutlined />}>Add Users from Exel</Button>
       </Upload>
-      ,
       <Modal
         title="Add User"
         visible={isModalVisible}
         onCancel={handleCancel}
         onOk={handleOk}
-        width={350}
+        width={400}
         footer={[
           <Button form="myForm" type="primary" key="submit" htmlType="submit">
             Submit

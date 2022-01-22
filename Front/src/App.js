@@ -8,7 +8,8 @@ import AdminPanel from './components/Admin/AdminPanel';
 import AdminPrivateRoute from './Utils/AdminPrivateRoute.route';
 import TeacherPrivateRoute from './Utils/TeacherPrivateRoute.route';
 import TeacherPanel from './components/Teacher/TeacherPanel';
-import AttendanceSubject from './components/Teacher/AttendanceSubject';
+import TableSubjectLessons from './components/Teacher/TableSubjectLessons';
+import SubjectDetails from './components/Profile/SubjectDetails';
 
 const App = () => {
   const roles = useSelector((state) => state.Auth.roles);
@@ -19,6 +20,8 @@ const App = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Profile />} />
+
+        <Route path="/subjectDetails/:id" element={<SubjectDetails />} />
 
         <Route
           path="/teacher"
@@ -33,7 +36,7 @@ const App = () => {
           path="/AttendanceSubject/:id"
           element={
             <TeacherPrivateRoute roles={roles}>
-              <AttendanceSubject />
+              <TableSubjectLessons />
             </TeacherPrivateRoute>
           }
         />

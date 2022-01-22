@@ -26,20 +26,23 @@ namespace QualificationWork.DAL.Query
 
         public List<Faculty> GetFaculty()
         {
-            return context.Faculties.ToList();
+            return context.Faculties
+                          .ToList();
         }
 
         public List<Specialty> GetSpecialtys()
         {
-            return context.Specialtys.ToList();
+            return context.Specialtys
+                          .ToList();
         }
 
-        public async Task<List<Group>> GetAllUserByGroup()
+        public async Task<List<Group>> GetAllGroup()
         {
             var data = await context.Groups
-                  .Include(pub => pub.UserGroups)
-                                     .ThenInclude(pub => pub.User)
-                                                  .ToListAsync();
+                                    .Include(pub=>pub.Faculty)
+                                    .Include(pub => pub.UserGroups)
+                                    .ThenInclude(pub => pub.User)
+                                    .ToListAsync();
             return data;
         }
 

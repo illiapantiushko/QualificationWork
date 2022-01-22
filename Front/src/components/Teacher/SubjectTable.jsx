@@ -9,7 +9,7 @@ const SubjectTable = (props) => {
 
   const expandedRowRender = (userSubjects) => {
     const columns = [
-      { title: 'UserName', dataIndex: 'userName', key: 'name' },
+      { title: 'UserName', dataIndex: 'userName', key: 'userName' },
       {
         title: 'Email',
         dataIndex: 'email',
@@ -47,7 +47,7 @@ const SubjectTable = (props) => {
       title: 'Назва',
       dataIndex: 'subjectName',
       key: 'name',
-      render: (text, record, index) => (
+      render: (text, record) => (
         <span>
           <Link to={`/AttendanceSubject/${record.id}`}>{text}</Link>
         </span>
@@ -75,7 +75,7 @@ const SubjectTable = (props) => {
 
   return (
     <div className="wraper">
-      <Title level={4}>List Subject with user</Title>
+      <Title level={4}>Список предметів</Title>
 
       <Table
         dataSource={subjects}

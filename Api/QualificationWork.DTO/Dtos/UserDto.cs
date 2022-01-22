@@ -15,19 +15,5 @@ namespace QualificationWork.DTO.Dtos
     }
 
 
-    public class UserValidator : AbstractValidator<UserDto>
-    {
-        private const string validationUserName = "User Name required field";
-        private const string validationPassword = "Password must be greater than 6 characters and less than 10";
-        private const string validationAge = "Password must be greater than 6 characters and less than 10";
-
-        public UserValidator()
-        {
-            RuleFor(x => x.UserName).NotNull().WithMessage(validationUserName);
-            RuleFor(x => x.UserEmail).NotNull().Length(6, 10).WithMessage(validationPassword);
-            RuleFor(x => x.Age).NotNull().WithMessage(validationAge);
-  
-        }
-
-    }
+   
 }

@@ -9,6 +9,7 @@ using QualificationWork.DTO.Dtos;
 using System.Collections.Generic;
 using Google.Apis.Auth;
 using Microsoft.AspNetCore.Identity;
+using System.Data.Entity;
 
 namespace QualificationWork.DAL.Command
 {
@@ -51,6 +52,18 @@ namespace QualificationWork.DAL.Command
 
             var user = await userManager.FindByEmailAsync(payload.Email);
 
+            if (user == null)
+            {
+                ApplicationUser userData = new ApplicationUser
+                {
+                    Email = payload.Email,
+                    SecurityStamp = Guid.NewGuid().ToString(),
+                    UserName = payload.GivenName,
+                    Age = 18
+                };
+                await userManager.CreateAsync(userData);
+            }
+
             // первірка на емайл адміна
             string AdminEmail = "illia.pantiushko@oa.edu.ua";
 
@@ -59,9 +72,14 @@ namespace QualificationWork.DAL.Command
                 await userManager.AddToRolesAsync(user, new List<string>() { UserRoles.Admin });
             }
 
+            if (user.ProfilePicture == null)
+            {
+                user.ProfilePicture = payload.Picture;
+            }
+
             var roles = await userManager.GetRolesAsync(user);
 
-            var jwtToken = jwtUtils.GenerateJwtToken(user);
+            var jwtToken = await jwtUtils.GenerateJwtToken(user);
 
             var refreshToken = jwtUtils.GenerateRefreshToken(ipAddress);
 
@@ -71,25 +89,6 @@ namespace QualificationWork.DAL.Command
             RemoveOldRefreshTokens(user);
 
             context.Update(user);
-
-            if (user == null)
-            {
-                ApplicationUser userData = new ApplicationUser
-                {
-                    Email = payload.Email,
-                    SecurityStamp = Guid.NewGuid().ToString(),
-                    UserName = payload.Email,
-                    Age = 18
-                };
-                var createdResult = await userManager.CreateAsync(userData);
-
-                if (!createdResult.Succeeded)
-                {
-                    throw new AppException("Something went wrong");
-                }
-
-                return new AuthenticateResponseDto(user.UserName, jwtToken, refreshToken.Token, roles);
-            }
 
             return new AuthenticateResponseDto(user.UserName, jwtToken, refreshToken.Token, roles);
         }
@@ -121,7 +120,7 @@ namespace QualificationWork.DAL.Command
 
             context.Update(user);
 
-            var jwtToken = jwtUtils.GenerateJwtToken(user);
+            var jwtToken = await jwtUtils.GenerateJwtToken(user);
 
             return new AuthenticateResponseDto(user.UserName, jwtToken, newRefreshToken.Token, roles);
         }

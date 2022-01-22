@@ -3,7 +3,6 @@ using QualificationWork.DTO.Dtos;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-
 namespace QualificationWork.Api.Controllers
 {
     [Route("api/[controller]")]
@@ -14,7 +13,6 @@ namespace QualificationWork.Api.Controllers
 
         public AuthenticationController(AuthenticationService authenticationService)
         {
-
             this.authenticationService = authenticationService;
         }
 
@@ -33,13 +31,11 @@ namespace QualificationWork.Api.Controllers
         }
 
         private string ipAddress()
-        {
-           
+        {  
             if (Request.Headers.ContainsKey("X-Forwarded-For"))
             {
                 return Request.Headers["X-Forwarded-For"];
             }
-
             else
             {
                 return HttpContext.Connection.RemoteIpAddress.MapToIPv4().ToString();

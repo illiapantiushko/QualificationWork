@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import { Menu } from 'antd';
-import { MailOutlined, AppstoreOutlined, TableOutlined } from '@ant-design/icons';
+import { Menu, Avatar } from 'antd';
+import { MailOutlined, AppstoreOutlined, TableOutlined, LogoutOutlined } from '@ant-design/icons';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
@@ -27,17 +27,19 @@ const Navbar = () => {
             <Menu.Item key="app" icon={<AppstoreOutlined />}>
               <NavLink to="/admin">Admin panel</NavLink>
             </Menu.Item>
-
             <Menu.Item key="alipay" icon={<TableOutlined />}>
               <NavLink to="/teacher">Teacher panel</NavLink>
             </Menu.Item>
-
             {!roles ? (
-              <Menu.Item key="login">
+              <Menu.Item key="login" style={{ marginLeft: 'auto' }}>
                 <NavLink to="/login">Login</NavLink>
               </Menu.Item>
             ) : (
-              <Menu.Item key=" LogOut" onClick={logout}>
+              <Menu.Item
+                key="LogOut"
+                onClick={logout}
+                icon={<LogoutOutlined />}
+                style={{ marginLeft: 'auto' }}>
                 Logout
               </Menu.Item>
             )}

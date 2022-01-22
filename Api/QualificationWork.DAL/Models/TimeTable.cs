@@ -12,9 +12,8 @@ namespace QualificationWork.DAL.Models
         public bool IsPresent { get; set; }
         public int Score { get; set; }
         public DateTime LessonDate { get; set; }
-        
-      
-        public virtual ICollection<UserSubject> UserSubjects { get; set; }
-        //public virtual UserSubject UserSubjects { get; set; }
+
+        public long UserSubjectId { get; set; }
+        public virtual UserSubject UserSubject { get; set; }
     }
 }

@@ -26,8 +26,6 @@ namespace QualificationWork.DAL.Command
         {
             var user = await userManager.FindByIdAsync(userId);
 
-            //var user = await context.Users.FirstOrDefaultAsync(x=>x.Id == userId);
-
             if (roleName == "Admin")
             {
 
@@ -43,7 +41,6 @@ namespace QualificationWork.DAL.Command
             {
                 await userManager.AddToRoleAsync(user, UserRoles.Student);
             }
-
         }
 
         public async Task DeleteRolesAsync(string userId, string roleName)
@@ -66,10 +63,16 @@ namespace QualificationWork.DAL.Command
                 await userManager.RemoveFromRoleAsync(user, UserRoles.Student);
             }
         }
-
         public async Task СreateUserAsync(UserDto model)
         {
-            ApplicationUser userData = new ApplicationUser
+            var check = context.Users.FirstOrDefaultAsync(x => x.Email == model.UserEmail);
+
+            if (check == null)
+            {
+                throw new AppException("User already exists");
+            }
+
+                ApplicationUser userData = new ApplicationUser
             {
                 Email = model.UserEmail,
                 SecurityStamp = Guid.NewGuid().ToString(),
@@ -78,27 +81,28 @@ namespace QualificationWork.DAL.Command
                 Age = model.Age,
             };
 
-            var result = await userManager.CreateAsync(userData);
+             await userManager.CreateAsync(userData);
 
-            if (!result.Succeeded)
-            {
-                throw new AppException("Something went wrong");
-            }
         }
 
         public async Task AddRangeUsers(List<UserDto> list)
         {
             foreach (var user in list)
             {
-                ApplicationUser userData = new ApplicationUser
-                {
-                    Email = user.UserEmail,
-                    SecurityStamp = Guid.NewGuid().ToString(),
-                    UserName = user.UserName,
-                    ІsContract = user.ІsContract,
-                    Age = user.Age,
-                };
-                await context.AddAsync(userData);
+                var check = context.Users.FirstOrDefaultAsync(x => x.Email == user.UserEmail);
+                
+                if (check==null) {
+
+                    ApplicationUser userData = new ApplicationUser
+                    {
+                        Email = user.UserEmail,
+                        SecurityStamp = Guid.NewGuid().ToString(),
+                        UserName = user.UserName,
+                        ІsContract = user.ІsContract,
+                        Age = user.Age,
+                    };
+                    await context.AddAsync(userData);
+                }
             }
         }
 
@@ -107,12 +111,16 @@ namespace QualificationWork.DAL.Command
             var data = new UserSubject
             {
                 UserId = userId,
-                SubjectId = subjectId,
-                TimeTableId = 0
-
+                SubjectId = subjectId
             };
 
-            await context.AddAsync(data);
+            var check = context.UserSubjects.FirstOrDefault(w => w.UserId == userId && w.SubjectId == subjectId);
+
+            if (check == null)
+            {
+                await context.AddAsync(data);
+            }
+          
         }
 
         public async Task AddGroup(long userId, long groupId)
@@ -122,7 +130,27 @@ namespace QualificationWork.DAL.Command
                 UserId = userId,
                 GroupId = groupId
             };
-            await context.AddAsync(data);
+
+            var check = context.UserGroups.FirstOrDefault(w => w.UserId == userId && w.GroupId == groupId);
+
+            if (check==null)
+            {
+                await context.AddAsync(data);
+            }
+        }
+
+        public async Task UpdateUserAsync(EditeUserDto model)
+        {
+            var data = await context.Users.FirstOrDefaultAsync(m => m.Id == model.Id);
+
+            if (data != null)
+            {
+
+                data.UserName= model.UserName;
+                data.Email = model.UserEmail;
+                data.Age = model.Age;
+                data.ІsContract = model.ІsContract;
+            }
         }
 
         public void RemoveSubject(long userId, long subjectId)
@@ -145,6 +173,7 @@ namespace QualificationWork.DAL.Command
                 IsPresent = model.IsPresent,
                 LessonNumber = model.LessonNumber,
                 Score = model.Score,
+                UserSubjectId=model.UserSubjectId
             };
 
             await context.AddAsync(data);
@@ -181,31 +210,51 @@ namespace QualificationWork.DAL.Command
             }
         }
 
+        public async Task AddFacultyGroupAsync(long facultyId, string groupName)
+        {
+            var group = new Group
+            {
+                GroupName = groupName,
+                FacultyId = facultyId
+            };
 
-        //public async Task AddNewLeson(long subjectId, int lessonNumber,  DateTime dateTime)
-        //{
-        //    var list = await context.UserSubjects.Where(x => x.SubjectId == subjectId).ToListAsync();
+            await context.AddAsync(group);
+            await context.SaveChangesAsync();
+        }
 
-        //    var data = new TimeTable
-        //    {
-        //        LessonDate = dateTime,
-        //        IsPresent = true,
-        //        LessonNumber = lessonNumber,
-        //        Score = 0,
-        //    };
+        public class CreateGroupDto
+        {
+            public string NameGroup { get; set; }
+            public string NameFaculty { get; set; }
+            public List<ApplicationUser> users { get; set; }
+            public List<Subject> subjects { get; set; }
+        }
 
-        //    foreach (var item in list) {
+        public async Task CreateGroup(CreateGroupDto model)
+        {
+            var faculty = await context.Faculties.FirstOrDefaultAsync(x => x.FacultyName == model.NameFaculty);
 
-        //        var userSubject = new UserSubject { UserId = item.UserId, SubjectId = item.SubjectId };
-        //        data.UserSubjects.Add(userSubject);
+            await AddFacultyGroupAsync(faculty.Id, model.NameGroup);
 
-        //    }
+            var group = await context.Groups.FirstOrDefaultAsync(x => x.GroupName == model.NameGroup);
 
-        //    //if (data != null)
-        //    //{
-        //    //    data.IsPresent = model.IsPresent;
-        //    //}
-        //}
+            foreach (var user in model.users)
+            {
+                await AddGroup(user.Id, group.Id);
+
+                foreach (var subject in model.subjects)
+                {
+                    await AddSubject(user.Id, subject.Id);
+
+                    var subjectGroup = new SubjectGroup
+                    {
+                        SubjectId = subject.Id,
+                        GroupId = group.Id,
+                    };
+                    await context.AddAsync(subjectGroup);
+                }
+            }
+        }
 
     }
 

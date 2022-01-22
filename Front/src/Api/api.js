@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { notification } from 'antd';
 
 export const instance = axios.create({
   baseURL: 'https://localhost:44384/api/',
@@ -27,10 +28,19 @@ instance.interceptors.response.use(
           return instance.request(originalRequest);
         })
         .catch(function (error) {
-          alert(error.message);
           console.log(error.message);
         });
     }
     throw error;
   },
 );
+
+// custom  Notification
+export const Notification = (status, message) => {
+  if (status !== 401) {
+    notification.error({
+      message: 'Error ' + status,
+      description: message,
+    });
+  }
+};

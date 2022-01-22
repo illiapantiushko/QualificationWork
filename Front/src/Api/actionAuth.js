@@ -1,13 +1,5 @@
-import { instance } from './api';
-import { notification } from 'antd';
+import { instance, Notification } from './api';
 import { SetAuthUserData } from './../Redux/Auth-reducer';
-
-const Notification = (status, message) => {
-  notification.error({
-    message: status,
-    description: message,
-  });
-};
 
 const setDataLocalStorage = (jwtToken, refreshToken, userName, roles) => {
   localStorage.setItem('token', jwtToken);
@@ -33,6 +25,6 @@ export const setUserData = (googleToken) => {
 
         dispatch(SetAuthUserData(res.data.userName, res.data.roles, true));
       })
-      .catch((err) => Notification(err.status, err.message));
+      .catch((err) => Notification(err.response.status, err.message));
   };
 };

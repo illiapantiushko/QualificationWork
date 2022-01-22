@@ -45,6 +45,10 @@ namespace QualificationWork.DAL
 
             modelBuilder.Entity<UserSubject>(entity =>
             {
+                entity.HasKey(x => x.Id);
+                entity.Property(x => x.Id)
+                .ValueGeneratedOnAdd();
+
                 entity.HasOne<ApplicationUser>(sc => sc.User)
                       .WithMany(s => s.UserSubjects)
                       .HasForeignKey(sc => sc.UserId)
@@ -55,9 +59,10 @@ namespace QualificationWork.DAL
                       .HasForeignKey(sc => sc.SubjectId)
                       .IsRequired();
 
-                entity.HasOne<TimeTable>(sc => sc.TimeTable)
-                     .WithMany(s => s.UserSubjects)
-                     .HasForeignKey(sc => sc.TimeTableId);
+                entity.HasMany(x => x.TimeTable)
+                .WithOne(x => x.UserSubject)
+                .HasForeignKey(x => x.UserSubjectId)
+                .IsRequired();
                    
             });
 
@@ -111,8 +116,6 @@ namespace QualificationWork.DAL
                         .HasForeignKey(s => s.GroupId);
             });
 
-            
-            //base.OnModelCreating(modelBuilder);
         }
     }
 }

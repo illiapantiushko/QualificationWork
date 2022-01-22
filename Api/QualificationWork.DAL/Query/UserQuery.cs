@@ -15,7 +15,6 @@ namespace QualificationWork.DAL.Query
         public UserQuery(ApplicationContext context)
         {
             this.context = context;
-
         }
 
         public async Task<List<ApplicationUser>> GetUsers()
@@ -25,7 +24,17 @@ namespace QualificationWork.DAL.Query
             return data;
         }
 
+        public async Task<ApplicationUser> GetUser(long userId)
+        {
+            var user = await context.Users
+                                    .Include(x=>x.UserGroups)
+                                    .ThenInclude(x=>x.Group)
+                                    .Include(x=>x.UserRoles)
+                                    .ThenInclude(x => x.Role)
+                                    .FirstOrDefaultAsync(w => w.Id == userId);
 
+            return user;
+        }
 
         public async Task<List<TimeTable>> GetTimeTable()
         {
@@ -35,50 +44,60 @@ namespace QualificationWork.DAL.Query
         }
 
         ////вивести всі предмети викладача та студентів які належать до предмета
-        public async Task<List<Subject>> GetAllTeacherSubject(long userId)
+        public async Task<List<Subject>> GetAllTeacherSubject()
         {
-            var teacher = context.Roles.FirstOrDefault(p => p.Name == UserRoles.Student);
+            //var teacher = context.Roles.FirstOrDefault(p => p.Name == UserRoles.Teacher);
 
-            var response = await context.Subjects.Where(x => x.UserSubjects.Any(y => y.UserId == userId))
-                 .Include(pub => pub.UserSubjects.Where(x => x.User.UserRoles.Any(y => y.RoleId == teacher.Id)))
-                  .ThenInclude(pub => pub.User).ToListAsync();
+
+            //var response = await context.UserSubjects
+            //    .Include(x=>x.User)
+            //    .Include(x=>x.Subject)
+            //    .Where(x => x.UserId == userId)
+            //    .ToListAsync();
+            var response = await context.Subjects
+                                         .Include(x => x.UserSubjects)
+                                         .ThenInclude(x => x.User)
+                                         .ToListAsync();
 
             return response;
         }
 
         // time table
 
-        // вивести користувачів та по предмету та номеру заняття
+        // вивести користувачів по предмету та номеру заняття
         public async Task<List<ApplicationUser>> GetUsersTimeTable(long subjectId, int namberleson)
         {
-           
-            var response = await context.Users.Where(x => x.UserSubjects.Any(y => y.SubjectId == subjectId))
-                             .Include(pub => pub.UserSubjects)
-                             .ThenInclude(pub => pub.Subject)
-                             .Include(pub => pub.UserSubjects.Where(x => x.TimeTable.LessonNumber==namberleson))
-                             .ThenInclude(pub => pub.TimeTable).ToListAsync();
-
+            var response = await context.Users
+                                        .Where(x=>x.UserSubjects.Any(x=>x.SubjectId==subjectId))
+                                        .Include(pub => pub.UserSubjects.Where(x=>x.SubjectId==subjectId))
+                                        .ThenInclude(pub => pub.TimeTable.Where(x => x.LessonNumber == namberleson))
+                                        .ToListAsync();
             return response;
         }
 
-
         public async Task<List<TimeTable>> GetSubjectTopic(long subjectId)
         {
-           var list = new List<TimeTable>();
+            var list = new List<TimeTable>();
 
-            var response = await context.TimeTable.Where(x => x.UserSubjects.Any(y => y.SubjectId == subjectId))
-                .ToListAsync();
-            
+            var response = await context.TimeTable.Where(x=>x.UserSubject.Subject.Id == subjectId).ToListAsync();
+
             foreach (var item in response)
             {
-               var leson = list.FirstOrDefault(x => x.LessonNumber == item.LessonNumber);
+                var leson = list.FirstOrDefault(x => x.LessonNumber == item.LessonNumber);
+                
                 if (leson == null) { list.Add(item); }
             }
 
             return list;
         }
 
+        public async Task<List<TimeTable>> GetTimeTableByUser(long subjectId, long userId)
+        {
+            var data = await context.TimeTable
+                            .Where(x=>x.UserSubject.SubjectId==subjectId && x.UserSubject.UserId == userId)
+                            .ToListAsync();
+            return data;
+        }
 
-        
     }
 }

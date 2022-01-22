@@ -1,12 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using QualificationWork.BL.Services;
 using QualificationWork.ClaimsExtension;
 using QualificationWork.DAL.Models;
 using QualificationWork.DTO.Dtos;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,6 +12,7 @@ namespace QualificationWork.Api.Controllers
     [Route("api/[controller]")]
     [ApiController]
     //[Authorize]
+    [Authorize(Roles = "Teacher")]
     public class TeachersController : ControllerBase
     {
 
@@ -22,10 +20,8 @@ namespace QualificationWork.Api.Controllers
 
         public TeachersController(SubjectService subjectService)
         {
-
             this.subjectService = subjectService;
         }
-
 
         [HttpGet("getSubjects")]
         public ActionResult GetSubjects()
@@ -38,6 +34,7 @@ namespace QualificationWork.Api.Controllers
         public async Task<ActionResult> GetAllTeacherFaculty(long facultyId)
         {
             var data = await subjectService.GetAllTeacherFaculty(facultyId);
+            var result = data.Where(x => x.UserRoles.Any(y => y.Role.Name == UserRoles.Teacher));
             return Ok(data);
         }
 
@@ -45,9 +42,10 @@ namespace QualificationWork.Api.Controllers
         public async Task<ActionResult> GetAllTeacherGroups(long groupId)
         {
             var data = await subjectService.GetAllTeacherGroups(groupId);
+            var result = data.Where(x => x.UserRoles.Any(y => y.Role.Name == UserRoles.Teacher));
             return Ok(data);
         }
-        [Authorize(AuthenticationSchemes = "Bearer")]
+        
         [HttpGet("GetAllSubject")]
         public async Task<ActionResult> GetAllSubject()
         {
@@ -55,10 +53,10 @@ namespace QualificationWork.Api.Controllers
             return Ok(data);
         }
 
-        [HttpGet("getAllSubjectByUser")]
-        public async Task<ActionResult> GetAllSubjectByUser()
+        [HttpGet("getAllUsersWithSubjests")]
+        public async Task<ActionResult> GetAllUsersWithSubjests(int pageNumber, int pageSize, string search)
         {
-            var data = await subjectService.GetAllSubjectByUser();
+            var data = await subjectService.GetAllUsersWithSubjests(pageNumber, pageSize, search);
             return Ok(data);
         }
 
@@ -75,6 +73,12 @@ namespace QualificationWork.Api.Controllers
             await subjectService.CreateSubjectAsync(model);
             return Ok();
         }
+        [HttpPost("addLesson")]
+        public async Task<ActionResult> AddLessonAsync([FromBody]AddLessonDto model)
+        {
+            await subjectService.AddLessonAsync(model);
+            return Ok();
+        }
 
         [HttpPut("updateSubject")]
         public async Task<ActionResult> UpdateSubjectAsync(long subjectId, [FromBody]SubjectDto model)
@@ -88,6 +92,13 @@ namespace QualificationWork.Api.Controllers
         {
             subjectService.DeleteSubject(subjectId);
             return Ok();
+        }
+        [HttpDelete("deleteLesson")]
+        public async Task<ActionResult> DeleteLessonAsync(int lessonNumber, long subjectId)
+        {
+            await subjectService.DeleteLessonAsync(lessonNumber, subjectId);
+            return Ok();
+            
         }
     }
 }

@@ -26,51 +26,77 @@ namespace QualificationWork.DAL.Query
             return data;
         }
 
+        public class UsersPagination {
+
+            public int TotalCount { get; set; }
+
+            public List<ApplicationUser> Users { get; set; }
+
+            public UsersPagination(int totalCount, List<ApplicationUser> users)
+            {
+                this.TotalCount = totalCount;
+                this.Users = users;
+            }
+        }
+
         // вивести всі предмети де числиться певний студент
         // вивести всі предмети для певного викладача
-        public async Task<List<ApplicationUser>> GetAllSubjectByUser()
+        public async Task<UsersPagination> GetAllUsersWithSubjests(int pageNumber, int pageSize, string search)
         {
-            var data = await context.Users
-                  .Include(pub => pub.UserSubjects)
-                                     .ThenInclude(pub => pub.Subject)
-                                      .Include(pub => pub.UserRoles)
-                                     .ThenInclude(pub => pub.Role)
-                                                  .ToListAsync();
-            return data;
+            IQueryable<ApplicationUser> users = context.Users;
+
+            if (!string.IsNullOrEmpty(search))
+            {
+                users = users.Where(e => e.UserName.ToLower().Contains(search)
+                                            || e.Email.ToLower().Contains(search.ToLower()));
+            }
+
+            int totalCount = context.Users.Count();
+
+            var response = await users.Skip((pageNumber - 1) * pageSize)
+                                    .Take(pageSize)
+                                    .Include(pub => pub.UserSubjects)
+                                    .ThenInclude(pub => pub.Subject)
+                                    .Include(pub => pub.UserRoles)
+                                    .ThenInclude(pub => pub.Role)
+                                    .AsNoTracking()
+                                    .ToListAsync();
+
+
+          return new UsersPagination(totalCount, response);
         }
 
         //вивести всіх викладачів певної групи
         public async Task<List<ApplicationUser>> GetAllTeacherGroups(long groupId)
         {
-            var teacher = context.Roles.FirstOrDefault(p => p.Name == UserRoles.Teacher);
-
             var response = await context.Users.Where(x => x.UserGroups.Any(y => y.GroupId == groupId))
-            .Where(x => x.UserRoles.Any(y => y.RoleId == teacher.Id)).ToListAsync();
+                                              .Where(x => x.UserRoles.Any(y => y.Role.Name == UserRoles.Teacher)).ToListAsync();
+           
             return response;
         }
 
         //вивести всіх викладачів факультету
         public async Task<List<ApplicationUser>> GetAllTeacherFaculty(long facultyId)
         {
-            var teacher = context.Roles.FirstOrDefault(p => p.Name == UserRoles.Teacher);
-
             var response = await context.Users
-                    .Where(x => x.UserGroups.Any(y => y.Group.FacultyId == facultyId))
-                    .Where(x => x.UserRoles.Any(y => y.RoleId == teacher.Id)).ToListAsync();
+                                        .Where(x => x.UserGroups.Any(y => y.Group.FacultyId == facultyId)).ToListAsync(); ;
+
             return response;
         }
 
         //вивести всі групи для яких читається певний предмет
         public async Task<List<Group>> GetAllGroupsBySubject(long subjectId)
         {
-            var response = await context.Groups.Where(x => x.SubjectGroups.Any(y => y.SubjectId == subjectId)).ToListAsync();
+            var response = await context.Groups
+                                        .Where(x => x.SubjectGroups.Any(y => y.SubjectId == subjectId)).ToListAsync();
             return response;
         }
 
 
         public async Task<List<Subject>> GetAllSubject(long userId)
         {
-            var response = await context.Subjects.Where(x => x.UserSubjects.Any(y => y.UserId == userId)).ToListAsync();  
+            var response = await context.Subjects
+                                        .Where(x => x.UserSubjects.Any(y => y.UserId == userId)).ToListAsync();  
             return response;
         }
     }

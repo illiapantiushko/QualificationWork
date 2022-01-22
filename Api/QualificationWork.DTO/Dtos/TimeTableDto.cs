@@ -10,5 +10,7 @@ namespace QualificationWork.DTO.Dtos
         public bool IsPresent { get; set; }
         public int Score { get; set; }
         public DateTime LessonDate { get; set; }
+
+        public long UserSubjectId { get; set; }
     }
 }

@@ -348,7 +348,12 @@ namespace QualificationWork.DAL.Migrations
                     b.Property<int>("Score")
                         .HasColumnType("int");
 
+                    b.Property<long>("UserSubjectId")
+                        .HasColumnType("bigint");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserSubjectId");
 
                     b.ToTable("TimeTable");
                 });
@@ -385,17 +390,12 @@ namespace QualificationWork.DAL.Migrations
                     b.Property<long>("SubjectId")
                         .HasColumnType("bigint");
 
-                    b.Property<long>("TimeTableId")
-                        .HasColumnType("bigint");
-
                     b.Property<long>("UserId")
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");
 
                     b.HasIndex("SubjectId");
-
-                    b.HasIndex("TimeTableId");
 
                     b.HasIndex("UserId");
 
@@ -549,6 +549,17 @@ namespace QualificationWork.DAL.Migrations
                     b.Navigation("Subject");
                 });
 
+            modelBuilder.Entity("QualificationWork.DAL.Models.TimeTable", b =>
+                {
+                    b.HasOne("QualificationWork.DAL.Models.UserSubject", "UserSubject")
+                        .WithMany("TimeTable")
+                        .HasForeignKey("UserSubjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("UserSubject");
+                });
+
             modelBuilder.Entity("QualificationWork.DAL.Models.UserGroup", b =>
                 {
                     b.HasOne("QualificationWork.DAL.Models.Group", "Group")
@@ -576,12 +587,6 @@ namespace QualificationWork.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("QualificationWork.DAL.Models.TimeTable", "TimeTable")
-                        .WithMany("UserSubjects")
-                        .HasForeignKey("TimeTableId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("QualificationWork.DAL.Models.ApplicationUser", "User")
                         .WithMany("UserSubjects")
                         .HasForeignKey("UserId")
@@ -589,8 +594,6 @@ namespace QualificationWork.DAL.Migrations
                         .IsRequired();
 
                     b.Navigation("Subject");
-
-                    b.Navigation("TimeTable");
 
                     b.Navigation("User");
                 });
@@ -630,9 +633,9 @@ namespace QualificationWork.DAL.Migrations
                     b.Navigation("UserSubjects");
                 });
 
-            modelBuilder.Entity("QualificationWork.DAL.Models.TimeTable", b =>
+            modelBuilder.Entity("QualificationWork.DAL.Models.UserSubject", b =>
                 {
-                    b.Navigation("UserSubjects");
+                    b.Navigation("TimeTable");
                 });
 #pragma warning restore 612, 618
         }

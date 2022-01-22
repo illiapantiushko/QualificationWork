@@ -1,41 +1,49 @@
-import { instance } from './api';
-import { notification } from 'antd';
-import { SetUsers, SetGroups, addUser, addUsers, deleteUser } from './../Redux/Admin-reducer';
+import { instance, Notification } from './api';
+import {
+  SetUsers,
+  SetGroups,
+  addUser,
+  addUsers,
+  deleteUser,
+  setlistSubjects,
+  updateUser,
+} from './../Redux/Admin-reducer';
 
-const Notification = (status, message) => {
-  notification.error({
-    message: status,
-    description: message,
-  });
-};
-
-export const GetUsers = () => {
+export const GetUsers = (pageNumber = 1, search = '') => {
   return async (dispatch) => {
     await instance
-      .get('Teachers/getAllSubjectByUser')
+      .get(
+        `Teachers/getAllUsersWithSubjests?pageNumber=${pageNumber}&pageSize=${4}&search=${search}`,
+      )
       .then((res) => {
+        console.log(res);
         dispatch(
           SetUsers(
-            res.data.map((row) => ({
-              id: row.id,
-              key: row.id,
-              name: row.userName,
-              email: row.email,
-              age: row.age,
-              userSubjects: row.userSubjects,
-              userRoles: row.userRoles,
-            })),
+            res.data.users.map(
+              (row) => ({
+                id: row.id,
+                key: row.id,
+                userName: row.userName,
+                email: row.email,
+                age: row.age,
+                іsContract: row.іsContract,
+                profilePicture: row.profilePicture,
+                userSubjects: row.userSubjects,
+                userRoles: row.userRoles,
+              }),
+              res.data.TotalCount,
+            ),
           ),
         );
       })
-      .catch((err) => Notification(err.status, err.message));
+      .catch((err) => Notification(err.response.status, err.message));
   };
 };
 
 export const GetGroups = () => {
   return async (dispatch) => {
     await instance
-      .get('Students/getAllUserByGroup')
+      .get('Students/getAllGroup')
       .then((res) => {
         dispatch(
           SetGroups(
@@ -44,20 +52,21 @@ export const GetGroups = () => {
               key: row.id,
               name: row.groupName,
               userGroups: row.userGroups,
+              faculty: row.faculty.facultyName,
             })),
           ),
         );
       })
-      .catch((err) => Notification(err.status, err.message));
+      .catch((err) => Notification(err.response.status, err.message));
   };
 };
 
 export const AddNewUser = (data) => {
   return async (dispatch) => {
-    const res = await instance
+    await instance
       .post(`Users/createUser`, data)
       .then((res) => {
-        const newItem = {
+        const newUser = {
           id: 1,
           name: data.userName,
           email: data.userEmail,
@@ -65,40 +74,32 @@ export const AddNewUser = (data) => {
           userSubjects: [],
           userRoles: [],
         };
-        dispatch(addUser(newItem));
+        dispatch(addUser(newUser));
       })
-      .catch((err) => Notification(err.status, err.message));
+      .catch((err) => Notification(err.response.status, err.message));
   };
 };
 
 export const DeleteUser = (id) => {
   return async (dispatch) => {
-    const res = await instance
+    await instance
       .delete(`Users/deleteUser?userId=${id}`)
       .then((res) => {
         dispatch(deleteUser(id));
       })
-      .catch((err) => Notification(err.status, err.message));
+      .catch((err) => Notification(err.response.status, err.message));
   };
 };
 
 export const AddNewUserFromExel = (file) => {
   return async (dispatch) => {
-    const res = await instance
+    await instance
       .post(`Users/AddUsersFromExel`, file, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       })
       .then((res) => {
-        // const newItem3 = {
-        //   id: 1,
-        //   name: res.data[2].userName,
-        //   email: res.data[2].userEmail,
-        //   age: res.data[2].age,
-        //   userSubjects: [],
-        //   userRoles: [],
-        // };
         dispatch(
           addUsers(
             res.data.map((row, index) => ({
@@ -113,6 +114,50 @@ export const AddNewUserFromExel = (file) => {
           ),
         );
       })
-      .catch((err) => Notification(err.status, err.message));
+      .catch((err) => Notification(err.response.status, err.message));
+  };
+};
+
+export const GetListSubjects = () => {
+  return async (dispatch) => {
+    await instance
+      .get('Teachers/getSubjects')
+      .then((res) => {
+        dispatch(
+          setlistSubjects(
+            res.data.map((row) => ({
+              id: row.id,
+              key: row.id,
+              subjectName: row.subjectName,
+              isActive: row.isActive,
+              amountCredits: row.amountCredits,
+              subjectСlosingDate: row.subjectСlosingDate,
+            })),
+          ),
+        );
+      })
+      .catch((err) => Notification(err.response.status, err.message));
+  };
+};
+
+export const editeUser = (data) => {
+  return async (dispatch) => {
+    await instance
+      .put(`Users/updateUser`, data)
+      .then((res) => {
+        dispatch(updateUser(data));
+      })
+      .catch((err) => Notification(err.response.status, err.message));
+  };
+};
+
+export const createGroup = (model) => {
+  return async (dispatch) => {
+    await instance
+      .post('Users/createGroup', model)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => Notification(err.response.status, err.message));
   };
 };

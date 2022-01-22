@@ -1,5 +1,6 @@
 import React from 'react';
 import { Table, Tag, Typography, Button } from 'antd';
+import AddGroup from './AddGroup';
 
 const { Title } = Typography;
 const GroupTable = ({ isFetching, groups }) => {
@@ -7,13 +8,11 @@ const GroupTable = ({ isFetching, groups }) => {
     {
       title: 'Name group',
       dataIndex: 'name',
-      sorter: false,
     },
-    // {
-    //   title: 'Email',
-    //   dataIndex: 'email',
-    //   sorter: false,
-    // },
+    {
+      title: 'Faculty',
+      dataIndex: 'faculty',
+    },
 
     // {
     //   title: 'Age',
@@ -61,11 +60,11 @@ const GroupTable = ({ isFetching, groups }) => {
 
   return (
     <div>
-      <Title level={4}>Group Table</Title>
-      <Button type="primary">Add new group</Button>
+      <Title level={4}>Список груп</Title>
+      <AddGroup />
       <Table
+        loading={isFetching}
         dataSource={groups}
-        // bordered
         pagination={false}
         columns={columns}
         expandable={{

@@ -1,16 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using QualificationWork.DAL;
 using QualificationWork.Middleware;
@@ -26,8 +20,6 @@ using QualificationWork.BL.Services;
 using Microsoft.AspNetCore.Identity;
 using QualificationWork.DAL.Models;
 using QualificationWork.DAL.Query;
-using QualificationWork.DTO.Dtos;
-using FluentValidation;
 
 namespace QualificationWork.Api
 {
@@ -58,7 +50,10 @@ namespace QualificationWork.Api
                .AddDefaultTokenProviders();
 
             // налаштування схеми
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            services.AddAuthentication(options => {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
                  .AddJwtBearer(options =>
                  {
                      options.RequireHttpsMetadata = false;
@@ -76,7 +71,7 @@ namespace QualificationWork.Api
                      };
                  });
 
-            services.AddTransient<IValidator<UserDto>, UserValidator>();
+        
 
             // підключення сервісів
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
@@ -109,7 +104,6 @@ namespace QualificationWork.Api
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "QualificationWork.Api", Version = "v1" });
             });
 
-
             //  підключення Hangfire 
             services.AddHangfireServer();
             services.AddHangfire(configuration => configuration
@@ -127,7 +121,6 @@ namespace QualificationWork.Api
 
         }
 
-
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
 
@@ -137,8 +130,8 @@ namespace QualificationWork.Api
                 Authorization = new[] {
                     new HangfireCustomBasicAuthenticationFilter
                     {
-                        User="admin",
-                        Pass="admin"
+                        User=Configuration["Hangfire:login"],
+                        Pass=Configuration["Hangfire:password"]
                     }
                     }
             };
@@ -160,9 +153,8 @@ namespace QualificationWork.Api
 
             app.UseRouting();
 
-            app.UseAuthorization();
             app.UseAuthentication();
-
+            app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

@@ -3,7 +3,8 @@ const SET_SUBJECT_LESONS = 'SET_SUBJECT_LESONS';
 const SET_ATTENDANCE_LIST = 'SET_ATTENDANCE_LIST';
 const UPDATE_USER_SCORE = 'UPDATE_USER_SCORE';
 const UPDATE_USER_IS_PRESENT = 'UPDATE_USER_IS_PRESENT';
-
+const ADD_NEW_LESSON = 'ADD_NEW_LESSON';
+const DELETE_LESSON = 'DELETE_LESSON';
 let initialState = {
   subjects: [],
   subjectLesons: [],
@@ -25,6 +26,15 @@ const TeacherReducer = (state = initialState, action) => {
         ...state,
         subjectLesons: action.payload,
         isFetching: false,
+      };
+    case ADD_NEW_LESSON:
+      return {
+        ...state,
+        subjectLesons: [...state.subjectLesons, action.payload],
+      };
+    case DELETE_LESSON:
+      return {
+        subjectLesons: [...state.subjectLesons.filter((lesson) => lesson.lessonNumber !== action.payload)],
       };
     case SET_ATTENDANCE_LIST:
       return {
@@ -66,10 +76,17 @@ export const SetSubjects = (subjects) => {
   };
 };
 
-export const SetSubjectLesons = (subjectLesons) => {
+export const SetSubjectLesons = (subjectLeson) => {
   return {
     type: SET_SUBJECT_LESONS,
-    payload: subjectLesons,
+    payload: subjectLeson,
+  };
+};
+
+export const addNewLesson = (data) => {
+  return {
+    type: ADD_NEW_LESSON,
+    payload: data,
   };
 };
 
@@ -91,6 +108,13 @@ export const UpdateUserIsPresent = (row) => {
   return {
     type: UPDATE_USER_IS_PRESENT,
     row,
+  };
+};
+
+export const deleteLesson = (lessonNumber) => {
+  return {
+    type:  DELETE_LESSON,
+    payload: lessonNumber,
   };
 };
 
