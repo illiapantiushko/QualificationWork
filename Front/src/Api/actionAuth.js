@@ -13,18 +13,18 @@ const setDataLocalStorage = (jwtToken, refreshToken, userName, roles) => {
 
 export const setUserData = (googleToken) => {
   return async (dispatch) => {
-    await instance
-      .post('Authentication/authenticate', { googleToken })
-      .then((res) => {
-        setDataLocalStorage(
-          res.data.jwtToken,
-          res.data.refreshToken,
-          res.data.userName,
-          res.data.roles,
-        );
+    try {
+      const res = await instance.post('Authentication/authenticate', { googleToken });
 
-        dispatch(SetAuthUserData(res.data.userName, res.data.roles, true));
-      })
-      .catch((err) => Notification(err.response.status, err.message));
+      setDataLocalStorage(
+        res.data.jwtToken,
+        res.data.refreshToken,
+        res.data.userName,
+        res.data.roles,
+      );
+      dispatch(SetAuthUserData(res.data.userName, res.data.roles, true));
+    } catch (error) {
+      Notification(error.response.status, error.message);
+    }
   };
 };

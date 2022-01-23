@@ -42,10 +42,9 @@ const AddGroup = (props) => {
     };
 
     props.createGroup(group);
-    props.GetUsers();
+    props.GetUsers(1, '');
     props.GetGroups();
     form.resetFields();
-
     setIsModalVisible(false);
   };
 
@@ -128,9 +127,7 @@ const AddGroup = (props) => {
               <Table
                 style={{ margin: 5 }}
                 bordered
-                rowSelection={{
-                  ...rowUserSelection,
-                }}
+                rowSelection={{ ...rowUserSelection }}
                 columns={UserColumns}
                 dataSource={props.listUsers}
                 pagination={false}
@@ -171,8 +168,8 @@ let mapDispatchToProps = (dispatch) => {
     createGroup: (model) => {
       dispatch(createGroup(model));
     },
-    GetUsers: () => {
-      dispatch(GetUsers());
+    GetUsers: (pageNumber, search) => {
+      dispatch(GetUsers(pageNumber, search));
     },
     GetGroups: () => {
       dispatch(GetGroups());

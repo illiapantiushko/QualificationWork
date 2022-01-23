@@ -29,6 +29,7 @@ namespace QualificationWork.DAL.HelperServise
             await CreateRoles();
             await CreateAdmin();
             //await CreateFaculty();
+            //await CreateSubjects();
             await context.SaveChangesAsync();
         }
 
@@ -73,7 +74,7 @@ namespace QualificationWork.DAL.HelperServise
         //    var data = new Faculty
         //    {
         //        FacultyName = "Economic",
-        //        Groups= new List<Group>
+        //        Groups = new List<Group>
         //        {
         //          new Group { GroupName = "KN-41" },
         //        }
@@ -84,41 +85,46 @@ namespace QualificationWork.DAL.HelperServise
         //    if (check == null)
         //    {
         //        await context.AddAsync(data);
+        //        await context.SaveChangesAsync();
+        //    }
+
+        //}
+
+
+        //public async Task CreateSubjects()
+        //{
+        //    var listSubjects = new List<Subject>()
+        //    {
+        //            new Subject{ SubjectName="Компютерні мережі",AmountCredits=200,IsActive=true,SubjectСlosingDate= DateTime.UtcNow},
+        //            new Subject{ SubjectName="Математичний аналіз",AmountCredits=300,IsActive=true,SubjectСlosingDate= DateTime.UtcNow},
+        //            new Subject{ SubjectName="Лінійна алгебра",AmountCredits=250,IsActive=true,SubjectСlosingDate= DateTime.UtcNow}
+        //                };
+
+        //    foreach (var subject in listSubjects)
+        //    {
+        //        var checkSubject = await context.Subjects.FirstOrDefaultAsync(p => p.SubjectName == subject.SubjectName);
+
+        //        if (checkSubject == null)
+        //        {
+        //            await context.AddAsync(subject);
+        //        }
         //    }
         //}
 
         //public async Task CreateUsers()
         //{
-        //    var listSubjects = new List<Subject>() {
-        //    new Subject{ SubjectName="Компютерні мережі",AmountCredits=200,IsActive=true,SubjectСlosingDate= DateTime.UtcNow},
-        //    new Subject{ SubjectName="Математичний аналіз",AmountCredits=300,IsActive=true,SubjectСlosingDate= DateTime.UtcNow},
-        //    new Subject{ SubjectName="Лінійна алгебра",AmountCredits=250,IsActive=true,SubjectСlosingDate= DateTime.UtcNow}
-        //        };
+        //    var listUsers = new List<ApplicationUser>()
+        //            {
+        //                new ApplicationUser{ UserName="Dima",Email="dima.sdsadsd@oa.edu.ua"},
+        //                new ApplicationUser{ UserName="Sofia",Email="sofiia.prusik@oa.edu.ua"},
+        //                new ApplicationUser{ UserName="dima",Email="dima.sdsadsd@oa.edu.ua"},
+        //            };
 
-        //    foreach (var subject in listSubjects) {
+        //    foreach (var user in listUsers)
+        //    {
+        //        var checkUser = await context.Users.FirstOrDefaultAsync(p => p.UserName == user.UserName);
 
-        //        var checkSubject = await context.Subjects.FirstOrDefaultAsync(p => p.SubjectName == subject.SubjectName);
-        //        if (checkSubject == null) {
-        //            await context.AddAsync(subject);
-        //        }
-        //    }
-
-
-
-
-
-
-        //    var listUsers = new List<ApplicationUser>() {
-        //    new ApplicationUser{ UserName="Dima",Email="dima.sdsadsd@oa.edu.ua"},
-        //    new ApplicationUser{ UserName="Sofia",Email="dima.sdsadsd@oa.edu.ua"},
-        //    new ApplicationUser{ UserName="dima",Email="dima.sdsadsd@oa.edu.ua"},
-        //        };
-
-        // foreach (var user in listUsers) {
-
-        //    var checkUser = await context.Users.FirstOrDefaultAsync(p => p.UserName == user.UserName);
-
-        //    var group = context.Groups.First();
+        //        var group = context.Groups.First();
 
         //        if (checkUser == null)
         //        {
@@ -129,35 +135,19 @@ namespace QualificationWork.DAL.HelperServise
         //                UserName = user.UserName,
         //            };
 
-        //            var userGroup = new UserGroup {
+        //            var userGroup = new UserGroup
+        //            {
         //                UserId = userData.Id,
         //                GroupId = group.Id
         //            };
 
         //            await context.AddAsync(userData);
         //            await context.AddAsync(userGroup);
-        //            await userManager.AddToRoleAsync(userData, UserRoles.Student);  
+        //            await userManager.AddToRoleAsync(userData, UserRoles.Student);
         //        }
 
         //    }
-
-        //var admin = await context.Users.FirstOrDefaultAsync(p => p.Email == adminEmail);
-
-        //if (admin == nullew
-        //{
-        //    ApplicationUser userData = new ApplicationUser
-        //    {
-        //        Email = adminEmail,
-        //        SecurityStamp = Guid.NewGuid().ToString(),
-        //        UserName = adminEmail,
-        //    };
-
-        //    await userManager.CreateAsync(userData);
-
-        //    await userManager.AddToRoleAsync(userData, UserRoles.Admin);
         //}
-
-
 
 
 

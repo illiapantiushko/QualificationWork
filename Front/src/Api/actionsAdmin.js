@@ -11,153 +11,153 @@ import {
 
 export const GetUsers = (pageNumber = 1, search = '') => {
   return async (dispatch) => {
-    await instance
-      .get(
-        `Teachers/getAllUsersWithSubjests?pageNumber=${pageNumber}&pageSize=${4}&search=${search}`,
-      )
-      .then((res) => {
-        console.log(res);
-        dispatch(
-          SetUsers(
-            res.data.users.map(
-              (row) => ({
-                id: row.id,
-                key: row.id,
-                userName: row.userName,
-                email: row.email,
-                age: row.age,
-                іsContract: row.іsContract,
-                profilePicture: row.profilePicture,
-                userSubjects: row.userSubjects,
-                userRoles: row.userRoles,
-              }),
-              res.data.TotalCount,
-            ),
-          ),
-        );
-      })
-      .catch((err) => Notification(err.response.status, err.message));
+    try {
+      const res = await instance.get(
+        `Teachers/getAllUsersWithSubjests?pageNumber=${pageNumber}&pageSize=${2}&search=${search}`,
+      );
+      dispatch(
+        SetUsers(
+          res.data.users.map((row) => ({
+            id: row.id,
+            key: row.id,
+            userName: row.userName,
+            email: row.email,
+            age: row.age,
+            іsContract: row.іsContract,
+            profilePicture: row.profilePicture,
+            userSubjects: row.userSubjects,
+            userRoles: row.userRoles,
+          })),
+          res.data.totalCount,
+        ),
+      );
+    } catch (error) {
+      Notification(error.response.status, error.message);
+    }
   };
 };
 
 export const GetGroups = () => {
   return async (dispatch) => {
-    await instance
-      .get('Students/getAllGroup')
-      .then((res) => {
-        dispatch(
-          SetGroups(
-            res.data.map((row) => ({
-              id: row.id,
-              key: row.id,
-              name: row.groupName,
-              userGroups: row.userGroups,
-              faculty: row.faculty.facultyName,
-            })),
-          ),
-        );
-      })
-      .catch((err) => Notification(err.response.status, err.message));
+    try {
+      const res = await instance.get('Students/getAllGroup');
+
+      dispatch(
+        SetGroups(
+          res.data.map((row) => ({
+            id: row.id,
+            key: row.id,
+            name: row.groupName,
+            userGroups: row.userGroups,
+            faculty: row.faculty.facultyName,
+          })),
+        ),
+      );
+    } catch (error) {
+      Notification(error.response.status, error.message);
+    }
   };
 };
 
 export const AddNewUser = (data) => {
   return async (dispatch) => {
-    await instance
-      .post(`Users/createUser`, data)
-      .then((res) => {
-        const newUser = {
-          id: 1,
-          name: data.userName,
-          email: data.userEmail,
-          age: data.age,
-          userSubjects: [],
-          userRoles: [],
-        };
-        dispatch(addUser(newUser));
-      })
-      .catch((err) => Notification(err.response.status, err.message));
+    try {
+      await instance.post(`Users/createUser`, data);
+      const newUser = {
+        id: 1,
+        name: data.userName,
+        email: data.userEmail,
+        age: data.age,
+        userSubjects: [],
+        userRoles: [],
+      };
+      dispatch(addUser(newUser));
+    } catch (error) {
+      Notification(error.response.status, error.message);
+    }
   };
 };
 
 export const DeleteUser = (id) => {
   return async (dispatch) => {
-    await instance
-      .delete(`Users/deleteUser?userId=${id}`)
-      .then((res) => {
-        dispatch(deleteUser(id));
-      })
-      .catch((err) => Notification(err.response.status, err.message));
+    try {
+      await instance.delete(`Users/deleteUser?userId=${id}`);
+      dispatch(deleteUser(id));
+    } catch (error) {
+      Notification(error.response.status, error.message);
+    }
   };
 };
 
 export const AddNewUserFromExel = (file) => {
   return async (dispatch) => {
-    await instance
-      .post(`Users/AddUsersFromExel`, file, {
+    try {
+      const res = await instance.post(`Users/AddUsersFromExel`, file, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
-      })
-      .then((res) => {
-        dispatch(
-          addUsers(
-            res.data.map((row, index) => ({
-              id: index,
-              key: index,
-              name: row.userName,
-              email: row.userEmail,
-              age: row.age,
-              userSubjects: [],
-              userRoles: [],
-            })),
-          ),
-        );
-      })
-      .catch((err) => Notification(err.response.status, err.message));
+      });
+
+      dispatch(
+        addUsers(
+          res.data.map((row, index) => ({
+            id: index,
+            key: index,
+            name: row.userName,
+            email: row.userEmail,
+            age: row.age,
+            userSubjects: [],
+            userRoles: [],
+          })),
+        ),
+      );
+    } catch (error) {
+      Notification(error.response.status, error.message);
+    }
   };
 };
 
 export const GetListSubjects = () => {
   return async (dispatch) => {
-    await instance
-      .get('Teachers/getSubjects')
-      .then((res) => {
-        dispatch(
-          setlistSubjects(
-            res.data.map((row) => ({
-              id: row.id,
-              key: row.id,
-              subjectName: row.subjectName,
-              isActive: row.isActive,
-              amountCredits: row.amountCredits,
-              subjectСlosingDate: row.subjectСlosingDate,
-            })),
-          ),
-        );
-      })
-      .catch((err) => Notification(err.response.status, err.message));
+    try {
+      const res = await instance.get('Teachers/getSubjects');
+
+      dispatch(
+        setlistSubjects(
+          res.data.map((row) => ({
+            id: row.id,
+            key: row.id,
+            subjectName: row.subjectName,
+            isActive: row.isActive,
+            amountCredits: row.amountCredits,
+            subjectСlosingDate: row.subjectСlosingDate,
+          })),
+        ),
+      );
+    } catch (error) {
+      Notification(error.response.status, error.message);
+    }
   };
 };
-
 export const editeUser = (data) => {
   return async (dispatch) => {
-    await instance
-      .put(`Users/updateUser`, data)
-      .then((res) => {
-        dispatch(updateUser(data));
-      })
-      .catch((err) => Notification(err.response.status, err.message));
+    try {
+      await instance.put(`Users/updateUser`, data);
+      dispatch(updateUser(data));
+    } catch (error) {
+      Notification(error.response.status, error.message);
+    }
   };
 };
 
 export const createGroup = (model) => {
   return async (dispatch) => {
-    await instance
-      .post('Users/createGroup', model)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => Notification(err.response.status, err.message));
+    try {
+      const res = await instance.post('Users/createGroup', model);
+      dispatch(GetUsers(1, ''));
+      dispatch(GetGroups());
+    } catch (error) {
+      Notification(error.response.status, error.message);
+    }
   };
 };

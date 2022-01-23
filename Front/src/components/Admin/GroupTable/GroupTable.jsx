@@ -1,9 +1,16 @@
-import React from 'react';
-import { Table, Tag, Typography, Button } from 'antd';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { GetGroups } from '../../../Api/actionsAdmin';
+import { Table, Tag, Typography } from 'antd';
 import AddGroup from './AddGroup';
 
 const { Title } = Typography;
-const GroupTable = ({ isFetching, groups }) => {
+const GroupTable = (props) => {
+  useEffect(() => {
+    props.GetGroups();
+  }, []);
+  console.log(props.groups);
+
   const columns = [
     {
       title: 'Name group',
@@ -19,10 +26,10 @@ const GroupTable = ({ isFetching, groups }) => {
     //   dataIndex: 'age',
     //   sorter: false,
     // },
-    // {
-    //   title: 'Action',
-    //   key: 'operation',
-    // },
+    {
+      title: 'Action',
+      key: 'operation',
+    },
   ];
 
   const expandedRowRender = (userGroups) => {
@@ -63,8 +70,7 @@ const GroupTable = ({ isFetching, groups }) => {
       <Title level={4}>Список груп</Title>
       <AddGroup />
       <Table
-        loading={isFetching}
-        dataSource={groups}
+        dataSource={props.groups}
         pagination={false}
         columns={columns}
         expandable={{
@@ -76,4 +82,18 @@ const GroupTable = ({ isFetching, groups }) => {
   );
 };
 
-export default GroupTable;
+let mapStateToProps = (state) => {
+  return {
+    groups: state.AdminPage.groups,
+  };
+};
+
+let mapDispatchToProps = (dispatch) => {
+  return {
+    GetGroups: () => {
+      dispatch(GetGroups());
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(GroupTable);

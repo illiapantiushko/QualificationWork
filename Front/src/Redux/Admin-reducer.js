@@ -20,7 +20,7 @@ const AdminReducer = (state = initialState, action) => {
       return {
         ...state,
         users: action.payload.users,
-        usersTotalCount: action.totalCount,
+        usersTotalCount: action.payload.totalCount,
         isFetching: false,
       };
 

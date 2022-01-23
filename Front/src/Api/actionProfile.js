@@ -3,33 +3,33 @@ import { SetSubjects, SetSubjectDetails, SetUserInfo } from './../Redux/Profile-
 
 export const GetInfoCurrentUser = () => {
   return async (dispatch) => {
-    await instance
-      .get('Users/getCurrentUser')
-      .then((res) => {
-        dispatch(SetUserInfo(res.data));
-      })
-      .catch((err) => Notification(err.response.status, err.message));
+    try {
+      const res = await instance.get('Users/getCurrentUser');
+      dispatch(SetUserInfo(res.data));
+    } catch (error) {
+      Notification(error.response.status, error.message);
+    }
   };
 };
 
 export const GetSubjects = () => {
   return async (dispatch) => {
-    await instance
-      .get('Teachers/GetAllSubject')
-      .then((res) => {
-        dispatch(SetSubjects(res.data));
-      })
-      .catch((err) => Notification(err.response.status, err.message));
+    try {
+      const res = await instance.get('Teachers/GetAllSubject');
+      dispatch(SetSubjects(res.data));
+    } catch (error) {
+      Notification(error.response.status, error.message);
+    }
   };
 };
 
 export const GetSubjectDetails = (id) => {
   return async (dispatch) => {
-    await instance
-      .get(`Users/getTimeTableByUser?subjectId=${id}`)
-      .then((res) => {
-        dispatch(SetSubjectDetails(res.data));
-      })
-      .catch((err) => Notification(err.response.status, err.message));
+    try {
+      const res = await instance.get(`Users/getTimeTableByUser?subjectId=${id}`);
+      dispatch(SetSubjectDetails(res.data));
+    } catch (error) {
+      Notification(error.response.status, error.message);
+    }
   };
 };

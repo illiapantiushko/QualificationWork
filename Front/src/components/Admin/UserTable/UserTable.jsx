@@ -1,5 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { Table, Tag, Popover, Popconfirm, Typography, Avatar, Input, Row, Col } from 'antd';
+import {
+  Table,
+  Tag,
+  Popover,
+  Popconfirm,
+  Typography,
+  Avatar,
+  Input,
+  Row,
+  Col,
+  Pagination,
+} from 'antd';
+import './userTable.scss';
+
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
 import { connect } from 'react-redux';
 import { GetUsers, DeleteUser } from '../../../Api/actionsAdmin';
@@ -28,10 +41,6 @@ const UserTable = (props) => {
 
   const deleteRole = (id, roleId) => {
     props.deleteUserRole({ id: id, roleId: roleId });
-  };
-
-  const onChangeTable = (pagination, filters, sorter, extra) => {
-    setCurrentPage(pagination);
   };
 
   const columns = [
@@ -171,19 +180,23 @@ const UserTable = (props) => {
         loading={props.isFetching}
         dataSource={props.users}
         bordered
-        onChange={onChangeTable}
         scroll={{ x: 1200 }}
-        pagination={{
-          current: currentPage,
-          total: props.usersTotalCount,
-        }}
+        pagination={false}
         columns={columns}
         expandable={{
           expandedRowRender: (record) => expandedRowRender(record.userSubjects),
           rowExpandable: (record) => record.userSubjects?.length,
         }}
       />
-
+      <div className="clearfix mt-4 mb-4">
+        <Pagination
+          className="pagination"
+          current={currentPage}
+          pageSize={2}
+          total={props.usersTotalCount}
+          onChange={(e) => setCurrentPage(e)}
+        />
+      </div>
       <EditeUser data={userData} visible={modalEditeUser} handleEditUser={handleEditUser} />
     </div>
   );
