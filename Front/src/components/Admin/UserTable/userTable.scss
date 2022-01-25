@@ -1,12 +1,9 @@
 .pagination {
   float: right;
-  margin: 20px 5px;
+  margin: 20px;
   margin-bottom: 50px;
 }
 
-.hint-text {
-  float: left;
-  margin-top: 6px;
-  font-size: 95%;
-  color: rgba(94, 75, 75, 0.6);
+.pagination__container {
+  margin: 20px 0 20px 0;
 }

@@ -89,7 +89,7 @@ namespace QualificationWork.Api
             services.AddTransient<UserService>();
             services.AddTransient<SubjectService>();
             services.AddTransient<GroupService>();
-            services.AddTransient<CsvService>();
+            services.AddTransient<ExcelService>();
 
             services.AddTransient<DBInitializer>();
 

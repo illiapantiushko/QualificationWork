@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using QualificationWork.BL.Services;
+using QualificationWork.DAL.Models;
 using QualificationWork.DTO.Dtos;
 using System.Threading.Tasks;
 
@@ -8,7 +9,6 @@ namespace QualificationWork.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize]
     [Authorize(Roles = "Student")]
     public class StudentsController : ControllerBase
     {
@@ -54,10 +54,10 @@ namespace QualificationWork.Api.Controllers
             return Ok(data);
         }
 
-        [HttpGet("getAllGroup")]
-        public async Task<ActionResult> GetAllGroup()
+        [HttpGet("getAllGroups")]
+        public async Task<ActionResult> GetAllGroupsAsync(int pageNumber, int pageSize, string search)
         {
-            var data = await groupService.GetAllGroup();
+            var data = await groupService.GetAllGroups(pageNumber, pageSize, search);
             return Ok(data); 
         }
 

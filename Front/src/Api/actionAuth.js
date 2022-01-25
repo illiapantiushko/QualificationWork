@@ -1,5 +1,5 @@
 import { instance, Notification } from './api';
-import { SetAuthUserData } from './../Redux/Auth-reducer';
+import { setAuthUserData } from './../Redux/Auth-reducer';
 
 const setDataLocalStorage = (jwtToken, refreshToken, userName, roles) => {
   localStorage.setItem('token', jwtToken);
@@ -22,7 +22,7 @@ export const setUserData = (googleToken) => {
         res.data.userName,
         res.data.roles,
       );
-      dispatch(SetAuthUserData(res.data.userName, res.data.roles, true));
+      dispatch(setAuthUserData(res.data.userName, res.data.roles, true));
     } catch (error) {
       Notification(error.response.status, error.message);
     }

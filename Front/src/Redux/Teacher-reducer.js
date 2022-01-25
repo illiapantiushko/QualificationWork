@@ -34,7 +34,9 @@ const TeacherReducer = (state = initialState, action) => {
       };
     case DELETE_LESSON:
       return {
-        subjectLesons: [...state.subjectLesons.filter((lesson) => lesson.lessonNumber !== action.payload)],
+        subjectLesons: [
+          ...state.subjectLesons.filter((lesson) => lesson.lessonNumber !== action.payload),
+        ],
       };
     case SET_ATTENDANCE_LIST:
       return {
@@ -69,14 +71,14 @@ const TeacherReducer = (state = initialState, action) => {
   }
 };
 
-export const SetSubjects = (subjects) => {
+export const setSubjects = (subjects) => {
   return {
     type: SET_SUBJECTS,
     payload: subjects,
   };
 };
 
-export const SetSubjectLesons = (subjectLeson) => {
+export const setSubjectLesons = (subjectLeson) => {
   return {
     type: SET_SUBJECT_LESONS,
     payload: subjectLeson,
@@ -90,21 +92,21 @@ export const addNewLesson = (data) => {
   };
 };
 
-export const SetAttendanceList = (attendanceList) => {
+export const setAttendanceList = (attendanceList) => {
   return {
     type: SET_ATTENDANCE_LIST,
     payload: attendanceList,
   };
 };
 
-export const UpdateUserScore = (row) => {
+export const updateUserScore = (row) => {
   return {
     type: UPDATE_USER_SCORE,
     row,
   };
 };
 
-export const UpdateUserIsPresent = (row) => {
+export const updateUserIsPresent = (row) => {
   return {
     type: UPDATE_USER_IS_PRESENT,
     row,
@@ -113,7 +115,7 @@ export const UpdateUserIsPresent = (row) => {
 
 export const deleteLesson = (lessonNumber) => {
   return {
-    type:  DELETE_LESSON,
+    type: DELETE_LESSON,
     payload: lessonNumber,
   };
 };

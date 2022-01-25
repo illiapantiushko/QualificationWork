@@ -11,17 +11,16 @@ namespace QualificationWork.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize]
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     public class UsersController : ControllerBase
     {
         private readonly UserService userService;
-        private readonly CsvService csvService;
+        private readonly ExcelService excelService;
 
-        public UsersController(UserService userService, CsvService csvService)
+        public UsersController(UserService userService, ExcelService excelService)
         {
             this.userService = userService;
-            this.csvService = csvService;
+            this.excelService = excelService;
         }
 
         [HttpGet("getUsers")]
@@ -116,23 +115,15 @@ namespace QualificationWork.Api.Controllers
         [HttpPost("AddUsersFromExel")]
         public async Task<ActionResult> AddUsersFromExel([FromForm] ExelDto model)
         {
-            var data = await csvService.Import(model.file);
+            var data = await excelService.Import(model.file);
             await userService.AddRangeUsers(data);
             return Ok(data);
-        }
-
-        [HttpGet("exportSubjectsFromExel")]
-        public ActionResult ExportSubjectsFromExel()
-        {
-            var stream = csvService.ExportToExcel();
-            Response.ContentType = new MediaTypeHeaderValue("application/octet-stream").ToString();
-            return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "users.xlsx");  
         }
 
         [HttpGet("exportToExcelUserTimeTable")]
         public ActionResult ExportToExcelUserTimeTable(long subjectId)
         {
-            var stream = csvService.ExportToExcelUserTimeTable(subjectId);
+            var stream = excelService.ExportToExcelUserTimeTable(subjectId);
             Response.ContentType = new MediaTypeHeaderValue("application/octet-stream").ToString();
             return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "users.xlsx");
         }

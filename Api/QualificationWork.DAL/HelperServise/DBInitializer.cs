@@ -149,11 +149,6 @@ namespace QualificationWork.DAL.HelperServise
         //    }
         //}
 
-
-
-
-
-
         //public async Task CheckSubject()
         //{
         //    var subjects = await context.Subjects.ToListAsync();

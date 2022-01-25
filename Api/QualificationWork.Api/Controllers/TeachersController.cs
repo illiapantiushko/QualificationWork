@@ -11,7 +11,6 @@ namespace QualificationWork.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize]
     [Authorize(Roles = "Teacher")]
     public class TeachersController : ControllerBase
     {

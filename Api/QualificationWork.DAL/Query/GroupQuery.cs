@@ -36,14 +36,24 @@ namespace QualificationWork.DAL.Query
                           .ToList();
         }
 
-        public async Task<List<Group>> GetAllGroup()
+        public async Task<GroupsPagination> GetAllGroups(int pageNumber, int pageSize, string search)
         {
-            var data = await context.Groups
+            IQueryable<Group> groups = context.Groups;
+
+            if (!string.IsNullOrEmpty(search))
+            {
+                groups = groups.Where(e => e.GroupName.ToLower().Contains(search));
+            }
+
+            int totalCount = context.Groups.Count();
+
+            var response = await groups.Skip((pageNumber - 1) * pageSize)
+                                    .Take(pageSize)
                                     .Include(pub=>pub.Faculty)
                                     .Include(pub => pub.UserGroups)
                                     .ThenInclude(pub => pub.User)
                                     .ToListAsync();
-            return data;
+            return new GroupsPagination(totalCount, response);
         }
 
     }

@@ -1,22 +1,23 @@
 import { instance, Notification } from './api';
 import {
-  SetUsers,
-  SetGroups,
+  setUsers,
+  setGroups,
   addUser,
   addUsers,
   deleteUser,
-  setlistSubjects,
+  setListSubjects,
   updateUser,
+  deleteUserRole,
 } from './../Redux/Admin-reducer';
 
-export const GetUsers = (pageNumber = 1, search = '') => {
+export const getUsers = (pageNumber = 1, search = '') => {
   return async (dispatch) => {
     try {
       const res = await instance.get(
-        `Teachers/getAllUsersWithSubjests?pageNumber=${pageNumber}&pageSize=${2}&search=${search}`,
+        `Teachers/getAllUsersWithSubjests?pageNumber=${pageNumber}&pageSize=${4}&search=${search}`,
       );
       dispatch(
-        SetUsers(
+        setUsers(
           res.data.users.map((row) => ({
             id: row.id,
             key: row.id,
@@ -37,20 +38,22 @@ export const GetUsers = (pageNumber = 1, search = '') => {
   };
 };
 
-export const GetGroups = () => {
+export const getGroups = (pageNumber = 1, search = '') => {
   return async (dispatch) => {
     try {
-      const res = await instance.get('Students/getAllGroup');
-
+      const res = await instance.get(
+        `Students/getAllGroups?pageNumber=${pageNumber}&pageSize=${5}&search=${search}`,
+      );
       dispatch(
-        SetGroups(
-          res.data.map((row) => ({
+        setGroups(
+          res.data.groups.map((row) => ({
             id: row.id,
             key: row.id,
             name: row.groupName,
             userGroups: row.userGroups,
             faculty: row.faculty.facultyName,
           })),
+          res.data.totalCount,
         ),
       );
     } catch (error) {
@@ -59,7 +62,7 @@ export const GetGroups = () => {
   };
 };
 
-export const AddNewUser = (data) => {
+export const addNewUser = (data) => {
   return async (dispatch) => {
     try {
       await instance.post(`Users/createUser`, data);
@@ -78,7 +81,7 @@ export const AddNewUser = (data) => {
   };
 };
 
-export const DeleteUser = (id) => {
+export const deleteUserData = (id) => {
   return async (dispatch) => {
     try {
       await instance.delete(`Users/deleteUser?userId=${id}`);
@@ -89,7 +92,7 @@ export const DeleteUser = (id) => {
   };
 };
 
-export const AddNewUserFromExel = (file) => {
+export const addNewUserFromExel = (file) => {
   return async (dispatch) => {
     try {
       const res = await instance.post(`Users/AddUsersFromExel`, file, {
@@ -117,13 +120,13 @@ export const AddNewUserFromExel = (file) => {
   };
 };
 
-export const GetListSubjects = () => {
+export const getListSubjects = () => {
   return async (dispatch) => {
     try {
       const res = await instance.get('Teachers/getSubjects');
 
       dispatch(
-        setlistSubjects(
+        setListSubjects(
           res.data.map((row) => ({
             id: row.id,
             key: row.id,
@@ -154,8 +157,23 @@ export const createGroup = (model) => {
   return async (dispatch) => {
     try {
       const res = await instance.post('Users/createGroup', model);
-      dispatch(GetUsers(1, ''));
-      dispatch(GetGroups());
+      dispatch(getUsers(1, ''));
+      dispatch(getGroups());
+    } catch (error) {
+      Notification(error.response.status, error.message);
+    }
+  };
+};
+
+export const deleteRole = (data) => {
+  return async (dispatch) => {
+    try {
+      const requestData = {
+        userId: data.id,
+        roleName: data.role.name,
+      };
+      const res = await instance.post('Users/deleteRole', requestData);
+      dispatch(deleteUserRole({ id: data.id, roleId: data.role.id }));
     } catch (error) {
       Notification(error.response.status, error.message);
     }

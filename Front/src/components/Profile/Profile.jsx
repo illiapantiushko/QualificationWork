@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { GetSubjects, GetInfoCurrentUser } from '../../Api/actionProfile';
+import { getSubjects, getInfoCurrentUser } from '../../Api/actionProfile';
 import { Table, Tag } from 'antd';
 import { Link } from 'react-router-dom';
 import './Profile.scss';
@@ -72,10 +72,10 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
   return {
     GetSubjects: () => {
-      dispatch(GetSubjects());
+      dispatch(getSubjects());
     },
     GetInfoCurrentUser: () => {
-      dispatch(GetInfoCurrentUser());
+      dispatch(getInfoCurrentUser());
     },
   };
 };

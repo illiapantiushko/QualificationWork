@@ -12,10 +12,9 @@ import {
   Pagination,
 } from 'antd';
 import './userTable.scss';
-
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
 import { connect } from 'react-redux';
-import { GetUsers, DeleteUser } from '../../../Api/actionsAdmin';
+import { getUsers, deleteUserData, deleteRole } from '../../../Api/actionsAdmin';
 import EditeUser from './EditeUser';
 import AddUser from './AddUser';
 
@@ -39,8 +38,8 @@ const UserTable = (props) => {
     !modalEditeUser ? setModalEditeUser(true) : setModalEditeUser(false);
   };
 
-  const deleteRole = (id, roleId) => {
-    props.deleteUserRole({ id: id, roleId: roleId });
+  const deleteRole = (id, role) => {
+    props.deleteRole({ id, role });
   };
 
   const columns = [
@@ -93,7 +92,7 @@ const UserTable = (props) => {
                   <a
                     href="#"
                     className="icon delete"
-                    onClick={() => deleteRole(record.id, user.role.id)}>
+                    onClick={() => deleteRole(record.id, user.role)}>
                     <DeleteOutlined />
                   </a>
                 </td>
@@ -188,11 +187,11 @@ const UserTable = (props) => {
           rowExpandable: (record) => record.userSubjects?.length,
         }}
       />
-      <div className="clearfix mt-4 mb-4">
+      <div className="pagination__container mt-4 mb-4">
         <Pagination
           className="pagination"
           current={currentPage}
-          pageSize={2}
+          pageSize={4}
           total={props.usersTotalCount}
           onChange={(e) => setCurrentPage(e)}
         />
@@ -212,10 +211,13 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
   return {
     GetUsers: (pageNumber, search) => {
-      dispatch(GetUsers(pageNumber, search));
+      dispatch(getUsers(pageNumber, search));
     },
     DeleteUser: (id) => {
-      dispatch(DeleteUser(id));
+      dispatch(deleteUserData(id));
+    },
+    deleteRole: (data) => {
+      dispatch(deleteRole(data));
     },
   };
 };

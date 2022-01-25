@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { GetSubjects } from '../../Api/actionsTeacher';
-import LineChart from './LineChart';
+import { getSubjects } from '../../Api/actionsTeacher';
 import SubjectTable from './SubjectTable';
 
 const TeacherPanel = (props) => {
@@ -27,7 +26,7 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
   return {
     GetSubjects: () => {
-      dispatch(GetSubjects());
+      dispatch(getSubjects());
     },
   };
 };

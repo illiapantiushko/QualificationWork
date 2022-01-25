@@ -52,7 +52,6 @@ namespace QualificationWork.BL.Services
         public async Task<UsersPagination> GetAllUsersWithSubjests(int pageNumber, int pageSize, string search)
         {
             return await subjectQuery.GetAllUsersWithSubjests(pageNumber,pageSize,search);
-
         }
 
         public async Task<List<ApplicationUser>> GetAllTeacherFaculty(long facultyId)

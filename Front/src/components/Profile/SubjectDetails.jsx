@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { GetSubjectDetails } from '../../Api/actionProfile';
+import { getSubjectDetails } from '../../Api/actionProfile';
 import { Table, Tag, Typography, Row, Col, Card } from 'antd';
 import { useParams } from 'react-router-dom';
 import DoughnutChart from './DoughnutChart';
@@ -52,7 +52,7 @@ const SubjectDetails = (props) => {
     <div className="wraper">
       <Title level={4}>Таблиця відуваності</Title>
       <Table dataSource={props.subjectDetails} bordered pagination={false} columns={columns} />
-      <Row align="middle">
+      {/* <Row align="middle">
         <Col xs={24} md={16}>
           <Card bordered={false} bodyStyle={{ padding: '0 20px 20px' }}>
             <LineChart />
@@ -63,7 +63,7 @@ const SubjectDetails = (props) => {
             <DoughnutChart timeTable={props.subjectDetails} />
           </Card>
         </Col>
-      </Row>
+      </Row> */}
     </div>
   );
 };
@@ -77,7 +77,7 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
   return {
     GetSubjectDetails: (id) => {
-      dispatch(GetSubjectDetails(id));
+      dispatch(getSubjectDetails(id));
     },
   };
 };

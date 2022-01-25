@@ -33,21 +33,21 @@ const ProfileReducer = (state = initialState, action) => {
   }
 };
 
-export const SetSubjects = (users) => {
+export const setSubjects = (users) => {
   return {
     type: SET_SUBJECTS,
     payload: users,
   };
 };
 
-export const SetUserInfo = (userInfo) => {
+export const setUserInfo = (userInfo) => {
   return {
     type: SET_USER_INFO,
     payload: userInfo,
   };
 };
 
-export const SetSubjectDetails = (data) => {
+export const setSubjectDetails = (data) => {
   return {
     type: SET_SUBJECT_DETAILS,
     payload: data,

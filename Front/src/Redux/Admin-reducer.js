@@ -11,6 +11,7 @@ let initialState = {
   users: [],
   usersTotalCount: null,
   groups: [],
+  groupsTotalCount: null,
   subjects: [],
 };
 
@@ -27,7 +28,8 @@ const AdminReducer = (state = initialState, action) => {
     case SET_GROUPS:
       return {
         ...state,
-        groups: action.payload,
+        groups: action.payload.groups,
+        groupsTotalCount: action.payload.totalCount,
         isFetching: false,
       };
     case ADD_USER:
@@ -62,10 +64,10 @@ const AdminReducer = (state = initialState, action) => {
 
     case DELETE_USER_ROLE:
       const deleteUserRole = state.users.map((item) => {
-        if (item.id === action.row.id) {
+        if (item.id === action.data.id) {
           return {
             ...item,
-            userRoles: [...item.userRoles.filter((role) => role.id !== action.row.roleId)],
+            userRoles: [...item.userRoles.filter((i) => i.role.id !== action.data.roleId)],
           };
         }
         return item;
@@ -82,17 +84,17 @@ const AdminReducer = (state = initialState, action) => {
   }
 };
 
-export const SetUsers = (users, totalCount) => {
+export const setUsers = (users, totalCount) => {
   return {
     type: SET_USERS,
     payload: { users, totalCount },
   };
 };
 
-export const SetGroups = (groups) => {
+export const setGroups = (groups, totalCount) => {
   return {
     type: SET_GROUPS,
-    payload: groups,
+    payload: { groups, totalCount },
   };
 };
 
@@ -124,14 +126,14 @@ export const deleteUser = (id) => {
   };
 };
 
-export const deleteUserRole = (row) => {
+export const deleteUserRole = (data) => {
   return {
     type: DELETE_USER_ROLE,
-    row,
+    data,
   };
 };
 
-export const setlistSubjects = (subjects) => {
+export const setListSubjects = (subjects) => {
   return {
     type: ADD_LIST_SUBJECTS,
     payload: subjects,

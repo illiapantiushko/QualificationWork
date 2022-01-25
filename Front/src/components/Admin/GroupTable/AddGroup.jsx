@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { GetListSubjects, createGroup, GetUsers, GetGroups } from '../../../Api/actionsAdmin';
+import { getListSubjects, createGroup, getUsers, getGroups } from '../../../Api/actionsAdmin';
 import { connect } from 'react-redux';
 import { Typography, Modal, Form, Button, Input, Select, Table, Row, Col } from 'antd';
 
@@ -163,16 +163,16 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
   return {
     GetListSubjects: () => {
-      dispatch(GetListSubjects());
+      dispatch(getListSubjects());
     },
     createGroup: (model) => {
       dispatch(createGroup(model));
     },
     GetUsers: (pageNumber, search) => {
-      dispatch(GetUsers(pageNumber, search));
+      dispatch(getUsers(pageNumber, search));
     },
     GetGroups: () => {
-      dispatch(GetGroups());
+      dispatch(getGroups());
     },
   };
 };

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { GetSubjectLesons, removeLesson } from '../../Api/actionsTeacher';
+import { getSubjectLesons, removeLesson } from '../../Api/actionsTeacher';
 import { Table, Button, Typography, Popconfirm } from 'antd';
 import AttendanceTable from './AttendanceTable';
 import AddLesonForm from './AddLesonForm';
@@ -80,7 +80,7 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
   return {
     GetSubjectLesons: (id) => {
-      dispatch(GetSubjectLesons(id));
+      dispatch(getSubjectLesons(id));
     },
     removeLesson: (lessonNumber, subjectId) => {
       dispatch(removeLesson(lessonNumber, subjectId));

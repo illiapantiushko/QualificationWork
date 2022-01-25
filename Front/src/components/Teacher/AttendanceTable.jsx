@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import 'antd/dist/antd.css';
 import { Table, Typography, Switch } from 'antd';
 import { connect } from 'react-redux';
-import { GetAttendanceList, SetNewUserScore, SetNewUserIsPresent } from '../../Api/actionsTeacher';
+import { getAttendanceList, setNewUserScore, setNewUserIsPresent } from '../../Api/actionsTeacher';
 import { EditableRow, EditableCell } from './EditableCell';
 import { DeleteOutlined } from '@ant-design/icons';
 
@@ -88,13 +88,13 @@ let mapStateToProps = (state) => {
 let mapDispatchToProps = (dispatch) => {
   return {
     GetAttendanceList: (id, namberleson) => {
-      dispatch(GetAttendanceList(id, namberleson));
+      dispatch(getAttendanceList(id, namberleson));
     },
     SetNewUserScore: (row) => {
-      dispatch(SetNewUserScore(row));
+      dispatch(setNewUserScore(row));
     },
     SetNewUserIsPresent: (id, isPresent) => {
-      dispatch(SetNewUserIsPresent(id, isPresent));
+      dispatch(setNewUserIsPresent(id, isPresent));
     },
   };
 };

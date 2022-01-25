@@ -108,19 +108,45 @@ namespace QualificationWork.DAL.Command
 
         public async Task AddSubject(long userId, long subjectId)
         {
-            var data = new UserSubject
+            var filterTimeTables = new List<TimeTable>();
+
+            var timeTables = await context.TimeTable.Where(x => x.UserSubject.Subject.Id == subjectId).ToListAsync();
+
+            foreach (var item in timeTables)
+            {
+                var leson = filterTimeTables.FirstOrDefault(x => x.LessonNumber == item.LessonNumber);
+
+                if (leson == null) { filterTimeTables.Add(item); }
+            }
+
+            var userSubject = new UserSubject
             {
                 UserId = userId,
                 SubjectId = subjectId
             };
 
-            var check = context.UserSubjects.FirstOrDefault(w => w.UserId == userId && w.SubjectId == subjectId);
+            var check = await context.UserSubjects.FirstOrDefaultAsync(w => w.UserId == userId && w.SubjectId == subjectId);
 
             if (check == null)
             {
-                await context.AddAsync(data);
+                if (filterTimeTables != null)
+                {
+                    foreach (var item in filterTimeTables)
+                    {
+                        var timeTable = new TimeTable
+                        {
+                            LessonNumber = item.LessonNumber,
+                            LessonDate = item.LessonDate,
+                            IsPresent = false,
+                            Score = 0,
+                        };
+
+                        userSubject.TimeTable.Add(timeTable);
+                    };
+                }
+
+                await context.AddAsync(userSubject);
             }
-          
         }
 
         public async Task AddGroup(long userId, long groupId)

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { AddLesson, getSubjectReport } from '../../Api/actionsTeacher';
+import { addLesson, getSubjectReport } from '../../Api/actionsTeacher';
 import { Button } from 'antd';
 import { Row, Col, Form, DatePicker, InputNumber } from 'antd';
 import './teacherPanel.scss';
@@ -43,7 +43,7 @@ const AddLesonForm = (props) => {
           </Form>
         </Col>
         <Col span={5}>
-          <Button onClick={downloadReport}>Сформувати звіт</Button>
+          <Button onClick={downloadReport}>Сформувати звіт за предметом</Button>
         </Col>
       </Row>
     </div>
@@ -53,7 +53,7 @@ const AddLesonForm = (props) => {
 let mapDispatchToProps = (dispatch) => {
   return {
     AddLesson: (data) => {
-      dispatch(AddLesson(data));
+      dispatch(addLesson(data));
     },
     getSubjectReport: (subjectId) => {
       dispatch(getSubjectReport(subjectId));

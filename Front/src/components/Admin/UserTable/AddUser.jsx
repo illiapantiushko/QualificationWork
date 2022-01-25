@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AddNewUser, AddNewUserFromExel } from '../../../Api/actionsAdmin';
+import { addNewUser, addNewUserFromExel } from '../../../Api/actionsAdmin';
 import { connect } from 'react-redux';
 import { Modal, Form, Button, Input, Select, Upload, message } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
@@ -91,10 +91,10 @@ const AddUser = (props) => {
 let mapDispatchToProps = (dispatch) => {
   return {
     AddNewUser: (data) => {
-      dispatch(AddNewUser(data));
+      dispatch(addNewUser(data));
     },
     AddNewUserFromExel: (file) => {
-      dispatch(AddNewUserFromExel(file));
+      dispatch(addNewUserFromExel(file));
     },
   };
 };

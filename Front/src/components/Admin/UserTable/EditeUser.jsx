@@ -2,7 +2,6 @@ import React from 'react';
 import { editeUser } from '../../../Api/actionsAdmin';
 import { connect } from 'react-redux';
 import { Modal, Form, Button, Input, Select } from 'antd';
-import { updateUser } from './../../../Redux/Admin-reducer';
 
 const EditeUser = (props) => {
   const [form] = Form.useForm();

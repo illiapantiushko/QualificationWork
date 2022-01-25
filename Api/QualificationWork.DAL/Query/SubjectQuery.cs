@@ -26,21 +26,6 @@ namespace QualificationWork.DAL.Query
             return data;
         }
 
-        public class UsersPagination {
-
-            public int TotalCount { get; set; }
-
-            public List<ApplicationUser> Users { get; set; }
-
-            public UsersPagination(int totalCount, List<ApplicationUser> users)
-            {
-                this.TotalCount = totalCount;
-                this.Users = users;
-            }
-        }
-
-        // вивести всі предмети де числиться певний студент
-        // вивести всі предмети для певного викладача
         public async Task<UsersPagination> GetAllUsersWithSubjests(int pageNumber, int pageSize, string search)
         {
             IQueryable<ApplicationUser> users = context.Users;

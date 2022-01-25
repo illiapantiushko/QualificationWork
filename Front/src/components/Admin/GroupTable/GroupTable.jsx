@@ -1,15 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { GetGroups } from '../../../Api/actionsAdmin';
-import { Table, Tag, Typography } from 'antd';
+import { getGroups } from '../../../Api/actionsAdmin';
+import { Table, Tag, Typography, Row, Col, Pagination, Input } from 'antd';
 import AddGroup from './AddGroup';
 
 const { Title } = Typography;
+const { Search } = Input;
+
 const GroupTable = (props) => {
+  const [search, setSearch] = useState(' ');
+  const [currentPage, setCurrentPage] = useState(1);
+
   useEffect(() => {
-    props.GetGroups();
-  }, []);
-  console.log(props.groups);
+    props.GetGroups(currentPage, search);
+  }, [currentPage, search]);
 
   const columns = [
     {
@@ -20,12 +24,6 @@ const GroupTable = (props) => {
       title: 'Faculty',
       dataIndex: 'faculty',
     },
-
-    // {
-    //   title: 'Age',
-    //   dataIndex: 'age',
-    //   sorter: false,
-    // },
     {
       title: 'Action',
       key: 'operation',
@@ -68,7 +66,14 @@ const GroupTable = (props) => {
   return (
     <div>
       <Title level={4}>Список груп</Title>
-      <AddGroup />
+      <Row align="middle">
+        <Col span={19}>
+          <AddGroup />
+        </Col>
+        <Col span={4}>
+          <Search placeholder="Search..." onChange={(e) => setSearch(e.target.value)} />
+        </Col>
+      </Row>
       <Table
         dataSource={props.groups}
         pagination={false}
@@ -78,6 +83,15 @@ const GroupTable = (props) => {
           rowExpandable: (record) => record.userGroups.length,
         }}
       />
+      <div className="pagination__container mt-4 mb-4">
+        <Pagination
+          className="pagination"
+          current={currentPage}
+          pageSize={4}
+          total={props.groupsTotalCount}
+          onChange={(e) => setCurrentPage(e)}
+        />
+      </div>
     </div>
   );
 };
@@ -85,13 +99,14 @@ const GroupTable = (props) => {
 let mapStateToProps = (state) => {
   return {
     groups: state.AdminPage.groups,
+    groupsTotalCount: state.AdminPage.groupsTotalCount,
   };
 };
 
 let mapDispatchToProps = (dispatch) => {
   return {
-    GetGroups: () => {
-      dispatch(GetGroups());
+    GetGroups: (pageNumber, search) => {
+      dispatch(getGroups(pageNumber, search));
     },
   };
 };

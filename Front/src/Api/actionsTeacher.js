@@ -1,22 +1,21 @@
 import { instance, Notification } from './api';
-
 import {
-  SetSubjects,
-  SetSubjectLesons,
-  SetAttendanceList,
-  UpdateUserScore,
-  UpdateUserIsPresent,
+  setSubjects,
+  setSubjectLesons,
+  setAttendanceList,
+  updateUserScore,
+  updateUserIsPresent,
   addNewLesson,
   deleteLesson,
 } from './../Redux/Teacher-reducer';
 
-export const GetSubjects = () => {
+export const getSubjects = () => {
   return async (dispatch) => {
     try {
       const res = await instance.get('Users/getAllTeacherSubject');
 
       dispatch(
-        SetSubjects(
+        setSubjects(
           res.data.map((row) => ({
             id: row.id,
             key: row.id,
@@ -34,13 +33,13 @@ export const GetSubjects = () => {
   };
 };
 
-export const GetSubjectLesons = (id) => {
+export const getSubjectLesons = (id) => {
   return async (dispatch) => {
     try {
       const res = await instance.get(`Users/GetSubjectTopic?subjectId=${id}`);
 
       dispatch(
-        SetSubjectLesons(
+        setSubjectLesons(
           res.data.map((row) => ({
             id: row.id,
             key: row.id,
@@ -55,7 +54,7 @@ export const GetSubjectLesons = (id) => {
   };
 };
 
-export const GetAttendanceList = (id, namberleson) => {
+export const getAttendanceList = (id, namberleson) => {
   return async (dispatch) => {
     try {
       const res = await instance.get(
@@ -63,7 +62,7 @@ export const GetAttendanceList = (id, namberleson) => {
       );
 
       dispatch(
-        SetAttendanceList(
+        setAttendanceList(
           res.data.map((row) => ({
             id: row.id,
             key: row.id,
@@ -80,31 +79,31 @@ export const GetAttendanceList = (id, namberleson) => {
   };
 };
 
-export const SetNewUserScore = (row) => {
+export const setNewUserScore = (row) => {
   return async (dispatch) => {
     try {
       const res = await instance.put(`Users/updateUserScore`, { id: row.id, score: row.score });
 
-      dispatch(UpdateUserScore(row));
+      dispatch(updateUserScore(row));
     } catch (error) {
       Notification(error.response.status, error.message);
     }
   };
 };
 
-export const SetNewUserIsPresent = (id, isPresent) => {
+export const setNewUserIsPresent = (id, isPresent) => {
   return async (dispatch) => {
     try {
       const res = await instance.put(`Users/updateUserIsPresent`, { id, isPresent });
 
-      dispatch(UpdateUserIsPresent({ id, isPresent }));
+      dispatch(updateUserIsPresent({ id, isPresent }));
     } catch (error) {
       Notification(error.response.status, error.message);
     }
   };
 };
 
-export const AddLesson = (data) => {
+export const addLesson = (data) => {
   return async (dispatch) => {
     try {
       const res = await instance.post(`Teachers/addLesson`, data);
@@ -139,14 +138,12 @@ export const getSubjectReport = (subjectId) => {
   return async (dispatch) => {
     try {
       const res = await instance.get(`Users/exportToExcelUserTimeTable?subjectId=${subjectId}`, {
-        headers: {
-          'Content-Type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-        },
+        responseType: 'arraybuffer',
       });
       const url = window.URL.createObjectURL(new Blob([res.data]));
       const link = document.createElement('a');
       link.href = url;
-      link.setAttribute('download', `file.xlsx`);
+      link.setAttribute('download', `Звіт.xlsx`);
       document.body.appendChild(link);
       link.click();
     } catch (error) {

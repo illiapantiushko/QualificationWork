@@ -60,10 +60,10 @@ namespace QualificationWork.BL.Services
             return groupQuery.GetSpecialtys();
         }
 
-        public async Task<List<Group>> GetAllGroup()
+        public async Task<GroupsPagination> GetAllGroups(int pageNumber, int pageSize, string search)
         {
 
-            return await groupQuery.GetAllGroup();
+            return await groupQuery.GetAllGroups(pageNumber, pageSize, search);
         }
 
 

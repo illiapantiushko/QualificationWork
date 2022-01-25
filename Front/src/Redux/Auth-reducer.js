@@ -26,14 +26,14 @@ const AuthReducer = (state = initialState, action) => {
   }
 };
 
-export const SetAuthUserData = (name, role, isAuth) => {
+export const setAuthUserData = (name, role, isAuth) => {
   return {
     type: SET_USER_DATA,
     payload: { name, role, isAuth },
   };
 };
 
-export const Logout = (name, role, isAuth) => {
+export const logout = (name, role, isAuth) => {
   return {
     type: LOGOUT,
     payload: { name, role, isAuth },

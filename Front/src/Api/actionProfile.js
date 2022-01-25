@@ -1,33 +1,33 @@
 import { instance, Notification } from './api';
-import { SetSubjects, SetSubjectDetails, SetUserInfo } from './../Redux/Profile-reducer';
+import { setSubjects, setSubjectDetails, setUserInfo } from './../Redux/Profile-reducer';
 
-export const GetInfoCurrentUser = () => {
+export const getInfoCurrentUser = () => {
   return async (dispatch) => {
     try {
       const res = await instance.get('Users/getCurrentUser');
-      dispatch(SetUserInfo(res.data));
+      dispatch(setUserInfo(res.data));
     } catch (error) {
       Notification(error.response.status, error.message);
     }
   };
 };
 
-export const GetSubjects = () => {
+export const getSubjects = () => {
   return async (dispatch) => {
     try {
       const res = await instance.get('Teachers/GetAllSubject');
-      dispatch(SetSubjects(res.data));
+      dispatch(setSubjects(res.data));
     } catch (error) {
       Notification(error.response.status, error.message);
     }
   };
 };
 
-export const GetSubjectDetails = (id) => {
+export const getSubjectDetails = (id) => {
   return async (dispatch) => {
     try {
       const res = await instance.get(`Users/getTimeTableByUser?subjectId=${id}`);
-      dispatch(SetSubjectDetails(res.data));
+      dispatch(setSubjectDetails(res.data));
     } catch (error) {
       Notification(error.response.status, error.message);
     }
