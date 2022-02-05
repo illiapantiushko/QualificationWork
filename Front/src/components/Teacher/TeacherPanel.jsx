@@ -1,34 +1,19 @@
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
-import { getSubjects } from '../../Api/actionsTeacher';
+import React from 'react';
 import SubjectTable from './SubjectTable';
+import { Layout } from 'antd';
 
+const { Content } = Layout;
 const TeacherPanel = (props) => {
-  useEffect(() => {
-    props.GetSubjects();
-  }, []);
-
   return (
-    <div className="wraper">
+    <Content
+      className="site-layout-background"
+      style={{
+        padding: 30,
+        minHeight: 280,
+      }}>
       <SubjectTable subjects={props.subjects} />
-      {/* <LineChart /> */}
-    </div>
+    </Content>
   );
 };
 
-let mapStateToProps = (state) => {
-  return {
-    subjects: state.TeacherPage.subjects,
-    isFetching: state.TeacherPage.isFetching,
-  };
-};
-
-let mapDispatchToProps = (dispatch) => {
-  return {
-    GetSubjects: () => {
-      dispatch(getSubjects());
-    },
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(TeacherPanel);
+export default TeacherPanel;

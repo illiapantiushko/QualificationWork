@@ -1,7 +1,7 @@
+import React, { useState } from 'react';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Login from './components/Login/Login';
-import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
 import { useSelector } from 'react-redux';
 import AdminPanel from './components/Admin/AdminPanel';
@@ -10,47 +10,73 @@ import TeacherPrivateRoute from './Utils/TeacherPrivateRoute.route';
 import TeacherPanel from './components/Teacher/TeacherPanel';
 import TableSubjectLessons from './components/Teacher/TableSubjectLessons';
 import SubjectDetails from './components/Profile/SubjectDetails';
+import { Layout } from 'antd';
+import NavBar from './components/Layout/NavBar';
+import SideBar from './components/Layout/SideBar';
+import Main from './components/Profile/Main';
+const { Footer } = Layout;
 
 const App = () => {
+  const [state, setState] = useState({
+    collapsed: true,
+  });
+
+  const toggle = () => {
+    setState({
+      collapsed: !state.collapsed,
+    });
+  };
+
   const roles = useSelector((state) => state.Auth.roles);
   return (
-    <div className="App">
-      <Navbar />
+    <>
+      <Layout>
+        <NavBar state={state} toggle={toggle}></NavBar>
+        <Layout style={{ backgroundColor: '#fff' }}>
+          <SideBar state={state}></SideBar>
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/" element={<Main />} />
 
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Profile />} />
+            <Route path="/subjectDetails/:id" element={<SubjectDetails />} />
 
-        <Route path="/subjectDetails/:id" element={<SubjectDetails />} />
+            <Route
+              path="/teacher"
+              element={
+                <TeacherPrivateRoute roles={roles}>
+                  <TeacherPanel />
+                </TeacherPrivateRoute>
+              }
+            />
 
-        <Route
-          path="/teacher"
-          element={
-            <TeacherPrivateRoute roles={roles}>
-              <TeacherPanel />
-            </TeacherPrivateRoute>
-          }
-        />
+            <Route
+              path="/AttendanceSubject/:id"
+              element={
+                <TeacherPrivateRoute roles={roles}>
+                  <TableSubjectLessons />
+                </TeacherPrivateRoute>
+              }
+            />
 
-        <Route
-          path="/AttendanceSubject/:id"
-          element={
-            <TeacherPrivateRoute roles={roles}>
-              <TableSubjectLessons />
-            </TeacherPrivateRoute>
-          }
-        />
-
-        <Route
-          path="/admin"
-          element={
-            <AdminPrivateRoute roles={roles}>
-              <AdminPanel />
-            </AdminPrivateRoute>
-          }
-        />
-      </Routes>
-    </div>
+            <Route
+              path="/admin"
+              element={
+                <AdminPrivateRoute roles={roles}>
+                  <AdminPanel />
+                </AdminPrivateRoute>
+              }
+            />
+          </Routes>
+        </Layout>
+        <Footer
+          style={{
+            textAlign: 'center',
+            backgroundColor: '#0d0f1a;',
+          }}>
+          ©2022 Створено студентами Нау ОА
+        </Footer>
+      </Layout>
+    </>
   );
 };
 

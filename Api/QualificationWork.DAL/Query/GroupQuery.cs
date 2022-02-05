@@ -30,6 +30,27 @@ namespace QualificationWork.DAL.Query
                           .ToList();
         }
 
+
+        public async Task<List<TimeTable>> GetTimeTableByUser(long userId)
+        {
+            var response = await context.TimeTable.Where(x => x.UserSubject.UserId == userId)
+                                                  .Include(x => x.UserSubject)
+                                                  .ThenInclude(x => x.Subject)
+                                                  .ToListAsync();
+            return response;
+
+        }
+
+        public async Task<List<TimeTable>> GetTimeTableBySubject(long subjectId)
+        {
+            var response = await context.TimeTable.Where(x => x.UserSubject.SubjectId == subjectId)
+                                                  .Include(x => x.UserSubject)
+                                                  .ThenInclude(x => x.User)
+                                                  .ToListAsync();
+            return response;
+
+        }
+
         public List<Specialty> GetSpecialtys()
         {
             return context.Specialtys

@@ -11,8 +11,6 @@ const Login = (props) => {
 
   const responseGoogle = (res) => {
     props.SetUserData(res.tokenId);
-    console.log(res);
-
     navigate('/');
   };
 

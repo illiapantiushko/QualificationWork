@@ -1,0 +1,41 @@
+/* @import url(./constants.css); */
+/* #components-layout-demo-custom-trigger .trigger {
+  padding: 0 24px;
+  font-size: 18px;
+  line-height: 64px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+#components-layout-demo-custom-trigger .trigger:hover {
+  color: #1890ff;
+}
+#components-layout-demo-custom-trigger .logo {
+  height: 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.3);
+} */
+.site-layout .site-layout-background {
+  background: var(--color-white);
+}
+.triger-header {
+  padding: 3px;
+  font-size: 20px;
+  color: var(--color-green) !important;
+}
+.ant-page-header-heading-title {
+  color: var(--color-white) !important;
+  font-size: 16 !important;
+}
+.ant-page-header-heading .ant-avatar {
+  margin-right: 22px !important;
+}
+.ant-avatar {
+  padding: 3px;
+  width: 45px !important;
+  height: 45px !important;
+  border: 2px solid var(--color-green);
+}
+.site-page-header {
+  background-color: var(--color-blue-dark) !important;
+}

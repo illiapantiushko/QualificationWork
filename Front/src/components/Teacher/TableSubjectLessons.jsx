@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getSubjectLesons, removeLesson } from '../../Api/actionsTeacher';
-import { Table, Button, Typography, Popconfirm } from 'antd';
+import { Table, Button, Typography, Popconfirm, Layout } from 'antd';
 import AttendanceTable from './AttendanceTable';
 import AddLesonForm from './AddLesonForm';
 import { DeleteOutlined } from '@ant-design/icons';
 
 const { Title } = Typography;
+const { Content } = Layout;
 
 const TableSubjectLessons = (props) => {
   const { id } = useParams();
@@ -59,14 +60,19 @@ const TableSubjectLessons = (props) => {
   ];
 
   return (
-    <div className="wraper">
+    <Content
+      className="site-layout-background"
+      style={{
+        padding: 30,
+        minHeight: 280,
+      }}>
       <Title level={4}> Компютерні мережі</Title>
       <AddLesonForm subjetId={id} />
       <Table dataSource={props.subjectLesons} bordered pagination={false} columns={columns} />
       {!balTable.visible ? null : (
         <AttendanceTable subjectId={id} namberleson={balTable.namberleson} />
       )}
-    </div>
+    </Content>
   );
 };
 

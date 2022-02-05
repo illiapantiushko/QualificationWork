@@ -44,7 +44,7 @@ namespace QualificationWork.DAL.Query
         }
 
         ////вивести всі предмети викладача та студентів які належать до предмета
-        public async Task<List<Subject>> GetAllTeacherSubject()
+        public async Task<List<Subject>> GetAllTeacherSubject( long userId)
         {
             //var teacher = context.Roles.FirstOrDefault(p => p.Name == UserRoles.Teacher);
 
@@ -55,6 +55,7 @@ namespace QualificationWork.DAL.Query
             //    .Where(x => x.UserId == userId)
             //    .ToListAsync();
             var response = await context.Subjects
+                                         .Where(x => x.UserSubjects.Any(y => y.UserId == userId))
                                          .Include(x => x.UserSubjects)
                                          .ThenInclude(x => x.User)
                                          .ToListAsync();

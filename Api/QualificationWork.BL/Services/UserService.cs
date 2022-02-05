@@ -95,15 +95,15 @@ namespace QualificationWork.BL.Services
             context.SaveChanges();
         }
 
-        public async Task AddRangeUsers(List<UserDto> model)
+        public async Task AddRangeUsers(List<UserFromExcelDto> model)
         {
            await userCommand.AddRangeUsers(model);
            await context.SaveChangesAsync();
         }
 
-        public async Task<List<Subject>> GetAllTeacherSubject()
+        public async Task<List<Subject>> GetAllTeacherSubject(long userId)
         {
-            return await userQuery.GetAllTeacherSubject();
+            return await userQuery.GetAllTeacherSubject(userId);
         }
 
         public async Task<List<ApplicationUser>> GetUsersTimeTable(long subjectId, int namberleson)

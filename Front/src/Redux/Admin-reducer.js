@@ -10,8 +10,10 @@ const DELETE_USER_ROLE = 'DELETE_USER_ROLE';
 let initialState = {
   users: [],
   usersTotalCount: null,
+  isFetchingUsers: true,
   groups: [],
   groupsTotalCount: null,
+  isFetchingGroups: true,
   subjects: [],
 };
 
@@ -22,7 +24,7 @@ const AdminReducer = (state = initialState, action) => {
         ...state,
         users: action.payload.users,
         usersTotalCount: action.payload.totalCount,
-        isFetching: false,
+        isFetchingUsers: false,
       };
 
     case SET_GROUPS:
@@ -30,7 +32,7 @@ const AdminReducer = (state = initialState, action) => {
         ...state,
         groups: action.payload.groups,
         groupsTotalCount: action.payload.totalCount,
-        isFetching: false,
+        isFetchingGroups: false,
       };
     case ADD_USER:
       return {

@@ -33,3 +33,21 @@ export const getSubjectDetails = (id) => {
     }
   };
 };
+
+export const getUserReport = (userId) => {
+  return async (dispatch) => {
+    try {
+      const res = await instance.get(`Users/exportToExcelByUser`, {
+        responseType: 'arraybuffer',
+      });
+      const url = window.URL.createObjectURL(new Blob([res.data]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', `Звіт.xlsx`);
+      document.body.appendChild(link);
+      link.click();
+    } catch (error) {
+      Notification(error.response.status, error.message);
+    }
+  };
+};

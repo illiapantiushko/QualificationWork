@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { addNewUser, addNewUserFromExel } from '../../../Api/actionsAdmin';
 import { connect } from 'react-redux';
-import { Modal, Form, Button, Input, Select, Upload, message } from 'antd';
+import { Modal, Form, Button, Checkbox, Input, Select, Upload, message } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 
 const AddUser = (props) => {
@@ -20,9 +20,14 @@ const AddUser = (props) => {
     setIsModalVisible(false);
   };
 
-  const onFinish = (data) => {
-    props.AddNewUser(data);
+  const onChange = (checkedValues) => {
+    console.log('checked = ', checkedValues);
+  };
 
+  const onFinish = (data) => {
+    // props.AddNewUser(data);
+
+    console.log(data);
     form.resetFields();
     setIsModalVisible(false);
   };
@@ -69,7 +74,6 @@ const AddUser = (props) => {
           <Form.Item name="userName" rules={[{ required: true }]}>
             <Input placeholder="Name" />
           </Form.Item>
-
           <Form.Item name="userEmail" rules={[{ required: true }]}>
             <Input placeholder="Email" />
           </Form.Item>
@@ -81,6 +85,13 @@ const AddUser = (props) => {
               <Select.Option value={true}>Платник</Select.Option>
               <Select.Option value={false}>Державник</Select.Option>
             </Select>
+          </Form.Item>
+          <Form.Item name="role" rules={[{ required: true }]}>
+            <Checkbox.Group style={{ width: '100%' }} onChange={onChange}>
+              <Checkbox value="Admin">Admin</Checkbox>
+              <Checkbox value="Student">Student</Checkbox>
+              <Checkbox value="Teacher">Teacher</Checkbox>
+            </Checkbox.Group>
           </Form.Item>
         </Form>
       </Modal>

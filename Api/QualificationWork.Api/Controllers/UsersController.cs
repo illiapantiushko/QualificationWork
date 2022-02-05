@@ -11,7 +11,7 @@ namespace QualificationWork.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     public class UsersController : ControllerBase
     {
         private readonly UserService userService;
@@ -58,7 +58,7 @@ namespace QualificationWork.Api.Controllers
         [HttpGet("getAllTeacherSubject")]
         public async Task<ActionResult> GetAllTeacherSubject()
         {
-            var data = await userService.GetAllTeacherSubject();
+            var data = await userService.GetAllTeacherSubject(User.GetUserId());
             return Ok(data);
         }
 
@@ -120,12 +120,35 @@ namespace QualificationWork.Api.Controllers
             return Ok(data);
         }
 
-        [HttpGet("exportToExcelUserTimeTable")]
-        public ActionResult ExportToExcelUserTimeTable(long subjectId)
+
+        [HttpPost("AddSubjectsFromExel")]
+        public async Task<ActionResult> AddSubjectsFromExel([FromForm] ExelDto model)
         {
-            var stream = excelService.ExportToExcelUserTimeTable(subjectId);
+            var data = await excelService.ImportSubject(model.file);
+            return Ok(data);
+        }
+
+        [HttpPost("AddFacultyFromExel")]
+        public async Task<ActionResult> AddFacultyFromExel([FromForm] ExelDto model)
+        {
+            var data = await excelService.ImportFaculty(model.file);
+            return Ok(data);
+        }
+
+        [HttpGet("exportToExcelUserTimeTable")]
+        public async Task<ActionResult> ExportToExcelUserTimeTable(long subjectId)
+        {
+            var stream = await excelService.ExportToExcelBySubject(subjectId);
             Response.ContentType = new MediaTypeHeaderValue("application/octet-stream").ToString();
             return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "users.xlsx");
+        }
+
+        [HttpGet("exportToExcelByUser")]
+        public async Task<ActionResult> ExportToExcelByUser()
+        {
+            var stream = await excelService.ExportToExcelByUser(User.GetUserId());
+            Response.ContentType = new MediaTypeHeaderValue("application/octet-stream").ToString();
+            return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Report.xlsx");
         }
 
         [HttpPost("createGroup")]

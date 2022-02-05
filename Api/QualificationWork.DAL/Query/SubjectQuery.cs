@@ -77,11 +77,15 @@ namespace QualificationWork.DAL.Query
             return response;
         }
 
-
         public async Task<List<Subject>> GetAllSubject(long userId)
         {
             var response = await context.Subjects
-                                        .Where(x => x.UserSubjects.Any(y => y.UserId == userId)).ToListAsync();  
+                                        .Where(x => x.UserSubjects.Any(y => y.UserId == userId))
+                                        .Include(x=>x.UserSubjects)
+                                        .ThenInclude(x=>x.User)
+                                        .ThenInclude(x => x.UserRoles)
+                                        .ThenInclude(x => x.Role)
+                                        .ToListAsync();
             return response;
         }
     }

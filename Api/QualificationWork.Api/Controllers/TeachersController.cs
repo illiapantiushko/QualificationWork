@@ -49,7 +49,8 @@ namespace QualificationWork.Api.Controllers
         public async Task<ActionResult> GetAllSubject()
         {
             var data = await subjectService.GetAllSubject(User.GetUserId());
-            return Ok(data);
+            var result = data.Where(x => x.UserSubjects.Any(y => y.User.UserRoles.Any(x => x.Role.Name == UserRoles.Teacher)));
+            return Ok(result);
         }
 
         [HttpGet("getAllUsersWithSubjests")]

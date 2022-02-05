@@ -67,7 +67,7 @@ const GroupTable = (props) => {
     <div>
       <Title level={4}>Список груп</Title>
       <Row align="middle">
-        <Col span={19}>
+        <Col span={20}>
           <AddGroup />
         </Col>
         <Col span={4}>
@@ -75,6 +75,7 @@ const GroupTable = (props) => {
         </Col>
       </Row>
       <Table
+        loading={props.isFetching}
         dataSource={props.groups}
         pagination={false}
         columns={columns}
@@ -100,6 +101,7 @@ let mapStateToProps = (state) => {
   return {
     groups: state.AdminPage.groups,
     groupsTotalCount: state.AdminPage.groupsTotalCount,
+    isFetching: state.AdminPage.isFetchingGroups,
   };
 };
 

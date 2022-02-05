@@ -28,8 +28,9 @@ namespace QualificationWork.DAL.HelperServise
         {
             await CreateRoles();
             await CreateAdmin();
-            //await CreateFaculty();
-            //await CreateSubjects();
+            //await CreateUsers();
+            await CreateFaculty();
+            await CreateSubjects();
             await context.SaveChangesAsync();
         }
 
@@ -69,85 +70,75 @@ namespace QualificationWork.DAL.HelperServise
             }
         }
 
-        //public async Task CreateFaculty()
-        //{
-        //    var data = new Faculty
-        //    {
-        //        FacultyName = "Economic",
-        //        Groups = new List<Group>
-        //        {
-        //          new Group { GroupName = "KN-41" },
-        //        }
-        //    };
+        public async Task CreateFaculty()
+        {
+            var data = new Faculty
+            {
+                FacultyName = "Economic",
+                Groups = new List<Group>
+                {
+                  new Group { GroupName = "KN-41" },
+                }
+            };
 
-        //    var check = await context.Faculties.FirstOrDefaultAsync(p => p.FacultyName == data.FacultyName);
+            var check = await context.Faculties.FirstOrDefaultAsync(p => p.FacultyName == data.FacultyName);
 
-        //    if (check == null)
-        //    {
-        //        await context.AddAsync(data);
-        //        await context.SaveChangesAsync();
-        //    }
+            if (check == null)
+            {
+                await context.AddAsync(data);
+                await context.SaveChangesAsync();
+            }
 
-        //}
+        }
 
+        public async Task CreateSubjects()
+        {
+            var listSubjects = new List<Subject>()
+            {
+                    new Subject{ SubjectName="Компютерні мережі",AmountCredits=200,IsActive=true,SubjectСlosingDate= DateTime.UtcNow},
+                    new Subject{ SubjectName="Математичний аналіз",AmountCredits=300,IsActive=true,SubjectСlosingDate= DateTime.UtcNow},
+                    new Subject{ SubjectName="Лінійна алгебра",AmountCredits=250,IsActive=true,SubjectСlosingDate= DateTime.UtcNow}
+                        };
 
-        //public async Task CreateSubjects()
-        //{
-        //    var listSubjects = new List<Subject>()
-        //    {
-        //            new Subject{ SubjectName="Компютерні мережі",AmountCredits=200,IsActive=true,SubjectСlosingDate= DateTime.UtcNow},
-        //            new Subject{ SubjectName="Математичний аналіз",AmountCredits=300,IsActive=true,SubjectСlosingDate= DateTime.UtcNow},
-        //            new Subject{ SubjectName="Лінійна алгебра",AmountCredits=250,IsActive=true,SubjectСlosingDate= DateTime.UtcNow}
-        //                };
+            foreach (var subject in listSubjects)
+            {
+                var checkSubject = await context.Subjects.FirstOrDefaultAsync(p => p.SubjectName == subject.SubjectName);
 
-        //    foreach (var subject in listSubjects)
-        //    {
-        //        var checkSubject = await context.Subjects.FirstOrDefaultAsync(p => p.SubjectName == subject.SubjectName);
+                if (checkSubject == null)
+                {
+                    await context.AddAsync(subject);
+                }
+            }
+        }
 
-        //        if (checkSubject == null)
-        //        {
-        //            await context.AddAsync(subject);
-        //        }
-        //    }
-        //}
+        public async Task CreateUsers()
+        {
+            var listUsers = new List<ApplicationUser>()
+                    {
+                        new ApplicationUser{ UserName="pasha",Email="pasha.pupkin@oa.edu.ua"},
+                        new ApplicationUser{ UserName="sofia",Email="sofiia.prusik@oa.edu.ua"},
+                        new ApplicationUser{ UserName="dima",Email="dima.kravchuk@oa.edu.ua"},
+                    };
 
-        //public async Task CreateUsers()
-        //{
-        //    var listUsers = new List<ApplicationUser>()
-        //            {
-        //                new ApplicationUser{ UserName="Dima",Email="dima.sdsadsd@oa.edu.ua"},
-        //                new ApplicationUser{ UserName="Sofia",Email="sofiia.prusik@oa.edu.ua"},
-        //                new ApplicationUser{ UserName="dima",Email="dima.sdsadsd@oa.edu.ua"},
-        //            };
+            foreach (var user in listUsers)
+            {
+                var checkUser = await context.Users.FirstOrDefaultAsync(p => p.UserName == user.UserName);
 
-        //    foreach (var user in listUsers)
-        //    {
-        //        var checkUser = await context.Users.FirstOrDefaultAsync(p => p.UserName == user.UserName);
+                if (checkUser == null)
+                {
+                    ApplicationUser userData = new ApplicationUser
+                    {
+                        Email = user.Email,
+                        SecurityStamp = Guid.NewGuid().ToString(),
+                        UserName = user.UserName,
+                    };
 
-        //        var group = context.Groups.First();
+                    await userManager.CreateAsync(userData);
 
-        //        if (checkUser == null)
-        //        {
-        //            ApplicationUser userData = new ApplicationUser
-        //            {
-        //                Email = user.Email,
-        //                SecurityStamp = Guid.NewGuid().ToString(),
-        //                UserName = user.UserName,
-        //            };
-
-        //            var userGroup = new UserGroup
-        //            {
-        //                UserId = userData.Id,
-        //                GroupId = group.Id
-        //            };
-
-        //            await context.AddAsync(userData);
-        //            await context.AddAsync(userGroup);
-        //            await userManager.AddToRoleAsync(userData, UserRoles.Student);
-        //        }
-
-        //    }
-        //}
+                    await userManager.AddToRoleAsync(userData, UserRoles.Student);
+                 }
+            }
+        }
 
         //public async Task CheckSubject()
         //{

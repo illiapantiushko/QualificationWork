@@ -168,7 +168,7 @@ const UserTable = (props) => {
     <div>
       <Title level={4}>Список користувачів</Title>
       <Row align="middle">
-        <Col span={19}>
+        <Col span={20}>
           <AddUser />
         </Col>
         <Col span={4}>
@@ -205,6 +205,7 @@ let mapStateToProps = (state) => {
   return {
     users: state.AdminPage.users,
     usersTotalCount: state.AdminPage.usersTotalCount,
+    isFetching: state.AdminPage.isFetchingUsers,
   };
 };
 

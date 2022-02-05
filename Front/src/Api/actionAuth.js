@@ -22,6 +22,7 @@ export const setUserData = (googleToken) => {
         res.data.userName,
         res.data.roles,
       );
+
       dispatch(setAuthUserData(res.data.userName, res.data.roles, true));
     } catch (error) {
       Notification(error.response.status, error.message);

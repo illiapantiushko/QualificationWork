@@ -14,4 +14,8 @@
     <ProjectReference Include="..\QualificationWork.DAL\QualificationWork.DAL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="NewFolder\" />
+  </ItemGroup>
+
 </Project>

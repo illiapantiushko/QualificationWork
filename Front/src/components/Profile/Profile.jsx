@@ -7,10 +7,10 @@ import './Profile.scss';
 import ProfileInfo from './ProfileInfo';
 
 const Profile = (props) => {
-  useEffect(() => {
-    props.GetInfoCurrentUser();
-    props.GetSubjects();
-  }, []);
+  // useEffect(() => {
+  //   props.GetInfoCurrentUser();
+  //   props.GetSubjects();
+  // }, []);
 
   const columns = [
     {
@@ -51,7 +51,7 @@ const Profile = (props) => {
       <ProfileInfo profile={props.profile} />
       <h1>My Subjects</h1>
       <Table
-        loading={props.isFetching}
+        loading={props.isFetchingSubjects}
         dataSource={props.subjects}
         bordered
         pagination={false}
@@ -65,6 +65,7 @@ let mapStateToProps = (state) => {
   return {
     profile: state.ProfilePage.profile,
     subjects: state.ProfilePage.subjects,
+    isFetchingSubjects: state.ProfilePage.isFetchingSubjects,
     isFetching: state.ProfilePage.isFetching,
   };
 };

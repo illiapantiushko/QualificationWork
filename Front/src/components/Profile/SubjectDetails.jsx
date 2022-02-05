@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getSubjectDetails } from '../../Api/actionProfile';
-import { Table, Tag, Typography, Row, Col, Card } from 'antd';
+import { Table, Tag, Typography, Layout, Row, Col, Card } from 'antd';
 import { useParams } from 'react-router-dom';
 import DoughnutChart from './DoughnutChart';
 import LineChart from './LineChart';
 
 const { Title } = Typography;
 
+const { Content } = Layout;
 const SubjectDetails = (props) => {
   const { id } = useParams();
 
@@ -49,7 +50,12 @@ const SubjectDetails = (props) => {
   ];
 
   return (
-    <div className="wraper">
+    <Content
+      className="site-layout-background"
+      style={{
+        padding: 30,
+        minHeight: 280,
+      }}>
       <Title level={4}>Таблиця відуваності</Title>
       <Table dataSource={props.subjectDetails} bordered pagination={false} columns={columns} />
       {/* <Row align="middle">
@@ -64,7 +70,7 @@ const SubjectDetails = (props) => {
           </Card>
         </Col>
       </Row> */}
-    </div>
+    </Content>
   );
 };
 

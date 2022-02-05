@@ -5,8 +5,10 @@ const UPDATE_USER_SCORE = 'UPDATE_USER_SCORE';
 const UPDATE_USER_IS_PRESENT = 'UPDATE_USER_IS_PRESENT';
 const ADD_NEW_LESSON = 'ADD_NEW_LESSON';
 const DELETE_LESSON = 'DELETE_LESSON';
+
 let initialState = {
   subjects: [],
+  isFetchingSubjects: true,
   subjectLesons: [],
   attendanceList: [],
   isFetching: false,
@@ -18,7 +20,7 @@ const TeacherReducer = (state = initialState, action) => {
       return {
         ...state,
         subjects: action.payload,
-        isFetching: false,
+        isFetchingSubjects: false,
       };
 
     case SET_SUBJECT_LESONS:

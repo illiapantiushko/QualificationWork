@@ -85,11 +85,11 @@ namespace QualificationWork.DAL.Command
 
         }
 
-        public async Task AddRangeUsers(List<UserDto> list)
+        public async Task AddRangeUsers(List<UserFromExcelDto> list)
         {
             foreach (var user in list)
             {
-                var check = context.Users.FirstOrDefaultAsync(x => x.Email == user.UserEmail);
+                var check = context.Users.FirstOrDefault(x => x.Email == user.UserEmail);
                 
                 if (check==null) {
 

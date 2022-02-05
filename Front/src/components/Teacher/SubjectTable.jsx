@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Table, Tag, Typography } from 'antd';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { getSubjects } from '../../Api/actionsTeacher';
 
 const { Title } = Typography;
 
 const SubjectTable = (props) => {
+  useEffect(() => {
+    props.GetSubjects();
+  }, []);
+
   const { subjects } = props;
 
   const expandedRowRender = (userSubjects) => {
@@ -78,6 +84,7 @@ const SubjectTable = (props) => {
       <Title level={4}>Список предметів</Title>
 
       <Table
+        loading={props.isFetching}
         dataSource={subjects}
         bordered
         pagination={false}
@@ -91,4 +98,19 @@ const SubjectTable = (props) => {
   );
 };
 
-export default SubjectTable;
+let mapStateToProps = (state) => {
+  return {
+    subjects: state.TeacherPage.subjects,
+    isFetching: state.TeacherPage.isFetchingSubjects,
+  };
+};
+
+let mapDispatchToProps = (dispatch) => {
+  return {
+    GetSubjects: () => {
+      dispatch(getSubjects());
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SubjectTable);

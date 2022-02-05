@@ -1,0 +1,149 @@
+2022-02-02 20:34:36.9451|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-02-02 20:34:46.4214|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-02-02 20:34:50.8623|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-02-02 20:34:50.8665|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-02-02 20:34:50.8665|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-02-02 20:34:51.8548|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:10164:0558f134 successfully announced in 715,3581 ms
+2022-02-02 20:34:51.9287|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:10164:0558f134 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-02-02 20:34:51.9287|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-02-02 20:34:51.9814|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-02-02 20:34:52.0332|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-02-02 20:34:52.0672|INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout
+2022-02-02 20:34:52.9803|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:10164:0558f134 all the dispatchers started
+2022-02-02 21:35:38.8769|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-02-02 21:35:39.5826|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-02-02 21:35:43.3762|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-02-02 21:35:43.3946|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-02-02 21:35:43.4156|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-02-02 21:35:44.1222|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-02-02 21:35:44.1584|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-02-02 21:35:44.1729|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-02-02 21:35:44.2320|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:3356:c31ab2a7 successfully announced in 737,0743 ms
+2022-02-02 21:35:44.2610|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:3356:c31ab2a7 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-02-02 21:35:45.6809|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:3356:c31ab2a7 all the dispatchers started
+2022-02-02 21:40:05.6762|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-02-02 21:40:07.7089|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-02-02 21:40:11.8140|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-02-02 21:40:11.8458|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-02-02 21:40:11.8676|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-02-02 21:40:12.6458|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-02-02 21:40:12.7075|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-02-02 21:40:12.7423|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-02-02 21:40:12.9130|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:14688:760c6dfe successfully announced in 845,783 ms
+2022-02-02 21:40:12.9374|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:14688:760c6dfe is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-02-02 21:40:13.1352|INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout
+2022-02-02 21:40:14.5458|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:14688:760c6dfe all the dispatchers started
+2022-02-02 21:46:09.4072|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-02-02 21:46:13.9733|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-02-02 21:46:22.4125|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-02-02 21:46:22.4292|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-02-02 21:46:22.4455|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-02-02 21:46:23.5250|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-02-02 21:46:23.5894|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:13760:09552f7e successfully announced in 918,2974 ms
+2022-02-02 21:46:23.5822|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-02-02 21:46:23.6969|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-02-02 21:46:23.7460|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:13760:09552f7e is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-02-02 21:46:23.9264|INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout
+2022-02-02 21:46:24.6248|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:13760:09552f7e all the dispatchers started
+2022-02-02 21:54:48.0039|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-02-02 21:54:48.6575|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-02-02 21:54:51.6404|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-02-02 21:54:51.6670|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-02-02 21:54:51.6884|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-02-02 21:54:52.2593|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-02-02 21:54:52.3523|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-02-02 21:54:52.3708|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-02-02 21:54:52.4260|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:9708:1006ec57 successfully announced in 635,0835 ms
+2022-02-02 21:54:52.4579|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:9708:1006ec57 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-02-02 21:54:52.5912|INFO|Hangfire.Server.ServerWatchdog|2 servers were removed due to timeout
+2022-02-02 21:54:53.5139|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:9708:1006ec57 all the dispatchers started
+2022-02-02 22:07:37.6905|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-02-02 22:07:38.4576|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-02-02 22:07:41.2349|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-02-02 22:07:41.2413|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-02-02 22:07:41.2413|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-02-02 22:07:41.8990|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-02-02 22:07:41.9259|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-02-02 22:07:41.9410|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-02-02 22:07:42.0016|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:12492:dca719a7 successfully announced in 637,0477 ms
+2022-02-02 22:07:42.0254|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:12492:dca719a7 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-02-02 22:07:43.2218|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:12492:dca719a7 all the dispatchers started
+2022-02-02 22:10:55.9431|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-02-02 22:10:58.2312|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-02-02 22:11:02.0162|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-02-02 22:11:02.0225|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-02-02 22:11:02.0225|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-02-02 22:11:02.7104|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-02-02 22:11:02.7104|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-02-02 22:11:02.7249|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-02-02 22:11:02.7674|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:14472:7b66d892 successfully announced in 664,6647 ms
+2022-02-02 22:11:02.7934|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:14472:7b66d892 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-02-02 22:11:02.8818|INFO|Hangfire.Server.ServerWatchdog|1 servers were removed due to timeout
+2022-02-02 22:11:04.0085|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:14472:7b66d892 all the dispatchers started
+2022-02-02 22:13:02.4642|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-02-02 22:13:04.5261|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-02-02 22:13:07.4581|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-02-02 22:13:07.4871|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-02-02 22:13:07.4965|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-02-02 22:13:08.0115|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-02-02 22:13:08.0231|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-02-02 22:13:08.0555|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-02-02 22:13:08.1039|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:8188:7e5eda36 successfully announced in 550,3865 ms
+2022-02-02 22:13:08.1270|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:8188:7e5eda36 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-02-02 22:13:09.2053|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:8188:7e5eda36 all the dispatchers started
+2022-02-02 22:18:08.4056|INFO|Hangfire.Server.ServerWatchdog|2 servers were removed due to timeout
+2022-02-02 22:20:20.6740|WARN|Microsoft.EntityFrameworkCore.Query|The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+2022-02-02 22:20:20.6922|WARN|Microsoft.EntityFrameworkCore.Query|The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+2022-02-02 22:20:20.7273|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-02-02 22:20:20.7738|WARN|Microsoft.EntityFrameworkCore.Query|The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+2022-02-02 22:20:20.7738|WARN|Microsoft.EntityFrameworkCore.Query|The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results.
+2022-02-02 22:20:20.8020|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-02-02 22:20:40.7345|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-02-02 22:21:16.4391|WARN|Microsoft.EntityFrameworkCore.Query|Compiling a query which loads related collections for more than one collection navigation either via 'Include' or through projection but no 'QuerySplittingBehavior' has been configured. By default Entity Framework will use 'QuerySplittingBehavior.SingleQuery' which can potentially result in slow query performance. See https://go.microsoft.com/fwlink/?linkid=2134277 for more information. To identify the query that's triggering this warning call 'ConfigureWarnings(w => w.Throw(RelationalEventId.MultipleCollectionIncludeWarning))'
+2022-02-02 22:23:09.7130|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Start installing Hangfire SQL objects...
+2022-02-02 22:23:13.3557|INFO|Hangfire.SqlServer.SqlServerObjectsInstaller|Hangfire SQL objects installed.
+2022-02-02 22:23:16.5844|INFO|Hangfire.BackgroundJobServer|Starting Hangfire Server using job storage: 'SQL Server: (localdb)\MSSQLLocalDB@MyDB'
+2022-02-02 22:23:16.5844|INFO|Hangfire.BackgroundJobServer|Using the following options for SQL Server job storage: Queue poll interval: 00:00:00.
+2022-02-02 22:23:16.5982|INFO|Hangfire.BackgroundJobServer|Using the following options for Hangfire Server:
+    Worker count: 20
+    Listening queues: 'default'
+    Shutdown timeout: 00:00:15
+    Schedule polling interval: 00:00:15
+2022-02-02 22:23:17.2832|INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down.
+2022-02-02 22:23:17.3348|INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development
+2022-02-02 22:23:17.3624|INFO|Microsoft.Hosting.Lifetime|Content root path: C:\Users\admin\Desktop\QualificationWork\Api\QualificationWork.Api
+2022-02-02 22:23:17.4015|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:24520:412607f2 successfully announced in 729,9182 ms
+2022-02-02 22:23:17.4249|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:24520:412607f2 is starting the registered dispatchers: ServerWatchdog, ServerJobCancellationWatcher, ExpirationManager, CountersAggregator, Worker, DelayedJobScheduler, RecurringJobScheduler...
+2022-02-02 22:23:18.3622|INFO|Hangfire.Server.BackgroundServerProcess|Server desktop-bhcmgte:24520:412607f2 all the dispatchers started

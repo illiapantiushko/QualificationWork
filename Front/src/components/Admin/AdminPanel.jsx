@@ -2,10 +2,18 @@ import React from 'react';
 import GroupTable from './GroupTable/GroupTable';
 import './adminPanel.scss';
 import UserTable from './UserTable/UserTable';
+import { Layout } from 'antd';
+
+const { Content } = Layout;
 
 const AdminPanel = (props) => {
   return (
-    <div className="wraper">
+    <Content
+      className="site-layout-background"
+      style={{
+        padding: 30,
+        minHeight: 280,
+      }}>
       <UserTable isFetching={props.isFetching} deleteUserRole={props.deleteUserRole} />
       <GroupTable
         refreshUsers={props.GetUsers}
@@ -13,7 +21,7 @@ const AdminPanel = (props) => {
         isFetching={props.isFetching}
         groups={props.groups}
       />
-    </div>
+    </Content>
   );
 };
 

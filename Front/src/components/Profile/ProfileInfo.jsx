@@ -5,7 +5,7 @@ import { UserOutlined } from '@ant-design/icons';
 
 const ProfileInfo = (props) => {
   const profile = props.profile;
-  console.log(profile);
+
   return (
     <Row>
       <Col xs={24}>

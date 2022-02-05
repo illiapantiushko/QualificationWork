@@ -1,7 +1,7 @@
 import React from 'react';
 import { editeUser } from '../../../Api/actionsAdmin';
 import { connect } from 'react-redux';
-import { Modal, Form, Button, Input, Select } from 'antd';
+import { Modal, Form, Button, Input, Select, Checkbox } from 'antd';
 
 const EditeUser = (props) => {
   const [form] = Form.useForm();
@@ -18,9 +18,14 @@ const EditeUser = (props) => {
     іsContract: props.data?.іsContract,
   };
 
+  const onChange = (checkedValues) => {
+    console.log('checked = ', checkedValues);
+  };
+
   const onFinish = (data) => {
-    data.id = props.data?.id;
-    props.editeUser(data);
+    // data.id = props.data?.id;
+    // props.editeUser(data);
+    console.log(data);
     form.resetFields();
     props.handleEditUser();
   };
@@ -59,6 +64,13 @@ const EditeUser = (props) => {
               <Select.Option value={true}>Платник</Select.Option>
               <Select.Option value={false}>Державник</Select.Option>
             </Select>
+          </Form.Item>
+          <Form.Item name="role" rules={[{ required: true }]}>
+            <Checkbox.Group style={{ width: '100%' }} onChange={onChange}>
+              <Checkbox value="Admin">Admin</Checkbox>
+              <Checkbox value="Student">Student</Checkbox>
+              <Checkbox value="Teacher">Teacher</Checkbox>
+            </Checkbox.Group>
           </Form.Item>
         </Form>
       </Modal>

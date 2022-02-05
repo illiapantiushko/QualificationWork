@@ -5,6 +5,7 @@ const SET_USER_INFO = 'SET_USER_INFO';
 let initialState = {
   profile: null,
   subjects: [],
+  isFetchingSubjects: true,
   subjectDetails: [],
   isFetching: true,
 };
@@ -15,7 +16,7 @@ const ProfileReducer = (state = initialState, action) => {
       return {
         ...state,
         subjects: action.payload,
-        isFetching: false,
+        isFetchingSubjects: false,
       };
     case SET_USER_INFO:
       return {

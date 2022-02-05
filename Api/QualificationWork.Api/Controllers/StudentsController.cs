@@ -9,6 +9,7 @@ namespace QualificationWork.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+
     [Authorize(Roles = "Student")]
     public class StudentsController : ControllerBase
     {
