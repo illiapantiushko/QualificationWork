@@ -34,6 +34,20 @@ namespace QualificationWork.Api.Controllers
             return Ok();
         }
 
+        [HttpPost("addUserGroup")]
+        public async Task<ActionResult> AddUserGroup([FromBody] AddUserGroupDto model)
+        {
+            await groupService.AddUserGroup(model.groupId, model.arrUserId);
+            return Ok();
+        }
+        [HttpPost("addUserSubject")]
+        public async Task<ActionResult> AddGroupSubject([FromBody] AddUserGroupDto model)
+        {
+
+            await groupService.AddGroupSubject(model.groupId, model.arrUserId);
+            return Ok();
+        }
+
         [HttpGet("getFaculty")]
         public ActionResult GetFaculty()
         {
@@ -48,13 +62,6 @@ namespace QualificationWork.Api.Controllers
             return Ok(data);
         }
 
-        [HttpGet("getSpecialtys")]
-        public ActionResult GetSpecialtys()
-        {
-            var data = groupService.GetSpecialtys();
-            return Ok(data);
-        }
-
         [HttpGet("getAllGroups")]
         public async Task<ActionResult> GetAllGroupsAsync(int pageNumber, int pageSize, string search)
         {
@@ -66,6 +73,12 @@ namespace QualificationWork.Api.Controllers
         public async Task<ActionResult> CreateFaculty([FromBody] FacultyDto model)
         {
             await groupService.CreateFacultyAsync(model);
+            return Ok();
+        }
+        [HttpDelete("deleteGroup")]
+        public ActionResult DeleteGroup(long groupId)
+        {
+            groupService.DeleteGroup(groupId);
             return Ok();
         }
     }

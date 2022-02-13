@@ -14,19 +14,19 @@ const AttendanceTable = (props) => {
   }, [props.subjectId, props.namberleson]);
 
   const handleSwitch = (e, id) => {
-    props.SetNewUserIsPresent(id, e);
+    props.SetNewUserIsPresent(id, e, props.namberleson);
   };
   const columns = [
-    { title: 'User Name', dataIndex: 'userName', key: 'userName' },
+    { title: 'Імя', dataIndex: 'userName', key: 'userName' },
     {
-      title: 'IsPresent',
+      title: 'Присутність',
       dataIndex: 'isPresent',
       key: 'isPresent',
       align: 'center',
       render: (e, record) => <Switch checked={e} onChange={(e) => handleSwitch(e, record.id)} />,
     },
     {
-      title: 'Bal',
+      title: 'Бал',
       dataIndex: 'score',
       key: 'score',
       with: 200,
@@ -36,7 +36,7 @@ const AttendanceTable = (props) => {
   ];
 
   const handleSave = (row) => {
-    props.SetNewUserScore(row);
+    props.SetNewUserScore(row, props.namberleson);
   };
 
   const components = {
@@ -90,11 +90,11 @@ let mapDispatchToProps = (dispatch) => {
     GetAttendanceList: (id, namberleson) => {
       dispatch(getAttendanceList(id, namberleson));
     },
-    SetNewUserScore: (row) => {
-      dispatch(setNewUserScore(row));
+    SetNewUserScore: (row, lessonNumber) => {
+      dispatch(setNewUserScore(row, lessonNumber));
     },
-    SetNewUserIsPresent: (id, isPresent) => {
-      dispatch(setNewUserIsPresent(id, isPresent));
+    SetNewUserIsPresent: (id, isPresent, lessonNumber) => {
+      dispatch(setNewUserIsPresent(id, isPresent, lessonNumber));
     },
   };
 };

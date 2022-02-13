@@ -53,11 +53,11 @@ namespace QualificationWork.BL.Services
             await context.SaveChangesAsync();
         }
 
-        public async Task AddSubject(long userId, long subjectId)
-        {
-            await userCommand.AddSubject(userId, subjectId);
-            await context.SaveChangesAsync();
-        }
+        //public async Task AddSubject(long userId, long subjectId)
+        //{
+        //    await userCommand.AddSubject(userId, subjectId);
+        //    await context.SaveChangesAsync();
+        //}
         public async Task UpdateUserAsync(EditeUserDto model)
         {
             await userCommand.UpdateUserAsync(model);

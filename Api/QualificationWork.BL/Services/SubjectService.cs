@@ -49,9 +49,14 @@ namespace QualificationWork.BL.Services
             return subjectQuery.GetSubjects();
         }
 
-        public async Task<UsersPagination> GetAllUsersWithSubjests(int pageNumber, int pageSize, string search)
+        public async Task<Pagination<Subject>> GetAllSubjects(int pageNumber, int pageSize, string search)
         {
-            return await subjectQuery.GetAllUsersWithSubjests(pageNumber,pageSize,search);
+            return await subjectQuery.GetAllSubjects(pageNumber, pageSize, search);
+        }
+
+        public async Task<Pagination<ApplicationUser>> GetAllUsersWithSubjests(int pageNumber, int pageSize, string search)
+        {
+            return await subjectQuery.GetAllUsersWithSubjests(pageNumber, pageSize, search);
         }
 
         public async Task<List<ApplicationUser>> GetAllTeacherFaculty(long facultyId)
@@ -77,13 +82,13 @@ namespace QualificationWork.BL.Services
 
         public async Task AddLessonAsync(AddLessonDto model)
         {
-           await subjectCommand.AddLessonAsync(model);
-           await context.SaveChangesAsync();
+            await subjectCommand.AddLessonAsync(model);
+            await context.SaveChangesAsync();
         }
 
         public async Task DeleteLessonAsync(int lessonNumber, long subjectId)
         {
-            await subjectCommand.DeleteLessonAsync(lessonNumber,subjectId);
+            await subjectCommand.DeleteLessonAsync(lessonNumber, subjectId);
             await context.SaveChangesAsync();
         }
     }

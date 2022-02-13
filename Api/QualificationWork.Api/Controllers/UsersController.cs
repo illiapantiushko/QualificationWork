@@ -3,9 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using QualificationWork.BL.Services;
 using QualificationWork.ClaimsExtension;
 using QualificationWork.DTO.Dtos;
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using static QualificationWork.DAL.Command.UserCommand;
 
 namespace QualificationWork.Api.Controllers
 {
@@ -15,12 +13,10 @@ namespace QualificationWork.Api.Controllers
     public class UsersController : ControllerBase
     {
         private readonly UserService userService;
-        private readonly ExcelService excelService;
 
-        public UsersController(UserService userService, ExcelService excelService)
+        public UsersController(UserService userService)
         {
             this.userService = userService;
-            this.excelService = excelService;
         }
 
         [HttpGet("getUsers")]
@@ -54,7 +50,7 @@ namespace QualificationWork.Api.Controllers
             var data = await userService.GetSubjectTopic(subjectId);
             return Ok(data);
         }
-        
+
         [HttpGet("getAllTeacherSubject")]
         public async Task<ActionResult> GetAllTeacherSubject()
         {
@@ -90,13 +86,6 @@ namespace QualificationWork.Api.Controllers
             return Ok();
         }
 
-        [HttpPost("addSubject")]
-        public async Task<ActionResult> AddSubject([FromBody] UserSubjectDto model)
-        {
-            await userService.AddSubject(model.UserId, model.SubjectId);
-            return Ok();
-        }
-
         [HttpPost("addGroup")]
         public async Task<ActionResult> AddGroup(long userId, long groupId)
         {
@@ -112,47 +101,8 @@ namespace QualificationWork.Api.Controllers
             return Ok();
         }
 
-        [HttpPost("AddUsersFromExel")]
-        public async Task<ActionResult> AddUsersFromExel([FromForm] ExelDto model)
-        {
-            var data = await excelService.Import(model.file);
-            await userService.AddRangeUsers(data);
-            return Ok(data);
-        }
-
-
-        [HttpPost("AddSubjectsFromExel")]
-        public async Task<ActionResult> AddSubjectsFromExel([FromForm] ExelDto model)
-        {
-            var data = await excelService.ImportSubject(model.file);
-            return Ok(data);
-        }
-
-        [HttpPost("AddFacultyFromExel")]
-        public async Task<ActionResult> AddFacultyFromExel([FromForm] ExelDto model)
-        {
-            var data = await excelService.ImportFaculty(model.file);
-            return Ok(data);
-        }
-
-        [HttpGet("exportToExcelUserTimeTable")]
-        public async Task<ActionResult> ExportToExcelUserTimeTable(long subjectId)
-        {
-            var stream = await excelService.ExportToExcelBySubject(subjectId);
-            Response.ContentType = new MediaTypeHeaderValue("application/octet-stream").ToString();
-            return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "users.xlsx");
-        }
-
-        [HttpGet("exportToExcelByUser")]
-        public async Task<ActionResult> ExportToExcelByUser()
-        {
-            var stream = await excelService.ExportToExcelByUser(User.GetUserId());
-            Response.ContentType = new MediaTypeHeaderValue("application/octet-stream").ToString();
-            return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Report.xlsx");
-        }
-
         [HttpPost("createGroup")]
-        public async Task<ActionResult> CreateGroup([FromBody]CreateGroupDto model)
+        public async Task<ActionResult> CreateGroup([FromBody] CreateGroupDto model)
         {
             await userService.CreateGroup(model);
             return Ok();
@@ -185,7 +135,6 @@ namespace QualificationWork.Api.Controllers
             return Ok();
         }
 
-     
         [HttpDelete("deleteUser")]
         public ActionResult DeleteUser(long userId)
         {

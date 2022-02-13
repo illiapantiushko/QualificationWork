@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { editeUser } from '../../../Api/actionsAdmin';
 import { connect } from 'react-redux';
 import { Modal, Form, Button, Input, Select, Checkbox } from 'antd';
@@ -11,22 +11,23 @@ const EditeUser = (props) => {
     props.handleEditUser();
   };
 
-  const Intitial = {
+  const intitial = {
     userName: props.data?.userName,
     userEmail: props.data?.email,
     age: props.data?.age,
     іsContract: props.data?.іsContract,
+    roles: props.data?.userRoles,
   };
 
+  // const [intitial, setInitial] = useState({});
   const onChange = (checkedValues) => {
     console.log('checked = ', checkedValues);
   };
 
   const onFinish = (data) => {
-    // data.id = props.data?.id;
-    // props.editeUser(data);
-    console.log(data);
-    form.resetFields();
+    data.id = props.data?.id;
+    props.editeUser(data);
+
     props.handleEditUser();
   };
 
@@ -44,7 +45,7 @@ const EditeUser = (props) => {
           </Button>,
         ]}>
         <Form
-          initialValues={Intitial}
+          initialValues={intitial}
           form={form}
           id="myForm"
           name="basic"
@@ -65,7 +66,7 @@ const EditeUser = (props) => {
               <Select.Option value={false}>Державник</Select.Option>
             </Select>
           </Form.Item>
-          <Form.Item name="role" rules={[{ required: true }]}>
+          <Form.Item name="roles" rules={[{ required: true }]}>
             <Checkbox.Group style={{ width: '100%' }} onChange={onChange}>
               <Checkbox value="Admin">Admin</Checkbox>
               <Checkbox value="Student">Student</Checkbox>

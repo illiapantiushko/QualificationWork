@@ -1,14 +1,13 @@
 import React from 'react';
 import { Card, Button } from 'antd';
-import Title from 'antd/lib/skeleton/Title';
 import { Link } from 'react-router-dom';
+
 const CardSubject = ({ data, profile }) => {
   const gridStyle = {
     width: '32%',
     margin: 4,
   };
 
-  console.log(data);
   return (
     <Card.Grid className="card-grid" style={gridStyle}>
       <div>
@@ -20,10 +19,7 @@ const CardSubject = ({ data, profile }) => {
         </div>
         <div className="card-content">
           <div>
-            <span className="card-text">
-              {data.userSubjects.user?.username}
-              {/* Новоселецька С.В. */}
-            </span>
+            <span className="card-text">{data.teacher}</span>
           </div>
           <a className="card-text">{profile?.email}</a>
         </div>
@@ -31,7 +27,6 @@ const CardSubject = ({ data, profile }) => {
           <div className="card-footer__inner">
             <span className="item date">
               {new Date(data.subjectСlosingDate).toLocaleString('uk-UA')}
-              {/* {data.subjectСlosingDate} */}
               <i class="fal fa-check"></i>
             </span>
             <span className="item">

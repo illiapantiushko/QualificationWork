@@ -1,9 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Layout, Button, PageHeader } from 'antd';
 import { connect } from 'react-redux';
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
+import { getInfoCurrentUser } from '../../Api/actionProfile';
+import { useSelector } from 'react-redux';
+import { useNavigate, useLocation } from 'react-router-dom';
 const { Header } = Layout;
-const NavBar = ({ state, toggle, profile }) => {
+const NavBar = ({ state, toggle, profile, GetInfoCurrentUser }) => {
+  const location = useLocation();
+  const checkLocation = location.pathname === '/login';
+  const roles = useSelector((state) => state.Auth.roles);
+  const navigate = useNavigate();
+
+  const logout = () => {
+    localStorage.clear();
+    navigate('/login');
+  };
+
+  useEffect(() => {
+    GetInfoCurrentUser();
+  }, []);
+
   return (
     <Layout className="site-layout">
       <Header className="site-layout-background" style={{ padding: 0 }}>
@@ -12,9 +29,10 @@ const NavBar = ({ state, toggle, profile }) => {
           title={profile?.userName}
           avatar={{
             src: profile?.profilePicture,
+            shape: 'square',
           }}
           extra={[
-            <Button key="1" className="header-button">
+            <Button onClick={logout} key="1" className="header-button">
               Вийти
             </Button>,
           ]}
@@ -39,12 +57,9 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
   return {
-    // AddNewUser: (data) => {
-    //   dispatch(addNewUser(data));
-    // },
-    // AddNewUserFromExel: (file) => {
-    //   dispatch(addNewUserFromExel(file));
-    // },
+    GetInfoCurrentUser: () => {
+      dispatch(getInfoCurrentUser());
+    },
   };
 };
 

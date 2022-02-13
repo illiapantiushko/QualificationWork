@@ -29,16 +29,12 @@ namespace QualificationWork.BL.Services
         {
             await groupCommand.AddFacultyGroupAsync(facultyId, GroupName);
             await context.SaveChangesAsync();
-
         }
-
         public async Task CreateFacultyAsync(FacultyDto model)
         {
             await groupCommand.CreateFacultyAsync(model);
             await context.SaveChangesAsync();
         }
-
-
         public async Task AddGroupSpecialtyAsync(long groupId, string specialtyName)
         {
             await groupCommand.AddGroupSpecialtyAsync(groupId, specialtyName);
@@ -55,19 +51,27 @@ namespace QualificationWork.BL.Services
             return groupQuery.GetFaculty();
         }
 
-        public List<Specialty> GetSpecialtys()
+        public async Task<Pagination<Group>> GetAllGroups(int pageNumber, int pageSize, string search)
         {
-            return groupQuery.GetSpecialtys();
-        }
-
-        public async Task<GroupsPagination> GetAllGroups(int pageNumber, int pageSize, string search)
-        {
-
             return await groupQuery.GetAllGroups(pageNumber, pageSize, search);
         }
 
+        public async Task AddUserGroup(long groupId, long[] arrUserId)
+        {
+            await groupCommand.AddUserGroup(groupId, arrUserId);
+            await context.SaveChangesAsync();
+        }
 
+        public void DeleteGroup(long groupId)
+        {
+            groupCommand.DeleteGroup(groupId);
+            context.SaveChanges();
+        }
 
-
+        public async Task AddGroupSubject(long groupId, long[] arrSubjectId)
+        {
+            await groupCommand.AddUserGroup(groupId, arrSubjectId);
+            await context.SaveChangesAsync();
+        }
     }
 }

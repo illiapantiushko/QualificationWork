@@ -27,12 +27,15 @@ namespace QualificationWork.BL.Services
             this.groupQuery = groupQuery;
         }
 
-        public async Task<List<UserFromExcelDto>> Import(IFormFile file) {
+        public async Task<List<UserFromExcelDto>> Import(IFormFile file)
+        {
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
             var list = new List<UserFromExcelDto>();
-            using (var stream = new MemoryStream()) {
+            using (var stream = new MemoryStream())
+            {
                 await file.CopyToAsync(stream);
-                using (var package = new ExcelPackage(stream)) {
+                using (var package = new ExcelPackage(stream))
+                {
                     ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
                     var rowcount = worksheet.Dimension.Rows;
                     for (int row = 2; row <= rowcount; row++)
@@ -43,12 +46,12 @@ namespace QualificationWork.BL.Services
                             UserEmail = worksheet.Cells[row, 2].Value.ToString().Trim(),
                             Age = Convert.ToInt32(worksheet.Cells[row, 3].Value.ToString().Trim()),
                             ІsContract = Convert.ToBoolean(worksheet.Cells[row, 4].Value.ToString().Trim())
-                    });
+                        });
                     }
                 }
             }
             return list;
-           }
+        }
 
         public async Task<List<GroupDto>> ImportFacultyGroups(IFormFile file)
         {
@@ -78,77 +81,82 @@ namespace QualificationWork.BL.Services
                 }
             }
 
-            foreach (var group in listGroup) {
+            foreach (var group in listGroup)
+            {
 
 
-                foreach (var faculty in listFaculty) {
+                foreach (var faculty in listFaculty)
+                {
 
                     var facultyData = context.Faculties.FirstOrDefault(x => x.FacultyName == faculty.FacultyName);
-                    var dataGroup = new Group {
-                        GroupName=group.GroupName,
-                        FacultyId=facultyData.Id
+                    var dataGroup = new Group
+                    {
+                        GroupName = group.GroupName,
+                        FacultyId = facultyData.Id
                     };
 
                     await context.AddAsync(dataGroup);
                 }
-            
+
             }
             await context.SaveChangesAsync();
             return listGroup;
         }
 
-        //public async Task<List<SubjectDto>> ImportSubjectGroups(IFormFile file)
-        //{
-        //    ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-        //    var listSubject = new List<UserSubjectDto>();
-        
-        //    using (var stream = new MemoryStream())
-        //    {
-        //        await file.CopyToAsync(stream);
-        //        using (var package = new ExcelPackage(stream))
-        //        {
-        //            ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
-        //            var rowcount = worksheet.Dimension.Rows;
-        //            for (int row = 2; row <= rowcount; row++)
-        //            {
-        //                listSubject.Add(new UserDto
-        //                {
-        //                    UserName = worksheet.Cells[row, 1].Value.ToString().Trim()
-        //                });
+        public async Task<List<SubjectDto>> ImportStusentSubject(IFormFile file)
+        {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+            var listSubject = new List<SubjectDto>();
+            var listUser = new List<UserDto>();
 
-        //                //listUser.Add(new SubjectDto
-        //                //{
-        //                //    SubjectName = worksheet.Cells[row, 2].Value.ToString().Trim(),
-        //                //    AmountCredits=0,
-        //                //    IsActive=true,
-        //                //    SubjectСlosingDate=DateTime.Now()
-        //                //});
-        //            }
-        //        }
-        //    }
+            using (var stream = new MemoryStream())
+            {
+                await file.CopyToAsync(stream);
+                using (var package = new ExcelPackage(stream))
+                {
+                    ExcelWorksheet worksheet = package.Workbook.Worksheets[0];
+                    var rowcount = worksheet.Dimension.Rows;
+                    for (int row = 2; row <= rowcount; row++)
+                    {
+                        listUser.Add(new UserDto
+                        {
+                            UserName = worksheet.Cells[row, 1].Value.ToString().Trim()
+                        });
 
-        //    foreach (var user in listUser)
-        //    {
-        //        var userData = context.Users.FirstOrDefault(x => x.UserName == user.UserName);
+                        listSubject.Add(new SubjectDto
+                        {
+                            SubjectName = worksheet.Cells[row, 2].Value.ToString().Trim()
+                        });
+                    }
+                }
+            }
+
+            foreach (var user in listUser)
+            {
+                var userData = context.Users.FirstOrDefault(x => x.UserName == user.UserName);
 
 
-        //        foreach (var subject in listSubject)
-        //        {
+                foreach (var subject in listSubject)
+                {
 
-        //            var subjectData = context.Subjects.FirstOrDefault(x => x.SubjectName == subject.SubjectName);
-        //            var dataGroup = new UserSubjectDto
-        //            {
-        //                UserId = userData.Id,
-        //                SubjectId = subjectData.Id
-        //            };
+                    var subjectData = context.Subjects.FirstOrDefault(x => x.SubjectName == subject.SubjectName);
+                    var data = new TimeTable
+                    {
+                        UserId = userData.Id,
+                        SubjectId = subjectData.Id,
+                        IsPresent = false,
+                        Score = 0,
+                        LessonDate = DateTime.Now,
+                        LessonNumber = 1,
+                    };
 
-        //            await context.AddAsync(dataGroup);
-        //        }
+                    await context.AddAsync(data);
+                }
 
-        //    }
-        //    await context.SaveChangesAsync();
-        //    return listGroup;
-        //}
+            }
+            await context.SaveChangesAsync();
+            return listSubject;
+        }
 
         public async Task<List<Faculty>> ImportFaculty(IFormFile file)
         {
@@ -165,16 +173,17 @@ namespace QualificationWork.BL.Services
                     {
                         listFaculty.Add(new Faculty
                         {
-                            FacultyName= worksheet.Cells[row, 1].Value.ToString().Trim()
+                            FacultyName = worksheet.Cells[row, 1].Value.ToString().Trim()
                         });
                     }
                 }
             }
 
-            foreach ( var faculty in listFaculty) {
-                var chekFaculty =  context.Faculties.FirstOrDefault(x => x.FacultyName==faculty.FacultyName);
-               
-                if (chekFaculty == null) 
+            foreach (var faculty in listFaculty)
+            {
+                var chekFaculty = context.Faculties.FirstOrDefault(x => x.FacultyName == faculty.FacultyName);
+
+                if (chekFaculty == null)
                 {
                     await context.AddAsync(faculty);
                 }
@@ -183,7 +192,6 @@ namespace QualificationWork.BL.Services
 
             return listFaculty;
         }
-
         public async Task<List<Subject>> ImportSubject(IFormFile file)
         {
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
@@ -199,10 +207,10 @@ namespace QualificationWork.BL.Services
                     {
                         listSubjects.Add(new Subject
                         {
-                               SubjectName= worksheet.Cells[row, 1].Value.ToString().Trim(),
-                               IsActive= Convert.ToBoolean(worksheet.Cells[row, 2].Value.ToString().Trim()),
-                               AmountCredits = Convert.ToInt32(worksheet.Cells[row, 3].Value.ToString().Trim()),
-                               SubjectСlosingDate = Convert.ToDateTime(worksheet.Cells[row, 4].Value.ToString().Trim())
+                            SubjectName = worksheet.Cells[row, 1].Value.ToString().Trim(),
+                            IsActive = Convert.ToBoolean(worksheet.Cells[row, 2].Value.ToString().Trim()),
+                            AmountCredits = Convert.ToInt32(worksheet.Cells[row, 3].Value.ToString().Trim()),
+                            SubjectСlosingDate = Convert.ToDateTime(worksheet.Cells[row, 4].Value.ToString().Trim())
                         });
                     }
                 }
@@ -227,7 +235,7 @@ namespace QualificationWork.BL.Services
             ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
 
             var subject = context.Subjects.FirstOrDefault(x => x.Id == subjectId);
-            
+
             var stream = new MemoryStream();
             using (var xlPackage = new ExcelPackage(stream))
             {
@@ -244,28 +252,61 @@ namespace QualificationWork.BL.Services
                 worksheet.Cells["D2"].Value = "Присутність";
                 worksheet.Cells["E2"].Value = "Бал";
                 worksheet.Cells["F2"].Value = "Дата заняття";
-              
-                worksheet.Cells["A1:F2"].Style.Fill.PatternType = ExcelFillStyle.Solid;
-                worksheet.Cells["A1:F1"].Style.Fill.BackgroundColor.SetColor(Color.FromArgb(24, 159, 24));
-                worksheet.Cells["A2:F2"].Style.Fill.BackgroundColor.SetColor(Color.FromArgb(184, 204, 228));
-                worksheet.Cells["A2:F2"].Style.Font.Bold = true;
+                worksheet.Cells["G2"].Value = "П.І.Б";
+                worksheet.Cells["H2"].Value = "Підсумкова оцінка";
+                worksheet.Cells["A1:H2"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                worksheet.Cells["A1:H1"].Style.Fill.BackgroundColor.SetColor(Color.FromArgb(24, 159, 24));
+                worksheet.Cells["A2:H2"].Style.Fill.BackgroundColor.SetColor(Color.FromArgb(184, 204, 228));
+                worksheet.Cells["A2:H2"].Style.Font.Bold = true;
                 worksheet.Cells["A1:K20"].AutoFitColumns();
 
                 var row = 3;
 
-                var usersTimeTable = await groupQuery.GetTimeTableBySubject(subjectId);
+                var usersTimeTables = await groupQuery.GetTimeTableBySubject(subjectId);
 
-                foreach (var timeTable in usersTimeTable)
+                foreach (var timeTable in usersTimeTables)
                 {
-                        worksheet.Cells[row, 1].Value = timeTable.UserSubject.User.UserName;
-                        worksheet.Cells[row, 2].Value = timeTable.UserSubject.User.Email;
-                        worksheet.Cells[row, 3].Value = timeTable.LessonNumber;
-                        worksheet.Cells[row, 4].Value = !timeTable.IsPresent? "Відсутній":"Присутній";
-                        worksheet.Cells[row, 5].Value = timeTable.Score;
-                        worksheet.Cells[row, 6].Style.Numberformat.Format = "m/d/yy h:mm";
-                        worksheet.Cells[row, 6].Value = timeTable.LessonDate;
-                        row++;
+                    worksheet.Cells[row, 1].Value = timeTable.User.UserName;
+                    worksheet.Cells[row, 2].Value = timeTable.User.Email;
+                    worksheet.Cells[row, 3].Value = timeTable.LessonNumber;
+                    worksheet.Cells[row, 4].Value = !timeTable.IsPresent ? "Відсутній" : "Присутній";
+                    worksheet.Cells[row, 5].Value = timeTable.Score;
+                    worksheet.Cells[row, 6].Style.Numberformat.Format = "m/d/yy h:mm";
+                    worksheet.Cells[row, 6].Value = timeTable.LessonDate;
+                    row++;
                 }
+
+                var listUniqueTimetable = new List<TimeTable>();
+
+                foreach (var item in usersTimeTables)
+                {
+                    var leson = listUniqueTimetable.FirstOrDefault(x => x.UserId == item.UserId);
+
+                    if (leson == null)
+                    {
+                        listUniqueTimetable.Add(item);
+                    }
+                }
+
+                var rowCount = 3;
+                foreach (var timeTable in listUniqueTimetable)
+                {
+                    var totaCount = 0;
+
+                    var userTimeTable = context.TimeTable
+                                               .Where(x => x.UserId == timeTable.UserId)
+                                               .Where(x => x.SubjectId == subjectId).ToList();
+
+                    foreach (var i in userTimeTable)
+                    {
+                        totaCount += i.Score;
+                    }
+
+                    worksheet.Cells[rowCount, 7].Value = timeTable.User.UserName;
+                    worksheet.Cells[rowCount, 8].Value = totaCount;
+                    rowCount++;
+                }
+
                 xlPackage.Workbook.Properties.Title = "User List";
                 xlPackage.Workbook.Properties.Author = "Mohamad Lawand";
                 xlPackage.Workbook.Properties.Subject = "User List";
@@ -287,18 +328,19 @@ namespace QualificationWork.BL.Services
                 namedStyle.Style.Font.UnderLine = true;
                 namedStyle.Style.Font.Color.SetColor(Color.Blue);
 
-                worksheet.Cells["A1"].Value = "Звіт по предметам";
                 worksheet.Cells["A1"].Style.Font.Bold = true;
+                worksheet.Cells["A1"].Value = "Звіт по предметам";
                 worksheet.Cells["A2"].Value = "Предмет";
                 worksheet.Cells["B2"].Value = "Номер заняття";
                 worksheet.Cells["C2"].Value = "Присутність";
                 worksheet.Cells["D2"].Value = "Бал";
                 worksheet.Cells["E2"].Value = "Дата заняття";
-
-                worksheet.Cells["A1:E2"].Style.Fill.PatternType = ExcelFillStyle.Solid;
-                worksheet.Cells["A1:E1"].Style.Fill.BackgroundColor.SetColor(Color.FromArgb(24, 159, 24));
-                worksheet.Cells["A2:E2"].Style.Fill.BackgroundColor.SetColor(Color.FromArgb(184, 204, 228));
-                worksheet.Cells["A2:F2"].Style.Font.Bold = true;
+                worksheet.Cells["G2"].Value = "Предмет";
+                worksheet.Cells["H2"].Value = "Підсумкова оцінка";
+                worksheet.Cells["A1:H2"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                worksheet.Cells["A1:H1"].Style.Fill.BackgroundColor.SetColor(Color.FromArgb(24, 159, 24));
+                worksheet.Cells["A2:H2"].Style.Fill.BackgroundColor.SetColor(Color.FromArgb(184, 204, 228));
+                worksheet.Cells["A2:H2"].Style.Font.Bold = true;
                 worksheet.Cells["A1:K20"].AutoFitColumns();
 
                 var row = 3;
@@ -307,7 +349,7 @@ namespace QualificationWork.BL.Services
 
                 foreach (var timeTable in userTimeTable)
                 {
-                    worksheet.Cells[row, 1].Value = timeTable.UserSubject.Subject.SubjectName;
+                    worksheet.Cells[row, 1].Value = timeTable.Subject.SubjectName;
                     worksheet.Cells[row, 2].Value = timeTable.LessonNumber;
                     worksheet.Cells[row, 3].Value = !timeTable.IsPresent ? "Відсутній" : "Присутній";
                     worksheet.Cells[row, 4].Value = timeTable.Score;
@@ -315,6 +357,39 @@ namespace QualificationWork.BL.Services
                     worksheet.Cells[row, 5].Value = timeTable.LessonDate;
                     row++;
                 }
+
+                var listUniqueTimetable = new List<TimeTable>();
+
+                foreach (var item in userTimeTable)
+                {
+                    var leson = listUniqueTimetable.FirstOrDefault(x => x.SubjectId == item.SubjectId);
+
+                    if (leson == null)
+                    {
+                        listUniqueTimetable.Add(item);
+                    }
+                }
+
+                var rowCount = 3;
+                foreach (var timeTable in listUniqueTimetable)
+                {
+                    var totaCount = 0;
+
+                    var subjectTimeTable = context.TimeTable
+                                               .Where(x => x.UserId == userId)
+                                               .Where(x => x.SubjectId == timeTable.SubjectId).ToList();
+
+                    foreach (var i in subjectTimeTable)
+                    {
+                        totaCount += i.Score;
+                    }
+
+                    worksheet.Cells[rowCount, 7].Value = timeTable.Subject.SubjectName;
+                    worksheet.Cells[rowCount, 8].Value = totaCount;
+                    rowCount++;
+                }
+
+
                 xlPackage.Workbook.Properties.Title = "User List";
                 xlPackage.Workbook.Properties.Author = "Mohamad Lawand";
                 xlPackage.Workbook.Properties.Subject = "User List";

@@ -13,7 +13,7 @@ const SubjectTable = (props) => {
 
   const { subjects } = props;
 
-  const expandedRowRender = (userSubjects) => {
+  const expandedRowRender = (timeTables) => {
     const columns = [
       { title: 'UserName', dataIndex: 'userName', key: 'userName' },
       {
@@ -35,12 +35,12 @@ const SubjectTable = (props) => {
       },
     ];
     const data = [];
-    for (let i = 0; i < userSubjects.length; ++i) {
+    for (let i = 0; i < timeTables.length; ++i) {
       data.push({
         key: i,
-        userName: userSubjects[i].user.userName,
-        email: userSubjects[i].user.email,
-        position: !userSubjects[i].user.іsContract ? 'Платник' : 'Бюджетник',
+        userName: timeTables[i].user.userName,
+        email: timeTables[i].user.email,
+        position: !timeTables[i].user.іsContract ? 'Платник' : 'Бюджетник',
       });
     }
     return <Table rowKey={Math.random()} columns={columns} dataSource={data} pagination={false} />;
@@ -75,7 +75,7 @@ const SubjectTable = (props) => {
       title: 'Дата закінчення курсу',
       dataIndex: 'subjectСlosingDate',
       key: 'subjectСlosingDate',
-      render: (record) => <span>{new Date(record).toLocaleString('uk-UA', options)}</span>,
+      render: (record) => <span>{new Date(record).toLocaleString('uk-UA')}</span>,
     },
   ];
 
@@ -90,8 +90,8 @@ const SubjectTable = (props) => {
         pagination={false}
         columns={columns}
         expandable={{
-          expandedRowRender: (record) => expandedRowRender(record.userSubjects),
-          rowExpandable: (record) => record.userSubjects?.length,
+          expandedRowRender: (record) => expandedRowRender(record.timeTables),
+          rowExpandable: (record) => record.timeTables?.length,
         }}
       />
     </div>

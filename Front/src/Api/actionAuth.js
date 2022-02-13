@@ -1,6 +1,6 @@
 import { instance, Notification } from './api';
 import { setAuthUserData } from './../Redux/Auth-reducer';
-
+import { redirectByRole } from './../Utils/Redirect';
 const setDataLocalStorage = (jwtToken, refreshToken, userName, roles) => {
   localStorage.setItem('token', jwtToken);
 
@@ -24,6 +24,8 @@ export const setUserData = (googleToken) => {
       );
 
       dispatch(setAuthUserData(res.data.userName, res.data.roles, true));
+
+      return redirectByRole(res.data.roles);
     } catch (error) {
       Notification(error.response.status, error.message);
     }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using QualificationWork.DAL.Models;
+using QualificationWork.DTO.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,12 +31,10 @@ namespace QualificationWork.DAL.Query
                           .ToList();
         }
 
-
         public async Task<List<TimeTable>> GetTimeTableByUser(long userId)
         {
-            var response = await context.TimeTable.Where(x => x.UserSubject.UserId == userId)
-                                                  .Include(x => x.UserSubject)
-                                                  .ThenInclude(x => x.Subject)
+            var response = await context.TimeTable.Where(x => x.UserId == userId)
+                                                  .Include(x => x.Subject)
                                                   .ToListAsync();
             return response;
 
@@ -43,21 +42,13 @@ namespace QualificationWork.DAL.Query
 
         public async Task<List<TimeTable>> GetTimeTableBySubject(long subjectId)
         {
-            var response = await context.TimeTable.Where(x => x.UserSubject.SubjectId == subjectId)
-                                                  .Include(x => x.UserSubject)
-                                                  .ThenInclude(x => x.User)
+            var response = await context.TimeTable.Where(x => x.SubjectId == subjectId)
+                                                  .Include(x => x.User)
                                                   .ToListAsync();
             return response;
-
         }
 
-        public List<Specialty> GetSpecialtys()
-        {
-            return context.Specialtys
-                          .ToList();
-        }
-
-        public async Task<GroupsPagination> GetAllGroups(int pageNumber, int pageSize, string search)
+        public async Task<Pagination<Group>> GetAllGroups(int pageNumber, int pageSize, string search)
         {
             IQueryable<Group> groups = context.Groups;
 
@@ -74,7 +65,8 @@ namespace QualificationWork.DAL.Query
                                     .Include(pub => pub.UserGroups)
                                     .ThenInclude(pub => pub.User)
                                     .ToListAsync();
-            return new GroupsPagination(totalCount, response);
+
+            return new Pagination<Group>(totalCount, response);
         }
 
     }

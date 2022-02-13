@@ -29,6 +29,8 @@ const UserTable = (props) => {
     props.GetUsers(currentPage, search);
   }, [search, currentPage]);
 
+  console.log(props.users);
+
   const [modalEditeUser, setModalEditeUser] = useState(false);
 
   const [userData, setUserData] = useState(null);
@@ -38,9 +40,9 @@ const UserTable = (props) => {
     !modalEditeUser ? setModalEditeUser(true) : setModalEditeUser(false);
   };
 
-  const deleteRole = (id, role) => {
-    props.deleteRole({ id, role });
-  };
+  // const deleteRole = (id, role) => {
+  //   props.deleteRole({ id, role });
+  // };
 
   const columns = [
     {
@@ -85,16 +87,16 @@ const UserTable = (props) => {
           <span>Without roles</span>
         ) : (
           <Popover
-            content={text?.map((user) => (
+            content={text?.map((role) => (
               <tr>
-                <td> {user.role.name}</td>
+                <td> {role}</td>
                 <td>
-                  <a
+                  {/* <a
                     href="#"
                     className="icon delete"
                     onClick={() => deleteRole(record.id, user.role)}>
                     <DeleteOutlined />
-                  </a>
+                  </a> */}
                 </td>
               </tr>
             ))}
@@ -124,7 +126,7 @@ const UserTable = (props) => {
     },
   ];
 
-  const expandedRowRender = (userSubjects) => {
+  const expandedRowRender = (timeTables) => {
     const columns = [
       { title: 'Назва', dataIndex: 'subjectName', key: 'name' },
       {
@@ -149,13 +151,13 @@ const UserTable = (props) => {
     const data = [];
 
     var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    for (let i = 0; i < userSubjects.length; ++i) {
+    for (let i = 0; i < timeTables.length; ++i) {
       data.push({
         key: i,
-        subjectName: userSubjects[i].subject.subjectName,
-        isActive: !userSubjects[i].subject.isActive ? 'Не активний' : 'Активний',
-        amountCredits: userSubjects[i].subject.amountCredits,
-        subjectСlosingDate: new Date(userSubjects[i].subject.subjectСlosingDate).toLocaleString(
+        subjectName: timeTables[i].subject.subjectName,
+        isActive: !timeTables[i].subject.isActive ? 'Не активний' : 'Активний',
+        amountCredits: timeTables[i].subject.amountCredits,
+        subjectСlosingDate: new Date(timeTables[i].subject.subjectСlosingDate).toLocaleString(
           'uk-UA',
           options,
         ),
@@ -167,7 +169,7 @@ const UserTable = (props) => {
   return (
     <div>
       <Title level={4}>Список користувачів</Title>
-      <Row align="middle">
+      <Row align="middle" className="header__table">
         <Col span={20}>
           <AddUser />
         </Col>
@@ -183,8 +185,8 @@ const UserTable = (props) => {
         pagination={false}
         columns={columns}
         expandable={{
-          expandedRowRender: (record) => expandedRowRender(record.userSubjects),
-          rowExpandable: (record) => record.userSubjects?.length,
+          expandedRowRender: (record) => expandedRowRender(record.timeTables),
+          rowExpandable: (record) => record.timeTables?.length,
         }}
       />
       <div className="pagination__container mt-4 mb-4">

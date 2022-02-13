@@ -65,14 +65,14 @@ namespace QualificationWork.DAL.Command
         }
         public async Task СreateUserAsync(UserDto model)
         {
-            var check = context.Users.FirstOrDefaultAsync(x => x.Email == model.UserEmail);
+            var check = await context.Users.FirstOrDefaultAsync(x => x.Email == model.UserEmail);
 
-            if (check == null)
+            if (check != null)
             {
                 throw new AppException("User already exists");
             }
 
-                ApplicationUser userData = new ApplicationUser
+                var userData = new ApplicationUser
             {
                 Email = model.UserEmail,
                 SecurityStamp = Guid.NewGuid().ToString(),
@@ -82,7 +82,7 @@ namespace QualificationWork.DAL.Command
             };
 
              await userManager.CreateAsync(userData);
-
+             await userManager.AddToRolesAsync(userData, model.Roles);            
         }
 
         public async Task AddRangeUsers(List<UserFromExcelDto> list)
@@ -106,48 +106,48 @@ namespace QualificationWork.DAL.Command
             }
         }
 
-        public async Task AddSubject(long userId, long subjectId)
-        {
-            var filterTimeTables = new List<TimeTable>();
+        //public async Task AddSubject(long userId, long subjectId)
+        //{
+        //    var filterTimeTables = new List<TimeTable>();
 
-            var timeTables = await context.TimeTable.Where(x => x.UserSubject.Subject.Id == subjectId).ToListAsync();
+        //    var timeTables = await context.TimeTable.Where(x => x.UserSubject.Subject.Id == subjectId).ToListAsync();
 
-            foreach (var item in timeTables)
-            {
-                var leson = filterTimeTables.FirstOrDefault(x => x.LessonNumber == item.LessonNumber);
+        //    foreach (var item in timeTables)
+        //    {
+        //        var leson = filterTimeTables.FirstOrDefault(x => x.LessonNumber == item.LessonNumber);
 
-                if (leson == null) { filterTimeTables.Add(item); }
-            }
+        //        if (leson == null) { filterTimeTables.Add(item); }
+        //    }
 
-            var userSubject = new UserSubject
-            {
-                UserId = userId,
-                SubjectId = subjectId
-            };
+        //    var userSubject = new UserSubject
+        //    {
+        //        UserId = userId,
+        //        SubjectId = subjectId
+        //    };
 
-            var check = await context.UserSubjects.FirstOrDefaultAsync(w => w.UserId == userId && w.SubjectId == subjectId);
+        //    var check = await context.UserSubjects.FirstOrDefaultAsync(w => w.UserId == userId && w.SubjectId == subjectId);
 
-            if (check == null)
-            {
-                if (filterTimeTables != null)
-                {
-                    foreach (var item in filterTimeTables)
-                    {
-                        var timeTable = new TimeTable
-                        {
-                            LessonNumber = item.LessonNumber,
-                            LessonDate = item.LessonDate,
-                            IsPresent = false,
-                            Score = 0,
-                        };
+        //    if (check == null)
+        //    {
+        //        if (filterTimeTables != null)
+        //        {
+        //            foreach (var item in filterTimeTables)
+        //            {
+        //                var timeTable = new TimeTable
+        //                {
+        //                    LessonNumber = item.LessonNumber,
+        //                    LessonDate = item.LessonDate,
+        //                    IsPresent = false,
+        //                    Score = 0,
+        //                };
 
-                        userSubject.TimeTable.Add(timeTable);
-                    };
-                }
+        //                userSubject.TimeTable.Add(timeTable);
+        //            };
+        //        }
 
-                await context.AddAsync(userSubject);
-            }
-        }
+        //        await context.AddAsync(userSubject);
+        //    }
+        //}
 
         public async Task AddGroup(long userId, long groupId)
         {
@@ -176,12 +176,14 @@ namespace QualificationWork.DAL.Command
                 data.Email = model.UserEmail;
                 data.Age = model.Age;
                 data.ІsContract = model.ІsContract;
+
+                await userManager.AddToRolesAsync(data, model.Roles);
             }
         }
 
         public void RemoveSubject(long userId, long subjectId)
         {
-            var data = context.UserSubjects
+            var data = context.TimeTable
                               .Where(pub => pub.UserId == userId)
                               .FirstOrDefault(pub => pub.SubjectId == subjectId);
 
@@ -195,11 +197,12 @@ namespace QualificationWork.DAL.Command
         {
             var data = new TimeTable
             {
+                UserId = model.UserId,
+                SubjectId = model.SubjectId,
                 LessonDate = model.LessonDate,
                 IsPresent = model.IsPresent,
                 LessonNumber = model.LessonNumber,
                 Score = model.Score,
-                UserSubjectId=model.UserSubjectId
             };
 
             await context.AddAsync(data);
@@ -218,8 +221,10 @@ namespace QualificationWork.DAL.Command
 
         public async Task UpdateUserScore(UpdateUserScoreDto model)
         {
-            var data = await context.TimeTable.FirstOrDefaultAsync(m => m.Id == model.Id);
-
+            var data = await context.TimeTable
+                .Where(x=>x.LessonNumber==model.LessonNumber)
+                .FirstOrDefaultAsync(m => m.UserId == model.Id);
+                
             if (data != null)
             {
                 data.Score = model.Score;
@@ -228,7 +233,9 @@ namespace QualificationWork.DAL.Command
 
         public async Task UpdateUserIsPresent(UpdateUserIsPresentDto model)
         {
-            var data = await context.TimeTable.FirstOrDefaultAsync(m => m.Id == model.Id);
+            var data = await context.TimeTable
+                .Where(x => x.LessonNumber == model.LessonNumber)
+                .FirstOrDefaultAsync(m => m.UserId == model.Id);
 
             if (data != null)
             {
@@ -248,38 +255,11 @@ namespace QualificationWork.DAL.Command
             await context.SaveChangesAsync();
         }
 
-        public class CreateGroupDto
-        {
-            public string NameGroup { get; set; }
-            public string NameFaculty { get; set; }
-            public List<ApplicationUser> users { get; set; }
-            public List<Subject> subjects { get; set; }
-        }
-
         public async Task CreateGroup(CreateGroupDto model)
         {
             var faculty = await context.Faculties.FirstOrDefaultAsync(x => x.FacultyName == model.NameFaculty);
 
             await AddFacultyGroupAsync(faculty.Id, model.NameGroup);
-
-            var group = await context.Groups.FirstOrDefaultAsync(x => x.GroupName == model.NameGroup);
-
-            foreach (var user in model.users)
-            {
-                await AddGroup(user.Id, group.Id);
-
-                foreach (var subject in model.subjects)
-                {
-                    await AddSubject(user.Id, subject.Id);
-
-                    var subjectGroup = new SubjectGroup
-                    {
-                        SubjectId = subject.Id,
-                        GroupId = group.Id,
-                    };
-                    await context.AddAsync(subjectGroup);
-                }
-            }
         }
 
     }

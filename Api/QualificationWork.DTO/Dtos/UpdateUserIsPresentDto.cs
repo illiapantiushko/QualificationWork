@@ -7,6 +7,7 @@ namespace QualificationWork.DTO.Dtos
   public class UpdateUserIsPresentDto
     {
         public long Id { get; set; }
+        public int LessonNumber { get; set; }
         public bool IsPresent { get; set; }
     }
 }

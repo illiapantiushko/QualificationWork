@@ -10,7 +10,7 @@ using QualificationWork.DAL;
 namespace QualificationWork.DAL.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20220103173941_initial")]
+    [Migration("20220205193003_initial")]
     partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -189,7 +189,13 @@ namespace QualificationWork.DAL.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("ProfilePicture")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Specialty")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("TwoFactorEnabled")
@@ -282,7 +288,7 @@ namespace QualificationWork.DAL.Migrations
 
                     b.HasIndex("GroupId");
 
-                    b.ToTable("Specialtys");
+                    b.ToTable("Specialty");
                 });
 
             modelBuilder.Entity("QualificationWork.DAL.Models.Subject", b =>
@@ -331,6 +337,28 @@ namespace QualificationWork.DAL.Migrations
                     b.ToTable("SubjectGroups");
                 });
 
+            modelBuilder.Entity("QualificationWork.DAL.Models.TeacherSubject", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<long>("SubjectId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("UserId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SubjectId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("TeacherSubjects");
+                });
+
             modelBuilder.Entity("QualificationWork.DAL.Models.TimeTable", b =>
                 {
                     b.Property<long>("Id")
@@ -350,12 +378,17 @@ namespace QualificationWork.DAL.Migrations
                     b.Property<int>("Score")
                         .HasColumnType("int");
 
-                    b.Property<long>("UserSubjectId")
+                    b.Property<long>("SubjectId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("UserId")
                         .HasColumnType("bigint");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UserSubjectId");
+                    b.HasIndex("SubjectId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("TimeTable");
                 });
@@ -380,28 +413,6 @@ namespace QualificationWork.DAL.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("UserGroups");
-                });
-
-            modelBuilder.Entity("QualificationWork.DAL.Models.UserSubject", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<long>("SubjectId")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("UserId")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("SubjectId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("UserSubjects");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<long>", b =>
@@ -551,15 +562,42 @@ namespace QualificationWork.DAL.Migrations
                     b.Navigation("Subject");
                 });
 
-            modelBuilder.Entity("QualificationWork.DAL.Models.TimeTable", b =>
+            modelBuilder.Entity("QualificationWork.DAL.Models.TeacherSubject", b =>
                 {
-                    b.HasOne("QualificationWork.DAL.Models.UserSubject", "UserSubject")
-                        .WithMany("TimeTable")
-                        .HasForeignKey("UserSubjectId")
+                    b.HasOne("QualificationWork.DAL.Models.Subject", "Subject")
+                        .WithMany("TeacherSubjects")
+                        .HasForeignKey("SubjectId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("UserSubject");
+                    b.HasOne("QualificationWork.DAL.Models.ApplicationUser", "User")
+                        .WithMany("TeacherSubjects")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Subject");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("QualificationWork.DAL.Models.TimeTable", b =>
+                {
+                    b.HasOne("QualificationWork.DAL.Models.Subject", "Subject")
+                        .WithMany("TimeTables")
+                        .HasForeignKey("SubjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("QualificationWork.DAL.Models.ApplicationUser", "User")
+                        .WithMany("TimeTables")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Subject");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("QualificationWork.DAL.Models.UserGroup", b =>
@@ -581,25 +619,6 @@ namespace QualificationWork.DAL.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("QualificationWork.DAL.Models.UserSubject", b =>
-                {
-                    b.HasOne("QualificationWork.DAL.Models.Subject", "Subject")
-                        .WithMany("UserSubjects")
-                        .HasForeignKey("SubjectId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("QualificationWork.DAL.Models.ApplicationUser", "User")
-                        .WithMany("UserSubjects")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Subject");
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("QualificationWork.DAL.Models.ApplicationRole", b =>
                 {
                     b.Navigation("UserRoles");
@@ -607,11 +626,13 @@ namespace QualificationWork.DAL.Migrations
 
             modelBuilder.Entity("QualificationWork.DAL.Models.ApplicationUser", b =>
                 {
+                    b.Navigation("TeacherSubjects");
+
+                    b.Navigation("TimeTables");
+
                     b.Navigation("UserGroups");
 
                     b.Navigation("UserRoles");
-
-                    b.Navigation("UserSubjects");
                 });
 
             modelBuilder.Entity("QualificationWork.DAL.Models.Faculty", b =>
@@ -632,12 +653,9 @@ namespace QualificationWork.DAL.Migrations
                 {
                     b.Navigation("SubjectGroups");
 
-                    b.Navigation("UserSubjects");
-                });
+                    b.Navigation("TeacherSubjects");
 
-            modelBuilder.Entity("QualificationWork.DAL.Models.UserSubject", b =>
-                {
-                    b.Navigation("TimeTable");
+                    b.Navigation("TimeTables");
                 });
 #pragma warning restore 612, 618
         }

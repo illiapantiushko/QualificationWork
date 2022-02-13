@@ -1,4 +1,5 @@
 import { instance, Notification } from './api';
+import { notification } from 'antd';
 import {
   setUsers,
   setGroups,
@@ -8,6 +9,8 @@ import {
   setListSubjects,
   updateUser,
   deleteUserRole,
+  addGroup,
+  deleteGroup,
 } from './../Redux/Admin-reducer';
 
 export const getUsers = (pageNumber = 1, search = '') => {
@@ -18,7 +21,7 @@ export const getUsers = (pageNumber = 1, search = '') => {
       );
       dispatch(
         setUsers(
-          res.data.users.map((row) => ({
+          res.data.data.map((row) => ({
             id: row.id,
             key: row.id,
             userName: row.userName,
@@ -26,8 +29,8 @@ export const getUsers = (pageNumber = 1, search = '') => {
             age: row.age,
             іsContract: row.іsContract,
             profilePicture: row.profilePicture,
-            userSubjects: row.userSubjects,
-            userRoles: row.userRoles,
+            timeTables: row.timeTables,
+            userRoles: row.userRoles?.map((r) => r.role.name),
           })),
           res.data.totalCount,
         ),
@@ -46,7 +49,7 @@ export const getGroups = (pageNumber = 1, search = '') => {
       );
       dispatch(
         setGroups(
-          res.data.groups.map((row) => ({
+          res.data.data.map((row) => ({
             id: row.id,
             key: row.id,
             name: row.groupName,
@@ -65,16 +68,22 @@ export const getGroups = (pageNumber = 1, search = '') => {
 export const addNewUser = (data) => {
   return async (dispatch) => {
     try {
-      await instance.post(`Users/createUser`, data);
+      const res = await instance.post(`Users/createUser`, data);
       const newUser = {
         id: 1,
         name: data.userName,
         email: data.userEmail,
         age: data.age,
-        userSubjects: [],
-        userRoles: [],
+        timeTables: [],
+        userRoles: data.roles,
       };
       dispatch(addUser(newUser));
+      if (res.status === 200) {
+        notification.success({
+          message: '200',
+          description: 'Користувача успішно додано',
+        });
+      }
     } catch (error) {
       Notification(error.response.status, error.message);
     }
@@ -84,8 +93,31 @@ export const addNewUser = (data) => {
 export const deleteUserData = (id) => {
   return async (dispatch) => {
     try {
-      await instance.delete(`Users/deleteUser?userId=${id}`);
+      const res = await instance.delete(`Users/deleteUser?userId=${id}`);
       dispatch(deleteUser(id));
+      if (res.status === 200) {
+        notification.success({
+          message: '200',
+          description: 'Користувача видалено',
+        });
+      }
+    } catch (error) {
+      Notification(error.response.status, error.message);
+    }
+  };
+};
+
+export const deleteGroupData = (id) => {
+  return async (dispatch) => {
+    try {
+      const res = await instance.delete(`Students/deleteGroup?groupId=${id}`);
+      dispatch(deleteGroup(id));
+      if (res.status === 200) {
+        notification.success({
+          message: '200',
+          description: 'Групу видалено видалено',
+        });
+      }
     } catch (error) {
       Notification(error.response.status, error.message);
     }
@@ -114,6 +146,13 @@ export const addNewUserFromExel = (file) => {
           })),
         ),
       );
+
+      if (res.status === 200) {
+        notification.success({
+          message: '200',
+          description: 'Користувачів успішно додано',
+        });
+      }
     } catch (error) {
       Notification(error.response.status, error.message);
     }
@@ -145,20 +184,14 @@ export const getListSubjects = () => {
 export const editeUser = (data) => {
   return async (dispatch) => {
     try {
-      await instance.put(`Users/updateUser`, data);
+      const res = await instance.put(`Users/updateUser`, data);
       dispatch(updateUser(data));
-    } catch (error) {
-      Notification(error.response.status, error.message);
-    }
-  };
-};
-
-export const createGroup = (model) => {
-  return async (dispatch) => {
-    try {
-      const res = await instance.post('Users/createGroup', model);
-      dispatch(getUsers(1, ''));
-      dispatch(getGroups());
+      if (res.status === 200) {
+        notification.success({
+          message: '200',
+          description: 'Користувача редаговано',
+        });
+      }
     } catch (error) {
       Notification(error.response.status, error.message);
     }
@@ -174,8 +207,86 @@ export const deleteRole = (data) => {
       };
       const res = await instance.post('Users/deleteRole', requestData);
       dispatch(deleteUserRole({ id: data.id, roleId: data.role.id }));
+      if (res.status === 200) {
+        notification.success({
+          message: '200',
+          description: 'Роль користувача успішно видалено',
+        });
+      }
     } catch (error) {
       Notification(error.response.status, error.message);
+    }
+  };
+};
+
+export const getUserList = (pageNumber = 1) => {
+  return async () => {
+    try {
+      return await instance.get(
+        `Teachers/getAllUsersWithSubjests?pageNumber=${pageNumber}&pageSize=${4}&search=${''}`,
+      );
+    } catch (error) {
+      Notification(error.response.status, error.message);
+    }
+  };
+};
+
+export const createNewGroup = (data) => {
+  return async (dispatch) => {
+    try {
+      const res = await instance.post(`Users/createGroup`, data);
+
+      const randomValue = Math.random();
+      const newGroup = {
+        id: randomValue,
+        key: randomValue,
+        name: data.groupName,
+        userGroups: [],
+        faculty: data.facultyName,
+      };
+      dispatch(addGroup(newGroup));
+      if (res.status === 200) {
+        notification.success({
+          message: '200',
+          description: 'Групі успішно додано',
+        });
+      }
+    } catch (error) {
+      Notification(error.response.status, error.message);
+    }
+  };
+};
+
+export const addUserGroup = (data) => {
+  return async (dispatch) => {
+    try {
+      const res = await instance.post(`Students/addUserGroup`, data);
+
+      if (res.status === 200) {
+        notification.success({
+          message: '200',
+          description: 'Користувачів успішно додано до групи',
+        });
+      }
+    } catch (error) {
+      Notification(error.response?.status, error.message);
+    }
+  };
+};
+
+export const addUserSubject = (data) => {
+  return async (dispatch) => {
+    try {
+      const res = await instance.post(`Students/addUserSubject`, data);
+
+      if (res.status === 200) {
+        notification.success({
+          message: '200',
+          description: 'Предмети успішно додано до групи',
+        });
+      }
+    } catch (error) {
+      Notification(error.response?.status, error.message);
     }
   };
 };

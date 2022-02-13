@@ -6,6 +6,8 @@ namespace QualificationWork.DTO.Dtos
 {
     public class TimeTableDto
     {
+        public long UserId { get; set; }
+        public long SubjectId { get; set; }
         public int LessonNumber { get; set; }
         public bool IsPresent { get; set; }
         public int Score { get; set; }

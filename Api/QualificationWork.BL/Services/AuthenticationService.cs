@@ -26,7 +26,6 @@ namespace QualificationWork.BL.Services
             return authenticate;
 
         }
-
         public async Task<AuthenticateResponseDto> RefreshToken(string token, string ipAddress)
         {
             var refreshToken = await authenticationCommand.RefreshToken(token, ipAddress);

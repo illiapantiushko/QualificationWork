@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Login from './components/Login/Login';
-import Profile from './components/Profile/Profile';
 import { useSelector } from 'react-redux';
 import AdminPanel from './components/Admin/AdminPanel';
 import AdminPrivateRoute from './Utils/AdminPrivateRoute.route';
@@ -26,14 +25,18 @@ const App = () => {
       collapsed: !state.collapsed,
     });
   };
+  const location = useLocation();
+  const checkLocation = location.pathname === '/login';
 
-  const roles = useSelector((state) => state.Auth.roles);
+  const roles = JSON.parse(localStorage.getItem('roles'));
+  //  useSelector((state) => state.Auth.roles);
   return (
     <>
       <Layout>
-        <NavBar state={state} toggle={toggle}></NavBar>
+        {checkLocation ? null : <NavBar state={state} toggle={toggle}></NavBar>}
         <Layout style={{ backgroundColor: '#fff' }}>
-          <SideBar state={state}></SideBar>
+          {checkLocation ? null : <SideBar state={state}></SideBar>}
+
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/" element={<Main />} />

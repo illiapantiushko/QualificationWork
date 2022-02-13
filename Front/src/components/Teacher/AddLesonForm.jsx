@@ -4,7 +4,7 @@ import { addLesson, getSubjectReport } from '../../Api/actionsTeacher';
 import { Button } from 'antd';
 import { Row, Col, Form, DatePicker, InputNumber } from 'antd';
 import './teacherPanel.scss';
-
+import { DownloadOutlined } from '@ant-design/icons';
 const AddLesonForm = (props) => {
   const [form] = Form.useForm();
 
@@ -14,7 +14,6 @@ const AddLesonForm = (props) => {
     props.AddLesson(data);
     form.resetFields();
   };
-
   const downloadReport = () => {
     props.getSubjectReport(props.subjetId);
   };
@@ -26,7 +25,7 @@ const AddLesonForm = (props) => {
             <Row justify="center">
               <Col span={8}>
                 <Form.Item name="lessonNumber" rules={[{ required: true }]}>
-                  <InputNumber className="addLeson__input" />
+                  <InputNumber placeholder="Leson Number" className="addLeson__input" />
                 </Form.Item>
               </Col>
               <Col span={8}>
@@ -34,7 +33,7 @@ const AddLesonForm = (props) => {
                   <DatePicker className="addLeson__input" />
                 </Form.Item>
               </Col>
-              <Col span={8}>
+              <Col span={3}>
                 <Button type="primary" key="submit" htmlType="submit">
                   Submit
                 </Button>
@@ -43,7 +42,9 @@ const AddLesonForm = (props) => {
           </Form>
         </Col>
         <Col span={5}>
-          <Button onClick={downloadReport}>Сформувати звіт за предметом</Button>
+          <Button onClick={downloadReport} type="primary">
+            Сформувати звіт за предметом
+          </Button>
         </Col>
       </Row>
     </div>

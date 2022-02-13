@@ -1,6 +1,8 @@
 import { instance, Notification } from './api';
 import { setSubjects, setSubjectDetails, setUserInfo } from './../Redux/Profile-reducer';
 
+import { setSubjectFetching } from './../Redux/Profile-reducer';
+
 export const getInfoCurrentUser = () => {
   return async (dispatch) => {
     try {
@@ -15,8 +17,24 @@ export const getInfoCurrentUser = () => {
 export const getSubjects = () => {
   return async (dispatch) => {
     try {
+      dispatch(setSubjectFetching());
       const res = await instance.get('Teachers/GetAllSubject');
-      dispatch(setSubjects(res.data));
+      dispatch(
+        setSubjects(
+          res.data.map((row) => ({
+            id: row.id,
+            key: row.id,
+            subjectName: row.subjectName,
+            isActive: row.isActive,
+            amountCredits: row.amountCredits,
+            subjectСlosingDate: row.subjectСlosingDate,
+            teacher: row.teacherSubjects[0].user.userName,
+            timeTables: row.timeTables,
+          })),
+
+          res.data,
+        ),
+      );
     } catch (error) {
       Notification(error.response.status, error.message);
     }
@@ -37,7 +55,7 @@ export const getSubjectDetails = (id) => {
 export const getUserReport = (userId) => {
   return async (dispatch) => {
     try {
-      const res = await instance.get(`Users/exportToExcelByUser`, {
+      const res = await instance.get(`Exels/exportToExcelByUser`, {
         responseType: 'arraybuffer',
       });
       const url = window.URL.createObjectURL(new Blob([res.data]));

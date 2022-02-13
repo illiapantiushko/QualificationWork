@@ -9,10 +9,10 @@ namespace QualificationWork.DAL
                                                         IdentityUserLogin<long>, IdentityRoleClaim<long>, IdentityUserToken<long>>
     {
         public DbSet<Subject> Subjects { get; set; }
-        public DbSet<Specialty> Specialtys { get; set; }
+        //public DbSet<Specialty> Specialtys { get; set; }
         public DbSet<Group> Groups { get; set; }
         public DbSet<Faculty> Faculties { get; set; }
-        public DbSet<UserSubject> UserSubjects { get; set; }
+        public DbSet<TeacherSubject> TeacherSubjects { get; set; }
         public DbSet<TimeTable> TimeTable { get; set; }
         public DbSet<UserGroup> UserGroups { get; set; }
         public DbSet<SubjectGroup> SubjectGroups { get; set; }
@@ -43,31 +43,52 @@ namespace QualificationWork.DAL
                         .IsRequired();
             });
 
-            modelBuilder.Entity<UserSubject>(entity =>
+            modelBuilder.Entity<TeacherSubject>(entity =>
             {
                 entity.HasKey(x => x.Id);
                 entity.Property(x => x.Id)
                 .ValueGeneratedOnAdd();
 
                 entity.HasOne<ApplicationUser>(sc => sc.User)
-                      .WithMany(s => s.UserSubjects)
+                      .WithMany(s => s.TeacherSubjects)
                       .HasForeignKey(sc => sc.UserId)
                       .IsRequired();
 
                 entity.HasOne<Subject>(sc => sc.Subject)
-                      .WithMany(s => s.UserSubjects)
+                      .WithMany(s => s.TeacherSubjects)
                       .HasForeignKey(sc => sc.SubjectId)
                       .IsRequired();
 
-                entity.HasMany(x => x.TimeTable)
-                .WithOne(x => x.UserSubject)
-                .HasForeignKey(x => x.UserSubjectId)
-                .IsRequired();
+                //entity.HasMany(x => x.TimeTable)
+                //.WithOne(x => x.UserSubject)
+                //.HasForeignKey(x => x.UserSubjectId)
+                //.IsRequired();
                    
+            });
+
+            modelBuilder.Entity<TimeTable>(entity =>
+            {
+                entity.HasKey(x => x.Id);
+                entity.Property(x => x.Id)
+                .ValueGeneratedOnAdd();
+
+                entity.HasOne<ApplicationUser>(sc => sc.User)
+                      .WithMany(s => s.TimeTables)
+                      .HasForeignKey(sc => sc.UserId)
+                      .IsRequired();
+
+                entity.HasOne<Subject>(sc => sc.Subject)
+                      .WithMany(s => s.TimeTables)
+                      .HasForeignKey(sc => sc.SubjectId)
+                      .IsRequired();
             });
 
             modelBuilder.Entity<UserGroup>(entity =>
             {
+                entity.HasKey(x => x.Id);
+                entity.Property(x => x.Id)
+                .ValueGeneratedOnAdd();
+
                 entity.HasOne<ApplicationUser>(sc => sc.User)
                       .WithMany(s => s.UserGroups)
                       .HasForeignKey(sc => sc.UserId)
@@ -90,9 +111,7 @@ namespace QualificationWork.DAL
                       .WithMany(s => s.SubjectGroups)
                       .HasForeignKey(sc => sc.GroupId)
                       .IsRequired();
-
             });
-
 
             modelBuilder.Entity<Group>(entity =>
             {
@@ -105,16 +124,16 @@ namespace QualificationWork.DAL
                       .HasForeignKey(s => s.FacultyId);
             });
 
-            modelBuilder.Entity<Specialty>(entity =>
-            {
-                entity.HasKey(s => s.Id);
-                entity.Property(s => s.Id)
-                .ValueGeneratedOnAdd();
+            //modelBuilder.Entity<Specialty>(entity =>
+            //{
+            //    entity.HasKey(s => s.Id);
+            //    entity.Property(s => s.Id)
+            //    .ValueGeneratedOnAdd();
 
-                entity.HasOne<Group>(s => s.Group)
-                        .WithMany(g => g.Specialtys)
-                        .HasForeignKey(s => s.GroupId);
-            });
+            //    entity.HasOne<Group>(s => s.Group)
+            //            .WithMany(g => g.Specialtys)
+            //            .HasForeignKey(s => s.GroupId);
+            //});
 
         }
     }

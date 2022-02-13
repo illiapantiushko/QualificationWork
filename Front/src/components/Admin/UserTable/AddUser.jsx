@@ -25,9 +25,7 @@ const AddUser = (props) => {
   };
 
   const onFinish = (data) => {
-    // props.AddNewUser(data);
-
-    console.log(data);
+    props.AddNewUser(data);
     form.resetFields();
     setIsModalVisible(false);
   };
@@ -56,9 +54,9 @@ const AddUser = (props) => {
       <Button type="primary" onClick={showModal} style={{ margin: 5 }}>
         Add User
       </Button>
-      <Upload {...UploadProps}>
+      {/* <Upload {...UploadProps}>
         <Button icon={<UploadOutlined />}>Add Users from Exel</Button>
-      </Upload>
+      </Upload> */}
       <Modal
         title="Add User"
         visible={isModalVisible}
@@ -86,7 +84,7 @@ const AddUser = (props) => {
               <Select.Option value={false}>Державник</Select.Option>
             </Select>
           </Form.Item>
-          <Form.Item name="role" rules={[{ required: true }]}>
+          <Form.Item name="roles" rules={[{ required: true }]}>
             <Checkbox.Group style={{ width: '100%' }} onChange={onChange}>
               <Checkbox value="Admin">Admin</Checkbox>
               <Checkbox value="Student">Student</Checkbox>

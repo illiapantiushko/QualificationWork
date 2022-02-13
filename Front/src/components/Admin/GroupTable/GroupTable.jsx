@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { getGroups } from '../../../Api/actionsAdmin';
-import { Table, Tag, Typography, Row, Col, Pagination, Input } from 'antd';
+import { getGroups, deleteGroupData } from '../../../Api/actionsAdmin';
+import { Table, Tag, Typography, Row, Col, Pagination, Input, Popover, Popconfirm } from 'antd';
 import AddGroup from './AddGroup';
-
+import { DeleteOutlined, EllipsisOutlined, InsertRowBelowOutlined } from '@ant-design/icons';
+import AddUser from './AddUser';
+import AddSubject from './AddSubject';
 const { Title } = Typography;
 const { Search } = Input;
 
 const GroupTable = (props) => {
+  const [modalAddUser, setModalAddUser] = useState({ groupId: null, visible: false });
+  const [modalAddSubject, setModalAddSubject] = useState({ groupId: null, visible: false });
+
   const [search, setSearch] = useState(' ');
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -27,6 +32,37 @@ const GroupTable = (props) => {
     {
       title: 'Action',
       key: 'operation',
+      align: 'center',
+      render: (text, record) => (
+        <>
+          <Popover
+            content={
+              <div>
+                <Popconfirm
+                  title="Sure to delete?"
+                  onConfirm={() => props.DeleteGroupData(record.id)}>
+                  <p className="item__optional__menu">
+                    Delete
+                    <DeleteOutlined />
+                  </p>
+                </Popconfirm>
+                <p
+                  onClick={() => setModalAddSubject({ groupId: record.id, visible: true })}
+                  className="item__optional__menu">
+                  Add Subjects
+                </p>
+                <p
+                  onClick={() => setModalAddUser({ groupId: record.id, visible: true })}
+                  className="item__optional__menu">
+                  Add Users
+                </p>
+              </div>
+            }
+            trigger="click">
+            <EllipsisOutlined style={{ fontSize: '25px' }} />
+          </Popover>
+        </>
+      ),
     },
   ];
 
@@ -66,9 +102,19 @@ const GroupTable = (props) => {
   return (
     <div>
       <Title level={4}>Список груп</Title>
-      <Row align="middle">
+      <Row align="middle" className="header__table">
         <Col span={20}>
           <AddGroup />
+          <AddUser
+            groupId={modalAddUser.groupId}
+            visible={modalAddUser.visible}
+            setModalAddUser={setModalAddUser}
+          />
+          <AddSubject
+            groupId={modalAddSubject.groupId}
+            visible={modalAddSubject.visible}
+            setModalAddUser={setModalAddSubject}
+          />
         </Col>
         <Col span={4}>
           <Search placeholder="Search..." onChange={(e) => setSearch(e.target.value)} />
@@ -109,6 +155,9 @@ let mapDispatchToProps = (dispatch) => {
   return {
     GetGroups: (pageNumber, search) => {
       dispatch(getGroups(pageNumber, search));
+    },
+    DeleteGroupData: (id) => {
+      dispatch(deleteGroupData(id));
     },
   };
 };

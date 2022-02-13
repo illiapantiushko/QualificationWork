@@ -11,5 +11,6 @@ namespace QualificationWork.DTO.Dtos
         public string UserEmail { get; set; }
         public int Age { get; set; }
         public bool ІsContract { get; set; }
+        public List<string> Roles { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 const SET_SUBJECTS = 'SET_SUBJECTS';
 const SET_SUBJECT_DETAILS = 'SET_SUBJECT_DETAILS';
 const SET_USER_INFO = 'SET_USER_INFO';
+const SET_SUBJECTS_FETCHING = 'SET_SUBJECTS_FETCHING';
 
 let initialState = {
   profile: null,
@@ -29,6 +30,11 @@ const ProfileReducer = (state = initialState, action) => {
         ...state,
         subjectDetails: action.payload,
       };
+    case SET_SUBJECTS_FETCHING:
+      return {
+        ...state,
+        isFetchingSubjects: true,
+      };
     default:
       return state;
   }
@@ -52,6 +58,12 @@ export const setSubjectDetails = (data) => {
   return {
     type: SET_SUBJECT_DETAILS,
     payload: data,
+  };
+};
+
+export const setSubjectFetching = () => {
+  return {
+    type: SET_SUBJECTS_FETCHING,
   };
 };
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getListSubjects, createGroup, getUsers, getGroups } from '../../../Api/actionsAdmin';
+import { createNewGroup } from '../../../Api/actionsAdmin';
 import { connect } from 'react-redux';
 import { Typography, Modal, Form, Button, Input, Select, Table, Row, Col } from 'antd';
 
@@ -9,9 +9,14 @@ const AddGroup = (props) => {
   const [usersData, setUsersData] = useState(null);
   const [subjectsData, setSubjectsData] = useState(null);
 
+  const [selectedRowKeys, setSelectedRowKeys] = useState([]);
+
   useEffect(() => {
-    props.GetListSubjects();
+    // setUsersData(getUserList(1));
+    // props.GetListSubjects();
   }, []);
+
+  console.log(usersData);
 
   const [form] = Form.useForm();
 
@@ -33,17 +38,31 @@ const AddGroup = (props) => {
     return arr;
   };
 
-  const onFinish = (data) => {
-    const group = {
-      nameGroup: data.groupName,
-      nameFaculty: data.faculty,
-      users: deleteKey(usersData),
-      subjects: deleteKey(subjectsData),
-    };
+  const onSelectChange = (selectedRowKeys) => {
+    console.log('selectedRowKeys changed: ', selectedRowKeys);
+    setSelectedRowKeys(selectedRowKeys);
+  };
 
-    props.createGroup(group);
-    props.GetUsers(1, '');
-    props.GetGroups();
+  const rowSelection = {
+    selectedRowKeys,
+    onChange: onSelectChange,
+  };
+
+  const onFinish = (data) => {
+    // const group = {
+    //   nameGroup: data.groupName,
+    //   nameFaculty: data.faculty,
+    //   users: deleteKey(usersData),
+    //   subjects: deleteKey(subjectsData),
+    // };
+    console.log(data);
+
+    // props.createGroup(group);
+    // props.GetUsers(1, '');
+    // props.GetGroups();
+    // setSelectedRowKeys([]);
+
+    props.createNewGroup(data);
     form.resetFields();
     setIsModalVisible(false);
   };
@@ -98,38 +117,35 @@ const AddGroup = (props) => {
       <Button type="primary" onClick={showModal} style={{ margin: 5 }}>
         Add new Group
       </Button>
-
       <Modal
         title="Add Group"
         visible={isModalVisible}
         onCancel={handleCancel}
         onOk={handleOk}
-        width={1000}
         footer={[
           <Button form="myForm" type="primary" key="submit" htmlType="submit">
             Create
           </Button>,
         ]}>
         <Form form={form} id="myForm" name="basic" onFinish={onFinish} autoComplete="off">
-          <Form.Item name="groupName" rules={[{ required: true }]}>
+          <Form.Item name="nameGroup" rules={[{ required: true }]}>
             <Input placeholder="Name group" />
           </Form.Item>
-          <Form.Item name="faculty" rules={[{ required: true }]}>
+          <Form.Item name="nameFaculty" rules={[{ required: true }]}>
             <Select placeholder="Факультет">
               <Select.Option value="Economic">Економіка</Select.Option>
-              <Select.Option value="RGM">РГМ</Select.Option>
             </Select>
           </Form.Item>
 
-          <Row>
+          {/* <Row>
             <Col xs={22} sm={22} md={22} lg={12} xl={12}>
               <Title level={5}>List Users</Title>
               <Table
                 style={{ margin: 5 }}
                 bordered
-                rowSelection={{ ...rowUserSelection }}
+                rowSelection={rowSelection}
                 columns={UserColumns}
-                dataSource={props.listUsers}
+                dataSource={usersData.data.}
                 pagination={false}
               />
             </Col>
@@ -146,7 +162,7 @@ const AddGroup = (props) => {
                 pagination={false}
               />
             </Col>
-          </Row>
+          </Row> */}
         </Form>
       </Modal>
     </div>
@@ -155,24 +171,15 @@ const AddGroup = (props) => {
 
 let mapStateToProps = (state) => {
   return {
-    listUsers: state.AdminPage.users,
-    listSubject: state.AdminPage.subjects,
+    // listUsers: state.AdminPage.users,
+    // listSubject: state.AdminPage.subjects,
   };
 };
 
 let mapDispatchToProps = (dispatch) => {
   return {
-    GetListSubjects: () => {
-      dispatch(getListSubjects());
-    },
-    createGroup: (model) => {
-      dispatch(createGroup(model));
-    },
-    GetUsers: (pageNumber, search) => {
-      dispatch(getUsers(pageNumber, search));
-    },
-    GetGroups: () => {
-      dispatch(getGroups());
+    createNewGroup: (data) => {
+      dispatch(createNewGroup(data));
     },
   };
 };

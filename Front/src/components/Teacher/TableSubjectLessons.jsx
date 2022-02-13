@@ -2,12 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getSubjectLesons, removeLesson } from '../../Api/actionsTeacher';
-import { Table, Button, Typography, Popconfirm, Layout } from 'antd';
+import { Table, Menu, Button, Typography, Popconfirm, Popover, Layout, Card } from 'antd';
 import AttendanceTable from './AttendanceTable';
 import AddLesonForm from './AddLesonForm';
-import { DeleteOutlined } from '@ant-design/icons';
+import { DeleteOutlined, EllipsisOutlined, InsertRowBelowOutlined } from '@ant-design/icons';
 
-const { Title } = Typography;
 const { Content } = Layout;
 
 const TableSubjectLessons = (props) => {
@@ -28,13 +27,6 @@ const TableSubjectLessons = (props) => {
       dataIndex: 'lessonNumber',
       key: ' lessonNumber',
       align: 'center',
-      render: (record) => (
-        <span
-          style={{ cursor: 'pointer' }}
-          onClick={() => setBalTable({ visible: true, namberleson: record })}>
-          {record}
-        </span>
-      ),
     },
     {
       title: 'Дата заняття',
@@ -47,14 +39,30 @@ const TableSubjectLessons = (props) => {
       title: 'Action',
       key: 'operation',
       align: 'center',
-      render: (record) => (
-        <span>
-          <Popconfirm title="Sure to delete?" onConfirm={() => deleteLesson(record.lessonNumber)}>
-            <a href="#" className="icon delete">
-              <DeleteOutlined />
-            </a>
-          </Popconfirm>
-        </span>
+      render: (text, record) => (
+        <>
+          <Popover
+            content={
+              <div>
+                <Popconfirm
+                  title="Sure to delete?"
+                  onConfirm={() => deleteLesson(record.lessonNumber)}>
+                  <p className="item__optional__menu">
+                    Delete
+                    <DeleteOutlined />
+                  </p>
+                </Popconfirm>
+                <p
+                  className="item__optional__menu"
+                  onClick={() => setBalTable({ visible: true, namberleson: record.lessonNumber })}>
+                  Show <InsertRowBelowOutlined />
+                </p>
+              </div>
+            }
+            trigger="click">
+            <EllipsisOutlined style={{ fontSize: '25px' }} />
+          </Popover>
+        </>
       ),
     },
   ];
@@ -66,9 +74,20 @@ const TableSubjectLessons = (props) => {
         padding: 30,
         minHeight: 280,
       }}>
-      <Title level={4}> Компютерні мережі</Title>
-      <AddLesonForm subjetId={id} />
-      <Table dataSource={props.subjectLesons} bordered pagination={false} columns={columns} />
+      <Card
+        title="Основи програмування"
+        bodyStyle={{
+          padding: 10,
+        }}
+        headStyle={{
+          fontWeight: '600',
+          fontSize: '18px',
+          backgroundColor: 'rgb(202 227 224 / 13%)',
+        }}
+        className="card__wrapper">
+        <AddLesonForm subjetId={id} />
+        <Table dataSource={props.subjectLesons} bordered pagination={false} columns={columns} />
+      </Card>
       {!balTable.visible ? null : (
         <AttendanceTable subjectId={id} namberleson={balTable.namberleson} />
       )}

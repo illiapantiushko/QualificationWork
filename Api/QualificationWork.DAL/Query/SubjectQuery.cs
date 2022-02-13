@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using QualificationWork.DAL.Models;
+using QualificationWork.DTO.Dtos;
 
 namespace QualificationWork.DAL.Query
 {
@@ -26,7 +27,7 @@ namespace QualificationWork.DAL.Query
             return data;
         }
 
-        public async Task<UsersPagination> GetAllUsersWithSubjests(int pageNumber, int pageSize, string search)
+        public async Task<Pagination<ApplicationUser>> GetAllUsersWithSubjests(int pageNumber, int pageSize, string search)
         {
             IQueryable<ApplicationUser> users = context.Users;
 
@@ -40,15 +41,14 @@ namespace QualificationWork.DAL.Query
 
             var response = await users.Skip((pageNumber - 1) * pageSize)
                                     .Take(pageSize)
-                                    .Include(pub => pub.UserSubjects)
+                                    .Include(pub => pub.TimeTables)
                                     .ThenInclude(pub => pub.Subject)
                                     .Include(pub => pub.UserRoles)
                                     .ThenInclude(pub => pub.Role)
                                     .AsNoTracking()
                                     .ToListAsync();
 
-
-          return new UsersPagination(totalCount, response);
+            return new Pagination<ApplicationUser>(totalCount, response);
         }
 
         //вивести всіх викладачів певної групи
@@ -80,13 +80,42 @@ namespace QualificationWork.DAL.Query
         public async Task<List<Subject>> GetAllSubject(long userId)
         {
             var response = await context.Subjects
-                                        .Where(x => x.UserSubjects.Any(y => y.UserId == userId))
-                                        .Include(x=>x.UserSubjects)
+                                        .Where(x => x.TimeTables.Any(y => y.UserId == userId))
+                                        .Include(x => x.TimeTables.Where(y=>y.UserId==userId))
+                                        .Include(x=>x.TeacherSubjects)
                                         .ThenInclude(x=>x.User)
-                                        .ThenInclude(x => x.UserRoles)
-                                        .ThenInclude(x => x.Role)
                                         .ToListAsync();
             return response;
         }
+
+        public async Task<Pagination<Subject>> GetAllSubjects(int pageNumber, int pageSize, string search)
+        {
+            IQueryable<Subject> subjects = context.Subjects;
+
+            if (!string.IsNullOrEmpty(search))
+            {
+                subjects = subjects.Where(e => e.SubjectName.ToLower().Contains(search));
+            }
+
+            int totalCount = context.Subjects.Count();
+
+            var response = await subjects.Skip((pageNumber - 1) * pageSize)
+                                    .Take(pageSize)
+                                    .AsNoTracking()
+                                    .ToListAsync();
+
+            return new Pagination<Subject>(totalCount, response);
+        }
+
+        //public async Task<List<SubjectGroup>> GetAllSubjectStudent(long userId)
+        //{
+        //    var response = await context.SubjectGroups
+        //                                .Include(x => x.Subject.UserSubjects)
+        //                                .ThenInclude(x => x.User)
+        //                                .Include(x => x.Group)
+        //                                .Where(x => x.Group.UserGroups.Any(y => y.UserId == userId))
+        //                                .ToListAsync();
+        //    return response;
+        //}
     }
 }

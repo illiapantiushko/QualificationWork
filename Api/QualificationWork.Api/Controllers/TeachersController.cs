@@ -44,13 +44,12 @@ namespace QualificationWork.Api.Controllers
             var result = data.Where(x => x.UserRoles.Any(y => y.Role.Name == UserRoles.Teacher));
             return Ok(data);
         }
-        
+
         [HttpGet("GetAllSubject")]
         public async Task<ActionResult> GetAllSubject()
         {
             var data = await subjectService.GetAllSubject(User.GetUserId());
-            var result = data.Where(x => x.UserSubjects.Any(y => y.User.UserRoles.Any(x => x.Role.Name == UserRoles.Teacher)));
-            return Ok(result);
+            return Ok(data);
         }
 
         [HttpGet("getAllUsersWithSubjests")]
@@ -59,6 +58,13 @@ namespace QualificationWork.Api.Controllers
             var data = await subjectService.GetAllUsersWithSubjests(pageNumber, pageSize, search);
             return Ok(data);
         }
+        [HttpGet("getAllSubjests")]
+        public async Task<ActionResult> GetAllSubjects(int pageNumber, int pageSize, string search)
+        {
+             var data = await subjectService.GetAllSubjects(pageNumber, pageSize, search);
+             return Ok(data);
+        }
+
 
         [HttpGet("getAllGroupsBySubject")]
         public async Task<ActionResult> GetAllGroupsBySubject(long subjectId)
@@ -74,7 +80,7 @@ namespace QualificationWork.Api.Controllers
             return Ok();
         }
         [HttpPost("addLesson")]
-        public async Task<ActionResult> AddLessonAsync([FromBody]AddLessonDto model)
+        public async Task<ActionResult> AddLessonAsync([FromBody] AddLessonDto model)
         {
             await subjectService.AddLessonAsync(model);
             return Ok();
@@ -98,7 +104,6 @@ namespace QualificationWork.Api.Controllers
         {
             await subjectService.DeleteLessonAsync(lessonNumber, subjectId);
             return Ok();
-            
         }
     }
 }

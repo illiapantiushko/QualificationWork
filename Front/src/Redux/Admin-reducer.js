@@ -6,6 +6,8 @@ const ADD_USERS = 'ADD_USERS';
 const ADD_LIST_SUBJECTS = ' ADD_LIST_SUBJECTS';
 const UPDATE_USER = 'UPDATE_USER';
 const DELETE_USER_ROLE = 'DELETE_USER_ROLE';
+const ADD_GROUP = 'ADD_GROUP';
+const DELETE_GROUP = ' DELETE_GROUP';
 
 let initialState = {
   users: [],
@@ -39,6 +41,12 @@ const AdminReducer = (state = initialState, action) => {
         ...state,
         users: [...state.users, action.payload],
       };
+
+    case ADD_GROUP:
+      return {
+        ...state,
+        groups: [...state.groups, action.payload],
+      };
     case ADD_USERS:
       return {
         ...state,
@@ -47,6 +55,11 @@ const AdminReducer = (state = initialState, action) => {
     case DELETE_USER:
       return {
         users: [...state.users.filter((user) => user.id !== action.payload)],
+      };
+
+    case DELETE_GROUP:
+      return {
+        groups: [...state.groups.filter((group) => group.id !== action.payload)],
       };
 
     case UPDATE_USER:
@@ -58,6 +71,7 @@ const AdminReducer = (state = initialState, action) => {
             userEmail: action.payload.userEmail,
             age: action.payload.age,
             isContract: action.payload.isContract,
+            userRoles: action.payload.roles,
           };
         }
         return item;
@@ -107,6 +121,13 @@ export const addUser = (data) => {
   };
 };
 
+export const addGroup = (data) => {
+  return {
+    type: ADD_GROUP,
+    payload: data,
+  };
+};
+
 export const updateUser = (userData) => {
   return {
     type: UPDATE_USER,
@@ -124,6 +145,13 @@ export const addUsers = (users) => {
 export const deleteUser = (id) => {
   return {
     type: DELETE_USER,
+    payload: id,
+  };
+};
+
+export const deleteGroup = (id) => {
+  return {
+    type: DELETE_GROUP,
     payload: id,
   };
 };

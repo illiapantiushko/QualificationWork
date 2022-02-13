@@ -2,6 +2,7 @@ import React from 'react';
 import SubjectTable from './SubjectTable';
 import { Layout } from 'antd';
 
+
 const { Content } = Layout;
 const TeacherPanel = (props) => {
   return (
