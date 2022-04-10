@@ -10,8 +10,7 @@ const Login = (props) => {
   const navigate = useNavigate();
 
   const responseGoogle = (res) => {
-    props.SetUserData(res.tokenId);
-    navigate('/');
+    props.SetUserData(res.tokenId, navigate); 
   };
 
   return (
@@ -32,12 +31,19 @@ const Login = (props) => {
   );
 };
 
+let mapStateToProps = (state) => {
+  return {
+    redirect: state.Auth.redirectTo
+  };
+};
+
 let mapDispatchToProps = (dispatch) => {
   return {
-    SetUserData: (data) => {
-      dispatch(setUserData(data));
+    SetUserData: (data, redirect) => {
+      dispatch(setUserData(data, redirect));
     },
   };
 };
 
-export default connect(null, mapDispatchToProps)(Login);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

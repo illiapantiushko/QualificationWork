@@ -60,11 +60,11 @@ namespace QualificationWork.Api.Controllers
             return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "users.xlsx");
         }
 
-        //[Authorize]
+        [Authorize]
         [HttpGet("exportToExcelByUser")]
-        public async Task<ActionResult> ExportToExcelByUser(long userId)
+        public async Task<ActionResult> ExportToExcelByUser()
         {
-            var stream = await excelService.ExportToExcelByUser(userId);
+            var stream = await excelService.ExportToExcelByUser(User.GetUserId());
             Response.ContentType = new MediaTypeHeaderValue("application/octet-stream").ToString();
             return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "Report.xlsx");
         }

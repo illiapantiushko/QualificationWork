@@ -54,11 +54,13 @@ const AdminReducer = (state = initialState, action) => {
       };
     case DELETE_USER:
       return {
+        ...state,
         users: [...state.users.filter((user) => user.id !== action.payload)],
       };
 
     case DELETE_GROUP:
       return {
+        ...state,
         groups: [...state.groups.filter((group) => group.id !== action.payload)],
       };
 

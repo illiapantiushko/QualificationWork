@@ -29,10 +29,6 @@ const CardSubject = ({ data, profile }) => {
               {new Date(data.subjectСlosingDate).toLocaleString('uk-UA')}
               <i class="fal fa-check"></i>
             </span>
-            <span className="item">
-              20/
-              <span className="subject-done">22</span>
-            </span>
           </div>
         </div>
       </div>

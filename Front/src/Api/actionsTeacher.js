@@ -40,14 +40,7 @@ export const getSubjectLesons = (id) => {
       const res = await instance.get(`Users/GetSubjectTopic?subjectId=${id}`);
 
       dispatch(
-        setSubjectLesons(
-          res.data.map((row) => ({
-            id: row.id,
-            key: row.id,
-            lessonNumber: row.lessonNumber,
-            lessonDate: row.lessonDate,
-          })),
-        ),
+        setSubjectLesons(res.data),
       );
     } catch (error) {
       Notification(error.response.status, error.message);
@@ -154,7 +147,7 @@ export const removeLesson = (lessonNumber, subjectId) => {
 export const getSubjectReport = (subjectId) => {
   return async (dispatch) => {
     try {
-      const res = await instance.get(`Exels/exportToExcelUserTimeTable?subjectId=${subjectId}`, {
+      const res = await instance.get(`Exels/exportToExcelBySubject?subjectId=${subjectId}`, {
         responseType: 'arraybuffer',
       });
       const url = window.URL.createObjectURL(new Blob([res.data]));

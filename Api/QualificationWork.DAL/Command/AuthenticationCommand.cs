@@ -43,14 +43,16 @@ namespace QualificationWork.DAL.Command
 
             string domenOA = "@oa.edu.ua";
 
-            bool ValidationEmail = payload.Email.EndsWith(domenOA);
+            //bool ValidationEmail = payload.Email.EndsWith(domenOA);
 
-            if (!ValidationEmail)
-            {
-                throw new AppException("The system only accepts training mail!");
-            }
+            //if (!ValidationEmail)
+            //{
+            //    throw new AppException("The system only accepts training mail!");
+            //}
 
-            var user = await userManager.FindByEmailAsync(payload.Email);
+            //var user = await userManager.FindByEmailAsync(payload.Email);
+
+            var user =  context.Users.FirstOrDefault(x=>x.Email==payload.Email);
 
             if (user == null)
             {
@@ -62,6 +64,7 @@ namespace QualificationWork.DAL.Command
                     Age = 18
                 };
                 await userManager.CreateAsync(userData);
+                await userManager.AddToRolesAsync(userData, new List<string>() { UserRoles.Student });
             }
 
             // первірка на емайл адміна
@@ -72,12 +75,16 @@ namespace QualificationWork.DAL.Command
                 await userManager.AddToRolesAsync(user, new List<string>() { UserRoles.Admin });
             }
 
-            if (user.ProfilePicture == null)
-            {
-                user.ProfilePicture = payload.Picture;
-            }
+
+
+            //if (user.ProfilePicture == null)
+            //{
+            //    user.ProfilePicture = payload.Picture;
+            //}
 
             var roles = await userManager.GetRolesAsync(user);
+
+
 
             var jwtToken = await jwtUtils.GenerateJwtToken(user);
 

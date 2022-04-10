@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { addLesson, getSubjectReport } from '../../Api/actionsTeacher';
 import { Button } from 'antd';
-import { Row, Col, Form, DatePicker, InputNumber } from 'antd';
+import { Row, Col, Form, DatePicker, InputNumber,Modal } from 'antd';
 import './teacherPanel.scss';
-import { DownloadOutlined } from '@ant-design/icons';
+
 const AddLesonForm = (props) => {
+
   const [form] = Form.useForm();
+
+  const [showModal, setShowModal]=useState(false);
+
+  const handleModal = () => {
+    !showModal ?setShowModal(true):setShowModal(false);
+  }
 
   const onFinish = (data) => {
     data.subjectId = Number(props.subjetId);
@@ -19,29 +26,39 @@ const AddLesonForm = (props) => {
   };
   return (
     <div className="wraper addLeson_wraper">
-      <Row>
-        <Col span={10}>
-          <Form className="addLeson__form" form={form} id="myForm" name="basic" onFinish={onFinish}>
-            <Row justify="center">
-              <Col span={8}>
+      
+      <Modal
+        title="Нове заняття"
+        visible={showModal}
+        onCancel={handleModal}
+        onOk={handleModal}
+        footer={[
+          <Button form="myForm" type="primary" key="submit" htmlType="submit">
+            Create
+          </Button>,
+        ]}>
+       <Form className="addLeson__form" form={form} id="myForm" name="basic" onFinish={onFinish}>
+              <Row justify='center' >
+              <Col span={20} >
                 <Form.Item name="lessonNumber" rules={[{ required: true }]}>
-                  <InputNumber placeholder="Leson Number" className="addLeson__input" />
+                  <InputNumber placeholder="Номер заняття" className="addLeson__input" />
                 </Form.Item>
-              </Col>
-              <Col span={8}>
                 <Form.Item name="date" rules={[{ required: true }]}>
-                  <DatePicker className="addLeson__input" />
+                  <DatePicker placeholder="Дата" className="addLeson__input" />
                 </Form.Item>
-              </Col>
-              <Col span={3}>
-                <Button type="primary" key="submit" htmlType="submit">
-                  Submit
-                </Button>
               </Col>
             </Row>
           </Form>
+      </Modal>
+      
+      
+      <Row gutter={[16, 16]} justify="end" >
+      <Col>
+      <Button onClick={handleModal} type="primary">
+            Додати нове заннятя
+      </Button>          
         </Col>
-        <Col span={5}>
+        <Col>
           <Button onClick={downloadReport} type="primary">
             Сформувати звіт за предметом
           </Button>

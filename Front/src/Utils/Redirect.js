@@ -1,15 +1,14 @@
-export const redirectByRole = (roles) => {
-  const firstRole = roles[0];
-
-  if (firstRole === 'Admin') {
-    return 'Admin';
+export const redirectByRole = (role) => {
+  
+  if (role === 'Admin') {
+    return '/admin';
   }
 
-  if (firstRole === 'Student') {
-    return 'Student';
+  if (role === 'Student') {
+    return '/';
   }
 
-  if (firstRole === 'Teacher') {
-    return 'Teacher';
+  if (role === 'Teacher') {
+    return '/teacher';
   }
 };

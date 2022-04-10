@@ -4,7 +4,6 @@ import { Table, Typography, Switch } from 'antd';
 import { connect } from 'react-redux';
 import { getAttendanceList, setNewUserScore, setNewUserIsPresent } from '../../Api/actionsTeacher';
 import { EditableRow, EditableCell } from './EditableCell';
-import { DeleteOutlined } from '@ant-design/icons';
 
 const { Title } = Typography;
 

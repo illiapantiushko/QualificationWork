@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getSubjectLesons, removeLesson } from '../../Api/actionsTeacher';
-import { Table, Menu, Button, Typography, Popconfirm, Popover, Layout, Card } from 'antd';
+import { Table, Popconfirm, Popover, Layout, Card } from 'antd';
 import AttendanceTable from './AttendanceTable';
 import AddLesonForm from './AddLesonForm';
 import { DeleteOutlined, EllipsisOutlined, InsertRowBelowOutlined } from '@ant-design/icons';
@@ -11,6 +11,7 @@ const { Content } = Layout;
 
 const TableSubjectLessons = (props) => {
   const { id } = useParams();
+
   useEffect(() => {
     props.GetSubjectLesons(id);
   }, []);
@@ -70,12 +71,9 @@ const TableSubjectLessons = (props) => {
   return (
     <Content
       className="site-layout-background"
-      style={{
-        padding: 30,
-        minHeight: 280,
-      }}>
+      style={{padding: 30, minHeight: 280, }}>
       <Card
-        title="Основи програмування"
+        title={props.subjectLesons.subjectName}
         bodyStyle={{
           padding: 10,
         }}
@@ -86,7 +84,7 @@ const TableSubjectLessons = (props) => {
         }}
         className="card__wrapper">
         <AddLesonForm subjetId={id} />
-        <Table dataSource={props.subjectLesons} bordered pagination={false} columns={columns} />
+        <Table dataSource={props.subjectLesons.lessons} bordered pagination={false} columns={columns} />
       </Card>
       {!balTable.visible ? null : (
         <AttendanceTable subjectId={id} namberleson={balTable.namberleson} />

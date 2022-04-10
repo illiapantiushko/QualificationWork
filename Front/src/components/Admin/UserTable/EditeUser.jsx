@@ -6,29 +6,34 @@ import { Modal, Form, Button, Input, Select, Checkbox } from 'antd';
 const EditeUser = (props) => {
   const [form] = Form.useForm();
 
-  const handleCancel = () => {
-    form.resetFields();
+  console.log(props);
+
+    const intitial = {
+      userName: props.data?.userName,
+      userEmail: props.data?.email,
+      age: props.data?.age,
+      іsContract: props.data?.іsContract,
+      roles: props.data?.userRoles,
+    };
+
+
+
+  function handleCancel() {
     props.handleEditUser();
-  };
+    form.resetFields();
+  }
 
-  const intitial = {
-    userName: props.data?.userName,
-    userEmail: props.data?.email,
-    age: props.data?.age,
-    іsContract: props.data?.іsContract,
-    roles: props.data?.userRoles,
-  };
-
-  // const [intitial, setInitial] = useState({});
+  
   const onChange = (checkedValues) => {
     console.log('checked = ', checkedValues);
   };
 
   const onFinish = (data) => {
     data.id = props.data?.id;
-    props.editeUser(data);
-
+    props.editeUser(data); 
+   form.resetFields();
     props.handleEditUser();
+  
   };
 
   return (
@@ -50,11 +55,11 @@ const EditeUser = (props) => {
           id="myForm"
           name="basic"
           onFinish={onFinish}
-          autoComplete="off">
+          >
           <Form.Item name="userName">
-            <Input placeholder="Name" />
+            <Input placeholder="Name" value={props.data?.userName} />
           </Form.Item>
-          <Form.Item name="userEmail">
+          <Form.Item name="userEmail" value={props.data?.email}>
             <Input placeholder="Email" />
           </Form.Item>
           <Form.Item name="age">

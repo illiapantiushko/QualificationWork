@@ -53,11 +53,6 @@ namespace QualificationWork.BL.Services
             await context.SaveChangesAsync();
         }
 
-        //public async Task AddSubject(long userId, long subjectId)
-        //{
-        //    await userCommand.AddSubject(userId, subjectId);
-        //    await context.SaveChangesAsync();
-        //}
         public async Task UpdateUserAsync(EditeUserDto model)
         {
             await userCommand.UpdateUserAsync(model);
@@ -111,7 +106,7 @@ namespace QualificationWork.BL.Services
             return await userQuery.GetUsersTimeTable(subjectId, namberleson);
         }
 
-        public async Task<List<TimeTable>> GetSubjectTopic(long subjectId)
+        public async Task<SubjectLessonsDto<TimeTable>> GetSubjectTopic(long subjectId)
         {
             return await userQuery.GetSubjectTopic(subjectId);
         }
@@ -128,11 +123,10 @@ namespace QualificationWork.BL.Services
             await context.SaveChangesAsync();
         }
 
-        public async Task<List<TimeTable>> GetTimeTableByUser(long subjectId, long userId)
+        public async Task<Subject> GetTimeTableByUser(long subjectId, long userId)
         {
             return await userQuery.GetTimeTableByUser(subjectId, userId);
         }
-
 
         public async Task CreateGroup(CreateGroupDto model)
         {

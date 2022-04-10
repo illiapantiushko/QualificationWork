@@ -13,6 +13,7 @@ import { Layout } from 'antd';
 import NavBar from './components/Layout/NavBar';
 import SideBar from './components/Layout/SideBar';
 import Main from './components/Profile/Main';
+import GroupDetails from './components/Admin/GroupTable/GroupDetails';
 const { Footer } = Layout;
 
 const App = () => {
@@ -41,6 +42,7 @@ const App = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/" element={<Main />} />
 
+            <Route path="/group/:id" element={<GroupDetails/>} />
             <Route path="/subjectDetails/:id" element={<SubjectDetails />} />
 
             <Route
@@ -72,9 +74,10 @@ const App = () => {
           </Routes>
         </Layout>
         <Footer
+        className='footer'
           style={{
             textAlign: 'center',
-            backgroundColor: '#0d0f1a;',
+            backgroundColor: '#0d0f1a;'
           }}>
           ©2022 Створено студентами Нау ОА
         </Footer>

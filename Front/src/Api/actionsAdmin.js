@@ -71,7 +71,7 @@ export const addNewUser = (data) => {
       const res = await instance.post(`Users/createUser`, data);
       const newUser = {
         id: 1,
-        name: data.userName,
+        userName: data.userName,
         email: data.userEmail,
         age: data.age,
         timeTables: [],

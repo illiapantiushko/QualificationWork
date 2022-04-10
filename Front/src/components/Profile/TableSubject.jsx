@@ -16,12 +16,12 @@ const TableSubject = ({ getUserReport, subjects, isFetching }) => {
       title: 'Кредити',
       dataIndex: 'amountCredits',
       key: 'credit',
+      
     },
     {
       title: 'Викладач',
       dataIndex: 'teacher',
       key: 'teacher',
-      render: (text, record) => <span style={{ color: '#271575' }}>{record.teacher} </span>,
     },
     {
       title: 'Бал',

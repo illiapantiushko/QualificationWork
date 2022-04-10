@@ -1,10 +1,12 @@
 const SET_USER_DATA = 'SET_USER_DATA';
+const SET_REDIRECT = 'SET_USER_DATA';
 const LOGOUT = 'LOGOUT';
 
 let initialState = {
   name: !localStorage.getItem('name') ? false : localStorage.getItem('name'),
   roles: !localStorage.getItem('roles') ? [] : JSON.parse(localStorage.getItem('roles')),
   isAuth: !localStorage.getItem('token') ? false : true,
+  redirectTo:"/"
 };
 
 const AuthReducer = (state = initialState, action) => {
@@ -26,10 +28,10 @@ const AuthReducer = (state = initialState, action) => {
   }
 };
 
-export const setAuthUserData = (name, role, isAuth) => {
+export const setAuthUserData = (name, role, isAuth, redirectTo) => {
   return {
     type: SET_USER_DATA,
-    payload: { name, role, isAuth },
+    payload: { name, role, isAuth, redirectTo},
   };
 };
 

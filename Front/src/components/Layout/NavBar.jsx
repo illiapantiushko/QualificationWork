@@ -28,8 +28,8 @@ const NavBar = ({ state, toggle, profile, GetInfoCurrentUser }) => {
           className="site-page-header"
           title={profile?.userName}
           avatar={{
-            src: profile?.profilePicture,
-            shape: 'square',
+            src: profile?.profilePicture ? profile?.profilePicture : "http://pm1.narvii.com/6889/74979d4d2744ec6e27995b6e866f091d04c0b40cr1-515-414v2_uhq.jpg",
+            shape: 'circle',
           }}
           extra={[
             <Button onClick={logout} key="1" className="header-button">

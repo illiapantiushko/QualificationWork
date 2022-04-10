@@ -1,21 +1,23 @@
 import React, { useEffect } from 'react';
-import { Table, Tag, Typography } from 'antd';
+import { Table, Tag,Card } from 'antd';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { getSubjects } from '../../Api/actionsTeacher';
 
-const { Title } = Typography;
-
 const SubjectTable = (props) => {
   useEffect(() => {
-    props.GetSubjects();
+   props.GetSubjects();
   }, []);
 
   const { subjects } = props;
 
   const expandedRowRender = (timeTables) => {
     const columns = [
-      { title: 'UserName', dataIndex: 'userName', key: 'userName' },
+    { 
+      title: 'UserName',
+      dataIndex: 'userName',
+      key: 'userName'
+     },
       {
         title: 'Email',
         dataIndex: 'email',
@@ -25,6 +27,7 @@ const SubjectTable = (props) => {
         title: 'Position',
         dataIndex: 'position',
         key: 'position',
+        align:'center',
         render: (record) => (
           <span>
             <Tag color={record === 'Платник' ? 'volcano' : 'green'} key={record.isActive}>
@@ -59,21 +62,26 @@ const SubjectTable = (props) => {
         </span>
       ),
     },
-
     {
       title: 'Активний',
       dataIndex: 'isActive',
       key: 'isActive',
+      align:'center',
       render: (record) => (
         <span>
           <Tag color={!record ? 'volcano' : 'green'}>{!record ? 'Не активний' : 'Активний'}</Tag>
         </span>
       ),
     },
-    { title: 'Кількість кредитів', dataIndex: 'amountCredits', key: 'amountCredits' },
+    { title: 'Кількість кредитів',
+     dataIndex: 'amountCredits', 
+     align:'center',
+     key: 'amountCredits'
+     },
     {
       title: 'Дата закінчення курсу',
       dataIndex: 'subjectСlosingDate',
+      align:'center',
       key: 'subjectСlosingDate',
       render: (record) => <span>{new Date(record).toLocaleString('uk-UA')}</span>,
     },
@@ -81,8 +89,8 @@ const SubjectTable = (props) => {
 
   return (
     <div className="wraper">
-      <Title level={4}>Список предметів</Title>
-
+      <Card
+      title={"Список предметів"}>
       <Table
         loading={props.isFetching}
         dataSource={subjects}
@@ -94,6 +102,7 @@ const SubjectTable = (props) => {
           rowExpandable: (record) => record.timeTables?.length,
         }}
       />
+      </Card>
     </div>
   );
 };

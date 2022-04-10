@@ -10,7 +10,7 @@ namespace QualificationWork.Api.Controllers
     [Route("api/[controller]")]
     [ApiController]
 
-    [Authorize(Roles = "Student")]
+    [Authorize]
     public class StudentsController : ControllerBase
     {
         private readonly GroupService groupService;

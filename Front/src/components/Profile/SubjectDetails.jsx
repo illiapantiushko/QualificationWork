@@ -1,12 +1,9 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { getSubjectDetails } from '../../Api/actionProfile';
-import { Table, Tag, Typography, Layout, Row, Col, Card } from 'antd';
-import { useParams } from 'react-router-dom';
-import DoughnutChart from './DoughnutChart';
-import LineChart from './LineChart';
+import { Table, Tag, Layout, Card, Button } from 'antd';
+import { useParams, Link } from 'react-router-dom';
 
-const { Title } = Typography;
 
 const { Content } = Layout;
 const SubjectDetails = (props) => {
@@ -50,33 +47,21 @@ const SubjectDetails = (props) => {
   ];
 
   return (
-    <Content
-      className="site-layout-background"
-      style={{
-        padding: 30,
-        minHeight: 280,
-      }}>
-      <Title level={4}>Таблиця відуваності</Title>
-      <Table dataSource={props.subjectDetails} bordered pagination={false} columns={columns} />
-      {/* <Row align="middle">
-        <Col xs={24} md={16}>
-          <Card bordered={false} bodyStyle={{ padding: '0 20px 20px' }}>
-            <LineChart />
-          </Card>
-        </Col>
-        <Col xs={24} md={8}>
-          <Card bordered={false} bodyStyle={{ padding: '0 20px 20px' }}>
-            <DoughnutChart timeTable={props.subjectDetails} />
-          </Card>
-        </Col>
-      </Row> */}
+    <Content 
+    className="site-layout-background"
+    style={{padding: 30, minHeight: 280, }}>
+      <Card
+        extra={ <Link to={"/"}>Back</Link>}
+        title={props.subject.subjectName}>
+      <Table dataSource={props.subject.timeTables} bordered pagination={false} columns={columns} />
+      </Card>
     </Content>
   );
 };
 
 let mapStateToProps = (state) => {
   return {
-    subjectDetails: state.ProfilePage.subjectDetails,
+    subject: state.ProfilePage.subjectDetails,
   };
 };
 

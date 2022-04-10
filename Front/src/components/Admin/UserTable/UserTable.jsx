@@ -12,7 +12,7 @@ import {
   Pagination,
 } from 'antd';
 import './userTable.scss';
-import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
+import { DeleteOutlined, EditOutlined, UserOutlined } from '@ant-design/icons';
 import { connect } from 'react-redux';
 import { getUsers, deleteUserData, deleteRole } from '../../../Api/actionsAdmin';
 import EditeUser from './EditeUser';
@@ -29,20 +29,14 @@ const UserTable = (props) => {
     props.GetUsers(currentPage, search);
   }, [search, currentPage]);
 
-  console.log(props.users);
-
   const [modalEditeUser, setModalEditeUser] = useState(false);
 
   const [userData, setUserData] = useState(null);
 
   const handleEditUser = (data) => {
-    setUserData(data);
+    setUserData({...data});
     !modalEditeUser ? setModalEditeUser(true) : setModalEditeUser(false);
   };
-
-  // const deleteRole = (id, role) => {
-  //   props.deleteRole({ id, role });
-  // };
 
   const columns = [
     {
@@ -51,11 +45,12 @@ const UserTable = (props) => {
       sorter: false,
       align: 'center',
       render: (text) => (
+       
         <Avatar
           style={{ marginLeft: 8 }}
           src={
             !text
-              ? 'https://instamir.info/wp-content/uploads/2019/04/instami-avatarka-v-instagram-11.png'
+              ? 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnSi-Gltn2w68Fn37i4rPk5IAW5xv9Xehwww&usqp=CAU'
               : text
           }
         />
@@ -90,14 +85,6 @@ const UserTable = (props) => {
             content={text?.map((role) => (
               <tr>
                 <td> {role}</td>
-                <td>
-                  {/* <a
-                    href="#"
-                    className="icon delete"
-                    onClick={() => deleteRole(record.id, user.role)}>
-                    <DeleteOutlined />
-                  </a> */}
-                </td>
               </tr>
             ))}
             trigger="hover">

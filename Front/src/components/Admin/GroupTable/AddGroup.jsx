@@ -1,22 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { createNewGroup } from '../../../Api/actionsAdmin';
 import { connect } from 'react-redux';
-import { Typography, Modal, Form, Button, Input, Select, Table, Row, Col } from 'antd';
-
-const { Title } = Typography;
+import { Modal, Form, Button, Input, Select} from 'antd';
 
 const AddGroup = (props) => {
   const [usersData, setUsersData] = useState(null);
   const [subjectsData, setSubjectsData] = useState(null);
 
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
-
-  useEffect(() => {
-    // setUsersData(getUserList(1));
-    // props.GetListSubjects();
-  }, []);
-
-  console.log(usersData);
 
   const [form] = Form.useForm();
 
@@ -49,19 +40,7 @@ const AddGroup = (props) => {
   };
 
   const onFinish = (data) => {
-    // const group = {
-    //   nameGroup: data.groupName,
-    //   nameFaculty: data.faculty,
-    //   users: deleteKey(usersData),
-    //   subjects: deleteKey(subjectsData),
-    // };
-    console.log(data);
-
-    // props.createGroup(group);
-    // props.GetUsers(1, '');
-    // props.GetGroups();
-    // setSelectedRowKeys([]);
-
+  
     props.createNewGroup(data);
     form.resetFields();
     setIsModalVisible(false);
@@ -73,15 +52,7 @@ const AddGroup = (props) => {
       dataIndex: 'userName',
       key: 'userName',
       render: (text) => <a>{text}</a>,
-    },
-    // {
-    //   title: 'Age',
-    //   dataIndex: 'age',
-    // },
-    // {
-    //   title: 'Address',
-    //   dataIndex: 'address',
-    // },
+    }
   ];
 
   const SubjectColumns = [
@@ -90,14 +61,6 @@ const AddGroup = (props) => {
       dataIndex: 'subjectName',
       render: (text) => <a>{text}</a>,
     },
-    // {
-    //   title: 'Age',
-    //   dataIndex: 'age',
-    // },
-    // {
-    //   title: 'Address',
-    //   dataIndex: 'address',
-    // },
   ];
 
   const rowUserSelection = {
@@ -129,7 +92,7 @@ const AddGroup = (props) => {
         ]}>
         <Form form={form} id="myForm" name="basic" onFinish={onFinish} autoComplete="off">
           <Form.Item name="nameGroup" rules={[{ required: true }]}>
-            <Input placeholder="Name group" />
+            <Input placeholder="Назва групи" />
           </Form.Item>
           <Form.Item name="nameFaculty" rules={[{ required: true }]}>
             <Select placeholder="Факультет">
@@ -137,43 +100,10 @@ const AddGroup = (props) => {
             </Select>
           </Form.Item>
 
-          {/* <Row>
-            <Col xs={22} sm={22} md={22} lg={12} xl={12}>
-              <Title level={5}>List Users</Title>
-              <Table
-                style={{ margin: 5 }}
-                bordered
-                rowSelection={rowSelection}
-                columns={UserColumns}
-                dataSource={usersData.data.}
-                pagination={false}
-              />
-            </Col>
-            <Col xs={22} sm={22} md={22} lg={12} xl={12}>
-              <Title level={5}>List Subject</Title>
-              <Table
-                style={{ margin: 5 }}
-                bordered
-                rowSelection={{
-                  ...rowSubjectSelection,
-                }}
-                columns={SubjectColumns}
-                dataSource={props.listSubject}
-                pagination={false}
-              />
-            </Col>
-          </Row> */}
         </Form>
       </Modal>
     </div>
   );
-};
-
-let mapStateToProps = (state) => {
-  return {
-    // listUsers: state.AdminPage.users,
-    // listSubject: state.AdminPage.subjects,
-  };
 };
 
 let mapDispatchToProps = (dispatch) => {
@@ -184,4 +114,4 @@ let mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddGroup);
+export default connect(null, mapDispatchToProps)(AddGroup);

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { getGroups, deleteGroupData } from '../../../Api/actionsAdmin';
-import { Table, Tag, Typography, Row, Col, Pagination, Input, Popover, Popconfirm } from 'antd';
+import { Table, Tag, Typography, Row, Col, Pagination, Input, Popover, Popconfirm, List } from 'antd';
 import AddGroup from './AddGroup';
 import { DeleteOutlined, EllipsisOutlined, InsertRowBelowOutlined } from '@ant-design/icons';
 import AddUser from './AddUser';
@@ -15,6 +16,7 @@ const GroupTable = (props) => {
 
   const [search, setSearch] = useState(' ');
   const [currentPage, setCurrentPage] = useState(1);
+
 
   useEffect(() => {
     props.GetGroups(currentPage, search);
@@ -38,25 +40,33 @@ const GroupTable = (props) => {
           <Popover
             content={
               <div>
+            
                 <Popconfirm
                   title="Sure to delete?"
                   onConfirm={() => props.DeleteGroupData(record.id)}>
-                  <p className="item__optional__menu">
+                  <li className="item__optional__menu">
                     Delete
-                    <DeleteOutlined />
-                  </p>
+                  </li>
                 </Popconfirm>
-                <p
+                <li
                   onClick={() => setModalAddSubject({ groupId: record.id, visible: true })}
                   className="item__optional__menu">
-                  Add Subjects
-                </p>
-                <p
+                  Subjects
+                </li>
+                <li
                   onClick={() => setModalAddUser({ groupId: record.id, visible: true })}
                   className="item__optional__menu">
-                  Add Users
-                </p>
+                Users
+                </li>
+
+                <Link to={`/group/${record.id}`}>
+                <li className="item__optional__menu">
+                  Group
+                </li>
+                </Link>
+                
               </div>
+
             }
             trigger="click">
             <EllipsisOutlined style={{ fontSize: '25px' }} />
@@ -77,6 +87,7 @@ const GroupTable = (props) => {
       {
         title: 'Position',
         dataIndex: 'position',
+        align:'center',
         key: 'position',
         render: (record) => (
           <span>
@@ -132,6 +143,7 @@ const GroupTable = (props) => {
       />
       <div className="pagination__container mt-4 mb-4">
         <Pagination
+        style={ {marginBottom:'50px'}}
           className="pagination"
           current={currentPage}
           pageSize={4}

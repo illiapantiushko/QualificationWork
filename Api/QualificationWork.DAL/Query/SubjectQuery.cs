@@ -41,7 +41,7 @@ namespace QualificationWork.DAL.Query
 
             var response = await users.Skip((pageNumber - 1) * pageSize)
                                     .Take(pageSize)
-                                    .Include(pub => pub.TimeTables)
+                                    .Include(pub => pub.TimeTables.Where(x => x.LessonNumber == 1))
                                     .ThenInclude(pub => pub.Subject)
                                     .Include(pub => pub.UserRoles)
                                     .ThenInclude(pub => pub.Role)

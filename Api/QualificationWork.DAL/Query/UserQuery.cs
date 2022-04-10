@@ -70,9 +70,10 @@ namespace QualificationWork.DAL.Query
             return response;
         }
 
-        public async Task<List<TimeTable>> GetSubjectTopic(long subjectId)
+        public async Task<SubjectLessonsDto<TimeTable>> GetSubjectTopic(long subjectId)
         {
             var list = new List<TimeTable>();
+            var subject = context.Subjects.FirstOrDefault(x => x.Id == subjectId);
 
             var response = await context.TimeTable
                                         .Where(x => x.SubjectId == subjectId)
@@ -86,14 +87,17 @@ namespace QualificationWork.DAL.Query
                     list.Add(item);
                 }
             }
-            return list;
+
+            var result = new SubjectLessonsDto<TimeTable>(subject.SubjectName, list);
+            return result;
         }
 
-        public async Task<List<TimeTable>> GetTimeTableByUser(long subjectId, long userId)
+        public async Task<Subject> GetTimeTableByUser(long subjectId, long userId)
         {
-            var data = await context.TimeTable
-                             .Where(x => x.SubjectId == subjectId && x.UserId == userId)
-                             .ToListAsync();
+            var data = await context.Subjects
+                             .Where(x => x.Id == subjectId)
+                             .Include(x => x.TimeTables.Where(x => x.SubjectId == subjectId && x.UserId == userId))
+                             .FirstOrDefaultAsync();
             return data;
         }
 

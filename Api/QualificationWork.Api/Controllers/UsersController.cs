@@ -9,7 +9,7 @@ namespace QualificationWork.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Roles = "Admin")]
+    [Authorize]
     public class UsersController : ControllerBase
     {
         private readonly UserService userService;

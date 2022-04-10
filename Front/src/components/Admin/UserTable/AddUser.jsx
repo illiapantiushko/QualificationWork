@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { addNewUser, addNewUserFromExel } from '../../../Api/actionsAdmin';
 import { connect } from 'react-redux';
-import { Modal, Form, Button, Checkbox, Input, Select, Upload, message } from 'antd';
-import { UploadOutlined } from '@ant-design/icons';
+import { Modal, Form, Button, Checkbox, Input, Select,  message } from 'antd';
+
 
 const AddUser = (props) => {
   const [form] = Form.useForm();
@@ -54,9 +54,6 @@ const AddUser = (props) => {
       <Button type="primary" onClick={showModal} style={{ margin: 5 }}>
         Add User
       </Button>
-      {/* <Upload {...UploadProps}>
-        <Button icon={<UploadOutlined />}>Add Users from Exel</Button>
-      </Upload> */}
       <Modal
         title="Add User"
         visible={isModalVisible}

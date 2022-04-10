@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
-import { Layout, Row, Card } from 'antd';
+import { Layout, Row, Card, Button } from 'antd';
 import CardSubject from './CardSubject';
-import SubjectDone from './SubjectDone';
 import TableSubject from './TableSubject';
 import { connect } from 'react-redux';
 
@@ -10,10 +9,9 @@ import { getSubjects, getUserReport } from '../../Api/actionProfile';
 const { Content } = Layout;
 const Main = (props) => {
   useEffect(() => {
-    props.GetSubjects();
+  props.GetSubjects();
   }, []);
 
-  console.log(props.subjects);
 
   return (
     <Content
