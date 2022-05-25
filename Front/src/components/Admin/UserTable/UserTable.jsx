@@ -12,7 +12,7 @@ import {
   Pagination,
 } from 'antd';
 import './userTable.scss';
-import { DeleteOutlined, EditOutlined, UserOutlined } from '@ant-design/icons';
+import { DeleteOutlined, EditOutlined} from '@ant-design/icons';
 import { connect } from 'react-redux';
 import { getUsers, deleteUserData, deleteRole } from '../../../Api/actionsAdmin';
 import EditeUser from './EditeUser';
@@ -38,9 +38,14 @@ const UserTable = (props) => {
     !modalEditeUser ? setModalEditeUser(true) : setModalEditeUser(false);
   };
 
+  const fetchRecords = (page) => {
+    setCurrentPage(page);
+    props.GetUsers(currentPage, search);
+  };
+
   const columns = [
     {
-      title: 'Avatar',
+      title: 'Зображення',
       dataIndex: 'profilePicture',
       sorter: false,
       align: 'center',
@@ -58,23 +63,23 @@ const UserTable = (props) => {
     },
 
     {
-      title: 'Name',
+      title: "Ім'я",
       dataIndex: 'userName',
       sorter: false,
     },
     {
-      title: 'Email',
+      title: 'Пошта',
       dataIndex: 'email',
       sorter: false,
     },
     {
-      title: 'Age',
+      title: 'Вік',
       dataIndex: 'age',
       sorter: false,
       align: 'center',
     },
     {
-      title: 'Roles',
+      title: 'Ролі',
       dataIndex: 'userRoles',
       align: 'center',
       render: (text, record) =>
@@ -94,7 +99,7 @@ const UserTable = (props) => {
       key: 'userRoles',
     },
     {
-      title: 'Action',
+      title: '',
       key: 'operation',
       align: 'center',
       render: (record) => (
@@ -103,7 +108,7 @@ const UserTable = (props) => {
             <EditOutlined />
           </a>
           <span> </span>
-          <Popconfirm title="Sure to delete?" onConfirm={() => props.DeleteUser(record.id)}>
+          <Popconfirm title="Ви впевнені що хочете видалити?" onConfirm={() => props.DeleteUser(record.id)}>
             <a href="#" className="icon delete">
               <DeleteOutlined />
             </a>
@@ -128,7 +133,7 @@ const UserTable = (props) => {
           </span>
         ),
       },
-      { title: 'Кількість кредитів', dataIndex: 'amountCredits', key: 'amountCredits' },
+      { title: 'Кількість кредитів', dataIndex: 'amountCredits', key: 'amountCredits',align:'center' },
       {
         title: 'Дата закінчення курсу',
         dataIndex: 'subjectСlosingDate',
@@ -161,30 +166,27 @@ const UserTable = (props) => {
           <AddUser />
         </Col>
         <Col span={4}>
-          <Search placeholder="Search..." onChange={(e) => setSearch(e.target.value)} />
+          <Search placeholder="Пошук..." onChange={(e) => setSearch(e.target.value)} />
         </Col>
       </Row>
       <Table
         loading={props.isFetching}
         dataSource={props.users}
         bordered
+        pagination={{
+          pageSize: 4,
+          total: props.usersTotalCount,
+          onChange: (page) => {
+            fetchRecords(page);
+          },
+        }}
         scroll={{ x: 1200 }}
-        pagination={false}
         columns={columns}
         expandable={{
           expandedRowRender: (record) => expandedRowRender(record.timeTables),
           rowExpandable: (record) => record.timeTables?.length,
         }}
       />
-      <div className="pagination__container mt-4 mb-4">
-        <Pagination
-          className="pagination"
-          current={currentPage}
-          pageSize={4}
-          total={props.usersTotalCount}
-          onChange={(e) => setCurrentPage(e)}
-        />
-      </div>
       <EditeUser data={userData} visible={modalEditeUser} handleEditUser={handleEditUser} />
     </div>
   );

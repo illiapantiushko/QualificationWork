@@ -21,6 +21,7 @@ const TableSubjectLessons = (props) => {
   const deleteLesson = (lessonNumber) => {
     props.removeLesson(lessonNumber, id);
   };
+  console.log(props.subjectLesons);
 
   const columns = [
     {
@@ -37,7 +38,7 @@ const TableSubjectLessons = (props) => {
       render: (record) => <span>{new Date(record).toLocaleString('uk-UA')}</span>,
     },
     {
-      title: 'Action',
+      title: '',
       key: 'operation',
       align: 'center',
       render: (text, record) => (
@@ -46,17 +47,17 @@ const TableSubjectLessons = (props) => {
             content={
               <div>
                 <Popconfirm
-                  title="Sure to delete?"
+                  title="Ви впевнені що хочете видалити?"
                   onConfirm={() => deleteLesson(record.lessonNumber)}>
                   <p className="item__optional__menu">
-                    Delete
+                    Видалити
                     <DeleteOutlined />
                   </p>
                 </Popconfirm>
                 <p
                   className="item__optional__menu"
                   onClick={() => setBalTable({ visible: true, namberleson: record.lessonNumber })}>
-                  Show <InsertRowBelowOutlined />
+                  Відкрити <InsertRowBelowOutlined />
                 </p>
               </div>
             }
@@ -73,7 +74,7 @@ const TableSubjectLessons = (props) => {
       className="site-layout-background"
       style={{padding: 30, minHeight: 280, }}>
       <Card
-        title={props.subjectLesons.subjectName}
+        title={props. subjectName}
         bodyStyle={{
           padding: 10,
         }}
@@ -84,7 +85,7 @@ const TableSubjectLessons = (props) => {
         }}
         className="card__wrapper">
         <AddLesonForm subjetId={id} />
-        <Table dataSource={props.subjectLesons.lessons} bordered pagination={false} columns={columns} />
+        <Table dataSource={props.subjectLesons} bordered pagination={false} columns={columns} />
       </Card>
       {!balTable.visible ? null : (
         <AttendanceTable subjectId={id} namberleson={balTable.namberleson} />
@@ -97,6 +98,7 @@ let mapStateToProps = (state) => {
   return {
     subjectLesons: state.TeacherPage.subjectLesons,
     isFetching: state.TeacherPage.isFetching,
+    subjectName:state.TeacherPage.subjectName,
   };
 };
 

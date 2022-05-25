@@ -43,4 +43,12 @@ export const Notification = (status, message) => {
       description: message,
     });
   }
+  if(status === undefined){
+    notification.error({
+      message: 'Warning',
+      description: message,
+    });
+  }
+
+
 };

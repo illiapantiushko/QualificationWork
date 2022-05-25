@@ -45,7 +45,7 @@ const AdminReducer = (state = initialState, action) => {
     case ADD_GROUP:
       return {
         ...state,
-        groups: [...state.groups, action.payload],
+        groups: [...state. groups, action.payload],
       };
     case ADD_USERS:
       return {

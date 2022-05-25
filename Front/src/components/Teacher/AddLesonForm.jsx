@@ -9,7 +9,7 @@ const AddLesonForm = (props) => {
 
   const [form] = Form.useForm();
 
-  const [showModal, setShowModal]=useState(false);
+  const [showModal, setShowModal]= useState(false);
 
   const handleModal = () => {
     !showModal ?setShowModal(true):setShowModal(false);
@@ -19,6 +19,7 @@ const AddLesonForm = (props) => {
     data.subjectId = Number(props.subjetId);
     data.date = new Date(data.date).toISOString();
     props.AddLesson(data);
+    setShowModal(false);
     form.resetFields();
   };
   const downloadReport = () => {
@@ -55,7 +56,7 @@ const AddLesonForm = (props) => {
       <Row gutter={[16, 16]} justify="end" >
       <Col>
       <Button onClick={handleModal} type="primary">
-            Додати нове заннятя
+        Додати заняття
       </Button>          
         </Col>
         <Col>

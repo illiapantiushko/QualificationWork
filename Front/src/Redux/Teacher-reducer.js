@@ -9,6 +9,7 @@ const DELETE_LESSON = 'DELETE_LESSON';
 let initialState = {
   subjects: [],
   isFetchingSubjects: true,
+  subjectName:'',
   subjectLesons: [],
   attendanceList: [],
   isFetching: false,
@@ -26,7 +27,8 @@ const TeacherReducer = (state = initialState, action) => {
     case SET_SUBJECT_LESONS:
       return {
         ...state,
-        subjectLesons: action.payload,
+        subjectName: action.payload?.subjectName, 
+        subjectLesons: action.payload?.lessons,
         isFetching: false,
       };
     case ADD_NEW_LESSON:

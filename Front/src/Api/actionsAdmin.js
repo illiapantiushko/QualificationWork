@@ -17,7 +17,7 @@ export const getUsers = (pageNumber = 1, search = '') => {
   return async (dispatch) => {
     try {
       const res = await instance.get(
-        `Teachers/getAllUsersWithSubjests?pageNumber=${pageNumber}&pageSize=${4}&search=${search}`,
+        `Users/getAllUsersWithSubjests?pageNumber=${pageNumber}&pageSize=${4}&search=${search}`,
       );
       dispatch(
         setUsers(
@@ -36,7 +36,7 @@ export const getUsers = (pageNumber = 1, search = '') => {
         ),
       );
     } catch (error) {
-      Notification(error.response.status, error.message);
+      Notification(error.response?.status, error.message);
     }
   };
 };
@@ -45,7 +45,7 @@ export const getGroups = (pageNumber = 1, search = '') => {
   return async (dispatch) => {
     try {
       const res = await instance.get(
-        `Students/getAllGroups?pageNumber=${pageNumber}&pageSize=${5}&search=${search}`,
+        `Users/getAllGroups?pageNumber=${pageNumber}&pageSize=${5}&search=${search}`,
       );
       dispatch(
         setGroups(
@@ -60,7 +60,7 @@ export const getGroups = (pageNumber = 1, search = '') => {
         ),
       );
     } catch (error) {
-      Notification(error.response.status, error.message);
+      Notification(error.response?.status, error.message);
     }
   };
 };
@@ -80,12 +80,11 @@ export const addNewUser = (data) => {
       dispatch(addUser(newUser));
       if (res.status === 200) {
         notification.success({
-          message: '200',
           description: 'Користувача успішно додано',
         });
       }
     } catch (error) {
-      Notification(error.response.status, error.message);
+      Notification(error.response?.status, error.message);
     }
   };
 };
@@ -97,12 +96,11 @@ export const deleteUserData = (id) => {
       dispatch(deleteUser(id));
       if (res.status === 200) {
         notification.success({
-          message: '200',
           description: 'Користувача видалено',
         });
       }
     } catch (error) {
-      Notification(error.response.status, error.message);
+      Notification(error.response?.status, error.message);
     }
   };
 };
@@ -110,16 +108,15 @@ export const deleteUserData = (id) => {
 export const deleteGroupData = (id) => {
   return async (dispatch) => {
     try {
-      const res = await instance.delete(`Students/deleteGroup?groupId=${id}`);
+      const res = await instance.delete(`Users/deleteGroup?groupId=${id}`);
       dispatch(deleteGroup(id));
       if (res.status === 200) {
         notification.success({
-          message: '200',
           description: 'Групу видалено видалено',
         });
       }
     } catch (error) {
-      Notification(error.response.status, error.message);
+      Notification(error.response?.status, error.message);
     }
   };
 };
@@ -149,12 +146,11 @@ export const addNewUserFromExel = (file) => {
 
       if (res.status === 200) {
         notification.success({
-          message: '200',
           description: 'Користувачів успішно додано',
         });
       }
     } catch (error) {
-      Notification(error.response.status, error.message);
+      Notification(error.response?.status, error.message);
     }
   };
 };
@@ -162,7 +158,7 @@ export const addNewUserFromExel = (file) => {
 export const getListSubjects = () => {
   return async (dispatch) => {
     try {
-      const res = await instance.get('Teachers/getSubjects');
+      const res = await instance.get('Users/getSubjects');
 
       dispatch(
         setListSubjects(
@@ -177,7 +173,7 @@ export const getListSubjects = () => {
         ),
       );
     } catch (error) {
-      Notification(error.response.status, error.message);
+      Notification(error.response?.status, error.message);
     }
   };
 };
@@ -188,12 +184,11 @@ export const editeUser = (data) => {
       dispatch(updateUser(data));
       if (res.status === 200) {
         notification.success({
-          message: '200',
           description: 'Користувача редаговано',
         });
       }
     } catch (error) {
-      Notification(error.response.status, error.message);
+      Notification(error.response?.status, error.message);
     }
   };
 };
@@ -209,12 +204,11 @@ export const deleteRole = (data) => {
       dispatch(deleteUserRole({ id: data.id, roleId: data.role.id }));
       if (res.status === 200) {
         notification.success({
-          message: '200',
           description: 'Роль користувача успішно видалено',
         });
       }
     } catch (error) {
-      Notification(error.response.status, error.message);
+      Notification(error.response?.status, error.message);
     }
   };
 };
@@ -223,10 +217,10 @@ export const getUserList = (pageNumber = 1) => {
   return async () => {
     try {
       return await instance.get(
-        `Teachers/getAllUsersWithSubjests?pageNumber=${pageNumber}&pageSize=${4}&search=${''}`,
+        `Users/getAllUsersWithSubjests?pageNumber=${pageNumber}&pageSize=${4}&search=${''}`,
       );
     } catch (error) {
-      Notification(error.response.status, error.message);
+      Notification(error.response?.status, error.message);
     }
   };
 };
@@ -239,7 +233,7 @@ export const createNewGroup = (data) => {
       const randomValue = Math.random();
       const newGroup = {
         id: randomValue,
-        key: randomValue,
+        key: randomValue + 1,
         name: data.groupName,
         userGroups: [],
         faculty: data.facultyName,
@@ -247,12 +241,11 @@ export const createNewGroup = (data) => {
       dispatch(addGroup(newGroup));
       if (res.status === 200) {
         notification.success({
-          message: '200',
-          description: 'Групі успішно додано',
+          description: 'Групу успішно додано',
         });
       }
     } catch (error) {
-      Notification(error.response.status, error.message);
+      Notification(error.response?.status, error.message);
     }
   };
 };
@@ -260,11 +253,10 @@ export const createNewGroup = (data) => {
 export const addUserGroup = (data) => {
   return async (dispatch) => {
     try {
-      const res = await instance.post(`Students/addUserGroup`, data);
+      const res = await instance.post(`Users/addUserGroup`, data);
 
       if (res.status === 200) {
         notification.success({
-          message: '200',
           description: 'Користувачів успішно додано до групи',
         });
       }
@@ -277,11 +269,10 @@ export const addUserGroup = (data) => {
 export const addUserSubject = (data) => {
   return async (dispatch) => {
     try {
-      const res = await instance.post(`Students/addUserSubject`, data);
+      const res = await instance.post(`Users/addUserSubject`, data);
 
       if (res.status === 200) {
         notification.success({
-          message: '200',
           description: 'Предмети успішно додано до групи',
         });
       }

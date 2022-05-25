@@ -8,22 +8,29 @@ const EditeUser = (props) => {
 
   console.log(props);
 
-    const intitial = {
-      userName: props.data?.userName,
-      userEmail: props.data?.email,
-      age: props.data?.age,
-      іsContract: props.data?.іsContract,
-      roles: props.data?.userRoles,
-    };
+  // const [intitial, setIntitial] = useState({
+  //     userName:null,
+  //     userEmail: null,
+  //     age: null,
+  //     іsContract: null,
+  //     roles: null
+  // })
 
-
+  useEffect(()=>{
+    form.setFieldsValue({
+    userName: props.data?.userName,
+     userEmail: props.data?.email,
+     age: props.data?.age,
+     іsContract: props.data?.іsContract,
+    roles: props.data?.userRoles
+    })
+  },[props])
 
   function handleCancel() {
     props.handleEditUser();
     form.resetFields();
   }
 
-  
   const onChange = (checkedValues) => {
     console.log('checked = ', checkedValues);
   };
@@ -33,7 +40,6 @@ const EditeUser = (props) => {
     props.editeUser(data); 
    form.resetFields();
     props.handleEditUser();
-  
   };
 
   return (
@@ -50,16 +56,15 @@ const EditeUser = (props) => {
           </Button>,
         ]}>
         <Form
-          initialValues={intitial}
           form={form}
           id="myForm"
           name="basic"
           onFinish={onFinish}
           >
-          <Form.Item name="userName">
-            <Input placeholder="Name" value={props.data?.userName} />
+          <Form.Item name="userName" >
+            <Input placeholder="Name" />
           </Form.Item>
-          <Form.Item name="userEmail" value={props.data?.email}>
+          <Form.Item name="userEmail">
             <Input placeholder="Email" />
           </Form.Item>
           <Form.Item name="age">
@@ -71,9 +76,9 @@ const EditeUser = (props) => {
               <Select.Option value={false}>Державник</Select.Option>
             </Select>
           </Form.Item>
-          <Form.Item name="roles" rules={[{ required: true }]}>
+          <Form.Item name="roles">
             <Checkbox.Group style={{ width: '100%' }} onChange={onChange}>
-              <Checkbox value="Admin">Admin</Checkbox>
+              <Checkbox  value="Admin">Admin</Checkbox>
               <Checkbox value="Student">Student</Checkbox>
               <Checkbox value="Teacher">Teacher</Checkbox>
             </Checkbox.Group>

@@ -26,12 +26,14 @@ namespace QualificationWork.DAL.HelperServise
 
         public async Task SeedAsync()
         {
+
             await CreateRoles();
             await CreateAdmin();
             //await CreateUsers();
             await CreateFaculty();
             await CreateSubjects();
             await context.SaveChangesAsync();
+            //BackgroundJobCheckingSubject();
         }
 
         public async Task CreateRoles()
@@ -140,25 +142,25 @@ namespace QualificationWork.DAL.HelperServise
             }
         }
 
-        //public async Task CheckSubject()
-        //{
-        //    var subjects = await context.Subjects.ToListAsync();
+        public async Task CheckSubject()
+        {
+            var subjects = await context.Subjects.ToListAsync();
 
-        //    foreach (var subject in subjects)
-        //    {
+            foreach (var subject in subjects)
+            {
+                if (subject.SubjectСlosingDate > DateTime.Today)
+                {
+                    subject.IsActive = false;
+                }
+            }
 
-        //        if (subject.SubjectСlosingDate == DateTime.Today)
-        //        {
-        //            subject.IsActive = false;
-        //        }
-        //    }
+        }
 
-        //}
-
-        //public void BackgroundJobCheckingSubject()
-        //{
-        //    recurringJobManager.AddOrUpdate("Checking the activity of the subject", () => CheckSubject(), Cron.Daily);
-        //}
+        public void BackgroundJobCheckingSubject()
+        {
+            // every day at 9:30
+            recurringJobManager.AddOrUpdate("Checking the activity of the subject", () => CheckSubject(), "0 30 9 * **");
+        }
 
     }
 }

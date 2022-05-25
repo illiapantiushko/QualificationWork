@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getGroups, deleteGroupData } from '../../../Api/actionsAdmin';
-import { Table, Tag, Typography, Row, Col, Pagination, Input, Popover, Popconfirm, List } from 'antd';
+import { Table, Tag, Typography, Row, Col,  Input, Popover, Popconfirm} from 'antd';
 import AddGroup from './AddGroup';
-import { DeleteOutlined, EllipsisOutlined, InsertRowBelowOutlined } from '@ant-design/icons';
+import {  EllipsisOutlined } from '@ant-design/icons';
 import AddUser from './AddUser';
 import AddSubject from './AddSubject';
 const { Title } = Typography;
@@ -22,17 +22,23 @@ const GroupTable = (props) => {
     props.GetGroups(currentPage, search);
   }, [currentPage, search]);
 
+
+  const fetchRecords = (page) => {
+    setCurrentPage(page);
+    props.GetGroups(currentPage, search);
+  };
+
   const columns = [
     {
-      title: 'Name group',
+      title: 'Назва',
       dataIndex: 'name',
     },
     {
-      title: 'Faculty',
+      title: 'Факультет',
       dataIndex: 'faculty',
     },
     {
-      title: 'Action',
+      title: '',
       key: 'operation',
       align: 'center',
       render: (text, record) => (
@@ -40,31 +46,30 @@ const GroupTable = (props) => {
           <Popover
             content={
               <div>
-            
                 <Popconfirm
                   title="Sure to delete?"
                   onConfirm={() => props.DeleteGroupData(record.id)}>
                   <li className="item__optional__menu">
-                    Delete
+                    Видалити
                   </li>
                 </Popconfirm>
                 <li
                   onClick={() => setModalAddSubject({ groupId: record.id, visible: true })}
                   className="item__optional__menu">
-                  Subjects
+                  Додати предмети
                 </li>
                 <li
                   onClick={() => setModalAddUser({ groupId: record.id, visible: true })}
                   className="item__optional__menu">
-                Users
+                 Додати користувачів
                 </li>
 
-                <Link to={`/group/${record.id}`}>
+                {/* <Link to={`/group/${record.id}`}>
                 <li className="item__optional__menu">
-                  Group
+                  Gro
                 </li>
                 </Link>
-                
+                 */}
               </div>
 
             }
@@ -78,14 +83,14 @@ const GroupTable = (props) => {
 
   const expandedRowRender = (userGroups) => {
     const columns = [
-      { title: 'UserName', dataIndex: 'userName', key: 'name' },
+      { title: "Ім'я", dataIndex: 'userName', key: 'name' },
       {
-        title: 'Email',
+        title: 'Пошта',
         dataIndex: 'email',
         key: 'email',
       },
       {
-        title: 'Position',
+        title: 'Позиція',
         dataIndex: 'position',
         align:'center',
         key: 'position',
@@ -128,29 +133,25 @@ const GroupTable = (props) => {
           />
         </Col>
         <Col span={4}>
-          <Search placeholder="Search..." onChange={(e) => setSearch(e.target.value)} />
+          <Search placeholder="Пошук..." onChange={(e) => setSearch(e.target.value)} />
         </Col>
       </Row>
       <Table
         loading={props.isFetching}
         dataSource={props.groups}
-        pagination={false}
+        pagination={{
+          pageSize: 4,
+          total: props.groupsTotalCount,
+          onChange: (page) => {
+            fetchRecords(page);
+          },
+        }}
         columns={columns}
         expandable={{
           expandedRowRender: (record) => expandedRowRender(record.userGroups),
           rowExpandable: (record) => record.userGroups.length,
         }}
       />
-      <div className="pagination__container mt-4 mb-4">
-        <Pagination
-        style={ {marginBottom:'50px'}}
-          className="pagination"
-          current={currentPage}
-          pageSize={4}
-          total={props.groupsTotalCount}
-          onChange={(e) => setCurrentPage(e)}
-        />
-      </div>
     </div>
   );
 };

@@ -47,7 +47,7 @@ namespace QualificationWork.DAL.Command
         {
 
             var timeTables = await context.TimeTable
-                                        .Where(x => x.SubjectId==model.SubjectId)
+                                        .Where(x => x.SubjectId== model.SubjectId)
                                         .Where(x => x.LessonNumber == 1)
                                         .ToListAsync();
 

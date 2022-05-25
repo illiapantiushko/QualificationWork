@@ -171,11 +171,14 @@ namespace QualificationWork.DAL.Command
 
             if (data != null)
             {
-
                 data.UserName= model.UserName;
                 data.Email = model.UserEmail;
                 data.Age = model.Age;
                 data.ІsContract = model.ІsContract;
+
+                List<string> roles = new List<string>() { UserRoles.Admin, UserRoles.Teacher, UserRoles.Student };
+
+                await userManager.RemoveFromRolesAsync(data, roles);
 
                 await userManager.AddToRolesAsync(data, model.Roles);
             }

@@ -85,7 +85,7 @@ const AddSubject = (props) => {
         onOk={handleOk}
         footer={[
           <Button form="myForm" type="primary" key="submit" htmlType="submit">
-            Add
+            Додати
           </Button>,
         ]}>
         <Form form={form} id="myForm" name="basic" onFinish={onFinish} autoComplete="off">

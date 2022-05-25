@@ -22,6 +22,7 @@ const TableSubject = ({ getUserReport, subjects, isFetching }) => {
       title: 'Викладач',
       dataIndex: 'teacher',
       key: 'teacher',
+      render:(text) => text[0]
     },
     {
       title: 'Бал',
@@ -69,7 +70,7 @@ const TableSubject = ({ getUserReport, subjects, isFetching }) => {
           type="primary"
           icon={<DownloadOutlined />}
           className="btn-download">
-          Скачати заліковку
+          Завантажити заліковку
         </Button>
       </div>
     </>

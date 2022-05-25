@@ -252,13 +252,10 @@ namespace QualificationWork.BL.Services
                 worksheet.Cells["D2"].Value = "Присутність";
                 worksheet.Cells["E2"].Value = "Бал";
                 worksheet.Cells["F2"].Value = "Дата заняття";
-                worksheet.Cells["G2"].Value = "П.І.Б";
-                worksheet.Cells["H2"].Value = "Підсумкова оцінка";
-                worksheet.Cells["A1:H2"].Style.Fill.PatternType = ExcelFillStyle.Solid;
-                worksheet.Cells["A1:H1"].Style.Fill.BackgroundColor.SetColor(Color.FromArgb(24, 159, 24));
-                worksheet.Cells["A2:H2"].Style.Fill.BackgroundColor.SetColor(Color.FromArgb(184, 204, 228));
-                worksheet.Cells["A2:H2"].Style.Font.Bold = true;
-                worksheet.Cells["A1:K20"].AutoFitColumns();
+                worksheet.Cells["A1:F2"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                worksheet.Cells["A1:F1"].Style.Fill.BackgroundColor.SetColor(Color.FromArgb(24, 159, 24));
+                worksheet.Cells["A2:F2"].Style.Fill.BackgroundColor.SetColor(Color.FromArgb(184, 204, 228));
+                worksheet.Cells["A2:F2"].Style.Font.Bold = true;
 
                 var row = 3;
 
@@ -288,7 +285,13 @@ namespace QualificationWork.BL.Services
                     }
                 }
 
-                var rowCount = 3;
+                var rowCount = 2;
+                var resultSheet = xlPackage.Workbook.Worksheets.Add("Підсумки");
+                resultSheet.Cells["A1"].Value = "І'мя";
+                resultSheet.Cells["B1"].Value = "Оцінка";
+                resultSheet.Cells["A1:B1"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                resultSheet.Cells["A1:B1"].Style.Fill.BackgroundColor.SetColor(Color.FromArgb(24, 159, 24));
+                resultSheet.Cells["A1:B2"].Style.Font.Bold = true;
                 foreach (var timeTable in listUniqueTimetable)
                 {
                     var totaCount = 0;
@@ -302,8 +305,8 @@ namespace QualificationWork.BL.Services
                         totaCount += i.Score;
                     }
 
-                    worksheet.Cells[rowCount, 7].Value = timeTable.User.UserName;
-                    worksheet.Cells[rowCount, 8].Value = totaCount;
+                    resultSheet.Cells[rowCount, 1].Value = timeTable.User.UserName;
+                    resultSheet.Cells[rowCount, 2].Value = totaCount;
                     rowCount++;
                 }
 
@@ -326,24 +329,19 @@ namespace QualificationWork.BL.Services
                 var worksheet = xlPackage.Workbook.Worksheets.Add("Звіт");
                 var namedStyle = xlPackage.Workbook.Styles.CreateNamedStyle("HyperLink");
                 namedStyle.Style.Font.UnderLine = true;
-                namedStyle.Style.Font.Color.SetColor(Color.Blue);
 
-                worksheet.Cells["A1"].Style.Font.Bold = true;
-                worksheet.Cells["A1"].Value = "Звіт по предметам";
-                worksheet.Cells["A2"].Value = "Предмет";
-                worksheet.Cells["B2"].Value = "Номер заняття";
-                worksheet.Cells["C2"].Value = "Присутність";
-                worksheet.Cells["D2"].Value = "Бал";
-                worksheet.Cells["E2"].Value = "Дата заняття";
-                worksheet.Cells["G2"].Value = "Предмет";
-                worksheet.Cells["H2"].Value = "Підсумкова оцінка";
-                worksheet.Cells["A1:H2"].Style.Fill.PatternType = ExcelFillStyle.Solid;
-                worksheet.Cells["A1:H1"].Style.Fill.BackgroundColor.SetColor(Color.FromArgb(24, 159, 24));
-                worksheet.Cells["A2:H2"].Style.Fill.BackgroundColor.SetColor(Color.FromArgb(184, 204, 228));
-                worksheet.Cells["A2:H2"].Style.Font.Bold = true;
+                worksheet.Cells["A1"].Value = "Предмет";
+                worksheet.Cells["B1"].Value = "Номер заняття";
+                worksheet.Cells["C1"].Value = "Присутність";
+                worksheet.Cells["D1"].Value = "Бал";
+                worksheet.Cells["E1"].Value = "Дата заняття";
+               
+                worksheet.Cells["A1:E1"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                worksheet.Cells["A1:E1"].Style.Fill.BackgroundColor.SetColor(Color.FromArgb(24, 159, 24));
+                worksheet.Cells["A1:E1"].Style.Font.Bold = true;
                 worksheet.Cells["A1:K20"].AutoFitColumns();
 
-                var row = 3;
+                var row = 2;
 
                 var userTimeTable = await groupQuery.GetTimeTableByUser(userId);
 
@@ -369,8 +367,15 @@ namespace QualificationWork.BL.Services
                         listUniqueTimetable.Add(item);
                     }
                 }
-
-                var rowCount = 3;
+                var resultSheet = xlPackage.Workbook.Worksheets.Add("Підсумки");
+                resultSheet.Cells["A1"].Value = "Предмет";
+                resultSheet.Cells["B1"].Value = "Оцінка";
+                resultSheet.Cells["A1"].Value = "І'мя";
+                resultSheet.Cells["B1"].Value = "Оцінка";
+                resultSheet.Cells["A1:B1"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                resultSheet.Cells["A1:B1"].Style.Fill.BackgroundColor.SetColor(Color.FromArgb(24, 159, 24));
+                resultSheet.Cells["A1:B2"].Style.Font.Bold = true;
+                var rowCount = 2;
                 foreach (var timeTable in listUniqueTimetable)
                 {
                     var totaCount = 0;
@@ -384,11 +389,10 @@ namespace QualificationWork.BL.Services
                         totaCount += i.Score;
                     }
 
-                    worksheet.Cells[rowCount, 7].Value = timeTable.Subject.SubjectName;
-                    worksheet.Cells[rowCount, 8].Value = totaCount;
+                    resultSheet.Cells[rowCount, 1].Value = timeTable.Subject.SubjectName;
+                    resultSheet.Cells[rowCount, 2].Value = totaCount;
                     rowCount++;
                 }
-
 
                 xlPackage.Workbook.Properties.Title = "User List";
                 xlPackage.Workbook.Properties.Author = "Mohamad Lawand";

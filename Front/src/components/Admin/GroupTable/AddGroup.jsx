@@ -40,6 +40,8 @@ const AddGroup = (props) => {
   };
 
   const onFinish = (data) => {
+
+    console.log(data);
   
     props.createNewGroup(data);
     form.resetFields();
@@ -78,10 +80,10 @@ const AddGroup = (props) => {
   return (
     <div>
       <Button type="primary" onClick={showModal} style={{ margin: 5 }}>
-        Add new Group
+        Додати групу
       </Button>
       <Modal
-        title="Add Group"
+        title="Додати групу"
         visible={isModalVisible}
         onCancel={handleCancel}
         onOk={handleOk}

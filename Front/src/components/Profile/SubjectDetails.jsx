@@ -51,7 +51,7 @@ const SubjectDetails = (props) => {
     className="site-layout-background"
     style={{padding: 30, minHeight: 280, }}>
       <Card
-        extra={ <Link to={"/"}>Back</Link>}
+        extra={ <Link to={"/"}>Назад</Link>}
         title={props.subject.subjectName}>
       <Table dataSource={props.subject.timeTables} bordered pagination={false} columns={columns} />
       </Card>

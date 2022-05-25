@@ -16,7 +16,7 @@ const AttendanceTable = (props) => {
     props.SetNewUserIsPresent(id, e, props.namberleson);
   };
   const columns = [
-    { title: 'Імя', dataIndex: 'userName', key: 'userName' },
+    { title: "Ім`я", dataIndex: 'userName', key: 'userName' },
     {
       title: 'Присутність',
       dataIndex: 'isPresent',

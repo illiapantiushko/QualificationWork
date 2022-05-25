@@ -19,9 +19,9 @@ const CardSubject = ({ data, profile }) => {
         </div>
         <div className="card-content">
           <div>
-            <span className="card-text">{data.teacher}</span>
+            <span className="card-text">{data.teacher[0]}</span>
           </div>
-          <a className="card-text">{profile?.email}</a>
+          <a className="card-text">{data.teacher[1]}</a>
         </div>
         <div className="card-footer">
           <div className="card-footer__inner">

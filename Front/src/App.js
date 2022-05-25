@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import './App.css';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Login from './components/Login/Login';
-import { useSelector } from 'react-redux';
 import AdminPanel from './components/Admin/AdminPanel';
 import AdminPrivateRoute from './Utils/AdminPrivateRoute.route';
+import StudentPrivateRoute from './Utils/StudentPrivateRoute.route';
 import TeacherPrivateRoute from './Utils/TeacherPrivateRoute.route';
 import TeacherPanel from './components/Teacher/TeacherPanel';
 import TableSubjectLessons from './components/Teacher/TableSubjectLessons';
@@ -30,7 +30,6 @@ const App = () => {
   const checkLocation = location.pathname === '/login';
 
   const roles = JSON.parse(localStorage.getItem('roles'));
-  //  useSelector((state) => state.Auth.roles);
   return (
     <>
       <Layout>
@@ -40,9 +39,6 @@ const App = () => {
 
           <Routes>
             <Route path="/login" element={<Login />} />
-            <Route path="/" element={<Main />} />
-
-            <Route path="/group/:id" element={<GroupDetails/>} />
             <Route path="/subjectDetails/:id" element={<SubjectDetails />} />
 
             <Route
@@ -53,7 +49,14 @@ const App = () => {
                 </TeacherPrivateRoute>
               }
             />
-
+            <Route
+              path="/"
+              element={
+                <StudentPrivateRoute roles={roles}>
+                <Main />
+                </StudentPrivateRoute>
+              }
+            />
             <Route
               path="/AttendanceSubject/:id"
               element={
@@ -68,6 +71,14 @@ const App = () => {
               element={
                 <AdminPrivateRoute roles={roles}>
                   <AdminPanel />
+                </AdminPrivateRoute>
+              }
+            />
+            <Route
+              path="/group/:id"
+              element={
+                <AdminPrivateRoute roles={roles}>
+                  <GroupDetails/>
                 </AdminPrivateRoute>
               }
             />

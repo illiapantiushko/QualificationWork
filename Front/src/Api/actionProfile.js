@@ -6,10 +6,10 @@ import { setSubjectFetching } from './../Redux/Profile-reducer';
 export const getInfoCurrentUser = () => {
   return async (dispatch) => {
     try {
-      const res = await instance.get('Users/getCurrentUser');
+      const res = await instance.get('Authentication/getCurrentUser');
       dispatch(setUserInfo(res.data));
     } catch (error) {
-      Notification(error.response.status, error.message);
+      Notification(error.response?.status, error.message);
     }
   };
 };
@@ -18,7 +18,7 @@ export const getSubjects = () => {
   return async (dispatch) => {
     try {
       dispatch(setSubjectFetching());
-      const res = await instance.get('Teachers/GetAllSubject');
+      const res = await instance.get('Students/GetAllSubject');
       dispatch(
         setSubjects(
           res.data.map((row) => ({
@@ -28,7 +28,7 @@ export const getSubjects = () => {
             isActive: row.isActive,
             amountCredits: row.amountCredits,
             subjectСlosingDate: row.subjectСlosingDate,
-            teacher: row.teacherSubjects[0].user.userName,
+            teacher:[row.teacherSubjects[0].user.userName, row.teacherSubjects[0].user.email],
             timeTables: row.timeTables,
           })),
 
@@ -36,7 +36,7 @@ export const getSubjects = () => {
         ),
       );
     } catch (error) {
-      Notification(error.response.status, error.message);
+      Notification(error.response?.status, error.message);
     }
   };
 };
@@ -44,10 +44,10 @@ export const getSubjects = () => {
 export const getSubjectDetails = (id) => {
   return async (dispatch) => {
     try {
-      const res = await instance.get(`Users/getTimeTableByUser?subjectId=${id}`);
+      const res = await instance.get(`Students/getTimeTableByUser?subjectId=${id}`);
       dispatch(setSubjectDetails(res.data));
     } catch (error) {
-      Notification(error.response.status, error.message);
+      Notification(error.response?.status, error.message);
     }
   };
 };
@@ -65,7 +65,7 @@ export const getUserReport = (userId) => {
       document.body.appendChild(link);
       link.click();
     } catch (error) {
-      Notification(error.response.status, error.message);
+      Notification(error.response?.status, error.message);
     }
   };
 };

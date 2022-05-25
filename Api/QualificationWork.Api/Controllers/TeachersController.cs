@@ -11,22 +11,17 @@ namespace QualificationWork.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    [Authorize(Roles = "Teacher")]
     public class TeachersController : ControllerBase
     {
 
         private readonly SubjectService subjectService;
+        private readonly UserService userService;
 
-        public TeachersController(SubjectService subjectService)
+        public TeachersController(SubjectService subjectService, UserService userService)
         {
             this.subjectService = subjectService;
-        }
-
-        [HttpGet("getSubjects")]
-        public ActionResult GetSubjects()
-        {
-            var data = subjectService.GetSubjects();
-            return Ok(data);
+            this.userService = userService;
         }
 
         [HttpGet("getAllTeacherFaculty")]
@@ -44,32 +39,36 @@ namespace QualificationWork.Api.Controllers
             var result = data.Where(x => x.UserRoles.Any(y => y.Role.Name == UserRoles.Teacher));
             return Ok(data);
         }
-
-        [HttpGet("GetAllSubject")]
-        public async Task<ActionResult> GetAllSubject()
-        {
-            var data = await subjectService.GetAllSubject(User.GetUserId());
-            return Ok(data);
-        }
-
-        [HttpGet("getAllUsersWithSubjests")]
-        public async Task<ActionResult> GetAllUsersWithSubjests(int pageNumber, int pageSize, string search)
-        {
-            var data = await subjectService.GetAllUsersWithSubjests(pageNumber, pageSize, search);
-            return Ok(data);
-        }
         [HttpGet("getAllSubjests")]
         public async Task<ActionResult> GetAllSubjects(int pageNumber, int pageSize, string search)
         {
              var data = await subjectService.GetAllSubjects(pageNumber, pageSize, search);
              return Ok(data);
         }
-
-
+        [HttpGet("getUsersTimeTable")]
+        public async Task<ActionResult> GetUsersTimeTable(long subjectId, int namberleson)
+        {
+            var data = await userService.GetUsersTimeTable(subjectId, namberleson);
+            return Ok(data);
+        }
         [HttpGet("getAllGroupsBySubject")]
         public async Task<ActionResult> GetAllGroupsBySubject(long subjectId)
         {
             var data= await subjectService.GetAllGroupsBySubject(subjectId);
+            return Ok(data);
+        }
+
+        [HttpGet("getAllTeacherSubject")]
+        public async Task<ActionResult> GetAllTeacherSubject()
+        {
+            var data = await userService.GetAllTeacherSubject(User.GetUserId());
+            return Ok(data);
+        }
+
+        [HttpGet("GetSubjectTopic")]
+        public async Task<ActionResult> GetSubjectTopic(long subjectId)
+        {
+            var data = await userService.GetSubjectTopic(subjectId);
             return Ok(data);
         }
 
@@ -105,5 +104,21 @@ namespace QualificationWork.Api.Controllers
             await subjectService.DeleteLessonAsync(lessonNumber, subjectId);
             return Ok();
         }
+
+        [HttpPut("updateUserScore")]
+        public async Task<ActionResult> UpdateUserScore([FromBody] UpdateUserScoreDto model)
+        {
+            await userService.UpdateUserScore(model);
+            return Ok();
+        }
+
+        [HttpPut("updateUserIsPresent")]
+        public async Task<ActionResult> UpdateUserIsPresent([FromBody] UpdateUserIsPresentDto model)
+        {
+            await userService.UpdateUserIsPresent(model);
+            return Ok();
+        }
+
+
     }
 }

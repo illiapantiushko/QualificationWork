@@ -2,6 +2,8 @@
 using QualificationWork.DTO.Dtos;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using QualificationWork.ClaimsExtension;
+using Microsoft.AspNetCore.Authorization;
 
 namespace QualificationWork.Api.Controllers
 {
@@ -10,9 +12,11 @@ namespace QualificationWork.Api.Controllers
     public class AuthenticationController : ControllerBase
     {
         private readonly AuthenticationService authenticationService;
+        private readonly UserService userService;
 
-        public AuthenticationController(AuthenticationService authenticationService)
+        public AuthenticationController(AuthenticationService authenticationService,UserService userService)
         {
+            this.userService = userService;
             this.authenticationService = authenticationService;
         }
 
@@ -40,6 +44,14 @@ namespace QualificationWork.Api.Controllers
             {
                 return HttpContext.Connection.RemoteIpAddress.MapToIPv4().ToString();
             }
+        }
+
+        [Authorize]
+        [HttpGet("getCurrentUser")]
+        public async Task<ActionResult> GetCurrentUser()
+        {
+            var data = await userService.GetUser(User.GetUserId());
+            return Ok(data);
         }
 
         public class GoogleAuth

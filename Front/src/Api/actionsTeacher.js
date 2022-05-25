@@ -13,7 +13,7 @@ import {
 export const getSubjects = () => {
   return async (dispatch) => {
     try {
-      const res = await instance.get('Users/getAllTeacherSubject');
+      const res = await instance.get('Teachers/getAllTeacherSubject');
 
       dispatch(
         setSubjects(
@@ -29,7 +29,7 @@ export const getSubjects = () => {
         ),
       );
     } catch (error) {
-      Notification(error.response.status, error.message);
+      // Notification(error.response?.status, error.message);
     }
   };
 };
@@ -37,13 +37,10 @@ export const getSubjects = () => {
 export const getSubjectLesons = (id) => {
   return async (dispatch) => {
     try {
-      const res = await instance.get(`Users/GetSubjectTopic?subjectId=${id}`);
-
-      dispatch(
-        setSubjectLesons(res.data),
-      );
+      const res = await instance.get(`Teachers/GetSubjectTopic?subjectId=${id}`);
+      dispatch(setSubjectLesons(res.data));
     } catch (error) {
-      Notification(error.response.status, error.message);
+      Notification(error.response?.status, error.message);
     }
   };
 };
@@ -52,7 +49,7 @@ export const getAttendanceList = (id, namberleson) => {
   return async (dispatch) => {
     try {
       const res = await instance.get(
-        `Users/getUsersTimeTable?subjectId=${id}&namberleson=${namberleson}`,
+        `Teachers/getUsersTimeTable?subjectId=${id}&namberleson=${namberleson}`,
       );
 
       dispatch(
@@ -68,7 +65,7 @@ export const getAttendanceList = (id, namberleson) => {
         ),
       );
     } catch (error) {
-      Notification(error.response.status, error.message);
+      Notification(error.response?.status, error.message);
     }
   };
 };
@@ -76,7 +73,7 @@ export const getAttendanceList = (id, namberleson) => {
 export const setNewUserScore = (row, lessonNumber) => {
   return async (dispatch) => {
     try {
-      const res = await instance.put(`Users/updateUserScore`, {
+      const res = await instance.put(`Teachers/updateUserScore`, {
         id: row.id,
         score: row.score,
         lessonNumber,
@@ -84,7 +81,7 @@ export const setNewUserScore = (row, lessonNumber) => {
 
       dispatch(updateUserScore(row));
     } catch (error) {
-      Notification(error.response.status, error.message);
+      Notification(error.response?.status, error.message);
     }
   };
 };
@@ -92,11 +89,11 @@ export const setNewUserScore = (row, lessonNumber) => {
 export const setNewUserIsPresent = (id, isPresent, lessonNumber) => {
   return async (dispatch) => {
     try {
-      const res = await instance.put(`Users/updateUserIsPresent`, { id, isPresent, lessonNumber });
+      const res = await instance.put(`Teachers/updateUserIsPresent`, { id, isPresent, lessonNumber });
 
       dispatch(updateUserIsPresent({ id, isPresent }));
     } catch (error) {
-      Notification(error.response.status, error.message);
+      Notification(error.response?.status, error.message);
     }
   };
 };
@@ -115,12 +112,11 @@ export const addLesson = (data) => {
       dispatch(addNewLesson(newLeson));
       if (res.status === 200) {
         notification.success({
-          message: '200',
-          description: 'Заннятя успішно додано',
+          description: 'Заняття успішно додано',
         });
       }
     } catch (error) {
-      Notification(error.response.status, error.message);
+      Notification(error.response?.status, error.message);
     }
   };
 };
@@ -134,12 +130,11 @@ export const removeLesson = (lessonNumber, subjectId) => {
       dispatch(deleteLesson(lessonNumber));
       if (res.status === 200) {
         notification.success({
-          message: '200',
           description: 'Заннятя успішно видалено',
         });
       }
     } catch (error) {
-      Notification(error.response.status, error.message);
+      Notification(error.response?.status, error.message);
     }
   };
 };
@@ -157,7 +152,7 @@ export const getSubjectReport = (subjectId) => {
       document.body.appendChild(link);
       link.click();
     } catch (error) {
-      Notification(error.response.status, error.message);
+      Notification(error.response?.status, error.message);
     }
   };
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Layout, Menu } from 'antd';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 import { UserOutlined, VideoCameraOutlined, UploadOutlined } from '@ant-design/icons';
 const { Sider } = Layout;
 const SideBar = ({ state }) => {
@@ -8,7 +8,7 @@ const SideBar = ({ state }) => {
 
   return (
     <Sider  trigger={null} theme="dark" collapsible collapsed={state.collapsed}>
-      <Menu  theme="dark" mode="inline" defaultSelectedKeys={['2']}>
+      <Menu  theme="dark" mode="inline">
       {roles.includes('Student')?
         <Menu.Item key="1" icon={<UserOutlined />}>
           <NavLink to="/">Profile</NavLink>

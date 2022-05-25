@@ -9,14 +9,18 @@ namespace QualificationWork.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class UsersController : ControllerBase
     {
         private readonly UserService userService;
+        private readonly SubjectService subjectService;
+        private readonly GroupService groupService;
 
-        public UsersController(UserService userService)
+        public UsersController(GroupService groupService,SubjectService subjectService, UserService userService)
         {
             this.userService = userService;
+            this.subjectService = subjectService;
+            this.groupService = groupService;
         }
 
         [HttpGet("getUsers")]
@@ -25,11 +29,19 @@ namespace QualificationWork.Api.Controllers
             var data = await userService.GetUsers();
             return Ok(data);
         }
-        [HttpGet("getCurrentUser")]
-        public async Task<ActionResult> GetCurrentUser()
+       
+        [HttpGet("getAllGroups")]
+        public async Task<ActionResult> GetAllGroupsAsync(int pageNumber, int pageSize, string search)
         {
-            var data = await userService.GetUser(User.GetUserId());
-            return Ok(data);        
+            var data = await groupService.GetAllGroups(pageNumber, pageSize, search);
+            return Ok(data);
+        }
+
+        [HttpGet("getAllUsersWithSubjests")]
+        public async Task<ActionResult> GetAllUsersWithSubjests(int pageNumber, int pageSize, string search)
+        {
+            var data = await subjectService.GetAllUsersWithSubjests(pageNumber, pageSize, search);
+            return Ok(data);
         }
 
         [HttpGet("getTimeTable")]
@@ -38,33 +50,7 @@ namespace QualificationWork.Api.Controllers
             var data = await userService.GetTimeTable();
             return Ok(data);
         }
-        [HttpGet("getUsersTimeTable")]
-        public async Task<ActionResult> GetUsersTimeTable(long subjectId, int namberleson)
-        {
-            var data = await userService.GetUsersTimeTable(subjectId, namberleson);
-            return Ok(data);
-        }
-        [HttpGet("GetSubjectTopic")]
-        public async Task<ActionResult> GetSubjectTopic(long subjectId)
-        {
-            var data = await userService.GetSubjectTopic(subjectId);
-            return Ok(data);
-        }
-
-        [HttpGet("getAllTeacherSubject")]
-        public async Task<ActionResult> GetAllTeacherSubject()
-        {
-            var data = await userService.GetAllTeacherSubject(User.GetUserId());
-            return Ok(data);
-        }
-
-        [HttpGet("getTimeTableByUser")]
-        public async Task<ActionResult> GetTimeTableByUser(long subjectId)
-        {
-            var data = await userService.GetTimeTableByUser(subjectId, User.GetUserId());
-            return Ok(data);
-        }
-
+       
         [HttpPost("addRole")]
         public async Task<ActionResult> AddRole([FromBody] RoleDto model)
         {
@@ -94,6 +80,13 @@ namespace QualificationWork.Api.Controllers
             return Ok();
         }
 
+        [HttpPost("addUserGroup")]
+        public async Task<ActionResult> AddUserGroup([FromBody] AddUserGroupDto model)
+        {
+            await groupService.AddUserGroup(model.groupId, model.arrUserId);
+            return Ok();
+        }
+
         [HttpPost("createTimeTable")]
         public async Task<ActionResult> CreateTimeTable([FromBody] TimeTableDto model)
         {
@@ -108,19 +101,6 @@ namespace QualificationWork.Api.Controllers
             return Ok();
         }
 
-        [HttpPut("updateUserScore")]
-        public async Task<ActionResult> UpdateUserScore([FromBody] UpdateUserScoreDto model)
-        {
-            await userService.UpdateUserScore(model);
-            return Ok();
-        }
-
-        [HttpPut("updateUserIsPresent")]
-        public async Task<ActionResult> UpdateUserIsPresent([FromBody] UpdateUserIsPresentDto model)
-        {
-            await userService.UpdateUserIsPresent(model);
-            return Ok();
-        }
         [HttpPut("updateUser")]
         public async Task<ActionResult> UpdateUserAsync( [FromBody] EditeUserDto model)
         {
@@ -135,10 +115,31 @@ namespace QualificationWork.Api.Controllers
             return Ok();
         }
 
+        [HttpPost("addUserSubject")]
+        public async Task<ActionResult> AddGroupSubject([FromBody] AddUserGroupDto model)
+        {
+            await groupService.AddGroupSubject(model.groupId, model.arrUserId);
+            return Ok();
+        }
+
+        [HttpGet("getSubjects")]
+        public ActionResult GetSubjects()
+        {
+            var data = subjectService.GetSubjects();
+            return Ok(data);
+        }
+
         [HttpDelete("deleteUser")]
         public ActionResult DeleteUser(long userId)
         {
             userService.DeleteUser(userId);
+            return Ok();
+        }
+
+        [HttpDelete("deleteGroup")]
+        public ActionResult DeleteGroup(long groupId)
+        {
+            groupService.DeleteGroup(groupId);
             return Ok();
         }
 

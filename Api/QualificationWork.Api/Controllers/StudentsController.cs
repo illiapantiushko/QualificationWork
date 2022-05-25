@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using QualificationWork.BL.Services;
+using QualificationWork.ClaimsExtension;
 using QualificationWork.DAL.Models;
 using QualificationWork.DTO.Dtos;
 using System.Threading.Tasks;
@@ -10,14 +11,18 @@ namespace QualificationWork.Api.Controllers
     [Route("api/[controller]")]
     [ApiController]
 
-    [Authorize]
+    [Authorize(Roles = "Student")]
     public class StudentsController : ControllerBase
     {
         private readonly GroupService groupService;
+        private readonly SubjectService subjectService;
+        private readonly UserService userService;
 
-        public StudentsController(GroupService groupService)
+        public StudentsController(GroupService groupService,UserService userService,SubjectService subjectService)
         {
             this.groupService = groupService;
+            this.userService = userService;
+            this.subjectService = subjectService;
         }
 
         [HttpPost("addFacultyGroup")]
@@ -40,13 +45,7 @@ namespace QualificationWork.Api.Controllers
             await groupService.AddUserGroup(model.groupId, model.arrUserId);
             return Ok();
         }
-        [HttpPost("addUserSubject")]
-        public async Task<ActionResult> AddGroupSubject([FromBody] AddUserGroupDto model)
-        {
-
-            await groupService.AddGroupSubject(model.groupId, model.arrUserId);
-            return Ok();
-        }
+      
 
         [HttpGet("getFaculty")]
         public ActionResult GetFaculty()
@@ -62,23 +61,23 @@ namespace QualificationWork.Api.Controllers
             return Ok(data);
         }
 
-        [HttpGet("getAllGroups")]
-        public async Task<ActionResult> GetAllGroupsAsync(int pageNumber, int pageSize, string search)
+        [HttpGet("getTimeTableByUser")]
+        public async Task<ActionResult> GetTimeTableByUser(long subjectId)
         {
-            var data = await groupService.GetAllGroups(pageNumber, pageSize, search);
-            return Ok(data); 
+            var data = await userService.GetTimeTableByUser(subjectId, User.GetUserId());
+            return Ok(data);
+        }
+        [HttpGet("GetAllSubject")]
+        public async Task<ActionResult> GetAllSubject()
+        {
+            var data = await subjectService.GetAllSubject(User.GetUserId());
+            return Ok(data);
         }
 
         [HttpPost("createFaculty")]
         public async Task<ActionResult> CreateFaculty([FromBody] FacultyDto model)
         {
             await groupService.CreateFacultyAsync(model);
-            return Ok();
-        }
-        [HttpDelete("deleteGroup")]
-        public ActionResult DeleteGroup(long groupId)
-        {
-            groupService.DeleteGroup(groupId);
             return Ok();
         }
     }
